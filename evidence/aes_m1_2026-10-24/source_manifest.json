@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-24",
+  "tool": "Vivado 2025.2",
+  "source_sha256": {
+    "rtl/crypto/aes128_core.v": "cf0e70782fdc4bb0ee37f787b3ae9e03b35fdc68eaf356cf1b797247b51c4600",
+    "rtl/crypto/aes_key_expand.v": "66704cd6066999f204473c3c481bbaec4d75169c95df86cd5b71cd1d685a1a0e",
+    "rtl/crypto/aes_mix_columns.v": "f3ad2d8bc7e6204db2d6e2b033bb553a73889c4113f5c9a9407128740e353e3b",
+    "rtl/crypto/aes_round.v": "18fdc9ef133331d8e873ffbff69ae11403f119546c449465e9555ac5585ae075",
+    "rtl/crypto/aes_sbox.v": "7cda27832879e90b30d843450fb9b2a0ee6ce72b26df98385650a3da392f7852",
+    "rtl/crypto/aes_shift_rows.v": "1a6400ef7971b899406db9745241db3aad57435cbe84bb8f669aae439748d37b",
+    "scripts/check_aes_synthesis.tcl": "1915cb81a520c56372292ef7f6ee21e3c0b525ecb63519ed64c5c6224a4c520a",
+    "tb/crypto/aes_reference.vh": "43f067c8ba093bdc54f715e2e4d1ec1ae88f82ebbfa9c4b6ad0a199e18f65ace",
+    "tb/crypto/tb_aes128_core.v": "64299753b2ac317bd11710f98a21d8745294c5a688b448aa60ea6576335a1406",
+    "tb/crypto/tb_aes_primitives.v": "09588136a238b08bb7489f41426872563e843692754dc6ea60e00b8708fdf111",
+    "tb/crypto/vectors/aes128_kat.mem": "c2dba443c6e3491939716763f4e21799fa10c88b2b82ff5117ff8486b7ddb8d6",
+    "tb/crypto/vectors/aes128_vector_count.vh": "c9e0f7903aa6ce1e04059474638abf98601b3be0f664eca649f6dbf5457aa385"
+  }
+}

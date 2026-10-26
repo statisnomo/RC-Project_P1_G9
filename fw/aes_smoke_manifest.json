@@ -1,0 +1,50 @@
+{
+  "code_bytes": 880,
+  "rom_capacity_bytes": 4096,
+  "result_ram_bytes": 68,
+  "stack_top": "0x2000",
+  "stack_bytes_used": 0,
+  "status_register": "x31: 0=running, 1=pass, 2=mismatch, 3=poll timeout",
+  "status_ram_address": "0x1040",
+  "labels": {
+    "_start": 0,
+    "poll_0": 140,
+    "read_0": 164,
+    "poll_1": 304,
+    "read_1": 328,
+    "poll_2": 516,
+    "read_2": 540,
+    "poll_3": 728,
+    "read_3": 752,
+    "pass_loop": 844,
+    "mismatch": 848,
+    "timeout": 864,
+    "fail_loop": 876
+  },
+  "cases": [
+    {
+      "name": "demo",
+      "key": "000102030405060708090a0b0c0d0e0f",
+      "plaintext": "00112233445566778899aabbccddeeff",
+      "ciphertext": "69c4e0d86a7b0430d8cdb78070b4c55a"
+    },
+    {
+      "name": "repeat_demo_key",
+      "key": "000102030405060708090a0b0c0d0e0f",
+      "plaintext": "00112233445566778899aabbccddeeff",
+      "ciphertext": "69c4e0d86a7b0430d8cdb78070b4c55a"
+    },
+    {
+      "name": "zero",
+      "key": "00000000000000000000000000000000",
+      "plaintext": "00000000000000000000000000000000",
+      "ciphertext": "66e94bd4ef8a2c3b884cfa59ca342b2e"
+    },
+    {
+      "name": "fips_example",
+      "key": "2b7e151628aed2a6abf7158809cf4f3c",
+      "plaintext": "3243f6a8885a308d313198a2e0370734",
+      "ciphertext": "3925841d02dc09fbdc118597196a0b32"
+    }
+  ]
+}

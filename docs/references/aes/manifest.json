@@ -1,0 +1,33 @@
+{
+  "retrieved": "2026-10-24",
+  "source": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Algorithm-Validation-Program/documents/aes/KAT_AES.zip",
+  "archive_sha256": "a203b16c9246b2ebae31dee5de21a606be80cf78ceabaca37150236fa098eb60",
+  "format": "aes128_kat.mem: 384-bit rows, key[383:256], plaintext[255:128], ciphertext[127:0]",
+  "selection": "AES-128 ECB encryption KAT sections only; ECB used to test a single raw block",
+  "files": [
+    {
+      "file": "ECBGFSbox128.rsp",
+      "first_index": 0,
+      "cases": 7,
+      "sha256": "62f17126e870b9700234cc5b592b5bb50b295320b9844f341ee58a33eae735e6"
+    },
+    {
+      "file": "ECBKeySbox128.rsp",
+      "first_index": 7,
+      "cases": 21,
+      "sha256": "f23ae1259a894fcabe955c42904e0d09394dceb17b8a3dc150767fa2a6482aa7"
+    },
+    {
+      "file": "ECBVarKey128.rsp",
+      "first_index": 28,
+      "cases": 128,
+      "sha256": "81ce3d0f80b57c4cfcacdde88e2ff9bc609050a1d80a0beb92fda30acdd98598"
+    },
+    {
+      "file": "ECBVarTxt128.rsp",
+      "first_index": 156,
+      "cases": 128,
+      "sha256": "447001742e5576da2213888f2187258bdd07c120106792c509786d46da2464f1"
+    }
+  ]
+}

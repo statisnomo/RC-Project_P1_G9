@@ -1,0 +1,37 @@
+# Generated simulation, synthesis, and waveform output.
+build/
+.Xil/
+xsim.dir/
+*.jou
+*.log
+*.pb
+*.wdb
+*.vcd
+*.vvp
+
+# Duplicate distribution packages and machine-generated Vivado state.
+/deliverables/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.runs/
+*.gen/
+*.srcs/
+*.str
+dfx_runtime.txt
+__pycache__/
+*.pyc
+
+# Preserve deliberately saved milestone evidence.
+!evidence/**/*.log
+!evidence/**/*.wdb
+
+# Local credentials and editor state.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.vscode/
+.idea/

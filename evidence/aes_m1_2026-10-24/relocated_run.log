@@ -1,0 +1,432 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat Oct 24 14:59:30 2026
+# Process ID         : 39776
+# Current directory  : D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project
+# Command line       : vivado.exe -mode batch -source scripts\verify_aes_gui.tcl -log relocation.log -journal relocation.jou -tclargs relocated
+# Log file           : D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/relocation.log
+# Journal file       : D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project\relocation.jou
+# Running On         : Anand-LOQ_25
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13450HX
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 16
+# Host memory        : 16873 MB
+# Swap memory        : 15569 MB
+# Total Virtual      : 32442 MB
+# Available Virtual  : 9637 MB
+#-----------------------------------------------------------
+source {scripts\verify_aes_gui.tcl}
+# set root [file normalize [file join [file dirname [info script]] ..]]
+# set out [file join $root build aes_tests]
+# file mkdir $out
+# open_project [file join $root vivado riscv_soc_lab riscv_soc_lab.xpr]
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab'
+INFO: [Project 1-313] Project file moved from 'D:/RC Project/riscv_soc_project/vivado/riscv_soc_lab' since last save.
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.gen/sources_1'.
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.ip_user_files'.
+Scanning sources...
+Finished scanning sources
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\emb-plus-vpr-4616\1.0\board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\emb-plus-vpr-4616\1.1\board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k24c\1.0\board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k24c\1.1\board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24i:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k24i\1.0\board.xml as part xck24-ubva530-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k26c\1.2\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k26c\1.3\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k26c\1.4\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k26i\1.2\board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k26i\1.3\board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k26i\1.4\board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kc705\1.6\board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.7 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kc705\1.7\board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu105\1.6\board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu105\1.7\board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu116\1.4\board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu116\1.5\board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu1500\1.2\board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kd240_som:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kd240_som\1.0\board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kd240_som:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kd240_som\1.1\board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kr260_som\1.0\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kr260_som\1.1\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kv260_som\1.2\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kv260_som\1.3\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kv260_som\1.4\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:scu35:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\scu35\1.0\board.xml as part xcsu35p-sbvb625-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\sp701\1.0\board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\sp701\1.1\board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\v80\1.0\board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vc707\1.4\board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.5 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vc707\1.5\board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vc709\1.8\board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\2.2\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.0\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.1\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.2\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.3\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.4\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190_newl\production\1.0\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190_newl\production\1.1\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190_newl\production\1.2\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190_newl\production\1.3\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu108\1.6\board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu108\1.7\board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu110\1.4\board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu118\2.0\board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu118\2.3\board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu118\2.4\board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu128\production\1.0\board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu129\production\1.0\board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu1525\1.3\board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek280\production\1.0\board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek280\production\1.1\board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek280\production\1.2\board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek385\1.0\board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek385\1.1\board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385_1:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek385_2\1.0\board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vermeo_t1_mpsoc\1.0\board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vermeo_t1_rfsoc\1.0\board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vhk158\production\1.0\board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vhk158\production\1.1\board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vhk158\production\1.2\board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\2.2\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\3.0\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\3.1\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\3.2\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\3.3\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180_newl\production\1.0\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180_newl\production\1.1\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk120\production\1.0\board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk120\production\1.1\board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk120\production\1.2\board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk180\production\1.0\board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk180\production\1.1\board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk180\production\1.2\board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vrk160:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vrk160\1.0\board.xml as part xcvr1602-vsva2488-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vrk160:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vrk160\1.1\board.xml as part xcvr1602-vsva2488-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zc706\1.4\board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.5 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zc706\1.5\board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu102\3.3\board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu102\3.4\board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu104\1.1\board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu106\2.4\board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu106\2.5\board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu106\2.6\board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu111\1.2\board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu111\1.3\board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu111\1.4\board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu1275\1.0\board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu1285\1.0\board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu208\production\2.0\board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu208ld\production\2.0\board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu216\production\2.0\board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu216ld\production\2.0\board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu670\2.0\board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu670ld\1.0\board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Project 1-5713] Board part '' set for the project  is not found. BoardPart property will be unset. Please select board from latest repo build 
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 528.074 ; gain = 219.207
+# if {![llength $argv] || [lindex $argv 0] ne "relocated"} {
+#     source [file join $root scripts add_aes_to_project.tcl]
+# }
+# set pairs {sim_aes_primitives tb_aes_primitives}
+# if {[llength $argv] && [lindex $argv 0] eq "core"} {
+#     set pairs {sim_aes_core tb_aes128_core sim_cpu_board tb_cpu_board}
+# }
+# if {[llength $argv] && [lindex $argv 0] eq "relocated"} {
+#     set pairs {sim_aes_primitives tb_aes_primitives sim_aes_core tb_aes128_core sim_cpu_board tb_cpu_board}
+#     foreach source_file [get_files -all] {
+#         set resolved [file normalize $source_file]
+#         if {![file exists $resolved] || [string first "${root}/" $resolved] != 0} {
+#             error "Relocated project has a missing or external source: $resolved"
+#         }
+#     }
+# }
+# set summary {}
+# foreach {simset bench} $pairs {
+#     current_fileset -simset [get_filesets $simset]
+#     launch_simulation -simset $simset -mode behavioral
+#     run all
+#     close_sim
+#     set log_path [file join $root vivado riscv_soc_lab riscv_soc_lab.sim $simset behav xsim simulate.log]
+#     set stream [open $log_path r]
+#     set contents [read $stream]
+#     close $stream
+#     set pattern [format {(?m)^PASS %s:[^\r\n]*} $bench]
+#     if {[regexp {\mFAIL\M} $contents] || ![regexp $pattern $contents pass_line]} {
+#         error "AES GUI test did not pass: $simset"
+#     }
+#     file copy -force $log_path [file join $out ${bench}.log]
+#     lappend summary $pass_line
+# }
+Command: launch_simulation  -simset sim_aes_primitives -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Sat Oct 24 14:59:44 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_aes_primitives'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_aes_primitives'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_aes_primitives' in fileset 'sim_aes_primitives'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim/cpu_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_aes_primitives'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_aes_primitives_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/crypto/aes_key_expand.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_key_expand
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/crypto/aes_mix_columns.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_mix_columns
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/crypto/aes_round.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_round
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/crypto/aes_sbox.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_sbox
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/crypto/aes_shift_rows.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_shift_rows
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/tb/crypto/tb_aes_primitives.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_aes_primitives
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aes_primitives_behav xil_defaultlib.tb_aes_primitives xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aes_primitives_behav xil_defaultlib.tb_aes_primitives xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.aes_sbox
+Compiling module xil_defaultlib.aes_shift_rows
+Compiling module xil_defaultlib.aes_mix_columns
+Compiling module xil_defaultlib.aes_round_default
+Compiling module xil_defaultlib.aes_key_expand_default
+Compiling module xil_defaultlib.tb_aes_primitives
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_aes_primitives_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_aes_primitives_behav -key {Behavioral:sim_aes_primitives:Functional:tb_aes_primitives} -tclbatch {tb_aes_primitives.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_aes_primitives.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_aes_primitives_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 548.832 ; gain = 20.758
+PASS tb_aes_primitives: 1810 checks; all 256 S-box entries, state transforms, 10 published round keys, normal/final rounds
+$finish called at time : 914 ns : File "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/tb/crypto/tb_aes_primitives.v" Line 92
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_aes_core -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Sat Oct 24 14:59:55 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_aes128_core'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_aes_core'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_aes128_core' in fileset 'sim_aes_core'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim/aes128_kat.mem'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim/aes128_kat.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_aes_core'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_aes128_core_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/crypto/aes128_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes128_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/crypto/aes_key_expand.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_key_expand
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/crypto/aes_mix_columns.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_mix_columns
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/crypto/aes_round.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_round
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/crypto/aes_sbox.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_sbox
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/crypto/aes_shift_rows.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_shift_rows
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/tb/crypto/tb_aes128_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_aes128_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aes128_core_behav xil_defaultlib.tb_aes128_core xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aes128_core_behav xil_defaultlib.tb_aes128_core xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.aes_sbox
+Compiling module xil_defaultlib.aes_key_expand_default
+Compiling module xil_defaultlib.aes_shift_rows
+Compiling module xil_defaultlib.aes_mix_columns
+Compiling module xil_defaultlib.aes_round_default
+Compiling module xil_defaultlib.aes128_core
+Compiling module xil_defaultlib.tb_aes128_core
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_aes128_core_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_aes128_core_behav -key {Behavioral:sim_aes_core:Functional:tb_aes128_core} -tclbatch {tb_aes128_core.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_aes128_core.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+WARNING: [Wavedata 42-489] Can't add object "/tb_aes128_core/vectors" to the wave window because it has 109056 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_aes128_core_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 548.844 ; gain = 0.012
+PASS tb_aes128_core: 17433 checks, 556 completed blocks; 284 NIST, 256 random, 11 reset-abort points; latency=11 clocks, earliest restart=12 clocks
+$finish called at time : 85576 ns : File "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/tb/crypto/tb_aes128_core.v" Line 166
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_cpu_board -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Sat Oct 24 15:00:04 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_cpu_board'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_cpu_board'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cpu_board' in fileset 'sim_cpu_board'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim/cpu_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_cpu_board'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_cpu_board_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/cpu/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/cpu/cpu_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/board/cpu_smoke_monitor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_smoke_monitor
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/mem/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/cpu/decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/cpu/imm_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imm_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/mem/instr_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instr_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/cpu/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/soc/soc_minimal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_minimal
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/rtl/board/zedboard_cpu_demo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module zedboard_cpu_demo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/tb/board/tb_cpu_board.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_cpu_board
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_cpu_board_behav xil_defaultlib.tb_cpu_board xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_cpu_board_behav xil_defaultlib.tb_cpu_board xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.instr_rom(INIT_FILE="cpu_smoke.h...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.decode
+Compiling module xil_defaultlib.imm_gen
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.cpu_core
+Compiling module xil_defaultlib.soc_minimal(ROM_FILE="cpu_smoke....
+Compiling module xil_defaultlib.cpu_smoke_monitor(TIMEOUT_CYCLES...
+Compiling module xil_defaultlib.zedboard_cpu_demo(HEARTBEAT_HALF...
+Compiling module xil_defaultlib.cpu_smoke_monitor(TIMEOUT_CYCLES...
+Compiling module xil_defaultlib.tb_cpu_board
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_cpu_board_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cpu_board_behav -key {Behavioral:sim_cpu_board:Functional:tb_cpu_board} -tclbatch {tb_cpu_board.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_cpu_board.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cpu_board_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 548.844 ; gain = 0.000
+PASS tb_cpu_board: actual CPU/ROM/RAM, LED mapping, heartbeat, reset/restart, 15 checker scenarios
+$finish called at time : 3910 ns : File "D:/RC Project/riscv_soc_project/build/aes_pack_validation_2026-10-24/riscv_soc_project/tb/board/tb_cpu_board.v" Line 120
+INFO: [Simtcl 6-16] Simulation closed
+# current_fileset -simset [get_filesets sim_aes_primitives]
+# close_project
+# puts [join $summary "\n"]
+PASS tb_aes_primitives: 1810 checks; all 256 S-box entries, state transforms, 10 published round keys, normal/final rounds
+PASS tb_aes128_core: 17433 checks, 556 completed blocks; 284 NIST, 256 random, 11 reset-abort points; latency=11 clocks, earliest restart=12 clocks
+PASS tb_cpu_board: actual CPU/ROM/RAM, LED mapping, heartbeat, reset/restart, 15 checker scenarios
+# set stream [open [file join $out gui_summary.txt] w]
+# puts $stream [join $summary "\n"]
+# puts $stream "AES_GUI_PASS"
+# close $stream
+# puts "AES_GUI_PASS"
+AES_GUI_PASS
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 24 15:00:14 2026...

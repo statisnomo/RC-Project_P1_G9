@@ -1,0 +1,46 @@
+{
+  "import_date": "2026-10-22",
+  "preservation": "Byte-identical copies; originals are not edited or added to active Vivado sources.",
+  "files": [
+    {
+      "file": "024608Xilinx Zynq-7000 SOC.pdf",
+      "title": "DS190: Zynq-7000 SoC Data Sheet: Overview",
+      "revision": "1.11.1",
+      "document_date": "2018-07-02",
+      "pdf_pages": 25,
+      "original_path": "C:\\Users\\anand\\Downloads\\024608Xilinx Zynq-7000 SOC.pdf",
+      "bytes": 733600,
+      "sha256": "f5d9257f94fa6140d4a0519a0185e43fea1dc79c806378f24416fdf25c34ff98"
+    },
+    {
+      "file": "zedboard_ug.pdf",
+      "title": "ZedBoard Hardware User's Guide",
+      "revision": "1.1",
+      "document_date": "2012-08-01",
+      "pdf_pages": 38,
+      "original_path": "C:\\Users\\anand\\Downloads\\zedboard_ug.pdf",
+      "bytes": 2544942,
+      "sha256": "abb8848da7d045be8eaef1e3a79e51098ec05a61c1e1ed87f160d06404cdf1c4"
+    },
+    {
+      "file": "constr.xdc",
+      "title": "User-supplied clock and LED constraint sample",
+      "revision": null,
+      "document_date": null,
+      "pdf_pages": null,
+      "original_path": "C:\\Users\\anand\\Downloads\\constr.xdc",
+      "bytes": 957,
+      "sha256": "aaf4327cbb4b301b4d7a0509a2d861721df4a3a0fab3fff50c935162aadfc09f"
+    },
+    {
+      "file": "zedboard-schematic-rev-e1-public.pdf",
+      "title": "Digilent ZED schematic",
+      "revision": "E.1",
+      "document_date": "2020-10-06",
+      "pdf_pages": 17,
+      "original_path": "C:\\Users\\anand\\Downloads\\zedboard-schematic-rev-e1-public.pdf",
+      "bytes": 3648335,
+      "sha256": "589867a1fec2fc5e7cf591977bb2e141d507bb213443bf1e512345dcfe45f440"
+    }
+  ]
+}

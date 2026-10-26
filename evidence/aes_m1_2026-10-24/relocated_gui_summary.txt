@@ -1,0 +1,4 @@
+PASS tb_aes_primitives: 1810 checks; all 256 S-box entries, state transforms, 10 published round keys, normal/final rounds
+PASS tb_aes128_core: 17433 checks, 556 completed blocks; 284 NIST, 256 random, 11 reset-abort points; latency=11 clocks, earliest restart=12 clocks
+PASS tb_cpu_board: actual CPU/ROM/RAM, LED mapping, heartbeat, reset/restart, 15 checker scenarios
+AES_GUI_PASS

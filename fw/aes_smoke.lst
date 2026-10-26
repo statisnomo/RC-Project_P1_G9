@@ -1,0 +1,220 @@
+0000  00002137  lui x2, 0x00002
+0004  00010113  addi x2, x2, 0
+0008  000010b7  lui x1, 0x00001
+000c  00008093  addi x1, x1, 0
+0010  400001b7  lui x3, 0x40000
+0014  00018193  addi x3, x3, 0
+0018  00000f93  addi x31, x0, 0
+001c  05f0a023  sw x31, 64(x1)
+0020  03020237  lui x4, 0x03020
+0024  10020213  addi x4, x4, 256
+0028  0041a823  sw x4, 16(x3)
+002c  07060237  lui x4, 0x07060
+0030  50420213  addi x4, x4, 1284
+0034  0041aa23  sw x4, 20(x3)
+0038  0b0a1237  lui x4, 0x0b0a1
+003c  90820213  addi x4, x4, -1784
+0040  0041ac23  sw x4, 24(x3)
+0044  0f0e1237  lui x4, 0x0f0e1
+0048  d0c20213  addi x4, x4, -756
+004c  0041ae23  sw x4, 28(x3)
+0050  33221237  lui x4, 0x33221
+0054  10020213  addi x4, x4, 256
+0058  0241a023  sw x4, 32(x3)
+005c  77665237  lui x4, 0x77665
+0060  54420213  addi x4, x4, 1348
+0064  0241a223  sw x4, 36(x3)
+0068  bbaaa237  lui x4, 0xbbaaa
+006c  98820213  addi x4, x4, -1656
+0070  0241a423  sw x4, 40(x3)
+0074  ffeee237  lui x4, 0xffeee
+0078  dcc20213  addi x4, x4, -564
+007c  0241a623  sw x4, 44(x3)
+0080  00100213  addi x4, x0, 1
+0084  0041a023  sw x4, 0(x3)
+0088  06400293  addi x5, x0, 100
+008c  0041a303  lw x6, 4(x3)
+0090  00237313  andi x6, x6, 2
+0094  00031863  bne x6, x0, read_0
+0098  fff28293  addi x5, x5, -1
+009c  fe0298e3  bne x5, x0, poll_0
+00a0  2c00006f  jal x0, timeout
+00a4  0301a403  lw x8, 48(x3)
+00a8  0080a023  sw x8, 0(x1)
+00ac  d8e0c3b7  lui x7, 0xd8e0c
+00b0  46938393  addi x7, x7, 1129
+00b4  28741e63  bne x8, x7, mismatch
+00b8  0341a403  lw x8, 52(x3)
+00bc  0080a223  sw x8, 4(x1)
+00c0  300483b7  lui x7, 0x30048
+00c4  b6a38393  addi x7, x7, -1174
+00c8  28741463  bne x8, x7, mismatch
+00cc  0381a403  lw x8, 56(x3)
+00d0  0080a423  sw x8, 8(x1)
+00d4  80b7d3b7  lui x7, 0x80b7d
+00d8  dd838393  addi x7, x7, -552
+00dc  26741a63  bne x8, x7, mismatch
+00e0  03c1a403  lw x8, 60(x3)
+00e4  0080a623  sw x8, 12(x1)
+00e8  5ac5b3b7  lui x7, 0x5ac5b
+00ec  47038393  addi x7, x7, 1136
+00f0  26741063  bne x8, x7, mismatch
+00f4  33221237  lui x4, 0x33221
+00f8  10020213  addi x4, x4, 256
+00fc  0241a023  sw x4, 32(x3)
+0100  77665237  lui x4, 0x77665
+0104  54420213  addi x4, x4, 1348
+0108  0241a223  sw x4, 36(x3)
+010c  bbaaa237  lui x4, 0xbbaaa
+0110  98820213  addi x4, x4, -1656
+0114  0241a423  sw x4, 40(x3)
+0118  ffeee237  lui x4, 0xffeee
+011c  dcc20213  addi x4, x4, -564
+0120  0241a623  sw x4, 44(x3)
+0124  00100213  addi x4, x0, 1
+0128  0041a023  sw x4, 0(x3)
+012c  06400293  addi x5, x0, 100
+0130  0041a303  lw x6, 4(x3)
+0134  00237313  andi x6, x6, 2
+0138  00031863  bne x6, x0, read_1
+013c  fff28293  addi x5, x5, -1
+0140  fe0298e3  bne x5, x0, poll_1
+0144  21c0006f  jal x0, timeout
+0148  0301a403  lw x8, 48(x3)
+014c  0080a823  sw x8, 16(x1)
+0150  d8e0c3b7  lui x7, 0xd8e0c
+0154  46938393  addi x7, x7, 1129
+0158  1e741c63  bne x8, x7, mismatch
+015c  0341a403  lw x8, 52(x3)
+0160  0080aa23  sw x8, 20(x1)
+0164  300483b7  lui x7, 0x30048
+0168  b6a38393  addi x7, x7, -1174
+016c  1e741263  bne x8, x7, mismatch
+0170  0381a403  lw x8, 56(x3)
+0174  0080ac23  sw x8, 24(x1)
+0178  80b7d3b7  lui x7, 0x80b7d
+017c  dd838393  addi x7, x7, -552
+0180  1c741863  bne x8, x7, mismatch
+0184  03c1a403  lw x8, 60(x3)
+0188  0080ae23  sw x8, 28(x1)
+018c  5ac5b3b7  lui x7, 0x5ac5b
+0190  47038393  addi x7, x7, 1136
+0194  1a741e63  bne x8, x7, mismatch
+0198  00000237  lui x4, 0x00000
+019c  00020213  addi x4, x4, 0
+01a0  0041a823  sw x4, 16(x3)
+01a4  00000237  lui x4, 0x00000
+01a8  00020213  addi x4, x4, 0
+01ac  0041aa23  sw x4, 20(x3)
+01b0  00000237  lui x4, 0x00000
+01b4  00020213  addi x4, x4, 0
+01b8  0041ac23  sw x4, 24(x3)
+01bc  00000237  lui x4, 0x00000
+01c0  00020213  addi x4, x4, 0
+01c4  0041ae23  sw x4, 28(x3)
+01c8  00000237  lui x4, 0x00000
+01cc  00020213  addi x4, x4, 0
+01d0  0241a023  sw x4, 32(x3)
+01d4  00000237  lui x4, 0x00000
+01d8  00020213  addi x4, x4, 0
+01dc  0241a223  sw x4, 36(x3)
+01e0  00000237  lui x4, 0x00000
+01e4  00020213  addi x4, x4, 0
+01e8  0241a423  sw x4, 40(x3)
+01ec  00000237  lui x4, 0x00000
+01f0  00020213  addi x4, x4, 0
+01f4  0241a623  sw x4, 44(x3)
+01f8  00100213  addi x4, x0, 1
+01fc  0041a023  sw x4, 0(x3)
+0200  06400293  addi x5, x0, 100
+0204  0041a303  lw x6, 4(x3)
+0208  00237313  andi x6, x6, 2
+020c  00031863  bne x6, x0, read_2
+0210  fff28293  addi x5, x5, -1
+0214  fe0298e3  bne x5, x0, poll_2
+0218  1480006f  jal x0, timeout
+021c  0301a403  lw x8, 48(x3)
+0220  0280a023  sw x8, 32(x1)
+0224  d44bf3b7  lui x7, 0xd44bf
+0228  96638393  addi x7, x7, -1690
+022c  12741263  bne x8, x7, mismatch
+0230  0341a403  lw x8, 52(x3)
+0234  0280a223  sw x8, 36(x1)
+0238  3b2c93b7  lui x7, 0x3b2c9
+023c  aef38393  addi x7, x7, -1297
+0240  10741863  bne x8, x7, mismatch
+0244  0381a403  lw x8, 56(x3)
+0248  0280a423  sw x8, 40(x1)
+024c  59fa53b7  lui x7, 0x59fa5
+0250  c8838393  addi x7, x7, -888
+0254  0e741e63  bne x8, x7, mismatch
+0258  03c1a403  lw x8, 60(x3)
+025c  0280a623  sw x8, 44(x1)
+0260  2e2b33b7  lui x7, 0x2e2b3
+0264  4ca38393  addi x7, x7, 1226
+0268  0e741463  bne x8, x7, mismatch
+026c  16158237  lui x4, 0x16158
+0270  e2b20213  addi x4, x4, -469
+0274  0041a823  sw x4, 16(x3)
+0278  a6d2b237  lui x4, 0xa6d2b
+027c  e2820213  addi x4, x4, -472
+0280  0041aa23  sw x4, 20(x3)
+0284  8815f237  lui x4, 0x8815f
+0288  7ab20213  addi x4, x4, 1963
+028c  0041ac23  sw x4, 24(x3)
+0290  3c4fd237  lui x4, 0x3c4fd
+0294  f0920213  addi x4, x4, -247
+0298  0041ae23  sw x4, 28(x3)
+029c  a8f64237  lui x4, 0xa8f64
+02a0  33220213  addi x4, x4, 818
+02a4  0241a023  sw x4, 32(x3)
+02a8  8d306237  lui x4, 0x8d306
+02ac  a8820213  addi x4, x4, -1400
+02b0  0241a223  sw x4, 36(x3)
+02b4  a2983237  lui x4, 0xa2983
+02b8  13120213  addi x4, x4, 305
+02bc  0241a423  sw x4, 40(x3)
+02c0  34073237  lui x4, 0x34073
+02c4  7e020213  addi x4, x4, 2016
+02c8  0241a623  sw x4, 44(x3)
+02cc  00100213  addi x4, x0, 1
+02d0  0041a023  sw x4, 0(x3)
+02d4  06400293  addi x5, x0, 100
+02d8  0041a303  lw x6, 4(x3)
+02dc  00237313  andi x6, x6, 2
+02e0  00031863  bne x6, x0, read_3
+02e4  fff28293  addi x5, x5, -1
+02e8  fe0298e3  bne x5, x0, poll_3
+02ec  0740006f  jal x0, timeout
+02f0  0301a403  lw x8, 48(x3)
+02f4  0280a823  sw x8, 48(x1)
+02f8  1d8423b7  lui x7, 0x1d842
+02fc  53938393  addi x7, x7, 1337
+0300  04741863  bne x8, x7, mismatch
+0304  0341a403  lw x8, 52(x3)
+0308  0280aa23  sw x8, 52(x1)
+030c  fb09e3b7  lui x7, 0xfb09e
+0310  c0238393  addi x7, x7, -1022
+0314  02741e63  bne x8, x7, mismatch
+0318  0381a403  lw x8, 56(x3)
+031c  0280ac23  sw x8, 56(x1)
+0320  978513b7  lui x7, 0x97851
+0324  1dc38393  addi x7, x7, 476
+0328  02741463  bne x8, x7, mismatch
+032c  03c1a403  lw x8, 60(x3)
+0330  0280ae23  sw x8, 60(x1)
+0334  320b73b7  lui x7, 0x320b7
+0338  a1938393  addi x7, x7, -1511
+033c  00741a63  bne x8, x7, mismatch
+0340  00100213  addi x4, x0, 1
+0344  0440a023  sw x4, 64(x1)
+0348  00100f93  addi x31, x0, 1
+034c  0000006f  jal x0, pass_loop
+0350  00200213  addi x4, x0, 2
+0354  0440a023  sw x4, 64(x1)
+0358  00200f93  addi x31, x0, 2
+035c  0100006f  jal x0, fail_loop
+0360  00300213  addi x4, x0, 3
+0364  0440a023  sw x4, 64(x1)
+0368  00300f93  addi x31, x0, 3
+036c  0000006f  jal x0, fail_loop
