@@ -58,9 +58,8 @@ All offsets below are relative to `0x40000000`.
 - `0x20`, `0x24`, `0x28`, `0x2C`: AES_PT0 through AES_PT3, read/write.
 - `0x30`, `0x34`, `0x38`, `0x3C`: AES_CT0 through AES_CT3, read-only.
 
-Before implementing this interface, define AES byte ordering, START pulse
-semantics, DONE clearing, writes while BUSY, and behavior for reserved or
-misaligned addresses. These details are not implied by the address map.
+The [implemented register contract](aes_mmio.md) defines AES byte ordering,
+START, DONE clearing, busy writes, and reserved/misaligned accesses.
 
 ## Integration status and remaining decisions
 
@@ -70,11 +69,10 @@ are implemented and simulated as of October 16, 2026. The completion-based
 valid/ready contract and first executable program are described in
 [cpu_pipeline.md](cpu_pipeline.md). The external MMIO port routes the four
 approved windows; its simulation stub is not an AES or peripheral controller.
-Define the AES register semantics listed above before attaching the crypto
-core and user-interface peripherals. The [paper consultation](paper_notes_mohan_2025.md)
+The [paper consultation](paper_notes_mohan_2025.md)
 motivates measuring accelerator latency separately from total offload cost.
 
-October 26: [soc_aes](cpu_aes_integration.md) connects the real AES MMIO
+October 27: [soc_aes](cpu_aes_integration.md) connects the real AES MMIO
 window. The other three windows currently return access errors. Four-block
 firmware, wait-state tests, reset/restart, and firmware error paths pass.
 The older `soc_minimal` signature test remains a separate baseline.

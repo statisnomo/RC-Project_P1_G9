@@ -1,6 +1,6 @@
 # The CPU now controls AES
 
-Integration work: **26 October 2026**. The CPU runs a real instruction
+Integration work: **26-27 October 2026**. The CPU runs a real instruction
 program that writes AES registers, starts encryption, polls for completion,
 and copies the returned ciphertext into RAM. It checks four blocks using
 three keys, including a repeated block without rewriting its key.
@@ -35,7 +35,7 @@ Open the project, close the current simulation, choose the set in
    without the CPU. Expected prefix: `PASS tb_aes_mmio`. Both one-wait-edge
    and three-wait-edge modes encrypt all 284 NIST cases. It also tests all
    byte strobe combinations, invalid requests, busy writes, continuous VALID,
-   and reset/cancellation. The two modes passed 26,486 and 47,998 checks.
+   and reset/cancellation. The two modes passed 26,632 and 48,264 checks.
 2. **`sim_soc_aes` / `tb_soc_aes`:** runs the actual CPU and firmware.
    Expected prefix: `PASS tb_soc_aes`. One/five wait-edge modes check 32
    healthy blocks in total, reset during encryption, repeated runs, injected
@@ -81,6 +81,11 @@ These are simulation measurements of this checking program, which also
 compares and stores words between reads. They are not software-AES speedups.
 The AES calculation itself still takes **11 clocks**.
 
-Logs are saved under `evidence/aes_m2_2026-10-26/`. A board build must pass
+The wrapper now captures request fields during its existing wait cycle.
+This removes the long CPU-address-to-AES-readback path without adding a
+bus wait edge. BUSY is still evaluated at completion, so a command during
+encryption is rejected according to the documented contract.
+
+Logs are saved under `evidence/aes_m2_2026-10-27/`. A board build must pass
 its own routed timing and DRC before programming; simulation alone does
 not establish 100 MHz operation. Physical board tests remain pending.

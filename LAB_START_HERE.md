@@ -1,6 +1,10 @@
 # Lab pack: everything built so far
 
-Prepared 22 October 2026. Start here after extracting the ZIP.
+Historical standalone-script guide, prepared 22 October 2026.
+For the **current October 27 pack**, use [the lab walkthrough](docs/lab_2026-10-27.md)
+and [the full GUI guide](VIVADO_START_HERE.md). They include AES and all
+14 simulation sets. The original nine-test snapshot below is retained
+for reference; statements about future AES work describe October 22 only.
 
 **Prefer Vivado's menus and buttons?** Use
 [VIVADO_START_HERE.md](VIVADO_START_HERE.md) and the GUI project in the newer

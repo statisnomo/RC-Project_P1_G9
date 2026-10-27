@@ -38,6 +38,36 @@ Task IDs refer to [project_checklist.md](project_checklist.md).
 - Next lab action remains **P4/P5**, observe the existing ALU/CPU images.
   AES board-image creation and all physical observations remain pending.
 
+## 26-27 October 2026 — CPU/AES integration and lab pack
+
+- Tasks **M2.1-M2.6 and G2 passed**. Added AES MMIO register semantics,
+  wrapper, CPU integration, four-block ROM firmware, independent LED
+  observer, three simulations, and an AES board top using existing LED pins.
+- MMIO passed **26,632 / 48,264 checks** with one/three wait edges.
+  Both include 284 NIST answers, busy/reset/access-error cases, and
+  acceptance checks at the encryption-completion boundary.
+- CPU/AES simulation passed **32 healthy blocks**, reset/restart, and
+  mismatch, timeout, and missing-peripheral fault paths. The real board
+  wrapper and **13 observer scenarios** also passed.
+- Firmware uses **880 ROM bytes / 68 RAM bytes**. Corrected status ordering:
+  RAM status is committed before x31 announces success. GNU linking and
+  C startup are not claimed; the ready ROM is generated from checked encodings.
+- Initial board routes missed 100 MHz. Capturing MMIO requests during the
+  existing wait cycle fixed the long CPU-address-to-response path. The
+  final route passes **+0.311 ns setup / +0.159 ns hold**, with no internal
+  unconstrained endpoints. DRC has zero errors and the retained ZPS7-1 warning.
+- Generated `build/zedboard_aes_demo/zedboard_aes_demo.bit`; 3,182 LUTs,
+  2,084 flip-flops, two RAMB36 blocks, zero DSPs and no inferred latches.
+- Added personal Vivado tasks **P6-P10**, the October 27 lab walkthrough,
+  and a record sheet for three separate board tests. Personal observations
+  and **H2 remain unchecked** until the user performs them.
+- Evidence: `evidence/aes_m2_2026-10-27/`; board reports are beside the image.
+- Fresh extraction of the lab ZIP passed **all 14 simulation sets** with
+  every registered source inside the extracted copy, without project repair.
+  Added a three-page printable guide and visually checked all pages.
+- Next development stage: **M3**, UART/keypad/OLED unit tests and exact
+  module identification before wiring. No new peripheral pins are enabled.
+
 ## Copy for each session or lab visit
 
 Date / start-end time:

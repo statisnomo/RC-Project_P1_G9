@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_cpu_core: 76 cases, 1287 retirements, load bypass=11, stalled decode cycles=657, drained fetches=37; reset cancellation
+$finish called at time : 57450 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_cpu_core.v" Line 171

@@ -1,0 +1,1500 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 03:00:01 2026
+# Process ID         : 10780
+# Current directory  : D:/RC Project/lab_validation_2026_10_27/riscv_soc_project
+# Command line       : vivado.exe -mode batch -source scripts\verify_aes_gui.tcl -log relocated_validation.log -journal relocated_validation.jou -tclargs relocated
+# Log file           : D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/relocated_validation.log
+# Journal file       : D:/RC Project/lab_validation_2026_10_27/riscv_soc_project\relocated_validation.jou
+# Running On         : Anand-LOQ_25
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13450HX
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 16
+# Host memory        : 16873 MB
+# Swap memory        : 15569 MB
+# Total Virtual      : 32442 MB
+# Available Virtual  : 11136 MB
+#-----------------------------------------------------------
+source {scripts\verify_aes_gui.tcl}
+# set root [file normalize [file join [file dirname [info script]] ..]]
+# set out [file join $root build aes_tests]
+# file mkdir $out
+# open_project [file join $root vivado riscv_soc_lab riscv_soc_lab.xpr]
+INFO: [Project 1-313] Project file moved from 'D:/RC Project/riscv_soc_project/vivado/riscv_soc_lab' since last save.
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.gen/sources_1'.
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.ip_user_files'.
+Scanning sources...
+Finished scanning sources
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\emb-plus-vpr-4616\1.0\board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\emb-plus-vpr-4616\1.1\board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k24c\1.0\board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k24c\1.1\board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24i:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k24i\1.0\board.xml as part xck24-ubva530-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k26c\1.2\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k26c\1.3\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k26c\1.4\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k26i\1.2\board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k26i\1.3\board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k26i\1.4\board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kc705\1.6\board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.7 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kc705\1.7\board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu105\1.6\board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu105\1.7\board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu116\1.4\board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu116\1.5\board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu1500\1.2\board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kd240_som:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kd240_som\1.0\board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kd240_som:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kd240_som\1.1\board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kr260_som\1.0\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kr260_som\1.1\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kv260_som\1.2\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kv260_som\1.3\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kv260_som\1.4\board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:scu35:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\scu35\1.0\board.xml as part xcsu35p-sbvb625-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\sp701\1.0\board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\sp701\1.1\board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\v80\1.0\board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vc707\1.4\board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.5 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vc707\1.5\board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vc709\1.8\board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\2.2\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.0\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.1\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.2\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.3\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190\production\3.4\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190_newl\production\1.0\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190_newl\production\1.1\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190_newl\production\1.2\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vck190_newl\production\1.3\board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu108\1.6\board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu108\1.7\board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu110\1.4\board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu118\2.0\board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu118\2.3\board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu118\2.4\board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu128\production\1.0\board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu129\production\1.0\board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vcu1525\1.3\board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek280\production\1.0\board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek280\production\1.1\board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek280\production\1.2\board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek385\1.0\board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek385\1.1\board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385_1:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vek385_2\1.0\board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vermeo_t1_mpsoc\1.0\board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vermeo_t1_rfsoc\1.0\board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vhk158\production\1.0\board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vhk158\production\1.1\board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vhk158\production\1.2\board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\2.2\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\3.0\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\3.1\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\3.2\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180\production\3.3\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180_newl\production\1.0\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vmk180_newl\production\1.1\board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk120\production\1.0\board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk120\production\1.1\board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk120\production\1.2\board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk180\production\1.0\board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk180\production\1.1\board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk180\production\1.2\board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vrk160:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vrk160\1.0\board.xml as part xcvr1602-vsva2488-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vrk160:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vrk160\1.1\board.xml as part xcvr1602-vsva2488-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zc706\1.4\board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.5 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zc706\1.5\board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu102\3.3\board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu102\3.4\board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu104\1.1\board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu106\2.4\board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu106\2.5\board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu106\2.6\board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu111\1.2\board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu111\1.3\board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu111\1.4\board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu1275\1.0\board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu1285\1.0\board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu208\production\2.0\board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu208ld\production\2.0\board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu216\production\2.0\board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu216ld\production\2.0\board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu670\2.0\board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at D:/VIVADO/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu670ld\1.0\board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Project 1-5713] Board part '' set for the project  is not found. BoardPart property will be unset. Please select board from latest repo build 
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 531.773 ; gain = 221.754
+# if {![llength $argv] || [lindex $argv 0] ne "relocated"} {
+#     source [file join $root scripts add_aes_to_project.tcl]
+#     source [file join $root scripts add_cpu_aes_to_project.tcl]
+# }
+# set pairs {sim_aes_primitives tb_aes_primitives}
+# if {[llength $argv] && [lindex $argv 0] eq "mmio"} {
+#     set pairs {sim_aes_mmio tb_aes_mmio}
+# }
+# if {[llength $argv] && [lindex $argv 0] eq "integration"} {
+#     set pairs {sim_aes_mmio tb_aes_mmio sim_soc_aes tb_soc_aes sim_aes_board tb_aes_board}
+# }
+# if {[llength $argv] && [lindex $argv 0] eq "soc"} {
+#     set pairs {sim_soc_aes tb_soc_aes sim_cpu_board tb_cpu_board}
+# }
+# if {[llength $argv] && [lindex $argv 0] eq "board"} {
+#     set pairs {sim_aes_board tb_aes_board sim_soc_aes tb_soc_aes}
+# }
+# if {[llength $argv] && [lindex $argv 0] eq "core"} {
+#     set pairs {sim_aes_core tb_aes128_core sim_cpu_board tb_cpu_board}
+# }
+# if {[llength $argv] && [lindex $argv 0] eq "relocated"} {
+#     set pairs {
+#         sim_1 tb_alu sim_regfile tb_regfile sim_imm_gen tb_imm_gen sim_decode tb_decode
+#         sim_memories tb_memories sim_cpu_core tb_cpu_core sim_soc_minimal tb_soc_minimal
+#         sim_alu_board tb_alu_selftest sim_cpu_board tb_cpu_board
+#         sim_aes_primitives tb_aes_primitives sim_aes_core tb_aes128_core
+#         sim_aes_mmio tb_aes_mmio sim_soc_aes tb_soc_aes sim_aes_board tb_aes_board
+#     }
+#     foreach source_file [get_files -all] {
+#         set resolved [file normalize $source_file]
+#         if {![file exists $resolved] || [string first "${root}/" $resolved] != 0} {
+#             error "Relocated project has a missing or external source: $resolved"
+#         }
+#     }
+# }
+# set summary {}
+# foreach {simset bench} $pairs {
+#     current_fileset -simset [get_filesets $simset]
+#     launch_simulation -simset $simset -mode behavioral
+#     run all
+#     close_sim
+#     set log_path [file join $root vivado riscv_soc_lab riscv_soc_lab.sim $simset behav xsim simulate.log]
+#     set stream [open $log_path r]
+#     set contents [read $stream]
+#     close $stream
+#     set pattern [format {(?m)^PASS %s:[^\r\n]*} $bench]
+#     if {[regexp {\mFAIL\M} $contents] || ![regexp $pattern $contents pass_line]} {
+#         error "AES GUI test did not pass: $simset"
+#     }
+#     file copy -force $log_path [file join $out ${bench}.log]
+#     lappend summary $pass_line
+# }
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:00:16 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_alu'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_alu' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_1/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_1/behav/xsim/aes_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_alu_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_alu_behav xil_defaultlib.tb_alu xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_alu_behav xil_defaultlib.tb_alu xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.tb_alu
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_alu_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_alu_behav -key {Behavioral:sim_1:Functional:tb_alu} -tclbatch {tb_alu.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_alu.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_alu_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 552.289 ; gain = 20.516
+PASS tb_alu: 4142 checks
+$finish called at time : 4142 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_alu.v" Line 170
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_regfile -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:00:25 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_regfile'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_regfile/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_regfile'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_regfile' in fileset 'sim_regfile'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_regfile/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_regfile/behav/xsim/aes_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_regfile'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_regfile/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_regfile_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_regfile/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_regfile/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_regfile_behav xil_defaultlib.tb_regfile xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_regfile_behav xil_defaultlib.tb_regfile xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.tb_regfile
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_regfile_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_regfile/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_regfile_behav -key {Behavioral:sim_regfile:Functional:tb_regfile} -tclbatch {tb_regfile.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_regfile.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_regfile_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 552.289 ; gain = 0.000
+PASS tb_regfile: 2456 port checks
+$finish called at time : 6771 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_regfile.v" Line 178
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_imm_gen -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:00:32 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_imm_gen'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_imm_gen/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_imm_gen'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_imm_gen' in fileset 'sim_imm_gen'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_imm_gen/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_imm_gen/behav/xsim/aes_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_imm_gen'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_imm_gen/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_imm_gen_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/imm_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imm_gen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_imm_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_imm_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_imm_gen/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_imm_gen/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_imm_gen_behav xil_defaultlib.tb_imm_gen xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_imm_gen_behav xil_defaultlib.tb_imm_gen xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.imm_gen
+Compiling module xil_defaultlib.tb_imm_gen
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_imm_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_imm_gen/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_imm_gen_behav -key {Behavioral:sim_imm_gen:Functional:tb_imm_gen} -tclbatch {tb_imm_gen.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_imm_gen.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_imm_gen_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 552.289 ; gain = 0.000
+PASS tb_imm_gen: 14546 checks
+$finish called at time : 14546 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_imm_gen.v" Line 168
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_decode -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:00:39 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_decode'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_decode/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_decode'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_decode' in fileset 'sim_decode'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_decode/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_decode/behav/xsim/aes_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_decode'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_decode/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_decode_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/imm_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imm_gen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_decode/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_decode/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_decode_behav xil_defaultlib.tb_decode xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_decode_behav xil_defaultlib.tb_decode xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.decode
+Compiling module xil_defaultlib.imm_gen
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.tb_decode
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_decode_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_decode/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_decode_behav -key {Behavioral:sim_decode:Functional:tb_decode} -tclbatch {tb_decode.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_decode.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_decode_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 552.289 ; gain = 0.000
+PASS tb_decode: 7717 decode checks, all 37 instructions, 15 combinational execution checks
+$finish called at time : 7717 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_decode.v" Line 369
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_memories -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:00:47 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_memories'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_memories/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_memories'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_memories' in fileset 'sim_memories'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_memories/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_memories/behav/xsim/aes_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_memories'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_memories/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_memories_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/mem/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/mem/instr_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instr_rom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_memories.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_memories
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_memories/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_memories/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_memories_behav xil_defaultlib.tb_memories xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_memories_behav xil_defaultlib.tb_memories xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.instr_rom(INIT_FILE="cpu_smoke.h...
+Compiling module xil_defaultlib.tb_memories
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_memories_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_memories/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_memories_behav -key {Behavioral:sim_memories:Functional:tb_memories} -tclbatch {tb_memories.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_memories.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_memories_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 552.289 ; gain = 0.000
+PASS tb_memories: 24 checks, byte lanes, boundaries, errors, reset cancellation, back-to-back requests
+$finish called at time : 840 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_memories.v" Line 85
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_cpu_core -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:00:54 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_cpu_core'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_cpu_core'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cpu_core' in fileset 'sim_cpu_core'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/aes_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/arithmetic.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/bad_shift.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/branches.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/branch_alignment.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/data_rom_access.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/dependencies.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/fence_unsupported.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/fetch_access.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/illegal.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/jalr_alignment.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/jal_alignment.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/jumps.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/load_access_x0.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/load_half_alignment.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/load_word_alignment.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/memory_lanes.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_once.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_read_error.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_window_end.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_write_error.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/random_alu.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/store_access.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/store_half_alignment.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/store_word_alignment.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/wrong_path_fetch.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/arithmetic.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/bad_shift.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/branches.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/branch_alignment.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/data_rom_access.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/dependencies.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/fence_unsupported.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/fetch_access.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/illegal.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/jalr_alignment.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/jal_alignment.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/jumps.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/load_access_x0.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/load_half_alignment.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/load_word_alignment.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/memory_lanes.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_once.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_read_error.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_window_end.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_write_error.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/random_alu.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/store_access.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/store_half_alignment.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/store_word_alignment.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/wrong_path_fetch.trace'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/arithmetic.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/bad_shift.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/branches.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/branch_alignment.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/data_rom_access.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/dependencies.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/fence_unsupported.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/fetch_access.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/illegal.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/jalr_alignment.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/jal_alignment.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/jumps.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/load_access_x0.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/load_half_alignment.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/load_word_alignment.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/memory_lanes.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_once.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_read_error.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_window_end.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_write_error.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/random_alu.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/store_access.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/store_half_alignment.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/store_word_alignment.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/wrong_path_fetch.bus'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/arithmetic.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/bad_shift.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/branches.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/branch_alignment.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/data_rom_access.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/dependencies.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/fence_unsupported.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/fetch_access.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/illegal.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/jalr_alignment.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/jal_alignment.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/jumps.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/load_access_x0.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/load_half_alignment.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/load_word_alignment.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/memory_lanes.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_once.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_read_error.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_window_end.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/mmio_write_error.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/random_alu.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/store_access.regs'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/store_half_alignment.regs'
+INFO: [Common 17-14] Message 'SIM-utils 43' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_cpu_core'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_cpu_core_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/cpu_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/imm_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imm_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_cpu_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_cpu_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_cpu_core_behav xil_defaultlib.tb_cpu_core xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_cpu_core_behav xil_defaultlib.tb_cpu_core xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.decode
+Compiling module xil_defaultlib.imm_gen
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.cpu_core
+Compiling module xil_defaultlib.tb_cpu_core
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_cpu_core_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_core/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cpu_core_behav -key {Behavioral:sim_cpu_core:Functional:tb_cpu_core} -tclbatch {tb_cpu_core.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_cpu_core.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+WARNING: [Wavedata 42-489] Can't add object "/tb_cpu_core/expected_trace" to the wave window because it has 327680 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+WARNING: [Wavedata 42-489] Can't add object "/tb_cpu_core/expected_bus" to the wave window because it has 458752 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cpu_core_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:15 . Memory (MB): peak = 553.141 ; gain = 0.852
+PASS tb_cpu_core: 76 cases, 1287 retirements, load bypass=11, stalled decode cycles=657, drained fetches=37; reset cancellation
+$finish called at time : 57450 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_cpu_core.v" Line 171
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_soc_minimal -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:01:12 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_soc_minimal'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_minimal/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_soc_minimal'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_soc_minimal' in fileset 'sim_soc_minimal'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_minimal/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_minimal/behav/xsim/aes_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_soc_minimal'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_minimal/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_soc_minimal_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/cpu_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/mem/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/imm_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imm_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/mem/instr_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instr_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/soc/soc_minimal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_minimal
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_soc_minimal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_soc_minimal
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_minimal/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_minimal/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_soc_minimal_behav xil_defaultlib.tb_soc_minimal xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_soc_minimal_behav xil_defaultlib.tb_soc_minimal xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.instr_rom(INIT_FILE="cpu_smoke.h...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.decode
+Compiling module xil_defaultlib.imm_gen
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.cpu_core
+Compiling module xil_defaultlib.soc_minimal(ROM_FILE="cpu_smoke....
+Compiling module xil_defaultlib.tb_soc_minimal
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_soc_minimal_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_minimal/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_soc_minimal_behav -key {Behavioral:sim_soc_minimal:Functional:tb_soc_minimal} -tclbatch {tb_soc_minimal.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_soc_minimal.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_soc_minimal_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 553.141 ; gain = 0.000
+PASS tb_soc_minimal: ROM program, sum=55, load-use=56, one delayed MMIO write, 44 retirements
+$finish called at time : 1790 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_soc_minimal.v" Line 49
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_alu_board -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:01:21 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_alu_selftest'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_alu_board/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_alu_board'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_alu_selftest' in fileset 'sim_alu_board'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_alu_board/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_alu_board/behav/xsim/aes_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_alu_board'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_alu_board/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_alu_selftest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/board/alu_selftest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu_selftest
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/board/zedboard_alu_demo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module zedboard_alu_demo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/board/tb_alu_selftest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_alu_selftest
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_alu_board/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_alu_board/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_alu_selftest_behav xil_defaultlib.tb_alu_selftest xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_alu_selftest_behav xil_defaultlib.tb_alu_selftest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.alu_selftest
+Compiling module xil_defaultlib.zedboard_alu_demo(HEARTBEAT_HALF...
+Compiling module xil_defaultlib.tb_alu_selftest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_alu_selftest_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_alu_board/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_alu_selftest_behav -key {Behavioral:sim_alu_board:Functional:tb_alu_selftest} -tclbatch {tb_alu_selftest.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_alu_selftest.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_alu_selftest_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 553.141 ; gain = 0.000
+PASS tb_alu_selftest: 16 vectors, result/zero fault injection, sticky failure, reset rerun, board LEDs, heartbeat
+$finish called at time : 836 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/board/tb_alu_selftest.v" Line 91
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_cpu_board -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:01:28 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_cpu_board'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_cpu_board'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cpu_board' in fileset 'sim_cpu_board'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim/aes_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_cpu_board'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_cpu_board_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/cpu_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/board/cpu_smoke_monitor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_smoke_monitor
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/mem/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/imm_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imm_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/mem/instr_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instr_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/soc/soc_minimal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_minimal
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/board/zedboard_cpu_demo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module zedboard_cpu_demo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/board/tb_cpu_board.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_cpu_board
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_cpu_board_behav xil_defaultlib.tb_cpu_board xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_cpu_board_behav xil_defaultlib.tb_cpu_board xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.instr_rom(INIT_FILE="cpu_smoke.h...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.decode
+Compiling module xil_defaultlib.imm_gen
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.cpu_core
+Compiling module xil_defaultlib.soc_minimal(ROM_FILE="cpu_smoke....
+Compiling module xil_defaultlib.cpu_smoke_monitor(TIMEOUT_CYCLES...
+Compiling module xil_defaultlib.zedboard_cpu_demo(HEARTBEAT_HALF...
+Compiling module xil_defaultlib.cpu_smoke_monitor(TIMEOUT_CYCLES...
+Compiling module xil_defaultlib.tb_cpu_board
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_cpu_board_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_cpu_board/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cpu_board_behav -key {Behavioral:sim_cpu_board:Functional:tb_cpu_board} -tclbatch {tb_cpu_board.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_cpu_board.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cpu_board_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 553.141 ; gain = 0.000
+PASS tb_cpu_board: actual CPU/ROM/RAM, LED mapping, heartbeat, reset/restart, 15 checker scenarios
+$finish called at time : 3910 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/board/tb_cpu_board.v" Line 120
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_aes_primitives -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:01:37 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_aes_primitives'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_aes_primitives'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_aes_primitives' in fileset 'sim_aes_primitives'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim/aes_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_aes_primitives'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_aes_primitives_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_key_expand.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_key_expand
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_mix_columns.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_mix_columns
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_round.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_round
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_sbox.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_sbox
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_shift_rows.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_shift_rows
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/crypto/tb_aes_primitives.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_aes_primitives
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aes_primitives_behav xil_defaultlib.tb_aes_primitives xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aes_primitives_behav xil_defaultlib.tb_aes_primitives xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.aes_sbox
+Compiling module xil_defaultlib.aes_shift_rows
+Compiling module xil_defaultlib.aes_mix_columns
+Compiling module xil_defaultlib.aes_round_default
+Compiling module xil_defaultlib.aes_key_expand_default
+Compiling module xil_defaultlib.tb_aes_primitives
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_aes_primitives_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_primitives/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_aes_primitives_behav -key {Behavioral:sim_aes_primitives:Functional:tb_aes_primitives} -tclbatch {tb_aes_primitives.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_aes_primitives.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_aes_primitives_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 553.141 ; gain = 0.000
+PASS tb_aes_primitives: 1810 checks; all 256 S-box entries, state transforms, 10 published round keys, normal/final rounds
+$finish called at time : 914 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/crypto/tb_aes_primitives.v" Line 92
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_aes_core -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:01:44 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_aes128_core'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_aes_core'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_aes128_core' in fileset 'sim_aes_core'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim/aes_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim/aes128_kat.mem'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim/aes128_kat.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_aes_core'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_aes128_core_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes128_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes128_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_key_expand.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_key_expand
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_mix_columns.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_mix_columns
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_round.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_round
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_sbox.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_sbox
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_shift_rows.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_shift_rows
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/crypto/tb_aes128_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_aes128_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aes128_core_behav xil_defaultlib.tb_aes128_core xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aes128_core_behav xil_defaultlib.tb_aes128_core xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.aes_sbox
+Compiling module xil_defaultlib.aes_key_expand_default
+Compiling module xil_defaultlib.aes_shift_rows
+Compiling module xil_defaultlib.aes_mix_columns
+Compiling module xil_defaultlib.aes_round_default
+Compiling module xil_defaultlib.aes128_core
+Compiling module xil_defaultlib.tb_aes128_core
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_aes128_core_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_core/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_aes128_core_behav -key {Behavioral:sim_aes_core:Functional:tb_aes128_core} -tclbatch {tb_aes128_core.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_aes128_core.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+WARNING: [Wavedata 42-489] Can't add object "/tb_aes128_core/vectors" to the wave window because it has 109056 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_aes128_core_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 553.141 ; gain = 0.000
+PASS tb_aes128_core: 17433 checks, 556 completed blocks; 284 NIST, 256 random, 11 reset-abort points; latency=11 clocks, earliest restart=12 clocks
+$finish called at time : 85576 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/crypto/tb_aes128_core.v" Line 166
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_aes_mmio -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:01:53 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_aes_mmio'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_mmio/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_aes_mmio'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_aes_mmio' in fileset 'sim_aes_mmio'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_mmio/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_mmio/behav/xsim/aes_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_mmio/behav/xsim/aes128_kat.mem'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_mmio/behav/xsim/aes128_kat.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_aes_mmio'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_mmio/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_aes_mmio_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes128_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes128_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_key_expand.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_key_expand
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_mix_columns.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_mix_columns
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_mmio.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_mmio
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_round.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_round
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_sbox.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_sbox
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_shift_rows.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_shift_rows
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/crypto/tb_aes_mmio.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_mmio_checks
+INFO: [VRFC 10-311] analyzing module tb_aes_mmio
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_mmio/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_mmio/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aes_mmio_behav xil_defaultlib.tb_aes_mmio xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aes_mmio_behav xil_defaultlib.tb_aes_mmio xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.aes_sbox
+Compiling module xil_defaultlib.aes_key_expand_default
+Compiling module xil_defaultlib.aes_shift_rows
+Compiling module xil_defaultlib.aes_mix_columns
+Compiling module xil_defaultlib.aes_round_default
+Compiling module xil_defaultlib.aes128_core
+Compiling module xil_defaultlib.aes_mmio_default
+Compiling module xil_defaultlib.aes_mmio_checks_default
+Compiling module xil_defaultlib.aes_mmio(WAIT_CYCLES=3)
+Compiling module xil_defaultlib.aes_mmio_checks(WAIT_CYCLES=3)
+Compiling module xil_defaultlib.tb_aes_mmio
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_aes_mmio_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_mmio/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_aes_mmio_behav -key {Behavioral:sim_aes_mmio:Functional:tb_aes_mmio} -tclbatch {tb_aes_mmio.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_aes_mmio.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_aes_mmio_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 553.141 ; gain = 0.000
+PASS aes_mmio_checks: wait=1, 26632 checks, 5987 transfers, 300 starts, 289 completions
+PASS aes_mmio_checks: wait=3, 48264 checks, 5700 transfers, 300 starts, 289 completions
+PASS tb_aes_mmio: 1/3 wait edges, 284 NIST blocks per mode, byte strobes, access errors, busy writes, held requests, reset cancellation
+$finish called at time : 287730 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/crypto/tb_aes_mmio.v" Line 251
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_soc_aes -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:02:02 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_soc_aes'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_aes/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_soc_aes'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_soc_aes' in fileset 'sim_soc_aes'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_aes/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_aes/behav/xsim/aes_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_soc_aes'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_aes/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_soc_aes_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes128_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes128_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_key_expand.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_key_expand
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_mix_columns.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_mix_columns
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_mmio.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_mmio
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_round.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_round
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_sbox.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_sbox
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_shift_rows.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_shift_rows
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/cpu_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/mem/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/imm_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imm_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/mem/instr_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instr_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/soc/soc_aes.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_aes
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/soc/soc_minimal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_minimal
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_soc_aes.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_aes_checks
+INFO: [VRFC 10-311] analyzing module tb_soc_aes
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_aes/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_aes/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_soc_aes_behav xil_defaultlib.tb_soc_aes xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_soc_aes_behav xil_defaultlib.tb_soc_aes xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.instr_rom(INIT_FILE="aes_smoke.h...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.decode
+Compiling module xil_defaultlib.imm_gen
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.cpu_core
+Compiling module xil_defaultlib.soc_minimal(ROM_FILE="aes_smoke....
+Compiling module xil_defaultlib.aes_sbox
+Compiling module xil_defaultlib.aes_key_expand_default
+Compiling module xil_defaultlib.aes_shift_rows
+Compiling module xil_defaultlib.aes_mix_columns
+Compiling module xil_defaultlib.aes_round_default
+Compiling module xil_defaultlib.aes128_core
+Compiling module xil_defaultlib.aes_mmio_default
+Compiling module xil_defaultlib.soc_aes
+Compiling module xil_defaultlib.soc_aes_checks_default
+Compiling module xil_defaultlib.aes_mmio(WAIT_CYCLES=5)
+Compiling module xil_defaultlib.soc_aes(AES_WAIT_CYCLES=5)
+Compiling module xil_defaultlib.soc_aes_checks(WAIT_CYCLES=5)
+Compiling module xil_defaultlib.tb_soc_aes
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_soc_aes_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_soc_aes/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_soc_aes_behav -key {Behavioral:sim_soc_aes:Functional:tb_soc_aes} -tclbatch {tb_soc_aes.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_soc_aes.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_soc_aes_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 553.141 ; gain = 0.000
+CPU_AES_MEASURE wait=1 block=0 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=0 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=1 operand-first-write-to-last-read=114 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=1 operand-first-write-to-last-read=144 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=2 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=2 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=3 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=3 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=0 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=1 block=1 operand-first-write-to-last-read=114 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=0 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=2 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=1 operand-first-write-to-last-read=144 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=3 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=2 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=0 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=1 block=1 operand-first-write-to-last-read=114 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=3 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=2 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=0 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=3 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=1 operand-first-write-to-last-read=144 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=5 block=2 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=5 block=3 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=0 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=1 block=1 operand-first-write-to-last-read=114 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=1 block=2 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=1 block=3 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+PASS soc_aes_checks: wait=1, 4 healthy four-block runs, reset mid-AES, mismatch, poll timeout, absent peripheral error
+CPU_AES_MEASURE wait=5 block=0 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=5 block=1 operand-first-write-to-last-read=144 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=5 block=2 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=5 block=3 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+PASS soc_aes_checks: wait=5, 4 healthy four-block runs, reset mid-AES, mismatch, poll timeout, absent peripheral error
+PASS tb_soc_aes: real CPU/ROM/RAM/AES, 1/5 wait edges, 32 checked blocks, restart and firmware error paths
+$finish called at time : 61740 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_soc_aes.v" Line 107
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_aes_board -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Tue Oct 27 03:02:11 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_aes_board'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_board/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_aes_board'
+INFO: [SIM-utils-72] Using boost library from 'D:/VIVADO/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_aes_board' in fileset 'sim_aes_board'...
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_board/behav/xsim/cpu_smoke.hex'
+INFO: [SIM-utils-43] Exported 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_board/behav/xsim/aes_smoke.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_aes_board'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_board/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_aes_board_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes128_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes128_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_key_expand.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_key_expand
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_mix_columns.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_mix_columns
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_mmio.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_mmio
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_round.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_round
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_sbox.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_sbox
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/crypto/aes_shift_rows.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_shift_rows
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/board/aes_smoke_monitor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_smoke_monitor
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/cpu_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/mem/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/imm_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imm_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/mem/instr_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instr_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/cpu/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/soc/soc_aes.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_aes
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/soc/soc_minimal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_minimal
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/rtl/board/zedboard_aes_demo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module zedboard_aes_demo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/board/tb_aes_board.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_aes_board
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_board/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_board/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aes_board_behav xil_defaultlib.tb_aes_board xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/VIVADO/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aes_board_behav xil_defaultlib.tb_aes_board xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.instr_rom(INIT_FILE="aes_smoke.h...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.decode
+Compiling module xil_defaultlib.imm_gen
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.cpu_core
+Compiling module xil_defaultlib.soc_minimal(ROM_FILE="aes_smoke....
+Compiling module xil_defaultlib.aes_sbox
+Compiling module xil_defaultlib.aes_key_expand_default
+Compiling module xil_defaultlib.aes_shift_rows
+Compiling module xil_defaultlib.aes_mix_columns
+Compiling module xil_defaultlib.aes_round_default
+Compiling module xil_defaultlib.aes128_core
+Compiling module xil_defaultlib.aes_mmio_default
+Compiling module xil_defaultlib.soc_aes
+Compiling module xil_defaultlib.aes_smoke_monitor(TIMEOUT_CYCLES...
+Compiling module xil_defaultlib.zedboard_aes_demo(HEARTBEAT_HALF...
+Compiling module xil_defaultlib.aes_smoke_monitor(TIMEOUT_CYCLES...
+Compiling module xil_defaultlib.tb_aes_board
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_aes_board_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/vivado/riscv_soc_lab/riscv_soc_lab.sim/sim_aes_board/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_aes_board_behav -key {Behavioral:sim_aes_board:Functional:tb_aes_board} -tclbatch {tb_aes_board.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_aes_board.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## log_wave -r /
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_aes_board_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 553.141 ; gain = 0.000
+PASS tb_aes_board: four actual CPU-driven blocks, reset/restart, heartbeat/LEDs, 13 monitor scenarios
+$finish called at time : 14050 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/board/tb_aes_board.v" Line 89
+INFO: [Simtcl 6-16] Simulation closed
+# current_fileset -simset [get_filesets sim_aes_primitives]
+# close_project
+# puts [join $summary "\n"]
+PASS tb_alu: 4142 checks
+PASS tb_regfile: 2456 port checks
+PASS tb_imm_gen: 14546 checks
+PASS tb_decode: 7717 decode checks, all 37 instructions, 15 combinational execution checks
+PASS tb_memories: 24 checks, byte lanes, boundaries, errors, reset cancellation, back-to-back requests
+PASS tb_cpu_core: 76 cases, 1287 retirements, load bypass=11, stalled decode cycles=657, drained fetches=37; reset cancellation
+PASS tb_soc_minimal: ROM program, sum=55, load-use=56, one delayed MMIO write, 44 retirements
+PASS tb_alu_selftest: 16 vectors, result/zero fault injection, sticky failure, reset rerun, board LEDs, heartbeat
+PASS tb_cpu_board: actual CPU/ROM/RAM, LED mapping, heartbeat, reset/restart, 15 checker scenarios
+PASS tb_aes_primitives: 1810 checks; all 256 S-box entries, state transforms, 10 published round keys, normal/final rounds
+PASS tb_aes128_core: 17433 checks, 556 completed blocks; 284 NIST, 256 random, 11 reset-abort points; latency=11 clocks, earliest restart=12 clocks
+PASS tb_aes_mmio: 1/3 wait edges, 284 NIST blocks per mode, byte strobes, access errors, busy writes, held requests, reset cancellation
+PASS tb_soc_aes: real CPU/ROM/RAM/AES, 1/5 wait edges, 32 checked blocks, restart and firmware error paths
+PASS tb_aes_board: four actual CPU-driven blocks, reset/restart, heartbeat/LEDs, 13 monitor scenarios
+# set stream [open [file join $out gui_summary.txt] w]
+# puts $stream [join $summary "\n"]
+# puts $stream "AES_GUI_PASS"
+# close $stream
+# puts "AES_GUI_PASS"
+AES_GUI_PASS
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 27 03:02:21 2026...

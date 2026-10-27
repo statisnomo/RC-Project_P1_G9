@@ -1,0 +1,10 @@
+# Preserve generated binary artifacts when cloning on Windows.
+*.pdf binary
+*.wdb binary
+*.bit binary
+*.dcp binary
+*.zip binary
+
+# Saved tool output is evidence: retain its original bytes and spacing.
+evidence/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+evidence/**/*.log -whitespace

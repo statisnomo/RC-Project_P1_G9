@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_alu: 4142 checks
+$finish called at time : 4142 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_alu.v" Line 170

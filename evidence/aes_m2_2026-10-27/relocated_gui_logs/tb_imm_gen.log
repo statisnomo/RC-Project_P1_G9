@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_imm_gen: 14546 checks
+$finish called at time : 14546 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_imm_gen.v" Line 168

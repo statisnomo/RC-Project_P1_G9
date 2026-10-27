@@ -10,6 +10,7 @@ results, and rehearsal. Use the [timeline](docs/project_timeline.md),
 [progress log](docs/progress_log.md) to track each small verified step.
 
 **Testing through Vivado's graphical interface?** Start with
+[the October 27 lab walkthrough](docs/lab_2026-10-27.md), then
 [VIVADO_START_HERE.md](VIVADO_START_HERE.md). Open
 `vivado/riscv_soc_lab/riscv_soc_lab.xpr` and select one of its fourteen simulation sets.
 [LAB_START_HERE.md](LAB_START_HERE.md) retains the optional script-based workflow.
@@ -25,12 +26,18 @@ practical tutorials, and small exercises for understanding each part of this bui
 
 ## Current milestone
 
-**October 26: the real CPU now encrypts through MMIO.** The
+**October 27: the real CPU now encrypts through MMIO.** The
 [CPU/AES guide](docs/cpu_aes_integration.md) explains the register wrapper,
 four-block ROM program, integrated simulations, and LED checker. The
 MMIO test passed all 284 NIST vectors with both normal and delayed replies;
 CPU integration checked 32 blocks plus reset and error paths. Your personal
 Vivado tests are P6-P10 in the [checklist](docs/project_checklist.md).
+
+The October 27 lab pack includes the new CPU/AES board image with passing
+routed **100 MHz timing (+0.311 ns setup / +0.159 ns hold)**. All 14 simulation
+sets passed from a fresh ZIP extraction. Use the
+[printable lab guide](output/pdf/lab-testing-guide-2026-10-27.pdf) and
+[board build record](docs/zedboard_aes_demo.md). Physical observations remain pending.
 
 The standalone **AES-128 core is now implemented and simulated**. On October 24,
 its primitives passed 1,810 checks and its controller passed 17,433 checks over

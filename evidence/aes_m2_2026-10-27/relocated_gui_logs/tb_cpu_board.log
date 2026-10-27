@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_cpu_board: actual CPU/ROM/RAM, LED mapping, heartbeat, reset/restart, 15 checker scenarios
+$finish called at time : 3910 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/board/tb_cpu_board.v" Line 120

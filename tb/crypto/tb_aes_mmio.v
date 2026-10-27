@@ -185,6 +185,25 @@ module aes_mmio_checks #(parameter WAIT_CYCLES=1) (output reg finished=0);
         access_bus(1,32'h40000020,0,15,2,1,got);
         access_bus(1,32'h40000020,0,0,2,0,got);
         result_block(CT);
+        // Request capture can occur while BUSY, but the completion edge
+        // decides acceptance. At DONE's edge BUSY is still one before
+        // the edge (reject); one edge later it is zero (accept).
+        for(i=0;i<2;i=i+1) begin
+            operands(KEY,PT);write_word(0,1);
+            while(cycle-launch_cycle < 10+i-WAIT_CYCLES) @(negedge clk);
+            valid=1;write=1;addr=32'h40000010;wdata=32'h12345678;wstrb=15;size=2;
+            equal(busy,1,"boundary request begins busy");
+            while(ready!==1) @(negedge clk);
+            if(i==0) equal(error,128'd1,"DONE-edge rejects busy write");
+            else equal(error,128'd0,"next edge accepts idle write");
+            @(posedge clk);#2;
+            equal(cycle-launch_cycle,11+i,"boundary completion cycle");
+            equal(dut.key_words[0],(i==0)?32'h03020100:32'h12345678,"boundary write effect");
+            equal(done,1,"operand write preserves DONE");
+            equal(dut.core_ct,CT,"in-flight key snapshot intact");
+            @(negedge clk);valid=0;
+            result_block(CT);
+        end
         // All published answers through the actual register interface.
         for(i=0;i<284;i=i+1) begin
             if((^vectors[i])===1'bx) $fatal(1,"FAIL missing vector");

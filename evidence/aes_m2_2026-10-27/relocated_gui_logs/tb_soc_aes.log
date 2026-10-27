@@ -1,0 +1,37 @@
+Time resolution is 1 ps
+CPU_AES_MEASURE wait=1 block=0 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=0 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=1 operand-first-write-to-last-read=114 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=1 operand-first-write-to-last-read=144 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=2 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=2 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=3 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=3 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=0 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=1 block=1 operand-first-write-to-last-read=114 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=0 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=2 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=1 operand-first-write-to-last-read=144 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=3 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=2 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=0 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=1 block=1 operand-first-write-to-last-read=114 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=3 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=2 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=0 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=3 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=5 block=1 operand-first-write-to-last-read=144 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=5 block=2 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=5 block=3 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=1 block=0 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=1 block=1 operand-first-write-to-last-read=114 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=1 block=2 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+CPU_AES_MEASURE wait=1 block=3 operand-first-write-to-last-read=150 start-to-last-read=81 clocks
+PASS soc_aes_checks: wait=1, 4 healthy four-block runs, reset mid-AES, mismatch, poll timeout, absent peripheral error
+CPU_AES_MEASURE wait=5 block=0 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=5 block=1 operand-first-write-to-last-read=144 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=5 block=2 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+CPU_AES_MEASURE wait=5 block=3 operand-first-write-to-last-read=192 start-to-last-read=99 clocks
+PASS soc_aes_checks: wait=5, 4 healthy four-block runs, reset mid-AES, mismatch, poll timeout, absent peripheral error
+PASS tb_soc_aes: real CPU/ROM/RAM/AES, 1/5 wait edges, 32 checked blocks, restart and firmware error paths
+$finish called at time : 61740 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_soc_aes.v" Line 107

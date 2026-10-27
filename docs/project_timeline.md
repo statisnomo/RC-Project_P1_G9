@@ -1,6 +1,6 @@
 # Build timeline: finish by 20 November 2026
 
-Plan created: **23 October 2026**; status updated **24 October**.
+Plan created: **23 October 2026**; status updated **27 October**.
 The confirmed deadline is **20 November
 2026**, replacing the original December 2 target. Dates use India time.
 
@@ -22,11 +22,15 @@ timing. Board references and current clock/LED constraints are checked.
 The standalone AES core passed M1 on October 24: 1,810 primitive checks,
 556 completed encryptions, and verified 11-clock latency. See the
 [AES acceptance guide](aes_core.md) for logs and early synthesis results.
-The project now includes eleven simulation sets.
+The CPU now controls AES through the approved MMIO window. Its four-block
+program, register-access tests, reset/restart, and error paths pass. The
+project now includes **14 simulation sets**. See the
+[CPU/AES integration record](cpu_aes_integration.md).
 
-**Physical board testing is still pending.** AES MMIO integration, real
-peripheral controllers, and the full demonstration firmware remain to be built.
-The present MMIO signature checker is a test device, not the AES block.
+**Physical board testing is still pending.** Real peripheral controllers
+and the full demonstration firmware remain to be built. The October 27
+lab visit uses the [small-test procedure](lab_2026-10-27.md); it also
+collects board/module revision information needed for M3.
 
 Evidence: [simulation summary](../build/vivado_gui_validation/gui_test_summary.txt),
 [ALU build record](zedboard_alu_demo.md), [CPU build record](zedboard_cpu_demo.md),
@@ -205,10 +209,11 @@ complete. No deadline hour has been assumed by this plan.
 These are target windows, not reservations. All simulation and build steps
 use the Vivado GUI described in [VIVADO_START_HERE.md](../VIVADO_START_HERE.md).
 
-- **Visit A, October 23-26:** record board revision; program the ALU and CPU
+- **Visit A, October 27:** record board revision; program the ALU and CPU
   images; check LD0 heartbeat, LD1 PASS, other LEDs off; repeat after reprogramming.
-- **Visit B, October 30-November 3:** program the CPU-plus-AES self-test
-  once M2 is ready; compare the known-answer result. Check wiring for visit C.
+- **Visit B, October 30-November 3, or combined with October 27:** program
+  the CPU-plus-AES self-test once M2 is ready; compare the known-answer
+  result. Check module identification and wiring plans for visit C.
 - **Visit C, November 7-10:** UART fixed string, all keypad keys, OLED pattern
   and text. Bring separate bitstreams so one failure is easy to isolate.
 - **Visit D, November 13-15:** complete keypad-to-ciphertext demonstration,
@@ -239,5 +244,7 @@ OLED demonstration. If it is still blocked by November 12, explicitly
 review the remaining scope; a fixed-input AES/LED demo is useful evidence
 but does not satisfy the complete project's acceptance condition.
 
-The very next development step is **M1.2: write the AES interface and byte
-ordering contract**, while the first lab slot validates the existing demos.
+The next development stage is **M3: independently tested UART, keypad,
+and OLED controllers**. Confirm actual module revisions and key legends
+before final I/O assignments. The lab first validates the existing ALU,
+CPU, and CPU/AES demos; do not mark physical gates passed from simulation.

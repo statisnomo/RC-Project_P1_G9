@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_aes_board: four actual CPU-driven blocks, reset/restart, heartbeat/LEDs, 13 monitor scenarios
+$finish called at time : 14050 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/board/tb_aes_board.v" Line 89

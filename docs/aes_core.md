@@ -120,13 +120,15 @@ clock-buffer location; Vivado reports `Timing 38-242` because clock skew
 cannot yet be estimated. Timing closure must be checked after integration.
 The 110 ns figure above is simulated timing, not a board measurement.
 
-## What happens next
+## Later integration update — October 27
 
-M2 adds the register wrapper at **`0x40000000`**, then a CPU program that
+M2 has added the register wrapper at **`0x40000000`** and a CPU program that
 writes the key/plaintext, starts encryption, polls DONE with a timeout, and
-reads the ciphertext into RAM. We will check that entire path before making
-its board self-test image.
+reads the ciphertext into RAM. The [CPU/AES guide](cpu_aes_integration.md)
+explains three new simulations and their results. Follow the
+[October 27 lab procedure](lab_2026-10-27.md) for the current pack.
 
 The current ALU and CPU `.bit` files still test their original designs.
-There is no AES board bitstream yet. Keypad, OLED, and UART remain separate
-later milestones. Physical board observations are still pending.
+The separate [CPU/AES board record](zedboard_aes_demo.md) covers its build.
+Keypad, OLED, and UART remain later milestones. Physical board observations
+are still pending.

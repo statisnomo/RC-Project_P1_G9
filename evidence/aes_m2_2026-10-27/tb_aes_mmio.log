@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+PASS aes_mmio_checks: wait=1, 26632 checks, 5987 transfers, 300 starts, 289 completions
+PASS aes_mmio_checks: wait=3, 48264 checks, 5700 transfers, 300 starts, 289 completions
+PASS tb_aes_mmio: 1/3 wait edges, 284 NIST blocks per mode, byte strobes, access errors, busy writes, held requests, reset cancellation
+$finish called at time : 287730 ns : File "D:/RC Project/riscv_soc_project/tb/crypto/tb_aes_mmio.v" Line 251

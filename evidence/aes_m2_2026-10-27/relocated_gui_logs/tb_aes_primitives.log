@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_aes_primitives: 1810 checks; all 256 S-box entries, state transforms, 10 published round keys, normal/final rounds
+$finish called at time : 914 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/crypto/tb_aes_primitives.v" Line 92

@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_alu_selftest: 16 vectors, result/zero fault injection, sticky failure, reset rerun, board LEDs, heartbeat
+$finish called at time : 836 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/board/tb_alu_selftest.v" Line 91

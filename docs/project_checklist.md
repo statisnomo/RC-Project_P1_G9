@@ -1,7 +1,7 @@
 # Project checklist
 
 Deadline: **20 November 2026**. Full-demo target: **15 November**.
-Last reviewed: **26 October 2026**. Next lab visit: **October 27**.
+Last reviewed: **27 October 2026**. Planned lab visit: **October 27**.
 
 Tick a box only after its stated result is observed. Add the task ID, date,
 and evidence location to [progress_log.md](progress_log.md). A future file
@@ -29,7 +29,7 @@ Evidence: [nine-test summary](../build/vivado_gui_validation/gui_test_summary.tx
 [ALU record](zedboard_alu_demo.md), [CPU record](zedboard_cpu_demo.md),
 [reference audit](../build/reference_review/audit.json).
 
-## First personal checks — October 23-26 / first available lab
+## Personal checks — October 27 / next available lab
 
 - [ ] P1: Open the `.xpr` in Vivado and run `sim_1` / `tb_alu` to PASS;
   inspect operands, operation, result, and zero in the waveform.
@@ -59,7 +59,8 @@ P6-P10 are your personal observations and remain unchecked until you run
 them. Follow the [small AES test walkthrough](aes_core.md); no terminal
 commands or physical board are needed.
 
-Procedure: [Vivado GUI guide](../VIVADO_START_HERE.md).
+Procedure: [October 27 lab walkthrough](lab_2026-10-27.md), followed by
+the [full Vivado GUI guide](../VIVADO_START_HERE.md).
 
 ## M1 — AES on its own — due October 28
 
@@ -93,11 +94,15 @@ standalone core; integrated timing and physical-board gates remain open.
   GNU linking and a C startup runtime remain future work.
 - [x] M2.5: Pass CPU-to-AES integration for several blocks/keys and reset;
   rerun affected baseline tests.
-- [ ] M2.6: Build a CPU-plus-AES self-test image and check routed timing/DRC.
-- [ ] G2: CPU obtains independently verified ciphertext through MMIO;
+- [x] M2.6: Build a CPU-plus-AES self-test image and check routed timing/DRC.
+- [x] G2: CPU obtains independently verified ciphertext through MMIO;
   the board self-test image and evidence are ready.
-- [ ] H2: Observe the CPU-plus-AES self-test passing on the physical board
-  during visit B; record image and expected/observed result.
+- [ ] H2: Observe the CPU-plus-AES self-test passing on the physical board;
+  reprogram it three times, and record the image, LEDs, and a short video.
+
+Engineering gate passed October 27: [CPU/AES guide](cpu_aes_integration.md),
+[board build](zedboard_aes_demo.md), [evidence](../evidence/aes_m2_2026-10-27/README.md).
+Routed 100 MHz setup/hold: +0.311/+0.159 ns. H2 stays open for the lab result.
 
 ## M3 — UART, keypad, and OLED — due November 8
 

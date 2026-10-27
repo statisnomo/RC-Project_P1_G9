@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_memories: 24 checks, byte lanes, boundaries, errors, reset cancellation, back-to-back requests
+$finish called at time : 840 ns : File "D:/RC Project/lab_validation_2026_10_27/riscv_soc_project/tb/cpu/tb_memories.v" Line 85

@@ -1,6 +1,7 @@
 # Test the project using Vivado's graphical interface
 
-Updated 26 October 2026. This is the main guide for the GUI lab pack.
+Updated 27 October 2026. This is the main guide for the GUI lab pack.
+For a shorter visit plan, start with [the lab walkthrough](docs/lab_2026-10-27.md).
 
 Project deadline: **20 November 2026**. The
 [timeline](docs/project_timeline.md) and [checklist](docs/project_checklist.md)
@@ -247,7 +248,7 @@ match the supplied sample and E.1 schematic; keep the existing active
 demo XDC. Do not add the reference `constr.xdc` or the commented template
 to the active project.
 
-The GUI pack includes the existing verified ALU and CPU bitstreams.
+The GUI pack includes verified ALU, CPU, and CPU-plus-AES bitstreams.
 You can program them without running synthesis again.
 
 1. Use the lab's documented power, JTAG-boot jumper setup, and USB-JTAG
@@ -259,8 +260,11 @@ You can program them without running synthesis again.
 6. Expect **LD0 blinking, LD1 ON, and LD2 through LD7 OFF**.
 7. Repeat with `build/zedboard_cpu_demo/zedboard_cpu_demo.bit` and expect
    the same LED pattern.
-8. Reprogram the CPU image once to check restart. Record each image name
-   and a short video.
+8. Repeat with `build/zedboard_aes_demo/zedboard_aes_demo.bit`; expect the
+   same pattern. This time the CPU has checked four AES ciphertext blocks.
+9. Reprogram the AES image three times to check fresh starts. Record each
+   image name and a short video. See [the AES board record](docs/zedboard_aes_demo.md)
+   for build evidence and failure codes.
 
 LD0 is only the heartbeat; LD1 is the application PASS indication. The
 configuration DONE light is separate. Physical board results remain
@@ -308,11 +312,19 @@ reports, not another design's saved results.
 
 ## Verification of this GUI pack
 
-On 24 October, both new AES sets passed in Vivado 2025.2 project mode, and
+On 27 October, the three CPU/AES integration sets passed with registered
+MMIO request handling. The CPU/AES board image meets routed 100 MHz timing:
+**+0.311 ns setup**, **+0.159 ns hold**. DRC has zero errors and the documented
+ZPS7-1 warning. See `evidence/aes_m2_2026-10-27/` for current evidence.
+All **14 simulation sets** also passed from a fresh extraction of this
+lab pack in another folder, without repairing the saved project. Its
+`relocated_gui_summary.txt` and logs record that verification.
+
+On 24 October, both standalone AES sets passed in Vivado 2025.2 project mode, and
 the existing CPU board test passed again. Results, source hashes, and wave
 databases are in `evidence/aes_m1_2026-10-24/`. These runs use the saved
 simulation sets supplied in the GUI project. AES standalone synthesis is
-an early estimate; the existing board bitstreams do not contain AES.
+an early estimate; the October 24 ALU/CPU images do not contain AES.
 The AES sets and CPU board test also passed from a freshly extracted copy
 in another folder, with all source files resolving inside that copy and
 without a project-repair step. See `relocated_gui_summary.txt` in the
