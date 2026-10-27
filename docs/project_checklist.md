@@ -31,6 +31,14 @@ Evidence: [nine-test summary](../build/vivado_gui_validation/gui_test_summary.tx
 
 ## Personal checks — October 27 / next available lab
 
+Prior lab context: the user reported loading a bitstream and observing a
+blinking LED. The image and PASS/FAIL LEDs were not recorded.
+The user confirmed that only the blinking LED is remembered. Script-policy
+and missing-project setup issues were also reported. See the
+[shared lab review](lab_followup_2026-10-27.md). P1/P2/P4/P5/H2 remain open
+until their stated outcomes are identified; the current GUI pack includes
+the `.xpr`, `cases.vh`, and program-data dependencies.
+
 - [ ] P1: Open the `.xpr` in Vivado and run `sim_1` / `tb_alu` to PASS;
   inspect operands, operation, result, and zero in the waveform.
 - [ ] P2: Run `sim_soc_minimal` and `sim_cpu_board`; explain what each checks.

@@ -1,0 +1,47 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Tue Oct 27 02:57:21 2026
+| Host         : Anand-LOQ_25 running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file {D:/RC Project/riscv_soc_project/build/zedboard_aes_demo/utilization.rpt}
+| Design       : zedboard_aes_demo
+| Device       : xc7z020clg484-1
+| Speed File   : -1
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------+-------------------+------------+------------+---------+------+------+--------+--------+------------+
+|          Instance          |       Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++----------------------------+-------------------+------------+------------+---------+------+------+--------+--------+------------+
+| zedboard_aes_demo          |             (top) |       3182 |       3181 |       0 |    1 | 2084 |      2 |      0 |          0 |
+|   (zedboard_aes_demo)      |             (top) |         13 |         12 |       0 |    1 |   29 |      0 |      0 |          0 |
+|   monitor                  | aes_smoke_monitor |        123 |        123 |       0 |    0 |   46 |      0 |      0 |          0 |
+|   soc                      |           soc_aes |       3051 |       3051 |       0 |    0 | 2009 |      2 |      0 |          0 |
+|     aes                    |          aes_mmio |       1557 |       1557 |       0 |    0 |  693 |      0 |      0 |          0 |
+|       (aes)                |          aes_mmio |        201 |        201 |       0 |    0 |  303 |      0 |      0 |          0 |
+|       core                 |       aes128_core |       1357 |       1357 |       0 |    0 |  390 |      0 |      0 |          0 |
+|         (core)             |       aes128_core |        202 |        202 |       0 |    0 |  390 |      0 |      0 |          0 |
+|         expand             |    aes_key_expand |        249 |        249 |       0 |    0 |    0 |      0 |      0 |          0 |
+|           (expand)         |    aes_key_expand |         89 |         89 |       0 |    0 |    0 |      0 |      0 |          0 |
+|         round_datapath     |         aes_round |        908 |        908 |       0 |    0 |    0 |      0 |      0 |          0 |
+|           (round_datapath) |         aes_round |        128 |        128 |       0 |    0 |    0 |      0 |      0 |          0 |
+|           mix              |   aes_mix_columns |        140 |        140 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     system                 |       soc_minimal |       1494 |       1494 |       0 |    0 | 1316 |      2 |      0 |          0 |
+|       cpu                  |          cpu_core |       1439 |       1439 |       0 |    0 | 1312 |      0 |      0 |          0 |
+|         (cpu)              |          cpu_core |        372 |        372 |       0 |    0 |  320 |      0 |      0 |          0 |
+|         decoder            |            decode |         55 |         55 |       0 |    0 |    0 |      0 |      0 |          0 |
+|         execution_alu      |               alu |        379 |        379 |       0 |    0 |    0 |      0 |      0 |          0 |
+|         registers          |           regfile |        607 |        607 |       0 |    0 |  992 |      0 |      0 |          0 |
++----------------------------+-------------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

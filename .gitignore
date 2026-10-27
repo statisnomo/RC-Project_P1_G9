@@ -1,5 +1,17 @@
 # Generated simulation, synthesis, and waveform output.
-build/
+/build/*
+!/build/README.md
+!/build/SHA256SUMS.txt
+!/build/zedboard_alu_demo/
+!/build/zedboard_cpu_demo/
+!/build/zedboard_aes_demo/
+/build/zedboard_*_demo/*
+!/build/zedboard_*_demo/*.bit
+!/build/zedboard_*_demo/*.rpt
+!/build/zedboard_*_demo/*.dcp
+!/build/zedboard_*_demo/*.hex
+!/build/zedboard_*_demo/summary.txt
+!/build/zedboard_*_demo/bitstream.sha256
 .Xil/
 xsim.dir/
 *.jou

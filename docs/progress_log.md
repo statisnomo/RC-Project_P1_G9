@@ -68,6 +68,25 @@ Task IDs refer to [project_checklist.md](project_checklist.md).
 - Next development stage: **M3**, UART/keypad/OLED unit tests and exact
   module identification before wiring. No new peripheral pins are enabled.
 
+## 27 October 2026 — previous lab conversation reviewed
+
+- Source: [shared lab conversation](https://chatgpt.com/share/6ae05561-14e0-83ee-b1e8-a38ddfce4c4d).
+  Actual visit date is not confirmed; this is the review date.
+- User reported PowerShell script execution being blocked, then moving to
+  Vivado GUI and finding no `.xpr` in the lab copy. The other assistant's
+  missing-`cases.vh` comment concerned the files uploaded to that chat.
+- User reported programming a bitstream and a blinking LED. Recorded as
+  **reported board activity**, with exact image and functional result
+  unconfirmed. No explicit simulation PASS or LD1/LD2 observation was supplied.
+- Follow-up answer: the user remembers only an LED blinking. The earlier
+  image and PASS/FAIL states remain unknown; no functional gate is closed.
+- Inspected the current ZIP: `.xpr`, 14 simulation sets, `cases.vh`, 126 CPU
+  program-data files, shared definitions, ROMs and AES vectors are present.
+  Existing fresh-extraction evidence records 14 passing development tests.
+- Added [lab follow-up notes](lab_followup_2026-10-27.md). P1/P2/P4/P5/H2
+  remain open. Next personal check: identify the programmed image and
+  record heartbeat, PASS/FAIL LEDs, and a video; use the prepared GUI project.
+
 ## Copy for each session or lab visit
 
 Date / start-end time:

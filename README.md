@@ -15,6 +15,10 @@ results, and rehearsal. Use the [timeline](docs/project_timeline.md),
 `vivado/riscv_soc_lab/riscv_soc_lab.xpr` and select one of its fourteen simulation sets.
 [LAB_START_HERE.md](LAB_START_HERE.md) retains the optional script-based workflow.
 
+**Need the programming files from GitHub?** Open [build/](build/README.md)
+for the ALU, CPU, and CPU/AES `.bit` files and their verified reports. Use
+**Code > Download ZIP** to obtain the project including these builds.
+
 The [board reference library](docs/references/zedboard/README.md) preserves
 the four files supplied on October 22. The [I/O plan](docs/board_io_plan.md)
 records checked pins, voltage banks, the old manual's JA3 discrepancy,
@@ -61,7 +65,9 @@ The new [CPU board demonstration](docs/zedboard_cpu_demo.md) adds a result
 checker, heartbeat/PASS/FAIL LEDs, simulation, constraints, and build scripts.
 Its simulation passed the real CPU program and 15 checker scenarios.
 The keypad, OLED, UART controllers, and full demonstration firmware remain to be built.
-This CPU has not been tested on the physical ZedBoard.
+The [prior lab record](docs/lab_followup_2026-10-27.md) reports a programmed
+bitstream and a blinking LED, but does not identify the image or PASS/FAIL
+states. The CPU's physical functional result remains unconfirmed.
 
 Dedicated branch comparisons and memory-address addition improved the
 preliminary 100 MHz setup slack from **-3.098 ns to +0.940 ns**. Synthesis

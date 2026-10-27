@@ -1,0 +1,36 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Tue Oct 20 15:45:21 2026
+| Host         : Anand-LOQ_25 running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file {D:/RC Project/riscv_soc_project/build/zedboard_cpu_demo/utilization.rpt}
+| Design       : zedboard_cpu_demo
+| Device       : xc7z020clg484-1
+| Speed File   : -1
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-----------------------+-------------------+------------+------------+---------+------+-----+--------+--------+------------+
+|        Instance       |       Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP Blocks |
++-----------------------+-------------------+------------+------------+---------+------+-----+--------+--------+------------+
+| zedboard_cpu_demo     |             (top) |       1382 |       1381 |       0 |    1 | 892 |      2 |      0 |          0 |
+|   (zedboard_cpu_demo) |             (top) |         13 |         12 |       0 |    1 |  29 |      0 |      0 |          0 |
+|   monitor             | cpu_smoke_monitor |         95 |         95 |       0 |    0 |  47 |      0 |      0 |          0 |
+|   soc                 |       soc_minimal |       1276 |       1276 |       0 |    0 | 816 |      2 |      0 |          0 |
+|     cpu               |          cpu_core |       1220 |       1220 |       0 |    0 | 809 |      0 |      0 |          0 |
+|       (cpu)           |          cpu_core |        366 |        366 |       0 |    0 | 329 |      0 |      0 |          0 |
+|       execution_alu   |               alu |        379 |        379 |       0 |    0 |   0 |      0 |      0 |          0 |
+|       registers       |           regfile |        410 |        410 |       0 |    0 | 480 |      0 |      0 |          0 |
++-----------------------+-------------------+------------+------------+---------+------+-----+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

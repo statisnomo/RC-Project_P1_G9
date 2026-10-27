@@ -11,6 +11,10 @@ inputs automatically and prints its result in Vivado.
 
 ## Open the ready-made project
 
+The GitHub repository now includes the three saved board builds under
+[`build/`](build/README.md). **Code > Download ZIP** includes them; the
+separately prepared October 27 lab ZIP also includes the same images.
+
 1. Extract the entire GUI ZIP into a short writable folder, for example
    `C:\RC_Lab`. Keep `rtl`, `tb`, `fw`, and `vivado` together.
 2. Start **Vivado 2025.2**.
@@ -293,6 +297,13 @@ reports, not another design's saved results.
 
 ## Common problems
 
+- **The earlier lab copy had no `.xpr`, or PowerShell scripts were blocked:**
+  use the complete October 27 GUI ZIP and open
+  `vivado/riscv_soc_lab/riscv_soc_lab.xpr` inside it. This procedure uses
+  Vivado's GUI and does not require changing the lab's execution policy.
+- **`cases.vh` appears missing when manually adding sources:** the prepared
+  project already includes `tb/programs/cases.vh` and the other CPU data
+  files. Keep the whole folder; adding only the `.v` files is insufficient.
 - **No PASS and time is still 0 ns:** click Run All.
 - **Simulation stopped at 1,000 ns:** the default duration was used.
   Run All to reach the bench's automatic finish.
