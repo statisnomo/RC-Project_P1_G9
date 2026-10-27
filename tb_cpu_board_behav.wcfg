@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_cpu_board_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_cpu_board" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="3900001fs"></ZoomEndTime>
+      <Cursor1Time time="275000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="115"></NameColumnWidth>
+      <ValueColumnWidth column_width="64"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="28" />
+   <wvobject fp_name="/tb_cpu_board/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/led" type="array">
+      <obj_property name="ElementShortName">led[7:0]</obj_property>
+      <obj_property name="ObjectShortName">led[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/mv" type="logic">
+      <obj_property name="ElementShortName">mv</obj_property>
+      <obj_property name="ObjectShortName">mv</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/mw" type="logic">
+      <obj_property name="ElementShortName">mw</obj_property>
+      <obj_property name="ObjectShortName">mw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/halted" type="logic">
+      <obj_property name="ElementShortName">halted</obj_property>
+      <obj_property name="ObjectShortName">halted</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/tv" type="logic">
+      <obj_property name="ElementShortName">tv</obj_property>
+      <obj_property name="ObjectShortName">tv</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/twe" type="logic">
+      <obj_property name="ElementShortName">twe</obj_property>
+      <obj_property name="ObjectShortName">twe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/ma" type="array">
+      <obj_property name="ElementShortName">ma[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ma[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/md" type="array">
+      <obj_property name="ElementShortName">md[31:0]</obj_property>
+      <obj_property name="ObjectShortName">md[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/tp" type="array">
+      <obj_property name="ElementShortName">tp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tp[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/tw" type="array">
+      <obj_property name="ElementShortName">tw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tw[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/ms" type="array">
+      <obj_property name="ElementShortName">ms[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ms[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/fc" type="array">
+      <obj_property name="ElementShortName">fc[3:0]</obj_property>
+      <obj_property name="ObjectShortName">fc[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/size" type="array">
+      <obj_property name="ElementShortName">size[1:0]</obj_property>
+      <obj_property name="ObjectShortName">size[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/tr" type="array">
+      <obj_property name="ElementShortName">tr[4:0]</obj_property>
+      <obj_property name="ObjectShortName">tr[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/failed" type="logic">
+      <obj_property name="ElementShortName">failed</obj_property>
+      <obj_property name="ObjectShortName">failed</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/failure" type="array">
+      <obj_property name="ElementShortName">failure[3:0]</obj_property>
+      <obj_property name="ObjectShortName">failure[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/checks" type="array">
+      <obj_property name="ElementShortName">checks[31:0]</obj_property>
+      <obj_property name="ObjectShortName">checks[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/transfers" type="array">
+      <obj_property name="ElementShortName">transfers[31:0]</obj_property>
+      <obj_property name="ObjectShortName">transfers[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/board_transfers" type="array">
+      <obj_property name="ElementShortName">board_transfers[31:0]</obj_property>
+      <obj_property name="ObjectShortName">board_transfers[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/board_cycles" type="array">
+      <obj_property name="ElementShortName">board_cycles[31:0]</obj_property>
+      <obj_property name="ObjectShortName">board_cycles[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/changes" type="array">
+      <obj_property name="ElementShortName">changes[31:0]</obj_property>
+      <obj_property name="ObjectShortName">changes[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/previous_heartbeat" type="logic">
+      <obj_property name="ElementShortName">previous_heartbeat</obj_property>
+      <obj_property name="ObjectShortName">previous_heartbeat</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu_board/board_checked" type="logic">
+      <obj_property name="ElementShortName">board_checked</obj_property>
+      <obj_property name="ObjectShortName">board_checked</obj_property>
+   </wvobject>
+</wave_config>

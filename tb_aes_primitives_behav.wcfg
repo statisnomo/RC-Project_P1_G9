@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_aes_primitives_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_aes_primitives" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="654882fs"></ZoomStartTime>
+      <ZoomEndTime time="656443fs"></ZoomEndTime>
+      <Cursor1Time time="655484fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="115"></NameColumnWidth>
+      <ValueColumnWidth column_width="64"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/tb_aes_primitives/byte_in" type="array">
+      <obj_property name="ElementShortName">byte_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">byte_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/byte_out" type="array">
+      <obj_property name="ElementShortName">byte_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">byte_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/state_in" type="array">
+      <obj_property name="ElementShortName">state_in[127:0]</obj_property>
+      <obj_property name="ObjectShortName">state_in[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/key_in" type="array">
+      <obj_property name="ElementShortName">key_in[127:0]</obj_property>
+      <obj_property name="ObjectShortName">key_in[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/round_index" type="array">
+      <obj_property name="ElementShortName">round_index[3:0]</obj_property>
+      <obj_property name="ObjectShortName">round_index[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/final_round" type="logic">
+      <obj_property name="ElementShortName">final_round</obj_property>
+      <obj_property name="ObjectShortName">final_round</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/shifted" type="array">
+      <obj_property name="ElementShortName">shifted[127:0]</obj_property>
+      <obj_property name="ObjectShortName">shifted[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/mixed" type="array">
+      <obj_property name="ElementShortName">mixed[127:0]</obj_property>
+      <obj_property name="ObjectShortName">mixed[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/rounded" type="array">
+      <obj_property name="ElementShortName">rounded[127:0]</obj_property>
+      <obj_property name="ObjectShortName">rounded[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/next_key" type="array">
+      <obj_property name="ElementShortName">next_key[127:0]</obj_property>
+      <obj_property name="ObjectShortName">next_key[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/checks" type="array">
+      <obj_property name="ElementShortName">checks[31:0]</obj_property>
+      <obj_property name="ObjectShortName">checks[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/j" type="array">
+      <obj_property name="ElementShortName">j[31:0]</obj_property>
+      <obj_property name="ObjectShortName">j[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/random_state" type="array">
+      <obj_property name="ElementShortName">random_state[31:0]</obj_property>
+      <obj_property name="ObjectShortName">random_state[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_primitives/published_keys" type="array">
+      <obj_property name="ElementShortName">published_keys[1:10][127:0]</obj_property>
+      <obj_property name="ObjectShortName">published_keys[1:10][127:0]</obj_property>
+   </wvobject>
+</wave_config>

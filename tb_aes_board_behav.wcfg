@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_aes_board_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_aes_board" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="14049998fs"></ZoomStartTime>
+      <ZoomEndTime time="14050001fs"></ZoomEndTime>
+      <Cursor1Time time="14050000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="115"></NameColumnWidth>
+      <ValueColumnWidth column_width="64"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="29" />
+   <wvobject fp_name="/tb_aes_board/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/led" type="array">
+      <obj_property name="ElementShortName">led[7:0]</obj_property>
+      <obj_property name="ObjectShortName">led[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/mmio_valid" type="logic">
+      <obj_property name="ElementShortName">mmio_valid</obj_property>
+      <obj_property name="ObjectShortName">mmio_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/mmio_write" type="logic">
+      <obj_property name="ElementShortName">mmio_write</obj_property>
+      <obj_property name="ObjectShortName">mmio_write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/mmio_ready" type="logic">
+      <obj_property name="ElementShortName">mmio_ready</obj_property>
+      <obj_property name="ObjectShortName">mmio_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/mmio_error" type="logic">
+      <obj_property name="ElementShortName">mmio_error</obj_property>
+      <obj_property name="ObjectShortName">mmio_error</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/halted" type="logic">
+      <obj_property name="ElementShortName">halted</obj_property>
+      <obj_property name="ObjectShortName">halted</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/trace_valid" type="logic">
+      <obj_property name="ElementShortName">trace_valid</obj_property>
+      <obj_property name="ObjectShortName">trace_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/trace_rd_we" type="logic">
+      <obj_property name="ElementShortName">trace_rd_we</obj_property>
+      <obj_property name="ObjectShortName">trace_rd_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/mmio_addr" type="array">
+      <obj_property name="ElementShortName">mmio_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mmio_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/mmio_wdata" type="array">
+      <obj_property name="ElementShortName">mmio_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mmio_wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/mmio_rdata" type="array">
+      <obj_property name="ElementShortName">mmio_rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mmio_rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/trace_wdata" type="array">
+      <obj_property name="ElementShortName">trace_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">trace_wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/mmio_wstrb" type="array">
+      <obj_property name="ElementShortName">mmio_wstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mmio_wstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/fault_code" type="array">
+      <obj_property name="ElementShortName">fault_code[3:0]</obj_property>
+      <obj_property name="ObjectShortName">fault_code[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/mmio_size" type="array">
+      <obj_property name="ElementShortName">mmio_size[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mmio_size[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/trace_rd" type="array">
+      <obj_property name="ElementShortName">trace_rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">trace_rd[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/failed" type="logic">
+      <obj_property name="ElementShortName">failed</obj_property>
+      <obj_property name="ObjectShortName">failed</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/first_failure" type="array">
+      <obj_property name="ElementShortName">first_failure[3:0]</obj_property>
+      <obj_property name="ObjectShortName">first_failure[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/board_checked" type="logic">
+      <obj_property name="ElementShortName">board_checked</obj_property>
+      <obj_property name="ObjectShortName">board_checked</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/prev" type="logic">
+      <obj_property name="ElementShortName">prev</obj_property>
+      <obj_property name="ObjectShortName">prev</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/checks" type="array">
+      <obj_property name="ElementShortName">checks[31:0]</obj_property>
+      <obj_property name="ObjectShortName">checks[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/b" type="array">
+      <obj_property name="ElementShortName">b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">b[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/w" type="array">
+      <obj_property name="ElementShortName">w[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/changes" type="array">
+      <obj_property name="ElementShortName">changes[31:0]</obj_property>
+      <obj_property name="ObjectShortName">changes[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_aes_board/ct" type="array">
+      <obj_property name="ElementShortName">ct[127:0]</obj_property>
+      <obj_property name="ObjectShortName">ct[127:0]</obj_property>
+   </wvobject>
+</wave_config>

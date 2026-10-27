@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_alu_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_alu" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="4142001fs"></ZoomEndTime>
+      <Cursor1Time time="4142000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="115"></NameColumnWidth>
+      <ValueColumnWidth column_width="64"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/tb_alu/operand_a" type="array">
+      <obj_property name="ElementShortName">operand_a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">operand_a[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_alu/operand_b" type="array">
+      <obj_property name="ElementShortName">operand_b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">operand_b[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_alu/alu_op" type="array">
+      <obj_property name="ElementShortName">alu_op[3:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_op[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_alu/result" type="array">
+      <obj_property name="ElementShortName">result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_alu/zero" type="logic">
+      <obj_property name="ElementShortName">zero</obj_property>
+      <obj_property name="ObjectShortName">zero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_alu/checks" type="array">
+      <obj_property name="ElementShortName">checks[31:0]</obj_property>
+      <obj_property name="ObjectShortName">checks[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_alu/errors" type="array">
+      <obj_property name="ElementShortName">errors[31:0]</obj_property>
+      <obj_property name="ObjectShortName">errors[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_alu/vector_index" type="array">
+      <obj_property name="ElementShortName">vector_index[31:0]</obj_property>
+      <obj_property name="ObjectShortName">vector_index[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_alu/operation_index" type="array">
+      <obj_property name="ElementShortName">operation_index[31:0]</obj_property>
+      <obj_property name="ObjectShortName">operation_index[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_alu/random_state" type="array">
+      <obj_property name="ElementShortName">random_state[31:0]</obj_property>
+      <obj_property name="ObjectShortName">random_state[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_alu/random_a" type="array">
+      <obj_property name="ElementShortName">random_a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">random_a[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_alu/random_b" type="array">
+      <obj_property name="ElementShortName">random_b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">random_b[31:0]</obj_property>
+   </wvobject>
+</wave_config>

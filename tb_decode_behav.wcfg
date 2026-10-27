@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_decode_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_decode" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="7717000fs"></ZoomEndTime>
+      <Cursor1Time time="683000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="115"></NameColumnWidth>
+      <ValueColumnWidth column_width="64"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/tb_decode/instr" type="array">
+      <obj_property name="ElementShortName">instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/rs1" type="array">
+      <obj_property name="ElementShortName">rs1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/rs2" type="array">
+      <obj_property name="ElementShortName">rs2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs2[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/rd" type="array">
+      <obj_property name="ElementShortName">rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/rs1_used" type="logic">
+      <obj_property name="ElementShortName">rs1_used</obj_property>
+      <obj_property name="ObjectShortName">rs1_used</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/rs2_used" type="logic">
+      <obj_property name="ElementShortName">rs2_used</obj_property>
+      <obj_property name="ObjectShortName">rs2_used</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/alu_op" type="array">
+      <obj_property name="ElementShortName">alu_op[3:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_op[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/alu_a_sel" type="array">
+      <obj_property name="ElementShortName">alu_a_sel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_a_sel[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/alu_b_imm" type="logic">
+      <obj_property name="ElementShortName">alu_b_imm</obj_property>
+      <obj_property name="ObjectShortName">alu_b_imm</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/imm_sel" type="array">
+      <obj_property name="ElementShortName">imm_sel[2:0]</obj_property>
+      <obj_property name="ObjectShortName">imm_sel[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/reg_write" type="logic">
+      <obj_property name="ElementShortName">reg_write</obj_property>
+      <obj_property name="ObjectShortName">reg_write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/wb_sel" type="array">
+      <obj_property name="ElementShortName">wb_sel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">wb_sel[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/mem_read" type="logic">
+      <obj_property name="ElementShortName">mem_read</obj_property>
+      <obj_property name="ObjectShortName">mem_read</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/mem_write" type="logic">
+      <obj_property name="ElementShortName">mem_write</obj_property>
+      <obj_property name="ObjectShortName">mem_write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/mem_size" type="array">
+      <obj_property name="ElementShortName">mem_size[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_size[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/mem_unsigned" type="logic">
+      <obj_property name="ElementShortName">mem_unsigned</obj_property>
+      <obj_property name="ObjectShortName">mem_unsigned</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/branch_op" type="array">
+      <obj_property name="ElementShortName">branch_op[2:0]</obj_property>
+      <obj_property name="ObjectShortName">branch_op[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/jump" type="logic">
+      <obj_property name="ElementShortName">jump</obj_property>
+      <obj_property name="ObjectShortName">jump</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/jalr" type="logic">
+      <obj_property name="ElementShortName">jalr</obj_property>
+      <obj_property name="ObjectShortName">jalr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decode/illegal" type="logic">
+      <obj_property name="ElementShortName">illegal</obj_property>
+      <obj_property name="ObjectShortName">illegal</obj_property>
+   </wvobject>
+</wave_config>
