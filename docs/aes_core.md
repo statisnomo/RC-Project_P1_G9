@@ -130,5 +130,7 @@ explains three new simulations and their results. Follow the
 
 The current ALU and CPU `.bit` files still test their original designs.
 The separate [CPU/AES board record](zedboard_aes_demo.md) covers its build.
-Keypad, OLED, and UART remain later milestones. Physical board observations
-are still pending.
+The user reported ALU/CPU/CPU-AES physical PASS, including three AES trials;
+see [the October 27 lab result](lab_results_2026-10-27.md). The UART now
+passes its [unit/MMIO tests](uart_tx.md); keypad, OLED, and UART-to-CPU
+integration remain later milestones.

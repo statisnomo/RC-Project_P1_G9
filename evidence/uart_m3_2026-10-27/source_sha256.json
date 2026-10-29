@@ -1,0 +1,14 @@
+{
+  "rtl/peripherals/uart_tx.v": "a0c365bc7203373d26e82406f328a3f0fae6c0bec98b72d5b1fc342d707d8952",
+  "rtl/peripherals/uart_mmio.v": "1f129ab42ba4ce8e71d5afb8b295deef311c799c731ce1dec2ef0abc3ff42031",
+  "tb/peripherals/uart_line_checker.v": "afb2decf38b053b40f2aca05e04c356e94bc72e1d21f95cd692e53a70efe719e",
+  "tb/peripherals/tb_uart_tx.v": "ca642f5673f2ac6207f866a7c3534074a9623c4a8cffd1a3ee8aacd70833b475",
+  "tb/peripherals/tb_uart_mmio.v": "658489f5d4882c5f041164888af0cce288a278ac62386c5140b101a4db764571",
+  "scripts/add_uart_to_project.tcl": "9927af8a364f212886e498bcc0bfd20a568a527b43166cb271cac72ac6c78877",
+  "scripts/update_uart_gui_project.tcl": "227787844f76fc405e1b63cce5d1bb7d36ee11e9abc799707c726758e97ac71c",
+  "scripts/create_vivado_gui_project.tcl": "7acb2586ff4ec6e3a76e54d325e8447f388517025c7ea5dc7a977115b72ac3bb",
+  "scripts/verify_uart_gui.tcl": "9c1401d36175bcfb4bc7ee3b8c2ee86d197f5b6a2ef157cbb7ca1f94a8d3a4c0",
+  "scripts/check_uart_synthesis.tcl": "e9a1d61f5565dde2b42ca3b76b93487d030719466a38ea2f116e83df05e69e08",
+  "docs/uart_interface.md": "aaa78904211ed0add4ad336490668d158d99fd435aa7a46d9042c1ef672f1022",
+  "vivado/riscv_soc_lab/riscv_soc_lab.xpr": "45489c6983d33a3ab6bfd327d1ebbee3c68e50dc6963021b8a7700bc16b7a80a"
+}

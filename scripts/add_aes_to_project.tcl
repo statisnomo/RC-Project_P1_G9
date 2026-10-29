@@ -10,8 +10,9 @@ foreach {simset bench} {sim_aes_primitives tb_aes_primitives sim_aes_core tb_aes
     add_files -fileset $simset -norecurse [list [file join $root tb crypto aes_reference.vh]]
     set_property file_type SystemVerilog [get_files [list $bench_file]]
     set_property top $bench $fs
-    set_property include_dirs [list [file join $root tb crypto] [file join $root tb crypto vectors]] $fs
+    set_property include_dirs [list [file join $root tb crypto] [file join $root tb crypto vectors] [file join $root tb common]] $fs
     if {$simset in {sim_aes_core sim_aes_mmio}} {
+        add_files -fileset $simset -norecurse [list [file join $root tb common sim_data_check.vh]]
         set vector_file [file join $root tb crypto vectors aes128_kat.mem]
         add_files -fileset $simset -norecurse [list $vector_file [file join $root tb crypto vectors aes128_vector_count.vh]]
         set_property file_type {Memory Initialization Files} [get_files [list $vector_file]]

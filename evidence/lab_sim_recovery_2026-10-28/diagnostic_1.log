@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+WARNING: file deliberately_missing.mem could not be opened
+Fatal: FAIL SIM_DATA cannot open 'deliberately_missing.mem'. Open the supplied .xpr; check staged data files and VIVADO_GUI.
+Time: 1 ns  Iteration: 0  Process: /tb_sim_data_check(MODE=1)/require_hex_file  Scope: tb_sim_data_check(MODE=1).require_hex_file  File: D:/RC Project/riscv_soc_project/tb/common/sim_data_check.vh Line: 11
+$finish called at time : 1 ns

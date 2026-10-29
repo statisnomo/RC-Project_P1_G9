@@ -8,6 +8,7 @@
 # Saved tool output is evidence: retain its original bytes and spacing.
 evidence/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
 evidence/**/*.log -whitespace
+evidence/**/*.rpt -whitespace
 
 # Keep the published build evidence byte-identical to the tested lab pack.
 build/** -text whitespace=trailing-space,space-before-tab,cr-at-eol

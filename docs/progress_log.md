@@ -87,6 +87,99 @@ Task IDs refer to [project_checklist.md](project_checklist.md).
   remain open. Next personal check: identify the programmed image and
   record heartbeat, PASS/FAIL LEDs, and a video; use the prepared GUI project.
 
+## 27 October 2026 — three physical board demos passed
+
+- User confirmed following the testing guide and successfully running all
+  three `.bit` files: ALU, CPU, and CPU plus AES.
+- All showed **LD0 blinking, LD1 ON, LD2-LD7 OFF**. AES passed **3/3 trials**.
+- **P4, P5, and H2 passed** on the strength of these reported physical
+  observations. M2 now has both engineering and physical acceptance.
+- Saved [the lab result](lab_results_2026-10-27.md). Media archiving and
+  the standalone CPU repeat are tracked separately; personal simulation
+  checks were not reported. Exact restart methods were not supplied.
+- Next small build step: UART TX and its MMIO wrapper, with independent
+  serial decoding tests and a Vivado GUI walkthrough. Adapter availability
+  may be assumed for planning; its model/3.3 V logic remains to be checked
+  before wiring, as agreed with the user.
+
+## 27 October 2026 — UART transmitter and registers accepted
+
+- **M3.2 passed**. Added `uart_tx` and `uart_mmio`, with the register and
+  reset contract defined before RTL. Default is 100 MHz / 868, approximately
+  115200 baud, 8N1, one byte at a time with BUSY polling.
+- The transmitter test passed **840 complete frames / 40 reset aborts**
+  across dividers 1, 2, 7, and 868. The MMIO test passed **564 frames /
+  20 reset aborts**, with 1,454 and 1,457 bus checks for waits 1 and 4.
+- Pin-level checking covers frame levels/durations independently of DUT
+  counters. Busy writes, byte strobes, invalid accesses, cancellation,
+  continuous VALID, and completion-boundary behavior passed.
+- The updated GUI project has **16 simulation sets** and starts on
+  `sim_uart_tx`. Existing CPU and CPU/AES board simulations also passed.
+- Standalone UART/MMIO synthesis: **55 LUTs, 37 FFs, zero latches/BRAM/DSP**,
+  estimated register setup slack **+6.368 ns**. This is not a routed board result.
+- Added personal GUI tasks **P13/P14** and [the UART walkthrough](uart_tx.md).
+  Saved [UART evidence](../evidence/uart_m3_2026-10-27/README.md).
+- Next development step: **M3.3**, keypad scanning and event handling.
+  H3.1 still needs a UART board build and actual serial reception. The
+  user's adapter availability assumption supports planning, not wiring verification.
+
+## 27 October 2026 — lab simulation failures reported
+
+- User supplied forwarded test output and confirmed using the supplied
+  `.xpr` in **Vivado 2020** (minor version not stated). The development
+  project and previous acceptance runs used **2025.2**.
+- Test 6: program/reference file-open warnings with garbled names, then
+  CPU fault code 1 at PC zero with an unknown instruction, at 80 ns.
+- Test 11: missing NIST vector 1 at 616 ns. Test 12: missing vector at
+  14030 ns. Test 13: unexpected CPU halt awaiting firmware status at 90 ns.
+- Recorded these as failed personal simulation attempts. The excerpts
+  suggest data loading/setup problems; the exact 2020 cause is not proven.
+  No unreported simulation is marked passed. Physical P4/P5/H2 passes
+  remain supported by the separate LED observations.
+
+## 28 October 2026 — simulation data recovery prepared and checked
+
+- Added a GUI-launched creator that builds the project in the running
+  Vivado version. It checks 128 data files before project creation and
+  explicitly registers ROMs, vectors, definitions, and include paths.
+- CPU filenames are materialized as strings before file I/O; CPU/AES
+  memory loads use explicit index bounds. Simulation-only guards report
+  missing, malformed, unknown, or incomplete input before functional tests.
+- **All 16 simulations passed** in a fresh project on **Vivado 2025.2**.
+  Six guard scenarios passed, including five expected data rejections.
+- The initial negative-test runner resumed after a time-zero fatal and
+  was stopped. Guard error paths now return explicitly and tests begin
+  after GUI time zero; final fault-injection runs completed cleanly.
+- Saved [recovery evidence](../evidence/lab_sim_recovery_2026-10-28/README.md)
+  and [the menu-only lab procedure](lab_simulation_recovery.md).
+- **P15 remains open:** rerun CPU, AES core, AES MMIO, and CPU/AES in
+  lab Vivado 2020 and save PASS lines plus the generated setup report.
+  Local 2025.2 checks do not establish 2020 compatibility.
+- Hardware RTL, firmware, constraints, and the three accepted board
+  images are unchanged by this recovery; no board rebuild is requested.
+
+## 29 October 2026 — test 7 added to the lab recovery
+
+- The user reported that test 7 (`sim_soc_minimal`) also failed. Its
+  original error text is unavailable; the user will provide it after
+  the next lab run. Its exact lab cause remains unconfirmed.
+- Added a file preflight and an independent comparison of all 1,024
+  initialized DUT ROM words before releasing reset. This check does
+  not reload the ROM or change the CPU. Later CPU faults now include
+  code, PC, and value; final failures show RAM/register/count details.
+- Added maintainer checks for a missing test 7 program and a deliberately
+  corrupted final ROM word. These are separate from the sixteen lab sets.
+- Added [NEXT_LAB.md](../NEXT_LAB.md), updated the blank lab record, and
+  expanded **P15** to tests **6/7/11/12/13**. The GUI creator registers
+  test 7's common header and program image automatically.
+- **All 16 normal simulations and eight diagnostic scenarios passed**
+  in a fresh project on **Vivado 2025.2**. Test 7 checked all ROM words,
+  sum 55, load-use 56, one MMIO write, and 44 retirements. Both deliberate
+  test 7 ROM failures stopped at 1 ns, before CPU execution. See
+  [the saved evidence](../evidence/lab_sim_recovery_2026-10-29/README.md).
+- **P15 remains open** for the five reported failures in lab Vivado 2020.
+  The accepted board images and user waveform files are unchanged.
+
 ## Copy for each session or lab visit
 
 Date / start-end time:

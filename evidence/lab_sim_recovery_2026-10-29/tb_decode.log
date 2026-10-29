@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_decode: 7717 decode checks, all 37 instructions, 15 combinational execution checks
+$finish called at time : 7717 ns : File "D:/RC Project/riscv_soc_project/tb/cpu/tb_decode.v" Line 369

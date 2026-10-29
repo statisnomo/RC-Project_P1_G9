@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+SIM_DATA_OK 'cpu_smoke.hex': 1024 words
+Fatal: FAIL SIM_ROM_LOAD 'cpu_smoke.hex' word=1023 actual=00000001 expected=00000000; CPU held in reset
+Time: 1 ns  Iteration: 0  Process: /tb_soc_minimal_rom_fault(MODE=1)/checks/check_program_rom  Scope: tb_soc_minimal_rom_fault(MODE=1).checks.check_program_rom  File: D:/RC Project/riscv_soc_project/tb/cpu/tb_soc_minimal.v Line: 49
+$finish called at time : 1 ns

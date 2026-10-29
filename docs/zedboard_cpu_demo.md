@@ -203,8 +203,8 @@ peripherals will require a new timing check when integrated.
 Vivado retained one design-rule warning, **ZPS7-1: PS7 block required**,
 because this PL-only build does not instantiate the processing system.
 The warning is recorded in `drc.rpt`, not suppressed. There were no DRC
-errors, and bitstream generation completed successfully. The physical test
-below remains necessary to check operation on the actual board.
+errors, and bitstream generation completed successfully. The physical
+test result is recorded below.
 
 The generated image is `build/zedboard_cpu_demo/zedboard_cpu_demo.bit`.
 Its SHA-256 matches the saved `bitstream.sha256`:
@@ -213,5 +213,6 @@ Its SHA-256 matches the saved `bitstream.sha256`:
 5B29D73D06769742961419AD243E45CF884AFF1B1A5101B8531726B1830556AD
 ```
 
-**Physical board testing is still pending.** Simulations and implementation
-reports cannot substitute for observing the LEDs in the lab.
+**Physical PASS reported October 27:** LD0 blinking, LD1 ON, LD2-LD7 OFF.
+See [the user's lab result](lab_results_2026-10-27.md); the standalone CPU
+repeat count was not separately stated.

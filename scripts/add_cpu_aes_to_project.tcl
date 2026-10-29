@@ -12,7 +12,10 @@ foreach {simset bench relative} {sim_soc_aes tb_soc_aes cpu/tb_soc_aes.v sim_aes
     set_property file_type SystemVerilog [get_files [list $file]]
     set_property top $bench $fs
     set_property verilog_define VIVADO_GUI $fs
-    set_property include_dirs [list [file join $root rtl cpu]] $fs
+    set_property include_dirs [list [file join $root rtl cpu] [file join $root tb common]] $fs
+    if {$simset eq "sim_soc_aes"} {
+        add_files -fileset $simset -norecurse [list [file join $root tb common sim_data_check.vh]]
+    }
     set_property xsim.elaborate.debug_level typical $fs
     set_property xsim.simulate.runtime 0ns $fs
     set_property xsim.simulate.log_all_signals true $fs

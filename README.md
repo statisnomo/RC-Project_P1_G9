@@ -9,10 +9,18 @@ results, and rehearsal. Use the [timeline](docs/project_timeline.md),
 [master checklist](docs/project_checklist.md), and
 [progress log](docs/progress_log.md) to track each small verified step.
 
-**Testing through Vivado's graphical interface?** Start with
+**Next lab: [follow this GUI checklist](NEXT_LAB.md).** It covers the reported
+failures in tests **6, 7, 11, 12, and 13**, including test 7's new ROM check.
+Download the latest repository ZIP, then create a fresh project using
+**Tools > Run Tcl Script > `scripts/create_lab_compat_project.tcl`** in lab
+Vivado 2020. The [recovery notes](docs/lab_simulation_recovery.md) explain
+the changes. The supplied development `.xpr` was generated with 2025.2.
+For the original board procedure, use
 [the October 27 lab walkthrough](docs/lab_2026-10-27.md), then
 [VIVADO_START_HERE.md](VIVADO_START_HERE.md). Open
-`vivado/riscv_soc_lab/riscv_soc_lab.xpr` and select one of its fourteen simulation sets.
+`vivado/riscv_soc_lab/riscv_soc_lab.xpr` directly only when using the tested
+2025.2 installation; the lab should use its freshly generated project.
+Both contain sixteen simulation sets.
 [LAB_START_HERE.md](LAB_START_HERE.md) retains the optional script-based workflow.
 
 **Need the programming files from GitHub?** Open [build/](build/README.md)
@@ -30,8 +38,10 @@ practical tutorials, and small exercises for understanding each part of this bui
 
 ## Current milestone
 
-**October 27: the real CPU now encrypts through MMIO.** The
-[CPU/AES guide](docs/cpu_aes_integration.md) explains the register wrapper,
+**October 27: ALU, CPU, and CPU/AES passed on the ZedBoard.** The user
+reported LD0 blinking, LD1 ON, and LD2-LD7 OFF for all three images,
+including **3/3 AES trials**. See [the physical test record](docs/lab_results_2026-10-27.md).
+The [CPU/AES guide](docs/cpu_aes_integration.md) explains the register wrapper,
 four-block ROM program, integrated simulations, and LED checker. The
 MMIO test passed all 284 NIST vectors with both normal and delayed replies;
 CPU integration checked 32 blocks plus reset and error paths. Your personal
@@ -41,7 +51,7 @@ The October 27 lab pack includes the new CPU/AES board image with passing
 routed **100 MHz timing (+0.311 ns setup / +0.159 ns hold)**. All 14 simulation
 sets passed from a fresh ZIP extraction. Use the
 [printable lab guide](output/pdf/lab-testing-guide-2026-10-27.pdf) and
-[board build record](docs/zedboard_aes_demo.md). Physical observations remain pending.
+[board build record](docs/zedboard_aes_demo.md).
 
 The standalone **AES-128 core is now implemented and simulated**. On October 24,
 its primitives passed 1,810 checks and its controller passed 17,433 checks over
@@ -64,10 +74,12 @@ checked retirements, 24 memory checks, and a complete program that stores
 The new [CPU board demonstration](docs/zedboard_cpu_demo.md) adds a result
 checker, heartbeat/PASS/FAIL LEDs, simulation, constraints, and build scripts.
 Its simulation passed the real CPU program and 15 checker scenarios.
-The keypad, OLED, UART controllers, and full demonstration firmware remain to be built.
-The [prior lab record](docs/lab_followup_2026-10-27.md) reports a programmed
-bitstream and a blinking LED, but does not identify the image or PASS/FAIL
-states. The CPU's physical functional result remains unconfirmed.
+The **UART transmitter and MMIO wrapper now pass their independent tests**:
+840 core frames and 564 bus-driven frames, plus reset-abort recovery.
+Use [the small UART GUI test](docs/uart_tx.md) for the next lesson. Keypad,
+OLED, UART-to-CPU integration, and full demonstration firmware remain to be built.
+The [physical lab record](docs/lab_results_2026-10-27.md) now confirms the
+user-observed CPU self-test PASS.
 
 Dedicated branch comparisons and memory-address addition improved the
 preliminary 100 MHz setup slack from **-3.098 ns to +0.940 ns**. Synthesis
@@ -94,7 +106,7 @@ automatic 16-vector checker, heartbeat and PASS/FAIL LEDs, pin constraints,
 and simulation/build scripts. Its simulation and FPGA build passed in
 Vivado 2025.2 on October 13, 2026; routed timing met 100 MHz and the `.bit`
 file is in `build/zedboard_alu_demo/`. The lab guide records the retained
-PS7 warning and full results. Physical board testing is still required.
+PS7 warning and full results. The user reported its physical PASS on October 27.
 
 ## Repository layout
 
@@ -160,7 +172,6 @@ timing results and the expected LED pattern before programming.
 
 Observe the CPU result in the lab: LD0 should blink, LD1 should stay on, and
 the other user LEDs should be off. CPU-to-AES MMIO integration now passes.
-The next peripheral milestone builds UART, keypad, and OLED independently;
-confirm exact module revisions and wiring before enabling their I/O pins.
-The existing ALU board demonstration remains an independent first physical
-lab check.
+The next peripheral step is the keypad scanner; UART unit/MMIO tests pass.
+Confirm exact module revisions and wiring before enabling peripheral I/O.
+The existing ALU, CPU, and CPU/AES images have reported physical PASS.

@@ -1,0 +1,7 @@
+Time resolution is 1 ps
+UART_TX_CASE div=1: 3331 pin/timing checks, 270 frames, 10 reset aborts
+UART_TX_CASE div=2: 6088 pin/timing checks, 270 frames, 10 reset aborts
+UART_TX_CASE div=7: 19873 pin/timing checks, 270 frames, 10 reset aborts
+UART_TX_CASE div=868: 309970 pin/timing checks, 30 frames, 10 reset aborts
+PASS tb_uart_tx: 4 dividers, 840 complete frames, 40 reset aborts
+$finish called at time : 3099700 ns : File "D:/RC Project/riscv_soc_project/build/uart_pack_validation/riscv_soc_project/tb/peripherals/tb_uart_tx.v" Line 84

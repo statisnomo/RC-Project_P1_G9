@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+Fatal: FAIL SIM_DATA 'valid.mem': expected 1 words, found 2. Re-extract the complete pack.
+Time: 1 ns  Iteration: 0  Process: /tb_sim_data_check(MODE=5)/require_hex_file  Scope: tb_sim_data_check(MODE=5).require_hex_file  File: D:/RC Project/riscv_soc_project/tb/common/sim_data_check.vh Line: 32
+$finish called at time : 1 ns

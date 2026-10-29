@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+SIM_DATA_OK 'aes128_kat.mem': 284 words
+PASS tb_aes128_core: 17433 checks, 556 completed blocks; 284 NIST, 256 random, 11 reset-abort points; latency=11 clocks, earliest restart=12 clocks
+$finish called at time : 85576 ns : File "D:/RC Project/riscv_soc_project/tb/crypto/tb_aes128_core.v" Line 173

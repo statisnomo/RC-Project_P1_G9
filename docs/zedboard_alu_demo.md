@@ -19,8 +19,8 @@ OLED are not part of this demonstration.
 - The DRC report contains one warning, `ZPS7-1: PS7 block required`, because
   the ARM processing-system block is absent. It was retained in the report,
   not suppressed. Bitstream generation completed with zero errors.
-- **Physical ZedBoard testing is still pending.** The expected LED behavior
-  below is the lab acceptance test, not an observation already made.
+- **Physical PASS reported October 27:** LD0 blinking, LD1 ON, LD2-LD7 OFF.
+  See [the user's lab result](lab_results_2026-10-27.md).
 
 This demo takes its clock directly from the board oscillator on PL pin Y9;
 it does not request clocks or signals from the processing system. A PL-only

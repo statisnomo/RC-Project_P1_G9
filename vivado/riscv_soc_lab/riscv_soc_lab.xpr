@@ -44,7 +44,7 @@
     <Option Name="SimulatorGccVersionRiviera" Val="9.3.0"/>
     <Option Name="SimulatorGccVersionActiveHdl" Val="9.3.0"/>
     <Option Name="BoardPart" Val=""/>
-    <Option Name="ActiveSimSet" Val="sim_aes_primitives"/>
+    <Option Name="ActiveSimSet" Val="sim_cpu_core"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPDefaultOutputPath" Val="$PGENDIR/sources_1"/>
@@ -57,7 +57,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="17"/>
+    <Option Name="WTXSimLaunchSim" Val="21"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -125,6 +125,22 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../../rtl/board/zedboard_cpu_demo.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../rtl/peripherals/uart_tx.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../rtl/peripherals/uart_mmio.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -443,6 +459,12 @@
     </FileSet>
     <FileSet Name="sim_memories" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_memories" RelGenDir="$PGENDIR/sim_memories">
       <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/../../fw/cpu_smoke.hex">
+        <FileInfo SFType="MIF">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../../tb/cpu/tb_memories.v">
         <FileInfo SFType="SVerilog">
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -1232,6 +1254,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../../tb/common/sim_data_check.vh">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../../tb/programs/cases.vh">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -1249,8 +1278,11 @@
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="tb_cpu_core"/>
-        <Option Name="VerilogDir" Val="$PPRDIR/../../rtl/cpu"/>
-        <Option Name="VerilogDir" Val="$PPRDIR/../../tb/programs"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../../../RC"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../tb/common"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/Project/riscv_soc_project/rtl/cpu"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/Project/riscv_soc_project/tb/programs"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/tb/common"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SelectedSimModel" Val="rtl"/>
@@ -1278,6 +1310,12 @@
     </FileSet>
     <FileSet Name="sim_soc_minimal" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_soc_minimal" RelGenDir="$PGENDIR/sim_soc_minimal">
       <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/../../fw/cpu_smoke.hex">
+        <FileInfo SFType="MIF">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../../tb/cpu/tb_soc_minimal.v">
         <FileInfo SFType="SVerilog">
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -1285,11 +1323,20 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../../tb/common/sim_data_check.vh">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="tb_soc_minimal"/>
-        <Option Name="VerilogDir" Val="$PPRDIR/../../rtl/cpu"/>
-        <Option Name="VerilogDir" Val="$PPRDIR/../../tb/programs"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../../../RC"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../tb/common"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/rtl/cpu"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/tb/programs"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SelectedSimModel" Val="rtl"/>
@@ -1355,6 +1402,12 @@
     </FileSet>
     <FileSet Name="sim_cpu_board" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_cpu_board" RelGenDir="$PGENDIR/sim_cpu_board">
       <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/../../fw/cpu_smoke.hex">
+        <FileInfo SFType="MIF">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../../tb/board/tb_cpu_board.v">
         <FileInfo SFType="SVerilog">
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -1444,6 +1497,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../../tb/common/sim_data_check.vh">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../../tb/crypto/aes_reference.vh">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -1468,8 +1528,11 @@
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="tb_aes128_core"/>
-        <Option Name="VerilogDir" Val="$PPRDIR/../../tb/crypto"/>
-        <Option Name="VerilogDir" Val="$PPRDIR/../../tb/crypto/vectors"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../../../RC"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../tb/common"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/Project/riscv_soc_project/tb/crypto"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/Project/riscv_soc_project/tb/crypto/vectors"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/tb/common"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SelectedSimModel" Val="rtl"/>
@@ -1511,6 +1574,13 @@
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../../tb/common/sim_data_check.vh">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../../tb/crypto/aes_reference.vh">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -1528,8 +1598,11 @@
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="tb_aes_mmio"/>
-        <Option Name="VerilogDir" Val="$PPRDIR/../../tb/crypto"/>
-        <Option Name="VerilogDir" Val="$PPRDIR/../../tb/crypto/vectors"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../../../RC"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../tb/common"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/Project/riscv_soc_project/tb/crypto"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/Project/riscv_soc_project/tb/crypto/vectors"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/tb/common"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SelectedSimModel" Val="rtl"/>
@@ -1557,6 +1630,19 @@
     </FileSet>
     <FileSet Name="sim_soc_aes" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_soc_aes" RelGenDir="$PGENDIR/sim_soc_aes">
       <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/../../fw/aes_smoke.hex">
+        <FileInfo SFType="MIF">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../tb/common/sim_data_check.vh">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../../tb/cpu/tb_soc_aes.v">
         <FileInfo SFType="SVerilog">
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -1567,7 +1653,10 @@
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="tb_soc_aes"/>
-        <Option Name="VerilogDir" Val="$PPRDIR/../../rtl/cpu"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../../../RC"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../tb/common"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/Project/riscv_soc_project/rtl/cpu"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/../../Project/riscv_soc_project/tb/common"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SelectedSimModel" Val="rtl"/>
@@ -1595,6 +1684,12 @@
     </FileSet>
     <FileSet Name="sim_aes_board" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_aes_board" RelGenDir="$PGENDIR/sim_aes_board">
       <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/../../fw/aes_smoke.hex">
+        <FileInfo SFType="MIF">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../../tb/board/tb_aes_board.v">
         <FileInfo SFType="SVerilog">
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -1629,6 +1724,92 @@
         <Option Name="xsim.simulate.runtime" Val="0ns"/>
         <Option Name="xsim.simulate.log_all_signals" Val="true"/>
         <Verilog_Define Name="VIVADO_GUI"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="sim_uart_tx" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_uart_tx" RelGenDir="$PGENDIR/sim_uart_tx">
+      <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/../../tb/peripherals/uart_line_checker.v">
+        <FileInfo SFType="SVerilog">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../tb/peripherals/tb_uart_tx.v">
+        <FileInfo SFType="SVerilog">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="tb_uart_tx"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SelectedSimModel" Val="rtl"/>
+        <Option Name="PamDesignTestbench" Val=""/>
+        <Option Name="PamDutBypassFile" Val="xil_dut_bypass"/>
+        <Option Name="PamSignalDriverFile" Val="xil_bypass_driver"/>
+        <Option Name="PamPseudoTop" Val="pseudo_tb"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="CosimPdi" Val=""/>
+        <Option Name="CosimPlatform" Val=""/>
+        <Option Name="CosimElf" Val=""/>
+        <Option Name="CosimRootfs" Val=""/>
+        <Option Name="CosimSDfile" Val=""/>
+        <Option Name="CosimSDDir" Val=""/>
+        <Option Name="CosimOutDir" Val=""/>
+        <Option Name="CosimXsa" Val=""/>
+        <Option Name="CosimAIKernel" Val=""/>
+        <Option Name="LogicalNoCTop" Val=""/>
+        <Option Name="LogicalNoCTopLib" Val=""/>
+        <Option Name="Dmv" Val=""/>
+        <Option Name="xsim.simulate.runtime" Val="0ns"/>
+        <Option Name="xsim.simulate.log_all_signals" Val="true"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="sim_uart_mmio" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_uart_mmio" RelGenDir="$PGENDIR/sim_uart_mmio">
+      <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/../../tb/peripherals/uart_line_checker.v">
+        <FileInfo SFType="SVerilog">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../tb/peripherals/tb_uart_mmio.v">
+        <FileInfo SFType="SVerilog">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="tb_uart_mmio"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SelectedSimModel" Val="rtl"/>
+        <Option Name="PamDesignTestbench" Val=""/>
+        <Option Name="PamDutBypassFile" Val="xil_dut_bypass"/>
+        <Option Name="PamSignalDriverFile" Val="xil_bypass_driver"/>
+        <Option Name="PamPseudoTop" Val="pseudo_tb"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="CosimPdi" Val=""/>
+        <Option Name="CosimPlatform" Val=""/>
+        <Option Name="CosimElf" Val=""/>
+        <Option Name="CosimRootfs" Val=""/>
+        <Option Name="CosimSDfile" Val=""/>
+        <Option Name="CosimSDDir" Val=""/>
+        <Option Name="CosimOutDir" Val=""/>
+        <Option Name="CosimXsa" Val=""/>
+        <Option Name="CosimAIKernel" Val=""/>
+        <Option Name="LogicalNoCTop" Val=""/>
+        <Option Name="LogicalNoCTopLib" Val=""/>
+        <Option Name="Dmv" Val=""/>
+        <Option Name="xsim.simulate.runtime" Val="0ns"/>
+        <Option Name="xsim.simulate.log_all_signals" Val="true"/>
       </Config>
     </FileSet>
   </FileSets>

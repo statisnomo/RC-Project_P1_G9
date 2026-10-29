@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+UART_MMIO_CASE wait=1: 1454 bus checks, 24455 pin checks, 282 frames, 10 aborts
+UART_MMIO_CASE wait=4: 1457 bus checks, 25889 pin checks, 282 frames, 10 aborts
+PASS tb_uart_mmio: waits 1/4, 564 complete frames, 20 reset aborts
+$finish called at time : 258890 ns : File "D:/RC Project/riscv_soc_project/build/uart_pack_validation/riscv_soc_project/tb/peripherals/tb_uart_mmio.v" Line 217

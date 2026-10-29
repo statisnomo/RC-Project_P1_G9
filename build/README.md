@@ -25,10 +25,10 @@ The existing constraints and firmware for rebuilding remain in the
 project's `constraints/`, `fw/`, and `scripts/` folders. `SHA256SUMS.txt`
 identifies the published artifacts, with paths relative to this folder.
 
-All three images passed their implementation timing checks. The recorded
-lab observation is an unidentified bitstream and blinking LED; functional
-ALU/CPU/AES board passes remain unconfirmed. See the
-[prior lab review](../docs/lab_followup_2026-10-27.md).
+All three images passed their implementation timing checks. On October 27,
+the user also reported **physical PASS for all three**, with the healthy
+LED pattern above, including **3/3 AES trials**. See the
+[physical lab record](../docs/lab_results_2026-10-27.md).
 
 Vivado caches, temporary runs, and unrelated generated builds remain
 ignored. These saved builds are deliberate distribution artifacts.

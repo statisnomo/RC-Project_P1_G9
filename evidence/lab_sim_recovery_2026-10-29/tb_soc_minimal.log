@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+SIM_DATA_OK 'cpu_smoke.hex': 1024 words
+SIM_ROM_LOAD_OK 'cpu_smoke.hex': all 1024 DUT words match file; first instruction=000010b7
+PASS tb_soc_minimal: ROM program, sum=55, load-use=56, one delayed MMIO write, 44 retirements
+$finish called at time : 1790 ns : File "D:/RC Project/riscv_soc_project/tb/cpu/tb_soc_minimal.v" Line 84

@@ -3,10 +3,11 @@
 Date and time:
 Student:
 Checklist task IDs for this visit:
-Computer / Vivado version:
+Computer / full Vivado version (Help > About Vivado, including 2020.x):
+Generated project path / setup_report.txt location:
 Board revision / device:
 Matching schematic revision (uploaded copy is E.1):
-Pack: riscv_soc_lab_2026-10-27.zip
+Repository commit or downloaded ZIP / date:
 Source changed since extraction? If yes, describe:
 
 ## Before future peripheral wiring
@@ -30,7 +31,8 @@ Mark only after observing PASS in the current run:
 - [ ] Decoder: 7,717 decode checks and 15 datapath examples.
 - [ ] ROM/RAM: 24 checks.
 - [ ] CPU: 76 cases / 1,287 retirements.
-- [ ] Minimal SoC: 55 in RAM, result 56, one MMIO write.
+- [ ] Minimal SoC: SIM_ROM_LOAD_OK for 1,024 words, then 55 in RAM,
+  result 56, one MMIO write and 44 retirements.
 - [ ] ALU board simulation: 16 vectors and fault/reset/LED checks.
 - [ ] CPU board simulation: actual program and 15 checker scenarios.
 - [ ] AES primitives: 1,810 checks.
@@ -38,6 +40,9 @@ Mark only after observing PASS in the current run:
 - [ ] AES MMIO: 26,632 / 48,264 checks for one/three wait edges.
 - [ ] CPU + AES: 32 healthy blocks plus restart/error paths.
 - [ ] CPU + AES board wrapper: 13 monitor scenarios plus real program/LEDs.
+- [ ] UART TX: 840 complete frames / 40 reset aborts.
+- [ ] UART MMIO: 564 complete frames / 20 reset aborts.
+- [ ] P15: tests 6/7/11/12/13 all passed on the actual lab Vivado installation.
 
 Summary/log location:
 Waveform screenshot locations:

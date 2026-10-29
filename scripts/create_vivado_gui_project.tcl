@@ -1,10 +1,11 @@
 # Maintenance helper. Lab users open the generated .xpr in Vivado.
 # Regenerating deliberately refuses to overwrite an existing GUI project.
 set root [file normalize [file join [file dirname [info script]] ..]]
-set out [file join $root vivado riscv_soc_lab]
-set project_file [file join $out riscv_soc_lab.xpr]
+if {![info exists lab_project_name]} { set lab_project_name riscv_soc_lab }
+set out [file join $root vivado $lab_project_name]
+set project_file [file join $out ${lab_project_name}.xpr]
 if {[file exists $project_file]} { error "Project already exists: $project_file" }
-create_project riscv_soc_lab $out -part xc7z020clg484-1
+create_project $lab_project_name $out -part xc7z020clg484-1
 set_property target_language Verilog [current_project]
 set_property target_simulator XSim [current_project]
 set_property simulator_language Mixed [current_project]
@@ -30,7 +31,7 @@ proc add_lab_sim {name bench relative_file} {
     add_files -fileset $name -norecurse [list $bench_file]
     set_property file_type SystemVerilog [get_files [list $bench_file]]
     set_property top $bench $fs
-    set_property include_dirs [list [file join $root rtl cpu] [file join $root tb programs]] $fs
+    set_property include_dirs [list [file join $root rtl cpu] [file join $root tb programs] [file join $root tb common]] $fs
     set_property xsim.elaborate.debug_level typical $fs
     # Open at time zero; the user selects signals then clicks Run All.
     set_property xsim.simulate.runtime 0ns $fs
@@ -52,6 +53,7 @@ foreach name {sim_memories sim_soc_minimal sim_cpu_core} {
     set_property verilog_define VIVADO_GUI [get_filesets $name]
 }
 add_files -fileset sim_cpu_core -norecurse [list [file join $root tb programs cases.vh]]
+add_files -fileset sim_cpu_core -norecurse [list [file join $root tb common sim_data_check.vh]]
 set vectors {}
 foreach extension {hex trace bus regs ram} {
     set vectors [concat $vectors [glob [file join $root tb programs *.$extension]]]
@@ -60,10 +62,13 @@ add_files -fileset sim_cpu_core -norecurse $vectors
 set_property file_type {Memory Initialization Files} [get_files $vectors]
 source [file join $root scripts add_aes_to_project.tcl]
 source [file join $root scripts add_cpu_aes_to_project.tcl]
+source [file join $root scripts add_uart_to_project.tcl]
+source [file join $root scripts configure_lab_simulation_data.tcl]
 update_compile_order -fileset sources_1
 foreach fs [get_filesets -filter {FILESET_TYPE == SimulationSrcs}] {
     update_compile_order -fileset $fs
 }
-current_fileset -simset [get_filesets sim_aes_primitives]
-close_project
+current_fileset -simset [get_filesets sim_uart_tx]
+if {![info exists lab_keep_open] || !$lab_keep_open} { close_project }
+unset -nocomplain lab_project_name lab_keep_open
 puts "GUI_PROJECT_READY: $project_file"

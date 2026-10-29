@@ -12,6 +12,7 @@ module soc_aes_checks #(parameter WAIT_CYCLES=1) (output reg finished=0);
 `else
     localparam ROM="fw/aes_smoke.hex";
 `endif
+    `include "sim_data_check.vh"
     soc_aes #(.ROM_FILE(ROM),.AES_WAIT_CYCLES(WAIT_CYCLES)) dut(.*);
     integer cycles=0,starts=0,reads=0,key_writes=0,pt_writes=0,passes=0;
     integer first_operand=-1,launch_cycle=0,run_count,i;
@@ -80,6 +81,8 @@ module soc_aes_checks #(parameter WAIT_CYCLES=1) (output reg finished=0);
         end
     endtask
     initial begin
+        #1; // Run All reaches the preflight; project launch remains at time zero.
+        require_hex_file(ROM, 1024);
         reset_system;healthy_result;
         reset_system;wait(aes_busy);reset_system;healthy_result;
         reset_system;healthy_result;

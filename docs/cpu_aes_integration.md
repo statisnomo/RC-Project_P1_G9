@@ -88,4 +88,6 @@ encryption is rejected according to the documented contract.
 
 Logs are saved under `evidence/aes_m2_2026-10-27/`. A board build must pass
 its own routed timing and DRC before programming; simulation alone does
-not establish 100 MHz operation. Physical board tests remain pending.
+not establish 100 MHz operation. The supplied build passed routed timing,
+and the user reported **3/3 physical AES trials passed** on October 27;
+see [the lab result](lab_results_2026-10-27.md).

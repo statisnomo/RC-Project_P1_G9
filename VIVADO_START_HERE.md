@@ -1,7 +1,11 @@
 # Test the project using Vivado's graphical interface
 
-Updated 27 October 2026. This is the main guide for the GUI lab pack.
-For a shorter visit plan, start with [the lab walkthrough](docs/lab_2026-10-27.md).
+Updated **29 October 2026**. This is the full GUI testing guide.
+The reported failing simulations used **Vivado 2020**, including test 7.
+First follow [the next-lab checklist](NEXT_LAB.md)
+to create a fresh project using the lab's installed version. The bundled
+`.xpr` and original verification used 2025.2; a 2020 retest remains required.
+The [October 27 walkthrough](docs/lab_2026-10-27.md) is the original board procedure.
 
 Project deadline: **20 November 2026**. The
 [timeline](docs/project_timeline.md) and [checklist](docs/project_checklist.md)
@@ -9,7 +13,10 @@ set the order of work; this guide supplies the existing test procedures.
 You can follow it using Vivado menus and buttons. The testbench drives
 inputs automatically and prints its result in Vivado.
 
-## Open the ready-made project
+## Open the ready-made project in Vivado 2025.2
+
+For **Vivado 2020**, use [the project creator](NEXT_LAB.md) first, then
+continue with the test-selection instructions below.
 
 The GitHub repository now includes the three saved board builds under
 [`build/`](build/README.md). **Code > Download ZIP** includes them; the
@@ -28,8 +35,11 @@ The target is `xc7z020clg484-1`. A ZedBoard board-definition entry is not
 required because the project selects the FPGA part directly. Vivado needs
 that Zynq-7000 device family installed.
 
-The updated project starts with **`sim_aes_primitives`**, whose simulation
-top is **`tb_aes_primitives`**. For your first ALU lesson, select **`sim_1`**,
+The recovery project starts with **`sim_cpu_core`**, whose simulation
+top is **`tb_cpu_core`**, to retest the first reported failure.
+Use [the small UART walkthrough](docs/uart_tx.md) for `sim_uart_tx` and
+`sim_uart_mmio`, the newest two tests. The original October 27 lab ZIP has 14 sets;
+the UART-step revision has 16. For your first ALU lesson, select **`sim_1`**,
 top **`tb_alu`**, using Simulation Settings as described below.
 The synthesis top is separately set to `zedboard_aes_demo`. A testbench is
 simulation-only; do not make `tb_alu` or another `tb_*` the synthesis top.
@@ -77,7 +87,7 @@ You can also select a simulation set in the Sources pane and use its
 explicit way to choose the set.
 [AMD documents the simulation-set and top-module settings here](https://docs.amd.com/r/2025.2-English/ug900-vivado-logic-simulation/Using-Simulation-Settings).
 
-## The fourteen tests to run
+## The sixteen tests to run
 
 ### 1. ALU
 
@@ -143,6 +153,8 @@ explicit way to choose the set.
 - Set: **`sim_soc_minimal`**. Top: **`tb_soc_minimal`**.
 - Files: `rtl/soc/soc_minimal.v`, CPU/memory blocks, `tb/cpu/tb_soc_minimal.v`.
 - Program: `fw/src/cpu_smoke.S`; encoded image: `fw/cpu_smoke.hex`.
+- Before execution: `SIM_DATA_OK 'cpu_smoke.hex': 1024 words`, followed by
+  `SIM_ROM_LOAD_OK` confirming that all 1,024 actual ROM words match the file.
 - Expected: **sum=55, load-use=56, one delayed MMIO write, 44 retirements**.
 - Under `tb_soc_minimal/dut` watch the trace signals and `mmio_valid`,
   `mmio_ready`, `mmio_write`, `mmio_addr`, `mmio_wdata`.
@@ -152,6 +164,8 @@ explicit way to choose the set.
 The program stores 55 at RAM address `0x1000`, reloads it, increments to 56,
 stores that at `0x1004`, performs the MMIO write, and loops at PC `0x30`.
 The current MMIO checker is a temporary test device, not AES.
+If it fails, use [the next-lab failure checklist](NEXT_LAB.md): save the
+first error and the new ROM/CPU fault details before closing the simulation.
 
 ### 8. ALU board wrapper
 
@@ -221,6 +235,23 @@ still uses its signature checker; `soc_aes` connects the real AES registers.
 - Watch `board/led`, `board/ab`, `board/ad`, and `board/monitor`.
 - The bench deliberately injects faults after checking healthy operation.
 
+### 15. UART transmitter
+
+- Set: **`sim_uart_tx`**. Top: **`tb_uart_tx`**.
+- Expected: **840 complete frames, 40 reset aborts**, four dividers.
+- Watch `tb_uart_tx/real_baud`: `start`, `data`, `tx`, `busy`, `done`.
+- The first frame sends A (`41`) at the real 115200-baud setting.
+  See [the waveform walkthrough](docs/uart_tx.md#test-1-send-the-letter-a).
+
+### 16. UART registers and bus rules
+
+- Set: **`sim_uart_mmio`**. Top: **`tb_uart_mmio`**.
+- Expected: **564 complete frames, 20 reset aborts**, wait settings 1 and 4.
+- Watch `tb_uart_mmio/short_wait`: `valid`, `ready`, `addr`, `wdata`,
+  `error`, `busy`, and `tx`. Only a successful bus completion sends a byte.
+- Deliberate busy/invalid accesses return errors; the overall PASS line
+  is the result. See [the UART bus walkthrough](docs/uart_tx.md#test-2-send-through-the-cpu-style-bus).
+
 ## Save evidence in Vivado
 
 For each test, capture the PASS message and one useful waveform event.
@@ -271,8 +302,8 @@ You can program them without running synthesis again.
    for build evidence and failure codes.
 
 LD0 is only the heartbeat; LD1 is the application PASS indication. The
-configuration DONE light is separate. Physical board results remain
-pending until observed in the lab.
+configuration DONE light is separate. The user reported all three images
+passed, including three AES trials; see [the October 27 lab result](docs/lab_results_2026-10-27.md).
 
 ## If you want to rebuild CPU-plus-AES in the GUI
 
@@ -323,6 +354,11 @@ reports, not another design's saved results.
 
 ## Verification of this GUI pack
 
+The UART-step revision adds two sets, for **16 total**. Both UART sets and
+the existing CPU/CPU-AES board sets passed in the updated saved project;
+see [UART evidence](evidence/uart_m3_2026-10-27/README.md). The older
+14-set fresh-extraction result below describes the original lab ZIP.
+
 On 27 October, the three CPU/AES integration sets passed with registered
 MMIO request handling. The CPU/AES board image meets routed 100 MHz timing:
 **+0.311 ns setup**, **+0.159 ns hold**. DRC has zero errors and the documented
@@ -346,8 +382,9 @@ mode after copying the project and sources to a different folder. The
 memory, CPU, and complete-system benches also passed with their original
 standalone defaults. Saved results are in `evidence/gui_simulations_2026-10-22/`.
 No hardware RTL changed for the GUI setup; the supplied bitstreams and
-their earlier routed reports remain the same files. Physical checks remain
-pending.
+their earlier routed reports remain the same files. Physical checks were
+pending at that stage; [the October 27 report](docs/lab_results_2026-10-27.md)
+now records ALU, CPU, and CPU/AES PASS.
 
 ## Optional: create only the ALU project manually
 

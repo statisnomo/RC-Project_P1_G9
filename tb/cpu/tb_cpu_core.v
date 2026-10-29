@@ -44,6 +44,7 @@ module tb_cpu_core #(
     reg [159:0] observed_trace;
     reg [223:0] observed_bus;
     string case_name;
+    `include "sim_data_check.vh"
 
     assign ir = iv && (mode != 1 || i_age >= 1 + ((ia[5:2] ^ (i_sequence & 15)) % 7));
     assign dr = dv && (mode == 0 || d_age >= (mode == 1 ? 1 + (d_sequence % 7) : 8));
@@ -120,13 +121,26 @@ module tb_cpu_core #(
         input [3:0] code;
         input [31:0] pc, value;
         integer k;
+        string hex_path, trace_path, bus_path, regs_path, ram_path;
         begin
             @(negedge clk); rst = 1; checking = 0; case_name = name;
-            $readmemh({PROGRAM_DIR,name,".hex"}, program_words);
-            $readmemh({PROGRAM_DIR,name,".trace"}, expected_trace, 0, commits > 0 ? commits-1 : 0);
-            $readmemh({PROGRAM_DIR,name,".bus"}, expected_bus, 0, transfers > 0 ? transfers-1 : 0);
-            $readmemh({PROGRAM_DIR,name,".regs"}, expected_regs);
-            $readmemh({PROGRAM_DIR,name,".ram"}, expected_ram);
+            // Materialize paths as strings instead of passing a mixed
+            // packed-parameter/string concatenation into simulator file I/O.
+            hex_path = $sformatf("%0s%0s.hex", PROGRAM_DIR, name);
+            trace_path = $sformatf("%0s%0s.trace", PROGRAM_DIR, name);
+            bus_path = $sformatf("%0s%0s.bus", PROGRAM_DIR, name);
+            regs_path = $sformatf("%0s%0s.regs", PROGRAM_DIR, name);
+            ram_path = $sformatf("%0s%0s.ram", PROGRAM_DIR, name);
+            require_hex_file(hex_path, 1024);
+            require_hex_file(trace_path, commits > 0 ? commits : 1);
+            require_hex_file(bus_path, transfers > 0 ? transfers : 1);
+            require_hex_file(regs_path, 32);
+            require_hex_file(ram_path, 1024);
+            $readmemh(hex_path, program_words, 0, 1023);
+            $readmemh(trace_path, expected_trace, 0, commits > 0 ? commits-1 : 0);
+            $readmemh(bus_path, expected_bus, 0, transfers > 0 ? transfers-1 : 0);
+            $readmemh(regs_path, expected_regs, 0, 31);
+            $readmemh(ram_path, expected_ram, 0, 1023);
             for (k=0;k<1024;k=k+1) ram[k]=0;
             for (k=0;k<4;k=k+1) scratch[k]=0;
             trace_count=0; bus_count=0; read_count=0; write_count=0;
@@ -157,7 +171,10 @@ module tb_cpu_core #(
             $fatal(1,"FAIL missing pipeline coverage: bypass=%0d stall=%0d drain=%0d",load_bypass,stalled_decode,drained_fetch);
         // Reset cancels a not-yet-completed store and restarts PC/register state.
         @(negedge clk); rst=1; mode=2; checking=0;
-        $readmemh({PROGRAM_DIR,"dependencies.hex"},program_words);
+        // The same file was checked during run_case above; use a stable string.
+        case_name = $sformatf("%0sdependencies.hex", PROGRAM_DIR);
+        require_hex_file(case_name, 1024);
+        $readmemh(case_name,program_words,0,1023);
         ram[0]=32'haabbccdd; write_count=0;
         repeat(3) @(negedge clk);
         rst=0;

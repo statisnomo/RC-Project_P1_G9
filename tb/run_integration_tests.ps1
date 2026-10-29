@@ -20,7 +20,7 @@ $benches = @($selected | ForEach-Object { Join-Path $root "tb/cpu/tb_$_.v" })
 Push-Location $out
 try {
     Run-Tool 'xvlog' (@('--include', (Join-Path $root 'rtl/cpu')) + $rtl)
-    Run-Tool 'xvlog' (@('--sv','--include',(Join-Path $root 'tb/programs')) + $benches)
+    Run-Tool 'xvlog' (@('--sv','--include',(Join-Path $root 'tb/programs'),'--include',(Join-Path $root 'tb/common')) + $benches)
     if ($Waves) { Copy-Item -LiteralPath (Join-Path $root 'tb/capture_waves.tcl') -Destination 'capture_waves.tcl' -Force }
     foreach ($name in $selected) {
         $bench = "tb_$name"

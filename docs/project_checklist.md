@@ -1,7 +1,8 @@
 # Project checklist
 
 Deadline: **20 November 2026**. Full-demo target: **15 November**.
-Last reviewed: **27 October 2026**. Planned lab visit: **October 27**.
+Last reviewed: **29 October 2026**, including board passes and the separate
+Vivado 2020 simulation failures.
 
 Tick a box only after its stated result is observed. Add the task ID, date,
 and evidence location to [progress_log.md](progress_log.md). A future file
@@ -31,23 +32,23 @@ Evidence: [nine-test summary](../build/vivado_gui_validation/gui_test_summary.tx
 
 ## Personal checks — October 27 / next available lab
 
-Prior lab context: the user reported loading a bitstream and observing a
-blinking LED. The image and PASS/FAIL LEDs were not recorded.
-The user confirmed that only the blinking LED is remembered. Script-policy
-and missing-project setup issues were also reported. See the
-[shared lab review](lab_followup_2026-10-27.md). P1/P2/P4/P5/H2 remain open
-until their stated outcomes are identified; the current GUI pack includes
-the `.xpr`, `cases.vh`, and program-data dependencies.
+Latest result: the user confirmed **all three board images passed**, with
+**LD0 blinking, LD1 ON, LD2-LD7 OFF**, including **3/3 AES trials**.
+P4/P5/H2 are accepted from that observation; see the
+[physical test record](lab_results_2026-10-27.md). The
+[earlier lab review](lab_followup_2026-10-27.md) remains a historical record.
+Personal simulation checks stay open until reported. Media archiving and
+the separate CPU repeat are tracked below rather than hiding the passed tests.
 
 - [ ] P1: Open the `.xpr` in Vivado and run `sim_1` / `tb_alu` to PASS;
   inspect operands, operation, result, and zero in the waveform.
 - [ ] P2: Run `sim_soc_minimal` and `sim_cpu_board`; explain what each checks.
 - [ ] P3: Record board/device revision, module models, and available lab slots.
   Confirm access to power, USB-JTAG, both Pmods, and a 3.3 V logic UART adapter.
-- [ ] P4: Program the existing ALU image; observe LD0 blinking, LD1 on,
-  LD2-LD7 off; save a photo/video.
-- [ ] P5: Program the existing CPU image; observe the same healthy LED
-  pattern; reprogram and confirm it repeats. Save a separate record.
+- [x] P4: Program the existing ALU image; observe LD0 blinking, LD1 on,
+  LD2-LD7 off. User reported PASS on October 27.
+- [x] P5: Program the existing CPU image; observe the same healthy LED
+  pattern. User reported PASS on October 27.
 - [ ] P6: Small Vivado test, no board needed: select `sim_aes_primitives`
   / `tb_aes_primitives`, then **Run Behavioral Simulation > Run All**.
   Observe `PASS tb_aes_primitives: 1810 checks` and save the PASS message.
@@ -62,13 +63,35 @@ the `.xpr`, `cases.vh`, and program-data dependencies.
   CPU's START/status/ciphertext accesses and the returned ciphertext in RAM.
 - [ ] P10: Run `sim_aes_board` / `tb_aes_board` to PASS; inspect the healthy
   LED pattern before the deliberate fault tests. See [the CPU/AES guide](cpu_aes_integration.md).
+- [ ] P11: Archive a photo/video of the board tests with their image names
+  for the final report. Functional passes are already recorded.
+- [ ] P12: Record a repeat of the standalone CPU image and its restart
+  method; only the AES repeat count was explicitly reported so far.
+- [ ] P13: Small UART Vivado test: run `sim_uart_tx` / `tb_uart_tx` to PASS;
+  inspect the first A frame in `real_baud`, including the full stop bit.
+- [ ] P14: Run `sim_uart_mmio` / `tb_uart_mmio` to PASS; observe TX starting
+  at bus completion and an expected error for a write while BUSY.
+  Follow the [small UART walkthrough](uart_tx.md); no board is needed.
+- [ ] P15: In lab Vivado 2020, use **Tools > Run Tcl Script** with
+  `scripts/create_lab_compat_project.tcl`. Rerun `sim_cpu_core`,
+  `sim_soc_minimal` (test 7), `sim_aes_core`, `sim_aes_mmio`, and
+  `sim_soc_aes` to PASS. For test 7, also save `SIM_ROM_LOAD_OK`. Save
+  `setup_report.txt` and logs. See [the recovery guide](lab_simulation_recovery.md).
+
+P15 follows the reported failures in tests **6/7/11/12/13** on
+Vivado 2020; test 7 was reported on October 29 without an error excerpt.
+Use [the next-lab checklist](../NEXT_LAB.md). The October 29 revision passed
+all 16 sets and eight diagnostic scenarios locally in 2025.2; see
+[the evidence](../evidence/lab_sim_recovery_2026-10-29/README.md).
+The lab-version retest is still required. Physical P4/P5/H2
+remain passed and do not need to be repeated solely for this setup change.
 
 P6-P10 are your personal observations and remain unchecked until you run
 them. Follow the [small AES test walkthrough](aes_core.md); no terminal
 commands or physical board are needed.
 
-Procedure: [October 27 lab walkthrough](lab_2026-10-27.md), followed by
-the [full Vivado GUI guide](../VIVADO_START_HERE.md).
+Procedure: [next-lab checklist](../NEXT_LAB.md), followed by the
+[full Vivado GUI guide](../VIVADO_START_HERE.md).
 
 ## M1 — AES on its own — due October 28
 
@@ -87,7 +110,8 @@ the [full Vivado GUI guide](../VIVADO_START_HERE.md).
 Passed October 24: [AES guide](aes_core.md), [contract](aes_interface.md),
 [evidence](../evidence/aes_m1_2026-10-24/README.md), and
 [early synthesis](../build/aes_synthesis/summary.txt). This accepts the
-standalone core; integrated timing and physical-board gates remain open.
+standalone core. Integrated timing and the physical CPU/AES test have
+since passed under M2 below.
 
 ## M2 — CPU controls AES — due November 2
 
@@ -105,18 +129,19 @@ standalone core; integrated timing and physical-board gates remain open.
 - [x] M2.6: Build a CPU-plus-AES self-test image and check routed timing/DRC.
 - [x] G2: CPU obtains independently verified ciphertext through MMIO;
   the board self-test image and evidence are ready.
-- [ ] H2: Observe the CPU-plus-AES self-test passing on the physical board;
-  reprogram it three times, and record the image, LEDs, and a short video.
+- [x] H2: Observe the CPU-plus-AES self-test passing on the physical board
+  in three trials. User reported 3/3 PASS on October 27; media is tracked by P11.
 
 Engineering gate passed October 27: [CPU/AES guide](cpu_aes_integration.md),
 [board build](zedboard_aes_demo.md), [evidence](../evidence/aes_m2_2026-10-27/README.md).
-Routed 100 MHz setup/hold: +0.311/+0.159 ns. H2 stays open for the lab result.
+Routed 100 MHz setup/hold: +0.311/+0.159 ns. H2 passed from the
+[user's physical observations](lab_results_2026-10-27.md).
 
 ## M3 — UART, keypad, and OLED — due November 8
 
 - [ ] M3.1: Check exact peripheral manuals, module revisions, connector
   positions, bank voltages, and final signal assignments before wiring.
-- [ ] M3.2: UART unit/MMIO tests pass: framing, baud timing, byte order,
+- [x] M3.2: UART unit/MMIO tests pass: framing, baud timing, byte order,
   consecutive bytes, busy behavior, and reset.
 - [ ] M3.3: Keypad unit/MMIO tests pass: all keys, bounce, held key,
   release/repress, event acknowledgement, multiple-key policy, and reset.
@@ -130,6 +155,12 @@ Routed 100 MHz setup/hold: +0.311/+0.159 ns. H2 stays open for the lab result.
   unintended duplicate events from bounce or a held key.
 - [ ] H3.3: On the board, display a fixed pattern, text, and a 32-digit
   sample ciphertext. Target all H3 checks by November 10.
+
+UART engineering tests passed October 27: [guide](uart_tx.md),
+[contract](uart_interface.md), and [evidence](../evidence/uart_m3_2026-10-27/README.md).
+The GUI project has 16 sets. Adapter availability is assumed for planning;
+its actual model/logic voltage still needs checking before wiring. UART
+CPU integration, routed board build, and H3.1 remain open.
 
 ## M4 — whole system — due November 12
 

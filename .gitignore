@@ -23,6 +23,7 @@ xsim.dir/
 
 # Duplicate distribution packages and machine-generated Vivado state.
 /deliverables/
+/vivado/riscv_soc_lab_compat*/
 /tmp/
 *.cache/
 *.hw/

@@ -1,5 +1,10 @@
 # Follow-up to the previous lab attempt
 
+**Later update:** the user subsequently confirmed all three board demos
+passed with the expected LEDs, including three AES trials. See
+[the new result record](lab_results_2026-10-27.md). The review below is
+preserved as the earlier state of knowledge; P4/P5/H2 are now passed.
+
 Reviewed **27 October 2026**. The actual lab date is not established by
 the shared record, so this is the review date, not an assigned visit date.
 

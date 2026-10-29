@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-27",
+  "archive": "riscv_soc_uart_step_2026-10-27.zip",
+  "sha256": "19411b094158b1e0c6b709c7eda52c3d3d6ae8078fedd67f30ca8f1b754ecf69",
+  "files": 374,
+  "simulation_sets": 16,
+  "saved_project_opened_without_source_repair": true,
+  "all_registered_source_paths_inside_extracted_project": true,
+  "tests": [
+    "PASS tb_uart_tx: 4 dividers, 840 complete frames, 40 reset aborts",
+    "PASS tb_uart_mmio: waits 1/4, 564 complete frames, 20 reset aborts",
+    "PASS tb_cpu_board: actual CPU/ROM/RAM, LED mapping, heartbeat, reset/restart, 15 checker scenarios",
+    "PASS tb_aes_board: four actual CPU-driven blocks, reset/restart, heartbeat/LEDs, 13 monitor scenarios"
+  ],
+  "scope": "Two new UART tests plus CPU/AES board regressions; original 14-set acceptance remains a prior saved result."
+}

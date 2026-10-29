@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+WARNING: File deliberately_missing_soc.hex referenced on D:/RC Project/riscv_soc_project/rtl/cpu/cpu_core.v at line 109 cannot be opened for reading. Please ensure that this file is available in the current working directory or parent directory of xsim.dir location specified via -xsimdir switch.
+WARNING: file deliberately_missing_soc.hex could not be opened
+Fatal: FAIL SIM_DATA cannot open 'deliberately_missing_soc.hex'. Recreate the project with scripts/create_lab_compat_project.tcl; check staged data files and VIVADO_GUI.
+Time: 1 ns  Iteration: 0  Process: /tb_soc_minimal_rom_fault/checks/require_hex_file  Scope: tb_soc_minimal_rom_fault.checks.require_hex_file  File: D:/RC Project/riscv_soc_project/tb/common/sim_data_check.vh Line: 11
+$finish called at time : 1 ns

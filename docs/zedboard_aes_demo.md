@@ -44,8 +44,8 @@ an image if setup or hold fails. The first attempts missed timing; request
 capture during the existing MMIO wait cycle shortened the response path.
 No internal false paths or lower clock target were used to obtain this result.
 
-Synthesis and routing establish implementation timing, not observed board
-operation. **Physical programming/LED observation is still pending.**
+**Physical PASS reported October 27: 3/3 AES trials**, with LD0 blinking,
+LD1 ON, and LD2-LD7 OFF each time. See [the user's lab result](lab_results_2026-10-27.md).
 
 ## LED meanings
 

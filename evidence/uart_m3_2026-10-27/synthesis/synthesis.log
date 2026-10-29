@@ -1,0 +1,277 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 18:09:42 2026
+# Process ID         : 4416
+# Current directory  : D:/RC Project/riscv_soc_project
+# Command line       : vivado.exe -mode batch -source scripts/check_uart_synthesis.tcl -log build/uart_synthesis/synthesis.log -journal build/uart_synthesis/synthesis.jou
+# Log file           : D:/RC Project/riscv_soc_project/build/uart_synthesis/synthesis.log
+# Journal file       : D:/RC Project/riscv_soc_project\build/uart_synthesis/synthesis.jou
+# Running On         : Anand-LOQ_25
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13450HX
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 16
+# Host memory        : 16873 MB
+# Swap memory        : 15569 MB
+# Total Virtual      : 32442 MB
+# Available Virtual  : 11671 MB
+#-----------------------------------------------------------
+source scripts/check_uart_synthesis.tcl
+# set root [file normalize [file join [file dirname [info script]] ..]]
+# set out [file join $root build uart_synthesis]
+# file mkdir $out
+# create_project -in_memory -part xc7z020clg484-1
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 529.523 ; gain = 219.828
+# read_verilog [list [file join $root rtl peripherals uart_tx.v] \
+#                    [file join $root rtl peripherals uart_mmio.v]]
+# synth_design -top uart_mmio -part xc7z020clg484-1 -mode out_of_context
+Command: synth_design -top uart_mmio -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9064
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1070.156 ; gain = 535.699
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'uart_mmio' [D:/RC Project/riscv_soc_project/rtl/peripherals/uart_mmio.v:5]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [D:/RC Project/riscv_soc_project/rtl/peripherals/uart_tx.v:6]
+	Parameter CLKS_PER_BIT bound to: 868 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [D:/RC Project/riscv_soc_project/rtl/peripherals/uart_tx.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'uart_mmio' (0#1) [D:/RC Project/riscv_soc_project/rtl/peripherals/uart_mmio.v:5]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1189.105 ; gain = 654.648
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1189.105 ; gain = 654.648
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1189.105 ; gain = 654.648
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1189.105 ; gain = 654.648
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 2     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[31] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[30] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[29] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[28] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[27] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[26] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[25] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[24] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[23] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[22] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[21] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[20] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[19] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[18] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[17] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[16] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[15] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[14] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[13] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[12] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[11] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[10] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[9] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[8] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[7] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[6] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[5] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[4] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[3] driven by constant 0
+WARNING: [Synth 8-3917] design uart_mmio has port rdata[2] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:39 . Memory (MB): peak = 1427.605 ; gain = 893.148
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:39 . Memory (MB): peak = 1427.605 ; gain = 893.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:39 . Memory (MB): peak = 1435.098 ; gain = 900.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:44 . Memory (MB): peak = 1657.422 ; gain = 1122.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:44 . Memory (MB): peak = 1657.422 ; gain = 1122.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:44 . Memory (MB): peak = 1657.422 ; gain = 1122.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:44 . Memory (MB): peak = 1657.422 ; gain = 1122.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:44 . Memory (MB): peak = 1657.422 ; gain = 1122.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:44 . Memory (MB): peak = 1657.422 ; gain = 1122.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     2|
+|2     |LUT2 |     3|
+|3     |LUT3 |     7|
+|4     |LUT4 |    15|
+|5     |LUT5 |    10|
+|6     |LUT6 |    25|
+|7     |FDRE |    37|
++------+-----+------+
+
+Report Instance Areas: 
++------+--------------+--------+------+
+|      |Instance      |Module  |Cells |
++------+--------------+--------+------+
+|1     |top           |        |    99|
+|2     |  transmitter |uart_tx |    63|
++------+--------------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:44 . Memory (MB): peak = 1657.422 ; gain = 1122.965
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 30 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:44 . Memory (MB): peak = 1657.422 ; gain = 1122.965
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:44 . Memory (MB): peak = 1657.422 ; gain = 1122.965
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1672.465 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1788.035 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 5267f84b
+INFO: [Common 17-83] Releasing license: Synthesis
+14 Infos, 30 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:48 . Memory (MB): peak = 1788.035 ; gain = 1258.512
+# create_clock -name uart_clk -period 10.000 [get_ports clk]
+# report_utilization -file [file join $out utilization.rpt]
+# report_timing_summary -file [file join $out timing_synth.rpt]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+report_timing_summary: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1788.035 ; gain = 0.000
+# report_timing -from [all_registers -clock uart_clk] -to [all_registers -clock uart_clk] \
+#     -max_paths 10 -file [file join $out register_paths.rpt]
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 10 -nworst 1 -delay_type max -sort_by slack.
+# set latches [get_cells -quiet -hier -filter {REF_NAME =~ LD*}]
+# if {[llength $latches]} { error "Unexpected UART latches: $latches" }
+# set paths [get_timing_paths -from [all_registers -clock uart_clk] -to [all_registers -clock uart_clk] -max_paths 1]
+# if {![llength $paths]} { error "No constrained UART register path" }
+# set slack [get_property SLACK [lindex $paths 0]]
+# set stream [open [file join $out summary.txt] w]
+# puts $stream "UART MMIO out-of-context synthesis; Vivado [version -short]"
+# puts $stream "Device: xc7z020clg484-1; default divider 868; clock constraint 10.000 ns"
+# puts $stream "Inferred latches: 0"
+# puts $stream "Estimated worst register-to-register setup slack: $slack ns"
+# puts $stream "Pre-route estimate only; top-level I/O delays intentionally unspecified."
+# puts $stream "CPU integration, routed timing, and physical UART operation remain pending."
+# close $stream
+# write_checkpoint -force [file join $out uart_mmio_synth.dcp]
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1788.035 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/RC Project/riscv_soc_project/build/uart_synthesis/uart_mmio_synth.dcp' has been generated.
+# close_project
+# puts "UART_SYNTHESIS_COMPLETE: register setup estimate $slack ns; no latches"
+UART_SYNTHESIS_COMPLETE: register setup estimate 6.368 ns; no latches
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 27 18:10:49 2026...

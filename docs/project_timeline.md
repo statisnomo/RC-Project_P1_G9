@@ -1,6 +1,7 @@
 # Build timeline: finish by 20 November 2026
 
 Plan created: **23 October 2026**; status updated **27 October**.
+Simulation recovery update: **29 October**; see the lab-version note below.
 The confirmed deadline is **20 November
 2026**, replacing the original December 2 target. Dates use India time.
 
@@ -24,13 +25,25 @@ The standalone AES core passed M1 on October 24: 1,810 primitive checks,
 [AES acceptance guide](aes_core.md) for logs and early synthesis results.
 The CPU now controls AES through the approved MMIO window. Its four-block
 program, register-access tests, reset/restart, and error paths pass. The
-project now includes **14 simulation sets**. See the
+CPU/AES lab pack included **14 simulation sets**. See the
 [CPU/AES integration record](cpu_aes_integration.md).
 
-**Physical board testing is still pending.** Real peripheral controllers
-and the full demonstration firmware remain to be built. The October 27
-lab visit uses the [small-test procedure](lab_2026-10-27.md); it also
-collects board/module revision information needed for M3.
+The next UART step has also passed its unit/MMIO tests (M3.2), adding
+two sets for **16 in the current project**. Follow [the UART walkthrough](uart_tx.md).
+
+The user reported CPU/AES simulation data failures in lab **Vivado 2020**,
+then added test 7 (minimal SoC) on October 29 without its error message.
+The [next-lab checklist](../NEXT_LAB.md) prioritizes tests 6/7/11/12/13.
+The project was generated with 2025.2. The [recovery route](lab_simulation_recovery.md)
+creates a fresh project in the installed version; its 16 local simulations
+pass on 2025.2, while the 2020 lab retest remains **P15**. This does not
+remove the separately reported physical board passes.
+
+**ALU, CPU, and CPU/AES passed on the physical board**, as reported by the
+user on October 27, including three successful AES trials. See the
+[lab results](lab_results_2026-10-27.md). Peripheral controllers and the
+full demonstration firmware are next; board/module revision information
+is still needed before enabling their I/O.
 
 Evidence: [simulation summary](../build/vivado_gui_validation/gui_test_summary.txt),
 [ALU build record](zedboard_alu_demo.md), [CPU build record](zedboard_cpu_demo.md),
@@ -244,7 +257,9 @@ OLED demonstration. If it is still blocked by November 12, explicitly
 review the remaining scope; a fixed-input AES/LED demo is useful evidence
 but does not satisfy the complete project's acceptance condition.
 
-The next development stage is **M3: independently tested UART, keypad,
-and OLED controllers**. Confirm actual module revisions and key legends
-before final I/O assignments. The lab first validates the existing ALU,
-CPU, and CPU/AES demos; do not mark physical gates passed from simulation.
+The current development stage is **M3: independently tested UART, keypad,
+and OLED controllers**. UART unit/MMIO tests have passed; the next small
+step is **M3.3, keypad scanning**. Confirm actual module revisions and key legends
+before final I/O assignments. The existing ALU, CPU, and CPU/AES demos
+have passed their reported physical checks. New peripheral tests each
+need their own simulation, implementation, and physical acceptance.

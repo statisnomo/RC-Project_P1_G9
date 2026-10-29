@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+SIM_DATA_OK 'valid.mem': 2 words
+PASS tb_sim_data_check: valid fixture accepted
+$finish called at time : 1 ns : File "D:/RC Project/riscv_soc_project/tb/common/tb_sim_data_check.v" Line 18

@@ -19,7 +19,8 @@ This file records the project baseline supplied on October 2, 2026.
   meets the desired 11–14 cycle budget with **11 clock periods from request
   acceptance to completion**, verified in simulation on October 24. It uses
   on-the-fly key expansion; earliest next acceptance is 12 periods later.
-  CPU-visible latency and routed integrated timing remain to be measured.
+  CPU-visible latency remains to be measured. The CPU/AES board image
+  passes routed 100 MHz timing; full-system timing is a later gate.
 - Peripherals: hardware Pmod KYPD scanner, SPI Pmod OLED controller
   (128x32 SSD1306), and UART TX debugging.
 - Debug connections: USB/JTAG and UART.
@@ -76,3 +77,9 @@ October 27: [soc_aes](cpu_aes_integration.md) connects the real AES MMIO
 window. The other three windows currently return access errors. Four-block
 firmware, wait-state tests, reset/restart, and firmware error paths pass.
 The older `soc_minimal` signature test remains a separate baseline.
+
+The [UART transmitter and register wrapper](uart_tx.md) now pass standalone
+unit/MMIO simulations. Their [register contract](uart_interface.md) uses
+TXDATA at UART offset 0x00 and STAT at 0x04. They are not yet instantiated
+in `soc_aes`; its non-AES windows still return errors. The user reported
+physical ALU/CPU/CPU-AES PASS in [the October 27 lab results](lab_results_2026-10-27.md).

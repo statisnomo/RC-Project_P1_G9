@@ -12,6 +12,12 @@ module tb_aes128_core;
 
     `include "aes_reference.vh"
     `include "aes128_vector_count.vh"
+    `include "sim_data_check.vh"
+`ifdef VIVADO_GUI
+    localparam VECTOR_FILE = "aes128_kat.mem";
+`else
+    localparam VECTOR_FILE = "tb/crypto/vectors/aes128_kat.mem";
+`endif
     reg [383:0] vectors [0:NIST_CASES-1];
     localparam [127:0] DEMO_KEY = 128'h000102030405060708090a0b0c0d0e0f;
     localparam [127:0] DEMO_PT = 128'h00112233445566778899aabbccddeeff;
@@ -98,11 +104,12 @@ module tb_aes128_core;
     end
 
     initial begin
-`ifdef VIVADO_GUI
-        $readmemh("aes128_kat.mem",vectors);
-`else
-        $readmemh("tb/crypto/vectors/aes128_kat.mem",vectors);
-`endif
+        #1; // Run All reaches the preflight; project launch remains at time zero.
+        require_hex_file(VECTOR_FILE, NIST_CASES);
+        $readmemh(VECTOR_FILE, vectors, 0, NIST_CASES-1);
+        for (i = 0; i < NIST_CASES; i = i + 1)
+            if ((^vectors[i]) === 1'bx)
+                $fatal(1,"FAIL SIM_DATA '%0s': vector %0d was not loaded by readmemh", VECTOR_FILE, i);
         // Reset beats START, including at power-up.
         start = 1; tick; check_status(0,0,128'b0);
         @(negedge clk); start = 0; rst = 0;

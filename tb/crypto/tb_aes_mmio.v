@@ -10,6 +10,12 @@ module aes_mmio_checks #(parameter WAIT_CYCLES=1) (output reg finished=0);
     wire [31:0] rdata;
     aes_mmio #(.WAIT_CYCLES(WAIT_CYCLES)) dut (.*);
     `include "aes_reference.vh"
+    `include "sim_data_check.vh"
+`ifdef VIVADO_GUI
+    localparam VECTOR_FILE = "aes128_kat.mem";
+`else
+    localparam VECTOR_FILE = "tb/crypto/vectors/aes128_kat.mem";
+`endif
     integer checks=0, transfers=0, starts=0, completions=0, cycle=0, launch_cycle=0;
     integer i,j,m,n,offset,before_starts;
     reg active=0;
@@ -125,11 +131,12 @@ module aes_mmio_checks #(parameter WAIT_CYCLES=1) (output reg finished=0);
     endtask
 
     initial begin
-`ifdef VIVADO_GUI
-        $readmemh("aes128_kat.mem",vectors);
-`else
-        $readmemh("tb/crypto/vectors/aes128_kat.mem",vectors);
-`endif
+        #1; // Run All reaches the preflight; project launch remains at time zero.
+        require_hex_file(VECTOR_FILE, 284);
+        $readmemh(VECTOR_FILE, vectors, 0, 283);
+        for (i = 0; i < 284; i = i + 1)
+            if ((^vectors[i]) === 1'bx)
+                $fatal(1,"FAIL SIM_DATA '%0s': vector %0d was not loaded by readmemh", VECTOR_FILE, i);
         reset_dut;
         read_word(0,0);read_word(4,0);
         for(i=0;i<4;i=i+1) begin read_word(16+4*i,0);read_word(32+4*i,0);read_word(48+4*i,0);end
