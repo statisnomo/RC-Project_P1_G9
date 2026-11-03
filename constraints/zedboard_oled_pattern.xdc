@@ -1,0 +1,26 @@
+# External Digilent Pmod OLED J1 to ZedBoard JB. JB3 is unused.
+set_property PACKAGE_PIN Y9 [get_ports clk_100mhz]
+create_clock -name pl_clock -period 10 [get_ports clk_100mhz]
+set_property PACKAGE_PIN W12 [get_ports {cs_n}]
+set_property PACKAGE_PIN W11 [get_ports {mosi}]
+set_property PACKAGE_PIN W8 [get_ports {sclk}]
+set_property PACKAGE_PIN V12 [get_ports {dc}]
+set_property PACKAGE_PIN W10 [get_ports {res_n}]
+set_property PACKAGE_PIN V9 [get_ports {vbat_n}]
+set_property PACKAGE_PIN V8 [get_ports {vdd_n}]
+set_property PACKAGE_PIN T22 [get_ports {led[0]}]
+set_property PACKAGE_PIN T21 [get_ports {led[1]}]
+set_property PACKAGE_PIN U22 [get_ports {led[2]}]
+set_property PACKAGE_PIN U21 [get_ports {led[3]}]
+set_property PACKAGE_PIN V22 [get_ports {led[4]}]
+set_property PACKAGE_PIN W22 [get_ports {led[5]}]
+set_property PACKAGE_PIN U19 [get_ports {led[6]}]
+set_property PACKAGE_PIN U14 [get_ports {led[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports *]
+set_false_path -to [get_ports {led[*]}]
+# All SPI signals derive from registered states. The external SPI runs at
+# 2.5 MHz. Bound pad delays/skew well inside the 200 ns half period.
+set_max_delay -datapath_only 15 -from [all_registers -clock pl_clock] -to [get_ports {cs_n mosi sclk dc res_n vbat_n vdd_n}]
+set_property CFGBVS VCCO [current_design]
+set_property CONFIG_VOLTAGE 3.3 [current_design]
+

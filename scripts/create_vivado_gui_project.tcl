@@ -63,6 +63,7 @@ set_property file_type {Memory Initialization Files} [get_files $vectors]
 source [file join $root scripts add_aes_to_project.tcl]
 source [file join $root scripts add_cpu_aes_to_project.tcl]
 source [file join $root scripts add_uart_to_project.tcl]
+source [file join $root scripts add_keypad_to_project.tcl]
 source [file join $root scripts configure_lab_simulation_data.tcl]
 update_compile_order -fileset sources_1
 foreach fs [get_filesets -filter {FILESET_TYPE == SimulationSrcs}] {

@@ -3,8 +3,10 @@
 Reviewed on 22 October 2026 against the four files in
 [the board reference library](references/zedboard/README.md). This plan
 records board wiring now so later peripheral work uses checked pins.
-Physical board revision and peripheral module revisions remain to be
-recorded at the lab.
+The user confirms standard **Digilent Pmod KYPD** and **Pmod OLED** modules.
+The UART adapter is unconfirmed. Physical board/module revisions and
+connector orientation should be recorded before wiring; product identity
+does not need to be asked again.
 
 ## The current demos need no pin changes
 
@@ -161,3 +163,7 @@ When a new peripheral's top-level ports and unit test are ready:
 Do not add the uploaded sample XDC or the entire reference template to
 the active project. Interface timing constraints will be added when the
 corresponding controller's real timing is defined.
+
+## November 3: two separate board projects
+
+The new keypad/AES image enables JA for the KYPD. The separate checkerboard image enables JB for the external OLED. Each has its own XDC and top; the older AES-only project still uses clock and LEDs. See [the current lab sheet](../LAB_THIS_WEEK.md) for connector orientation, expected outputs and how to generate the images.

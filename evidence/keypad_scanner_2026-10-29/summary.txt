@@ -1,0 +1,3 @@
+Vivado 2025.2; keypad scanner and minimal SoC simulations passed.
+Keypad default-parameter out-of-context synthesis: no latches; 100 MHz register setup estimate 4.049 ns.
+Pre-route only. MMIO, CPU integration, board constraints and physical keypad tests remain pending.

@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+PASS keypad_scanner_checks: COL=4 DB=3; 16 positions, held/release/repress, bounce policy, rollover, chords/ghosting, reset; 30 presses 26 releases
+PASS keypad_scanner_checks: COL=7 DB=1; 16 positions, held/release/repress, bounce policy, rollover, chords/ghosting, reset; 30 presses 26 releases
+PASS keypad_scanner_checks: COL=11 DB=5; 16 positions, held/release/repress, bounce policy, rollover, chords/ghosting, reset; 30 presses 26 releases
+PASS tb_keypad_scanner: 3 timing configurations, all positions, bounce, holds, rollover, chords, ghosting and reset
+$finish called at time : 353060 ns : File "D:/RC Project/riscv_soc_project/tb/peripherals/tb_keypad_scanner.v" Line 153

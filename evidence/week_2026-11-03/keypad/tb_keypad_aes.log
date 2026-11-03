@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_keypad_aes: 64 printed digits, 64 ACKs, 2 ciphertexts in RAM, open-drain columns and chord rejection
+$finish called at time : 442800 ns : File "D:/RC Project/riscv_soc_project/tb/board/tb_keypad_aes.v" Line 54

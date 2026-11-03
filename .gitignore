@@ -49,3 +49,4 @@ __pycache__/
 *.key
 .vscode/
 .idea/
+/vivado/zedboard_*_lab*/

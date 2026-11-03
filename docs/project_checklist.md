@@ -1,8 +1,8 @@
 # Project checklist
 
 Deadline: **20 November 2026**. Full-demo target: **15 November**.
-Last reviewed: **29 October 2026**, including board passes and the separate
-Vivado 2020 simulation failures.
+Last reviewed: **29 October 2026**, including eight reported lab simulation
+passes and the previously reported board passes.
 
 Tick a box only after its stated result is observed. Add the task ID, date,
 and evidence location to [progress_log.md](progress_log.md). A future file
@@ -37,57 +37,87 @@ Latest result: the user confirmed **all three board images passed**, with
 P4/P5/H2 are accepted from that observation; see the
 [physical test record](lab_results_2026-10-27.md). The
 [earlier lab review](lab_followup_2026-10-27.md) remains a historical record.
-Personal simulation checks stay open until reported. Media archiving and
-the separate CPU repeat are tracked below rather than hiding the passed tests.
+Tests **1–4/8–10/14 passed October 27**, clarified by the user.
+On October 29, tests **5/6/7/11/12/13/15/16** also passed in the lab;
+see [the simulation result record](lab_results_2026-10-29.md).
+Waveform learning and evidence archiving are tracked separately below.
 
-- [ ] P1: Open the `.xpr` in Vivado and run `sim_1` / `tb_alu` to PASS;
-  inspect operands, operation, result, and zero in the waveform.
-- [ ] P2: Run `sim_soc_minimal` and `sim_cpu_board`; explain what each checks.
+- [x] P1: Run `sim_1` / `tb_alu` to PASS. User confirms October 27 PASS;
+  waveform exercise is tracked separately in P17.
+- [x] P2: Run `sim_soc_minimal` and `sim_cpu_board` to PASS.
+  Minimal SoC passed October 29; CPU board-wrapper simulation passed October 27.
+  Explaining the waveforms remains a learning exercise in P17.
 - [ ] P3: Record board/device revision, module models, and available lab slots.
   Confirm access to power, USB-JTAG, both Pmods, and a 3.3 V logic UART adapter.
 - [x] P4: Program the existing ALU image; observe LD0 blinking, LD1 on,
   LD2-LD7 off. User reported PASS on October 27.
 - [x] P5: Program the existing CPU image; observe the same healthy LED
   pattern. User reported PASS on October 27.
-- [ ] P6: Small Vivado test, no board needed: select `sim_aes_primitives`
+- [x] P6: Small Vivado test, no board needed: select `sim_aes_primitives`
   / `tb_aes_primitives`, then **Run Behavioral Simulation > Run All**.
   Observe `PASS tb_aes_primitives: 1810 checks` and save the PASS message.
-- [ ] P7: Small Vivado test, no board needed: select `sim_aes_core`
+- [x] P7: Small Vivado test, no board needed: select `sim_aes_core`
   / `tb_aes128_core`, then **Run Behavioral Simulation > Run All**.
   Observe `PASS tb_aes128_core: 17433 checks, 556 completed blocks`.
-  Inspect 25-135 ns: START accepted, BUSY high, then DONE and ciphertext
-  `69c4e0d86a7b0430d8cdb78070b4c55a`. Save the waveform and PASS message.
-- [ ] P8: Run `sim_aes_mmio` / `tb_aes_mmio` in Vivado to PASS; inspect a
-  completed START write and verify that waiting cycles do not apply writes.
-- [ ] P9: Run `sim_soc_aes` / `tb_soc_aes` in Vivado to PASS; find the real
-  CPU's START/status/ciphertext accesses and the returned ciphertext in RAM.
-- [ ] P10: Run `sim_aes_board` / `tb_aes_board` to PASS; inspect the healthy
-  LED pattern before the deliberate fault tests. See [the CPU/AES guide](cpu_aes_integration.md).
+  PASS reported October 29; waveform exercise moved to P17.
+- [x] P8: Run `sim_aes_mmio` / `tb_aes_mmio` in Vivado to PASS.
+  PASS reported October 29; waveform exercise moved to P17.
+- [x] P9: Run `sim_soc_aes` / `tb_soc_aes` in Vivado to PASS.
+  PASS reported October 29; waveform exercise moved to P17.
+- [x] P10: Run `sim_aes_board` / `tb_aes_board` to PASS.
+  User confirms October 27 PASS; waveform exercise is P17. See [the CPU/AES guide](cpu_aes_integration.md).
 - [ ] P11: Archive a photo/video of the board tests with their image names
   for the final report. Functional passes are already recorded.
 - [ ] P12: Record a repeat of the standalone CPU image and its restart
   method; only the AES repeat count was explicitly reported so far.
-- [ ] P13: Small UART Vivado test: run `sim_uart_tx` / `tb_uart_tx` to PASS;
-  inspect the first A frame in `real_baud`, including the full stop bit.
-- [ ] P14: Run `sim_uart_mmio` / `tb_uart_mmio` to PASS; observe TX starting
-  at bus completion and an expected error for a write while BUSY.
+- [x] P13: Small UART Vivado test: run `sim_uart_tx` / `tb_uart_tx` to PASS.
+  PASS reported October 29; waveform exercise moved to P17.
+- [x] P14: Run `sim_uart_mmio` / `tb_uart_mmio` to PASS.
+  PASS reported October 29; waveform exercise moved to P17.
   Follow the [small UART walkthrough](uart_tx.md); no board is needed.
-- [ ] P15: In lab Vivado 2020, use **Tools > Run Tcl Script** with
-  `scripts/create_lab_compat_project.tcl`. Rerun `sim_cpu_core`,
+- [x] P15: Lab functional recovery: rerun `sim_cpu_core`,
   `sim_soc_minimal` (test 7), `sim_aes_core`, `sim_aes_mmio`, and
-  `sim_soc_aes` to PASS. For test 7, also save `SIM_ROM_LOAD_OK`. Save
-  `setup_report.txt` and logs. See [the recovery guide](lab_simulation_recovery.md).
+  `sim_soc_aes` to PASS. All five PASS messages reported October 29.
+  The lab was previously identified as Vivado 2020. Setup/evidence follow-up
+  is P16; see [the lab result](lab_results_2026-10-29.md).
+- [ ] P16: Archive the full lab logs, `setup_report.txt`, exact Vivado
+  version and source revision, and test 7's `SIM_ROM_LOAD_OK` line.
+  The pasted PASS messages are already saved; this is supplementary evidence.
+- [ ] P17: Complete the waveform exercises originally grouped with
+  P7/P8/P9/P13/P14: AES START/BUSY/DONE and known ciphertext;
+  MMIO START at completion; CPU status/ciphertext reads and RAM results;
+  UART's first A frame/full stop bit; UART bus completion and busy-write error.
+  Also inspect ALU/register-file and board-wrapper signals and explain the
+  minimal-SoC versus CPU board-wrapper tests. Save useful waveform views.
+- [ ] P18: Run keypad scanner test 17, `sim_keypad_scanner` /
+  `tb_keypad_scanner`, to PASS in the lab; observe one pulse per press,
+  stable release, and multiple-key lockout. See [the scanner guide](keypad_scanner.md).
+- [ ] P19: Run keypad MMIO test 18, `sim_keypad_mmio` / `tb_keypad_mmio`,
+  to PASS in the lab. Inspect pending data surviving reads, ACK freeing
+  the slot, and OVERFLOW preserving the first key. See [the MMIO guide](keypad_mmio.md).
+
+- [ ] P20: On lab Vivado run test 19: 64 keypad digits through CPU to two checked ciphertexts.
+- [ ] P21: Run test 20: capture the external OLED startup, checkerboard and shutdown.
+- [ ] P22: Generate both bitstreams in the lab GUI; save the timing reports and exact .bit names.
+- [ ] P23: On JA verify real keypad labels, one press per hold and the 32nd digit block indicator.
+- [ ] P24: On JB photograph the external OLED pattern; record automatic shutdown and LD1.
+
+Use the [November 3–4 lab sheet](../LAB_THIS_WEEK.md) for P18–P24.
+For older waveform and evidence follow-ups, see
+[the remaining tests and preparation checklist](remaining_lab_tasks.md).
 
 P15 follows the reported failures in tests **6/7/11/12/13** on
 Vivado 2020; test 7 was reported on October 29 without an error excerpt.
 Use [the next-lab checklist](../NEXT_LAB.md). The October 29 revision passed
 all 16 sets and eight diagnostic scenarios locally in 2025.2; see
 [the evidence](../evidence/lab_sim_recovery_2026-10-29/README.md).
-The lab-version retest is still required. Physical P4/P5/H2
-remain passed and do not need to be repeated solely for this setup change.
+The user subsequently reported all five recovery tests passing in the lab
+on October 29. P15 is complete; supplementary setup evidence is P16.
+Physical P4/P5/H2 remain passed separately.
 
-P6-P10 are your personal observations and remain unchecked until you run
-them. Follow the [small AES test walkthrough](aes_core.md); no terminal
+P6/P10 passed October 27; P7/P8/P9 passed October 29. All original
+16 simulation tests have now passed in the lab; waveform learning is P17.
+Follow the [small AES test walkthrough](aes_core.md); no terminal
 commands or physical board are needed.
 
 Procedure: [next-lab checklist](../NEXT_LAB.md), followed by the
@@ -143,8 +173,10 @@ Routed 100 MHz setup/hold: +0.311/+0.159 ns. H2 passed from the
   positions, bank voltages, and final signal assignments before wiring.
 - [x] M3.2: UART unit/MMIO tests pass: framing, baud timing, byte order,
   consecutive bytes, busy behavior, and reset.
-- [ ] M3.3: Keypad unit/MMIO tests pass: all keys, bounce, held key,
+- [x] M3.3: Keypad unit/MMIO tests pass: all keys, bounce, held key,
   release/repress, event acknowledgement, multiple-key policy, and reset.
+  Scanner and mailbox passed locally October 29, including all 16 positions,
+  ACK/event races and overflow. See [the MMIO evidence](../evidence/keypad_mmio_2026-10-29/README.md).
 - [ ] M3.4: OLED unit/MMIO tests pass: power/reset ordering, SPI, command/data,
   flow control, pixel/text formatting, and full ciphertext display.
 - [ ] M3.5: Add tests to the GUI project and prepare separate board images
@@ -158,7 +190,9 @@ Routed 100 MHz setup/hold: +0.311/+0.159 ns. H2 passed from the
 
 UART engineering tests passed October 27: [guide](uart_tx.md),
 [contract](uart_interface.md), and [evidence](../evidence/uart_m3_2026-10-27/README.md).
-The GUI project has 16 sets. Adapter availability is assumed for planning;
+The current source adds scanner test 17 and keypad MMIO test 18; the published recovery snapshot
+has 16 sets. M3.3's engineering tests pass; P18/P19 are the new lab checks.
+Adapter availability is assumed for planning;
 its actual model/logic voltage still needs checking before wiring. UART
 CPU integration, routed board build, and H3.1 remain open.
 
@@ -241,3 +275,4 @@ Copy this short section into a new progress entry; do not reuse old ticks.
 - [ ] Append the visit record and choose the next test that can run without the board.
 
 Use a fresh copy of [lab_record_template.md](lab_record_template.md) for each visit.
+

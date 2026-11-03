@@ -1,0 +1,29 @@
+November 3–4, 2026 | Lab record
+Name:                         Vivado Help > About:
+Board / module revisions:     ZIP name:
+Source change (or "unchanged"):
+Each result: PASS, FAIL or NOT RUN. For a failure save the first error / mismatch.
+
+Today: PC only
+17 scanner:
+18 keypad MMIO:
+19 CPU/keypad/AES (two CTs):
+20 OLED SPI and power:
+Paste four final messages or attach screenshots:
+
+Bitstreams actually generated on the lab PC
+Keypad project / bit filename + timestamp:
+Setup WNS:           Hold WHS:           DRC:
+OLED project / bit filename + timestamp:
+Setup WNS:           Hold WHS:           DRC:
+
+Tomorrow: physical board
+Bit used: [ ] lab-built  [ ] prebuilt; filename:
+JA keypad LD6 heartbeat / LD7 fault:
+Printed key -> LD3..0 (1, 2, A, F, 0):
+Hold / repeat / two-key / release:
+LD5 before digit 32 / after digit 32 / after digit 64:
+JB OLED bit used:
+Checkerboard visible?       Approx. seconds:        LD1 after shutdown?
+Photos / filenames:
+First unexpected observation (if any):

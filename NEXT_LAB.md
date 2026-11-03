@@ -1,8 +1,21 @@
-# Next lab: recover tests 6, 7, 11, 12, and 13
+# This week's lab: November 3–4
+Download [the November lab ZIP](https://raw.githubusercontent.com/statisnomo/RC-Project_P1_G9/main/deliverables/riscv_soc_lab_2026-11-03.zip) and extract it on the lab PC. Start with [the two board projects and GUI lab tests](LAB_THIS_WEEK.md). Run tests 17–20, generate both bitstreams on the lab PC, then test the keypad and external OLED on the ZedBoard. Tests 1–16 have already passed in the lab.
+
+The older recovery procedure follows for reference.
+## October archive: recover tests 6, 7, 11, 12, and 13
+
+**All original tests 1–16 passed across October 27 and 29.**
+On October 29, tests **5/6/7/11/12/13/15/16**
+were reported PASS. See [the recorded results](docs/lab_results_2026-10-29.md).
+P15's functional recovery is complete. Keep the procedure below for reruns;
+remaining evidence and waveform exercises are P16/P17 in the checklist.
+For what to do now, use [the remaining-test checklist](docs/remaining_lab_tasks.md).
+The new scanner increment adds [test 17](docs/keypad_scanner.md) in the
+current source; the published recovery snapshot still has sixteen tests.
 
 Updated **29 October 2026**. Use Vivado's menus; no terminal commands are needed.
 The lab reported **Vivado 2020**. The development installation is **2025.2**,
-so the lab retest is still required. No FPGA board is needed for these simulations.
+with the reported lab rerun recorded above. No FPGA board is needed for these simulations.
 
 ## 1. Download and create the project
 
@@ -37,21 +50,21 @@ For each item below:
    you do not need to type anything there.
 5. Save the PASS line, then use **File > Close Simulation** before switching sets.
 
-Check these boxes only after seeing the result on the lab computer:
+The boxes below reflect the user's October 29 lab PASS report:
 
-- [ ] **Test 5 — memory check:** `sim_memories` / `tb_memories`.
+- [x] **Test 5 — memory check:** `sim_memories` / `tb_memories`.
   Expected `PASS tb_memories: 24 checks`.
-- [ ] **Test 6 — CPU:** `sim_cpu_core` / `tb_cpu_core`.
+- [x] **Test 6 — CPU:** `sim_cpu_core` / `tb_cpu_core`.
   Expected `PASS tb_cpu_core: 76 cases, 1287 retirements`.
-- [ ] **Test 7 — CPU + ROM + RAM:** `sim_soc_minimal` / `tb_soc_minimal`.
+- [x] **Test 7 — CPU + ROM + RAM:** `sim_soc_minimal` / `tb_soc_minimal`.
   First expect `SIM_DATA_OK 'cpu_smoke.hex': 1024 words` and
   `SIM_ROM_LOAD_OK 'cpu_smoke.hex': all 1024 DUT words match file`.
   Then expect `PASS tb_soc_minimal: ROM program, sum=55, load-use=56, one delayed MMIO write, 44 retirements`.
-- [ ] **Test 11 — AES core:** `sim_aes_core` / `tb_aes128_core`.
+- [x] **Test 11 — AES core:** `sim_aes_core` / `tb_aes128_core`.
   Expected `PASS tb_aes128_core: 17433 checks, 556 completed blocks`.
-- [ ] **Test 12 — AES registers/bus:** `sim_aes_mmio` / `tb_aes_mmio`.
+- [x] **Test 12 — AES registers/bus:** `sim_aes_mmio` / `tb_aes_mmio`.
   Expected `PASS tb_aes_mmio: 1/3 wait edges, 284 NIST blocks per mode`.
-- [ ] **Test 13 — CPU runs AES:** `sim_soc_aes` / `tb_soc_aes`.
+- [x] **Test 13 — CPU runs AES:** `sim_soc_aes` / `tb_soc_aes`.
   Expected `PASS tb_soc_aes: real CPU/ROM/RAM/AES, 1/5 wait edges, 32 checked blocks`.
 
 These are prefixes of the full PASS messages. A `$finish` after PASS is normal.
@@ -93,3 +106,4 @@ three working `.bit` files are in [build/](build/README.md); this simulation
 recovery does not require rebuilding or reprogramming them. If the lab has
 the peripheral hardware, also record the KYPD/OLED module models and the
 3.3 V USB-to-TTL adapter model for the next wiring step.
+

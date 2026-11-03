@@ -1,5 +1,12 @@
 # Recover the five lab simulations in Vivado 2020
 
+**Outcome update, 29 October:** the user reported PASS for all five
+recovery tests, plus memory test 5 and UART tests 15/16. See
+[the lab results](lab_results_2026-10-29.md). P15's functional gate is
+complete; full logs/setup details remain P16. The preparation notes below
+describe the earlier failure and recovery work, not a request to repeat
+already-passed tests.
+
 Lab reports: **27 and 29 October 2026**. Recovery updated **29 October 2026**.
 The user confirmed opening the supplied `.xpr` in **Vivado 2020**; its
 exact minor version is not yet recorded. That project was generated and
@@ -120,8 +127,9 @@ Stop that simulation after a FAIL; fix the reported setup issue and
 launch a fresh simulation instead of repeatedly clicking Run All.
 
 Only Vivado **2025.2** is installed on the development machine. Local
-verification cannot certify a Vivado **2020** run; that compatibility
-check remains the lab retest. The reported failures and the successful
+verification alone cannot certify a Vivado **2020** run. The user has now
+reported the lab recovery tests passing; exact version/setup evidence
+remains P16. The reported failures and the successful
 physical board observations are retained separately in the project log.
 
 The October 28 recovery passed **all 16 normal simulations** in a freshly

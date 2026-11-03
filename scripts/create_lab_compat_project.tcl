@@ -21,7 +21,7 @@ puts $stream "Project created by Vivado [version -short]"
 puts $stream "Source root: $root"
 puts $stream "Project: $project_file"
 puts $stream "128 simulation data files checked for word count and hex format."
-puts $stream "16 simulation sets; active: sim_cpu_core."
+puts $stream "[llength [get_filesets -filter {FILESET_TYPE == SimulationSrcs}]] simulation sets; active: sim_cpu_core."
 puts $stream "Run the five reported failing tests first: 6 CPU, 7 minimal SoC, 11 AES core, 12 AES MMIO, 13 CPU/AES."
 puts $stream "Project creation is not a simulation PASS. Save the actual test results."
 close $stream

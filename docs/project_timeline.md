@@ -1,6 +1,6 @@
 # Build timeline: finish by 20 November 2026
 
-Plan created: **23 October 2026**; status updated **27 October**.
+Plan created: **23 October 2026**; current lab plan **3 November**.
 Simulation recovery update: **29 October**; see the lab-version note below.
 The confirmed deadline is **20 November
 2026**, replacing the original December 2 target. Dates use India time.
@@ -13,7 +13,11 @@ Use [project_checklist.md](project_checklist.md) to tick tasks and
 [progress_log.md](progress_log.md) to record dated results. The checklist
 is the maintained record; this document explains the order and deadlines.
 
-## Where we are now
+## November 3–4 lab
+
+November 3: tests 17–20 in Vivado, then generate the two images from editable lab projects. November 4: keypad-to-CPU/AES on JA and standalone OLED checkerboard on JB. Save results before marking the physical milestones complete. Next integration: let the CPU send its saved ciphertext to the OLED as 32 hex characters. See [the weekly lab sheet](../LAB_THIS_WEEK.md).
+
+## October baseline
 
 The CPU, memories, and minimal SoC are implemented. All **nine existing
 simulation sets** passed in the saved October 22 Vivado run. The ALU and
@@ -33,11 +37,12 @@ two sets for **16 in the current project**. Follow [the UART walkthrough](uart_t
 
 The user reported CPU/AES simulation data failures in lab **Vivado 2020**,
 then added test 7 (minimal SoC) on October 29 without its error message.
-The [next-lab checklist](../NEXT_LAB.md) prioritizes tests 6/7/11/12/13.
-The project was generated with 2025.2. The [recovery route](lab_simulation_recovery.md)
-creates a fresh project in the installed version; its 16 local simulations
-pass on 2025.2, while the 2020 lab retest remains **P15**. This does not
-remove the separately reported physical board passes.
+The user subsequently reported tests **5/6/7/11/12/13/15/16 passing in
+the lab on October 29**, closing **P15's functional recovery gate**.
+See [the lab results](lab_results_2026-10-29.md). Supplementary setup/log
+archiving remains P16; waveform learning remains P17. The project creator
+and sixteen local simulations passed separately on 2025.2. Next is
+**M3.3, keypad scanner and MMIO tests**.
 
 **ALU, CPU, and CPU/AES passed on the physical board**, as reported by the
 user on October 27, including three successful AES trials. See the
@@ -263,3 +268,4 @@ step is **M3.3, keypad scanning**. Confirm actual module revisions and key legen
 before final I/O assignments. The existing ALU, CPU, and CPU/AES demos
 have passed their reported physical checks. New peripheral tests each
 need their own simulation, implementation, and physical acceptance.
+

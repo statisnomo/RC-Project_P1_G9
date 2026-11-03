@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ZedBoard lab | 3-4 November</title><style>body{max-width:55rem;padding:1rem 2rem;margin:auto;font:16px/1.55 system-ui;color:#172638}h1,h2{line-height:1.2}h2{margin-top:2rem;color:#144968}td,th{padding:.4rem;border:1px solid #a6b9c3;text-align:left}table{border-collapse:collapse}li{margin:.4em 0}code{background:#eff4f6;padding:.08em .22em}a{color:#04588c}@media print{body{font-size:11pt}h2{break-after:avoid}}</style><body><h1 id="november-34-lab-build-your-own-bitstreams-then-test-the-two-pmods">November 3–4 lab: build your own bitstreams, then test the two Pmods</h1>
+<p><strong>Today (Nov 3):</strong> do tests 17–20 on the lab PC and generate both bitstreams yourself. <strong>Tomorrow (Nov 4):</strong> test the real keypad and OLED separately. No UART adapter or serial terminal is needed. Tests 1–16 already passed in the lab.</p>
+<h2 id="start-in-vivado-no-terminal">1. Start in Vivado — no terminal</h2>
+<ol>
+<li>Extract the <strong>entire weekly ZIP</strong> to a new writable local folder, e.g. <code>C:\RC_Nov03</code>. Work in the folder containing this guide. Do not work inside the ZIP. Keep it for tomorrow.</li>
+<li>Launch the lab's Vivado 2020.x. With no project open, choose <strong>Tools → Run Tcl Script</strong> and select <strong>scripts/create_keypad_board_project.tcl</strong>. This once-only setup creates and opens a project in <em>your installed version</em>. It references the RTL in your extracted folder; keep those files together. If the part is missing, have the lab enable <strong>Zynq-7000 → xc7z020clg484-1</strong> device support.</li>
+<li>Confirm <strong>Design Sources</strong> top <code>zedboard_keypad_aes</code>, <strong>Constraints</strong> <code>zedboard_keypad_aes.xdc</code>. Under <strong>Simulation Sources</strong>, choose the set listed below (right-click → <strong>Make Active</strong>, or <strong>Settings → Simulation → Simulation set</strong>). Choose <strong>Run Simulation → Run Behavioral Simulation</strong>, then click <strong>Run All</strong>. Copy the final PASS line from the Vivado Tcl Console. Close <strong>only the simulation</strong> between tests.</li>
+<li>After tests 17–19, build this project as in section 2. Close the project. Choose <strong>Tools → Run Tcl Script → scripts/create_oled_board_project.tcl</strong>. Confirm top <code>zedboard_oled_pattern</code> and <code>zedboard_oled_pattern.xdc</code>. Run test 20 and build that project too. Tomorrow reopen the same .xpr from <strong>File → Project → Open</strong>. Rerunning a setup script deliberately creates a new numbered folder.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Done</th>
+<th>Test / simulation set</th>
+<th>What proves it worked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ ]</td>
+<td>17 · <code>sim_keypad_scanner</code></td>
+<td><code>PASS tb_keypad_scanner:</code> — all 16 positions, bounce, holds and multi-key rejection.</td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>18 · <code>sim_keypad_mmio</code></td>
+<td><code>PASS tb_keypad_mmio:</code> — reads retain the first press; CPU acknowledgment frees its slot.</td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>19 · <code>sim_keypad_aes</code></td>
+<td><code>PASS tb_keypad_aes:</code> — 64 printed digits, 64 ACKs, two ciphertexts checked byte by byte in RAM.</td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>20 · <code>sim_oled_pattern</code></td>
+<td><code>PASS tb_oled_pattern:</code> — 1,048 SPI bytes checked at the output pins, clear, checkerboard, power sequencing.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>One useful waveform:</strong> In test 19 expand <code>tb_keypad_aes → dut</code>; add <code>addr</code>, <code>v</code>, <code>w</code>, <code>kr</code>, <code>ar</code> and <code>led</code> to Wave. Use <strong>Restart → Run All</strong>. After the 32nd digit, look for a completed write of 1 at <strong>0x40000000</strong> (AES START), followed by reads of <strong>0x40000030–3C</strong>. For input <code>00112233445566778899AABBCCDDEEFF</code>, public test key <code>000102030405060708090A0B0C0D0E0F</code>, ciphertext in byte order is <strong>69C4E0D86A7B0430D8CDB78070B4C55A</strong>. The four RAM words starting at 0x1020 read <strong>D8E0C469 30047B6A 80B7CDD8 5AC5B470</strong> (little endian). The second block is all zeros with the same key.</p>
+<h2 id="generate-a-new.bit-on-the-lab-pc-including-after-edits">2. Generate a new .bit on the lab PC, including after edits</h2>
+<ol>
+<li>In the correct board project edit the design file under <strong>Sources → Design Sources</strong> and save it. To practice with a visible change, in the OLED project change only the default <code>VIEW_CYCLES</code> from <code>800000000</code> to <code>400000000</code> (eight seconds → four at 100 MHz). Leave the reset and supply delays alone. Test 20 uses shorter overridden delays; the timed physical observation checks the changed default.
+For firmware changes, edit <code>fw/src/keypad_aes.S</code>, then open <code>fw/build_keypad_aes.py</code> in Python 3 IDLE and choose <strong>Run → Run Module (F5)</strong> to regenerate <code>fw/keypad_aes.hex</code> before synthesis. The supplied ROM and all RTL edits need no Python. The helper supports the instruction forms in the supplied assembly source.</li>
+<li>Run the affected behavioral test to PASS; close the simulation. Click <strong>Flow Navigator → Program and Debug → Generate Bitstream</strong>. Agree to run synthesis and implementation if prompted. Wait for <strong>Bitstream Generation Completed</strong>. A board need not be connected.</li>
+<li>After another edit, if Vivado still shows the previous run as complete, open <strong>Design Runs</strong>, right-click <strong>synth_1 → Reset Run</strong>, then <strong>Generate Bitstream</strong> again. Resetting a run discards its generated products; first copy any image/reports you want to retain. Keep the sources.</li>
+<li><strong>Open Implemented Design → Reports → Timing → Report Timing Summary</strong>. Require setup <strong>WNS ≥ 0</strong> and hold <strong>WHS ≥ 0</strong> on the 10 ns clock. <strong>Report DRC</strong>: no errors or critical warnings; check I/O Ports against the project's XDC. Save reports from your build. Do not use an image with missing pins or failed timing.</li>
+<li>The new image is under <strong>vivado/<project>/<project>.runs/impl_1/<top>.bit</strong>, where the project directory is printed as <code>LAB_BOARD_PROJECT_READY</code>. In <strong>Design Runs</strong>, right-click <strong>impl_1 → Open Run Directory</strong> to find it. Copy your .bit to a folder named for today's date/edit; record the filename and timestamp. Two projects produce two different images. For comparison the ZIP's <strong>prebuilt/</strong> folder has the locally generated reference images.</li>
+</ol>
+<p>If the simulation fails, save the <strong>first Fatal or ERROR</strong>, the simulation set and Vivado version. If synthesis or implementation fails, open the failed run's <strong>Messages</strong> or <strong>runme.log</strong>, and save the first error. A simulation PASS does not supply a bitstream. A generated bitstream does not prove that the module is wired correctly.</p>
+<h2 id="on-the-zedboard-keypad-ja">3. On the ZedBoard: keypad (JA)</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Bring ZedBoard, its power supply, USB-JTAG data cable, Digilent Pmod KYPD and external Pmod OLED. Power <strong>off</strong> to attach/remove modules. Fit KYPD J1 to <strong>JA</strong>, both rows, pin 1 to pin 1; confirm 3.3 V/GND alignment. Leave OLED detached for this test. Connect USB to <strong>J17</strong>. Power on.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>Hardware Manager → Open Target → Auto Connect → xc7z020 → Program Device</strong>. Browse explicitly to <strong>your</strong> <code>zedboard_keypad_aes.bit</code>. Clear any stale probes file. Program with all keys released. LD6 should blink; LD7 (CPU fault) should stay off.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Press and release <strong>1, 2, A, F, 0</strong> slowly. Read <strong>LD3…LD0</strong>, in that order: <strong>0001, 0010, 1010, 1111, 0000</strong>. <strong>LD4 flips once per accepted key</strong>, including zero or a repeated digit. Release between presses. Hold 5 for one second: one flip only. Press two keys together from idle: a chord seen together produces no digit; release both, then tap 5 again. Human fingers may land separately; test 17 checks exact simultaneity.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Reprogram with keys released to start an empty block. Type <strong>00112233445566778899AABBCCDDEEFF</strong> (two taps of each of 0 through F). <strong>LD5 stays off through digit 31, turns on after digit 32</strong> when firmware has stored the ciphertext. Repeat another 32 digits; LD5 turns off. LD6 keeps blinking; LD7 stays off. The LED is a completion marker; compare the actual ciphertext in simulation 19.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Save a photo/video showing header JA, key label and LEDs. If heartbeat works but digits are wrong, note printed key → observed four LED bits for 1, A, 0, D. Check pin-1 alignment with power off. Do not reuse the older AES self-test LED legend.</li>
+</ul>
+<h2 id="on-the-zedboard-external-oled-jb">4. On the ZedBoard: external OLED (JB)</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Power off. Disconnect the keypad; fit the <strong>128×32 Digilent Pmod OLED</strong> on <strong>JB</strong>, pin 1 to pin 1. This is the external module, not the display built into the ZedBoard or a Pmod OLEDrgb. Leave other Pmods disconnected.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Power on and program <strong>your</strong> <code>zedboard_oled_pattern.bit</code> via Hardware Manager. Look immediately: the external display should show a black-and-white <strong>8×8-pixel checkerboard</strong> for about <strong>8 seconds</strong> (4 if you made the suggested edit). <strong>LD0 on</strong> marks the viewing interval.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> The display then goes dark, followed by <strong>LD1 on</strong> after a further <strong>3.5 seconds</strong> for orderly shutdown. Wait for LD1 before powering off or reprogramming. Reprogram to repeat. If the board reaches LD1 but the display stayed blank, record that as a failed physical display check: LD1 only confirms the controller finished.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Save a picture while the pattern is visible and a second one at LD1. If blank, note JB orientation, exact module/revision, LED behavior and image used. This test checks the panel interface. Rendering CPU ciphertext as text is a later build.</li>
+</ul>
+<p>Pin references: <a href="https://digilent.com/reference/_media/pmod:pmod:pmodKYPD_rm.pdf">Digilent KYPD manual</a>, <a href="https://github.com/Digilent/vivado-library/blob/master/ip/Pmods/PmodKYPD_v1_0/drivers/PmodKYPD_v1_0/examples/main.c">Digilent key layout</a>, <a href="https://digilent.com/reference/_media/reference/pmod/pmodoled/pmodoled_rm.pdf">Digilent external OLED manual</a>. The project uses ZedBoard PL headers at 3.3 V and a 100 MHz PL clock.</p>
+<p><strong>Bring back:</strong> exact Vivado version, four PASS lines (or first failure), both new .bit filenames, setup/hold slack, and observed key/LED/panel results. Record skipped tests as not run. No new physical result has been claimed in this guide.</p>
+</body></html>

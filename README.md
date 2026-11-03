@@ -1,5 +1,7 @@
 # Custom RISC-V SoC with a Cryptographic Hardware Accelerator
 
+**November 3–4 lab:** [Build both .bit files in Vivado and test the keypad and OLED](LAB_THIS_WEEK.md).
+
 A custom RISC-V CPU and AES-128 accelerator in the ZedBoard programmable
 logic, with Pmod KYPD input, Pmod OLED output, and UART debugging.
 
@@ -9,7 +11,12 @@ results, and rehearsal. Use the [timeline](docs/project_timeline.md),
 [master checklist](docs/project_checklist.md), and
 [progress log](docs/progress_log.md) to track each small verified step.
 
-**Next lab: [follow this GUI checklist](NEXT_LAB.md).** It covers the reported
+**Lab update:** all original tests **1–16 passed** across October 27 and 29, including
+all five previously failing simulations and both UART tests. See
+[the lab results](docs/lab_results_2026-10-29.md). The next build step is
+the keypad scanner; setup-log archiving and waveform exercises remain separate.
+
+**For a lab rerun: [follow this GUI checklist](NEXT_LAB.md).** It covers the reported
 failures in tests **6, 7, 11, 12, and 13**, including test 7's new ROM check.
 Download the latest repository ZIP, then create a fresh project using
 **Tools > Run Tcl Script > `scripts/create_lab_compat_project.tcl`** in lab
@@ -20,7 +27,9 @@ For the original board procedure, use
 [VIVADO_START_HERE.md](VIVADO_START_HERE.md). Open
 `vivado/riscv_soc_lab/riscv_soc_lab.xpr` directly only when using the tested
 2025.2 installation; the lab should use its freshly generated project.
-Both contain sixteen simulation sets.
+The current source adds keypad scanner test 17 and MMIO test 18 to the original sixteen sets.
+See [the remaining lab tasks](docs/remaining_lab_tasks.md) for work you
+can do with the already-published sixteen-test snapshot.
 [LAB_START_HERE.md](LAB_START_HERE.md) retains the optional script-based workflow.
 
 **Need the programming files from GitHub?** Open [build/](build/README.md)
@@ -175,3 +184,4 @@ the other user LEDs should be off. CPU-to-AES MMIO integration now passes.
 The next peripheral step is the keypad scanner; UART unit/MMIO tests pass.
 Confirm exact module revisions and wiring before enabling peripheral I/O.
 The existing ALU, CPU, and CPU/AES images have reported physical PASS.
+

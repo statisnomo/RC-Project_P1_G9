@@ -87,7 +87,12 @@ You can also select a simulation set in the Sources pane and use its
 explicit way to choose the set.
 [AMD documents the simulation-set and top-module settings here](https://docs.amd.com/r/2025.2-English/ug900-vivado-logic-simulation/Using-Simulation-Settings).
 
-## The sixteen tests to run
+## The eighteen tests in the current source
+
+The published October 29 recovery snapshot has tests 1–16. The keypad
+scanner and MMIO increments add tests 17/18. All original tests 1–16
+have reported lab PASS results across October 27 and 29. Use
+[this short checklist](docs/remaining_lab_tasks.md) for learning and preparation.
 
 ### 1. ALU
 
@@ -251,6 +256,25 @@ still uses its signature checker; `soc_aes` connects the real AES registers.
   `error`, `busy`, and `tx`. Only a successful bus completion sends a byte.
 - Deliberate busy/invalid accesses return errors; the overall PASS line
   is the result. See [the UART bus walkthrough](docs/uart_tx.md#test-2-send-through-the-cpu-style-bus).
+
+### 17. Keypad scanner
+
+- Set: **`sim_keypad_scanner`**. Top: **`tb_keypad_scanner`**.
+- Expected: **`PASS tb_keypad_scanner`**, three timing configurations.
+- Checks all 16 positions, exact debounce thresholds, holds, release,
+  rollover, multiple-key rejection, ghosting and reset.
+- Watch `minimum/keys`, `col_drive_low`, `rows_n`, `press`, `key_position`,
+  `release_event`, and `blocked`. See [the scanner walkthrough](docs/keypad_scanner.md).
+- This is scanner-only; keypad MMIO, CPU integration and hardware tests follow.
+
+### 18. Keypad event mailbox and MMIO
+
+- Set: **`sim_keypad_mmio`**. Top: **`tb_keypad_mmio`**.
+- Expected: **`PASS tb_keypad_mmio`**, 466 checks across waits 1/4 and
+  mailbox-only/pin-driven scanner configurations.
+- Observe `fast/press`, `key_position`, `valid`, `ready`, `addr`,
+  `wdata`, `rdata` and `error`. DATA reads do not acknowledge the key.
+- See [the register contract and test guide](docs/keypad_mmio.md).
 
 ## Save evidence in Vivado
 

@@ -1,0 +1,7 @@
+Time resolution is 1 ps
+PASS keypad_mmio_checks: integrated=0 wait=1 checks=122 transfers=124
+PASS keypad_mmio_checks: integrated=0 wait=4 checks=122 transfers=124
+PASS keypad_mmio_checks: integrated=1 wait=1 checks=111 transfers=111
+PASS keypad_mmio_checks: integrated=1 wait=4 checks=111 transfers=111
+PASS tb_keypad_mmio: mailbox and real scanner, waits 1/4, 16 positions, ACK/event races, overflow, invalid/cancelled accesses and reset
+$finish called at time : 92120 ns : File "D:/RC Project/riscv_soc_project/tb/peripherals/tb_keypad_mmio.v" Line 116

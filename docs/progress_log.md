@@ -3,6 +3,10 @@
 Deadline: **20 November 2026**. Use India time for dates.
 Task IDs refer to [project_checklist.md](project_checklist.md).
 
+## 3 November 2026 — lab projects for both Pmods
+
+Built the CPU keypad firmware path to AES and RAM, plus a standalone external OLED checkerboard with automatic shutdown. Tests 17–20 passed on development Vivado 2025.2. Each project now has a GUI setup entry point for editing and generating its own bitstream on the lab PC. [Local evidence](../evidence/week_2026-11-03/README.md) and [the lab procedure](../LAB_THIS_WEEK.md) distinguish development verification from the pending lab checks P18–P24.
+
 ## 23 October 2026 — plan established
 
 - Deadline updated to November 20; working full-demo target November 15. 
@@ -180,6 +184,59 @@ Task IDs refer to [project_checklist.md](project_checklist.md).
 - **P15 remains open** for the five reported failures in lab Vivado 2020.
   The accepted board images and user waveform files are unchanged.
 
+## 29 October 2026 — eight lab simulations passed
+
+- User supplied PASS messages for tests **5, 6, 7, 11, 12, 13, 15, 16**.
+  Saved them in [the lab result record](lab_results_2026-10-29.md).
+- All five previously failing simulations now pass as reported in the
+  lab, including test 7. Closed **P15's functional recovery gate** and
+  recorded simulation completion for **P7/P8/P9/P13/P14**.
+- Split supplementary setup/log archiving into **P16** and unreported
+  waveform learning into **P17**, preserving the completed functional tests.
+  Exact version/source revision and setup report were not supplied today;
+  the lab was previously identified as Vivado 2020.
+- This report concerns simulation, not new FPGA programming or UART
+  hardware reception. Next implementation milestone is **M3.3, keypad scanner**.
+
+## 29 October 2026 — keypad scanner increment passed locally
+
+- Implemented column scanning, two-stage row synchronization, stable-scan
+  debounce, one-shot position events, stable release, rollover suppression,
+  multi-key lockout, and reset requiring all-release before arming.
+- Tests drive a passive matrix model through the scanner's pins, including
+  ghost paths. Three accelerated timing configurations pass all 16 positions
+  and exact debounce thresholds; the existing minimal SoC also still passes.
+- Default synthesis: 86 LUTs, 88 FFs, no latches; preliminary 100 MHz
+  register setup +4.049 ns. No routed keypad image or physical test claimed.
+- Added GUI test 17/P18, [scanner documentation](keypad_scanner.md), and
+  [the user's parallel lab tasks](remaining_lab_tasks.md). Evidence is
+  in [the scanner snapshot](../evidence/keypad_scanner_2026-10-29/README.md).
+- **M3.3 remains open:** persistent events, acknowledgement, overflow,
+  hex-label mapping and MMIO are the next increment. Existing board
+  designs and constraints are unchanged. New work is local, not yet pushed.
+
+## 29 October 2026 — record correction and keypad MMIO accepted
+
+- User clarified that tests **1–4/8–10/14 passed on October 27**.
+  The earlier assistant description as unreported was incorrect. All
+  original tests **1–16 have reported lab PASS** across October 27 and 29.
+  Corrected checklist P1/P2/P6/P10 and the lab/preparation records; waveform
+  learning remains separate from functional success.
+- User confirms standard **Digilent Pmod KYPD and Pmod OLED** targets.
+  UART adapter remains unconfirmed; no peripheral wiring enabled.
+- Added a persistent keypad event mailbox at the approved MMIO base,
+  explicit ACK/overflow clear, first-event retention, and deterministic
+  ACK/new-press and clear/new-overflow priorities.
+- Test 18 passed **466 checks / 470 bus completions**, across waits 1/4,
+  direct event tests and the real scanner driven through the matrix pins.
+  Scanner test 17 and minimal-SoC regression also passed.
+- Default synthesis: **137 LUTs, 83 FFs, no latches**, preliminary
+  100 MHz register setup **+4.290 ns**. Zero routed/hardware claims.
+  [Evidence](../evidence/keypad_mmio_2026-10-29/README.md).
+- **M3.3 engineering gate complete**; P18/P19 are the new lab tests.
+  CPU integration and physical-position-to-hex translation are next.
+  Work remains local and has not been pushed.
+
 ## Copy for each session or lab visit
 
 Date / start-end time:
@@ -204,3 +261,4 @@ Only after evidence is saved: update the corresponding checklist boxes.
 For a blocked task, retain the partial result and exact failure instead of
 marking it complete. An old pack remains a snapshot; keep this live log in
 the project and include its latest copy in the next pack.
+

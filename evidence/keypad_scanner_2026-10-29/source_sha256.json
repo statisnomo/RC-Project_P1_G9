@@ -1,0 +1,10 @@
+{
+  "rtl/peripherals/keypad_scanner.v": "4d3a07d46fc2312ce3bb2963b48b3c2133c44a09f02c25622575cadf4fbc1e8a",
+  "tb/peripherals/tb_keypad_scanner.v": "36e501be414bb1598eeaa969dc242f589f9b6395468c115f071dd057518235a5",
+  "tb/peripherals/keypad_matrix_model.v": "8fe8adad52c362ceeec1887482d359827af874f25983b60047f39fb41965de3e",
+  "scripts/add_keypad_to_project.tcl": "baa50c8e6cea06b5613632fab024f5e09093b5e3f0c94d0cd3c1a2934c812590",
+  "scripts/verify_keypad_scanner.tcl": "2af9a795a2805e9825496bea9c7b8e72cf9e101f831c4a5bae0a67a7af547615",
+  "scripts/create_vivado_gui_project.tcl": "f28dfb4434403dfc3ec89565121d5d4c496fedfc73522985f5e5797ca46b2fa3",
+  "scripts/create_lab_compat_project.tcl": "627ef486156296d0caa612cc15f02c6fbb03659bc62dcc755362ee7b39881781",
+  "vivado/riscv_soc_lab/riscv_soc_lab.xpr": "d4a612ee687bfe727dc4d2b7001074a7017f426d2b9443a278aa27f0f4d5c3e7"
+}
