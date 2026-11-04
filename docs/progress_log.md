@@ -267,3 +267,13 @@ the project and include its latest copy in the next pack.
 
 Tests 17–20 and the independent keypad/AES and OLED board demos passed (user report and photos). No lab bitstream regeneration was performed. The next combined build moves OLED to JC to fit beside the JA keypad; optional UART moves to JD1. Internal tests cover both full displayed ciphertexts and orderly chord shutdown/restart. See [development notes](development_update_2026-11-05.md).
 
+## November 5: waveform files recovered and remaining work reconciled
+
+All four user-supplied waveform configurations are now archived in
+`evidence/lab_2026-11-04/wave_configs/`; XML parsing and source/copy SHA-256
+comparisons passed. These preserve layouts, not recorded waveform samples.
+M3.4 is marked complete from the existing local OLED access and captured-pixel
+test evidence. P25–P28 and physical combined-display acceptance remain open.
+The checklist now separates user lab work from remaining firmware robustness,
+regression, measurement and submission work. No RTL or bitstreams changed.
+

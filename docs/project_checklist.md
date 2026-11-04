@@ -1,13 +1,47 @@
 # Project checklist
 
 Deadline: **20 November 2026**. Full-demo target: **15 November**.
-Last reviewed: **29 October 2026**, including eight reported lab simulation
-passes and the previously reported board passes.
+Last reviewed: **5 November 2026**. Lab simulations 1–20 and the independent
+keypad/AES and OLED board demos passed. Combined tests 21–23 passed locally;
+the combined JA/JC image meets routed 100 MHz timing but awaits lab testing.
 
 Tick a box only after its stated result is observed. Add the task ID, date,
 and evidence location to [progress_log.md](progress_log.md). A future file
 or test named below is planned work, not a file claimed to exist today.
 Use [the timeline](project_timeline.md) for dates and dependencies.
+
+## Remaining work and ownership — November 5
+
+The next lab priority is P25–P28 in the [combined demo guide](../NEXT_LAB_COMBINED.md).
+There is no need to repeat all 20 passed lab simulations during this visit.
+
+User / lab:
+
+- [ ] Run tests 21–23 in lab Vivado and save the PASS lines (P25).
+- [ ] Connect keypad to JA and external OLED to JC; verify both complete
+  expected ciphertexts, shutdown/release/restart, then another block (P26/P27).
+- [ ] Run implementation and Generate Bitstream from the supplied source;
+  program that lab-generated image and repeat the known-answer check (P28).
+  Save timing reports, exact Vivado version, source revision and bitstream name.
+- [ ] Before the November 15 full-demo target, record ten consecutive varied
+  blocks, three fresh-start trials and a readable video (M5.3–M5.5).
+- [ ] Confirm a suitable 3.3 V USB-to-TTL adapter if testing physical UART;
+  UART reception can be deferred while completing the keypad/OLED demo.
+- [ ] Confirm the November 20 deadline time and course deliverables; practise
+  explaining the CPU, MMIO, AES and peripheral data flow (M7).
+
+Development work:
+
+- [ ] Add firmware timeout/error and keypad-overflow recovery (M4.2).
+- [ ] Finish system address/error-routing and fault/reset/stall stress tests;
+  run the final regression against one release revision (M4.1/M4.4/M4.5).
+- [ ] Record CPU-visible encryption cycles, ROM/RAM usage and final resource/
+  timing results separately from AES-only latency (M4.5/M6.1/M6.2).
+- [ ] Finish diagrams, report/demo documentation and the reproducible final
+  package with an extracted-copy check and backup (M6.3–M6.5).
+
+Older unchecked evidence and learning tasks below remain useful follow-ups;
+they do not mean previously reported functional passes have been revoked.
 
 ## Existing verified baseline
 
@@ -49,6 +83,8 @@ Waveform learning and evidence archiving are tracked separately below.
   Explaining the waveforms remains a learning exercise in P17.
 - [ ] P3: Record board/device revision, module models, and available lab slots.
   Confirm access to power, USB-JTAG, both Pmods, and a 3.3 V logic UART adapter.
+  November 4 photos establish Rev D, standard KYPD and external Pmod OLED;
+  UART adapter details and future lab availability remain unconfirmed.
 - [x] P4: Program the existing ALU image; observe LD0 blinking, LD1 on,
   LD2-LD7 off. User reported PASS on October 27.
 - [x] P5: Program the existing CPU image; observe the same healthy LED
@@ -162,7 +198,8 @@ since passed under M2 below.
   polls with timeout, and reads ciphertext into RAM.
 - [x] M2.4: Check assembly instruction compatibility, reset entry/stack,
   and ROM/RAM fit. Supply ready `.hex` and documented linker layout.
-  GNU linking and a C startup runtime remain future work.
+  The combined display firmware now uses GNU assembly/linking; a C startup
+  runtime is optional and is not required by the assembly demonstration.
 - [x] M2.5: Pass CPU-to-AES integration for several blocks/keys and reset;
   rerun affected baseline tests.
 - [x] M2.6: Build a CPU-plus-AES self-test image and check routed timing/DRC.
@@ -186,8 +223,11 @@ Routed 100 MHz setup/hold: +0.311/+0.159 ns. H2 passed from the
   release/repress, event acknowledgement, multiple-key policy, and reset.
   Scanner and mailbox passed locally October 29, including all 16 positions,
   ACK/event races and overflow. See [the MMIO evidence](../evidence/keypad_mmio_2026-10-29/README.md).
-- [ ] M3.4: OLED unit/MMIO tests pass: power/reset ordering, SPI, command/data,
+- [x] M3.4: OLED unit/MMIO tests pass: power/reset ordering, SPI, command/data,
   flow control, pixel/text formatting, and full ciphertext display.
+  Local tests 21/22 cover the MMIO display; see
+  [combined build evidence](../evidence/display_candidate_2026-11-04/).
+  Physical text/ciphertext confirmation remains P26.
 - [ ] M3.5: Add tests to the GUI project and prepare separate board images
   with their own checked pin/timing constraints and implementation reports.
 - [ ] G3: All three peripheral simulations pass; independent board tests ready.
@@ -199,11 +239,12 @@ Routed 100 MHz setup/hold: +0.311/+0.159 ns. H2 passed from the
 
 UART engineering tests passed October 27: [guide](uart_tx.md),
 [contract](uart_interface.md), and [evidence](../evidence/uart_m3_2026-10-27/README.md).
-The current source adds scanner test 17 and keypad MMIO test 18; the published recovery snapshot
-has 16 sets. M3.3's engineering tests pass; P18/P19 are the new lab checks.
+Tests 17–20 subsequently passed in the lab November 4. Combined tests 21–23
+are now packaged for the next visit; they have passed locally in Vivado 2025.2.
 Adapter availability is assumed for planning;
 its actual model/logic voltage still needs checking before wiring. UART
-CPU integration, routed board build, and H3.1 remain open.
+CPU integration and routed combined board build are complete; physical UART
+reception (H3.1) remains open.
 
 ## M4 — whole system — due November 12
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_keypad_aes_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_keypad_aes" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="442800001fs"></ZoomEndTime>
+      <Cursor1Time time="442800000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="204"></NameColumnWidth>
+      <ValueColumnWidth column_width="98"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/tb_keypad_aes/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keypad_aes/cols" type="array">
+      <obj_property name="ElementShortName">cols[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cols[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keypad_aes/rows" type="array">
+      <obj_property name="ElementShortName">rows[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rows[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keypad_aes/led" type="array">
+      <obj_property name="ElementShortName">led[7:0]</obj_property>
+      <obj_property name="ObjectShortName">led[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keypad_aes/keys" type="array">
+      <obj_property name="ElementShortName">keys[15:0]</obj_property>
+      <obj_property name="ObjectShortName">keys[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keypad_aes/low" type="array">
+      <obj_property name="ElementShortName">low[3:0]</obj_property>
+      <obj_property name="ObjectShortName">low[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keypad_aes/events" type="array">
+      <obj_property name="ElementShortName">events[31:0]</obj_property>
+      <obj_property name="ObjectShortName">events[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keypad_aes/blocks" type="array">
+      <obj_property name="ElementShortName">blocks[31:0]</obj_property>
+      <obj_property name="ObjectShortName">blocks[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keypad_aes/acks" type="array">
+      <obj_property name="ElementShortName">acks[31:0]</obj_property>
+      <obj_property name="ObjectShortName">acks[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keypad_aes/starts" type="array">
+      <obj_property name="ElementShortName">starts[31:0]</obj_property>
+      <obj_property name="ObjectShortName">starts[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keypad_aes/POS" type="array">
+      <obj_property name="ElementShortName">POS[63:0]</obj_property>
+      <obj_property name="ObjectShortName">POS[63:0]</obj_property>
+   </wvobject>
+</wave_config>
