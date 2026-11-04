@@ -44,9 +44,10 @@ module tb_display_system;
         else if(packets<534) expected=0;
         else if(packets==534) expected=8'haf;
         else begin
-            if(vbat!==0 || packets>=1559) $fatal(1,"FAIL unexpected OLED data");
-            offset=(packets-535)%512;page=offset/128;x=offset%128;expected=0;
-            ct=packets<1047?CT0:CT1;
+            if(vbat!==0 || packets>=2607) $fatal(1,"FAIL unexpected OLED data");
+            offset=packets>=2095 ? packets-2095 : (packets-535)%512;
+            page=offset/128;x=offset%128;expected=0;
+            ct=(packets<1047 || packets>=2095)?CT0:CT1;
             if((page==1 || page==2) && x%8<5) begin
                 k=(page-1)*16+x/8;
                 glyph=glyph_rows(ct[127-k*4-:4]);
@@ -54,7 +55,7 @@ module tb_display_system;
             end
         end
         if(octet!==expected || dc!==((packets>=22 && packets<534) ||
-           (packets>=535 && packets<1559) || (packets>=1582 && packets<2094)))
+           (packets>=535 && packets<1559) || (packets>=1582 && packets<2094) || packets>=2095))
             $fatal(1,"FAIL OLED byte %d got %h expected %h dc %b",packets,octet,expected,dc);
         bits=0;packets++;
     end
@@ -65,10 +66,10 @@ module tb_display_system;
             if(tx!==0) $fatal(1,"FAIL UART start");
             for(int i=0;i<8;i++) begin repeat(DIV) @(posedge clk);value[i]=tx;end
             repeat(DIV) @(posedge clk);if(tx!==1) $fatal(1,"FAIL UART stop");
-            ct=chars<33?CT0:CT1;
+            ct=(chars<33 || chars>=66)?CT0:CT1;
             if(chars%33==32) expect_char=10;
             else begin n=ct[127-4*(chars%33)-:4];expect_char=n<10?48+n:55+n;end
-            if(chars>=66 || value!==expect_char) $fatal(1,"FAIL UART char %d: %h != %h",chars,value,expect_char);
+            if(chars>=99 || value!==expect_char) $fatal(1,"FAIL UART char %d: %h != %h",chars,value,expect_char);
             chars++;
         end
     end
@@ -98,8 +99,12 @@ module tb_display_system;
         wait(vdd===1);repeat(150) @(negedge clk);
         if(packets!=1560 || vbat!==1 || chars!=66) $fatal(1,"FAIL shutdown hold");
         keys=0;wait(packets==2095);wait(dut.oled.idle);repeat(250) @(negedge clk);
-        if(dut.system.cpu.halted || swaps!=4 || acks!=65) $fatal(1,"FAIL restart");
-        $display("PASS tb_display_system: 64 digits, 2 AES ciphertexts, 1024 pixel bytes, 66 UART characters, overlap, partial input, chord shutdown and release restart");$finish;
+        if(dut.system.cpu.halted || swaps!=4 || acks!=66) $fatal(1,"FAIL restart");
+        for(int i=0;i<32;i++) digit(P[127-i*4-:4]);
+        wait(packets==2607 && chars==99);repeat(250) @(negedge clk);
+        if(acks!=98 || swaps!=5 || dut.system.ram.words[12]!==0 || dut.system.ram.words[13]!==0)
+            $fatal(1,"FAIL post-restart block or diagnostics");
+        $display("PASS tb_display_system: 96 digits, 3 AES ciphertexts, 1536 pixel bytes, 99 UART characters, overlap, partial input, chord shutdown and full block after restart");$finish;
     end
     initial begin #2500000;$fatal(1,"FAIL watchdog packets=%d chars=%d",packets,chars);end
 endmodule

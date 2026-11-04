@@ -1,6 +1,6 @@
 # Custom RISC-V SoC with a Cryptographic Hardware Accelerator
 
-**Next combined demo:** [JA keypad + JC OLED; source and bitstream workflow](NEXT_LAB_COMBINED.md). [November 4 lab results](docs/lab_results_2026-11-04.md).
+**Next lab:** [hardened JA keypad + JC OLED kit and GUI procedure](NEXT_LAB_COMBINED.md), with tests 21–26 and expanded physical checks. [Optional UART side test](LAB_UART_OPTIONAL.md). [November 4 lab results](docs/lab_results_2026-11-04.md).
 
 **November 3–4 lab:** [Build both .bit files in Vivado and test the keypad and OLED](LAB_THIS_WEEK.md).
 
@@ -13,12 +13,12 @@ results, and rehearsal. Use the [timeline](docs/project_timeline.md),
 [master checklist](docs/project_checklist.md), and
 [progress log](docs/progress_log.md) to track each small verified step.
 
-**Lab update:** all original tests **1–16 passed** across October 27 and 29, including
-all five previously failing simulations and both UART tests. See
-[the lab results](docs/lab_results_2026-10-29.md). The next build step is
-the keypad scanner; setup-log archiving and waveform exercises remain separate.
+**Lab update:** all original tests **1–20 passed** across October 27, October 29
+and November 4, along with the independent keypad/AES and OLED board demos.
+The combined image awaits physical verification. Its firmware now has bounded
+status waits and keypad overflow recovery. See the [release notes](docs/release_2026-11-05.md).
 
-**For a lab rerun: [follow this GUI checklist](NEXT_LAB.md).** It covers the reported
+**Historical October recovery workflow:** [GUI checklist](NEXT_LAB.md). It covers the reported
 failures in tests **6, 7, 11, 12, and 13**, including test 7's new ROM check.
 Download the latest repository ZIP, then create a fresh project using
 **Tools > Run Tcl Script > `scripts/create_lab_compat_project.tcl`** in lab

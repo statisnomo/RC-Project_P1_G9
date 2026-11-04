@@ -1,7 +1,7 @@
 # Internal development run. Existing lab projects and their products are untouched.
 set root [file normalize [file join [file dirname [info script]] ..]]
-set out [file join $root build display_candidate run_[pid]]
-set evidence [file join $root evidence display_candidate_2026-11-04]
+set out [file join $root build display_hardened run_[pid]]
+set evidence [file join $root evidence display_hardened_2026-11-05]
 file mkdir $evidence
 create_project display_candidate $out -part xc7z020clg484-1
 foreach dir {cpu mem crypto peripherals} {add_files -norecurse [glob [file join $root rtl $dir *.v]]}
@@ -16,9 +16,12 @@ set_property file_type {Memory Initialization Files} [get_files [list $rom]]
 add_files -fileset constrs_1 -norecurse [list [file join $root constraints zedboard_display.xdc]]
 set_property STEPS.SYNTH_DESIGN.ARGS.FLATTEN_HIERARCHY none [get_runs synth_1]
 set_property STEPS.PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
-foreach top {tb_oled_access tb_display_system tb_display_board} {
+foreach top {tb_oled_access tb_display_system tb_display_board tb_display_recovery tb_display_bus tb_display_repeat} {
     set fs [create_fileset -simset sim_$top]
     add_files -fileset $fs -norecurse [list [file join $root tb internal ${top}.sv] [file join $root tb peripherals keypad_matrix_model.v] $rom]
+    set vectors [file join $root tb internal display_lab_vectors.mem]
+    add_files -fileset $fs -norecurse [list $vectors]
+    set_property file_type {Memory Initialization Files} [get_files -of_objects $fs [list $vectors]]
     set_property file_type {Memory Initialization Files} [get_files -of_objects $fs [list $rom]]
     set_property top $top $fs
     set_property xsim.simulate.runtime 0ns $fs
@@ -31,6 +34,7 @@ foreach top {tb_oled_access tb_display_system tb_display_board} {
     if {[string first "PASS ${top}:" $contents]<0 || [regexp {Fatal:|\mFAIL\M} $contents]} {error "$top failed"}
     file copy -force $log [file join $evidence ${top}.log]
 }
+if {[lsearch -exact $argv sim-only]>=0} {close_project;puts "DISPLAY_SIM_PASS";exit}
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
 if {[get_property PROGRESS [get_runs impl_1]] ne "100%"} {error "Implementation failed"}
@@ -50,9 +54,9 @@ if {[llength [get_cells -hier -filter {REF_NAME =~ LD*}]]} {error "Latches infer
 foreach memory {rom ram} {
     if {![llength [get_cells -hier -filter "NAME =~ soc/system/$memory/* && REF_NAME =~ RAMB*"]]} {error "Missing $memory BRAM"}
 }
-file copy -force [file join [get_property DIRECTORY [get_runs impl_1]] zedboard_display.bit] [file join $root build display_candidate zedboard_display.bit]
+file copy -force [file join [get_property DIRECTORY [get_runs impl_1]] zedboard_display.bit] [file join $root build display_hardened zedboard_display.bit]
 set fd [open [file join $evidence summary.txt] w]
-puts $fd "Vivado [version -short], 100MHz. Setup $slack(max) ns; hold $slack(min) ns. Three simulations passed. Physical test pending."
+puts $fd "Vivado [version -short], 100MHz. Setup $slack(max) ns; hold $slack(min) ns. Six simulations passed. Physical test pending."
 close $fd
 close_project
 puts "DISPLAY_CANDIDATE_PASS"

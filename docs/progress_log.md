@@ -277,3 +277,23 @@ test evidence. P25–P28 and physical combined-display acceptance remain open.
 The checklist now separates user lab work from remaining firmware robustness,
 regression, measurement and submission work. No RTL or bitstreams changed.
 
+## November 5: hardened firmware, full regression and next lab package
+
+M4.1/M4.2/M4.4/M4.5/G4: bounded status polls and mailbox-overflow recovery
+implemented. Tests 21–26 passed, including a third full block after restart,
+six injected status faults, real mailbox overflow, 44 routed accesses and
+20 varied complete blocks with 660 decoded UART frames. All baseline tests
+1–20 passed again. Six combined tests passed from an extracted package too.
+
+M4.6: new image generated at 100 MHz, setup +0.146 ns / hold +0.132 ns;
+no DRC errors or critical warnings, known ZPS7-1 warning only. Memory use is
+680 bytes code and 56 bytes RAM, no stack. M6.1 records 11 AES-core clocks
+separately from 60/75 START-to-last-ciphertext-read clocks at waits 1/5.
+See [the release notes](release_2026-11-05.md) and saved evidence folders.
+
+The next lab guide adds tests 24–26, physical H1–H7, ten independently
+calculated ciphertext references and optional UART side test U1. JA keypad,
+JC OLED, JD1 TX remain the wiring. P25–P31 and combined physical M5 acceptance
+remain pending. Cleanup removed 65 ignored caches (57,540,356 bytes) while
+preserving source, evidence and distributed artifacts.
+

@@ -1,0 +1,86 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LAB UART OPTIONAL</title><style>body{max-width:960px;margin:32px auto;padding:0 24px;font:17px/1.6 system-ui;color:#17202a}h1,h2{line-height:1.25}pre{background:#f1f4f7;padding:16px;overflow:auto}code{font-size:0.95em}li{margin:8px 0}a{color:#075cab}@media print{body{font-size:11pt;margin:0}h2{break-after:avoid}pre{white-space:pre-wrap}}</style><body><h1 id="optional-uart-side-test-same-combined-image">Optional UART side test — same combined image</h1>
+<p>This test checks the real serial output of our PL-only RISC-V SoC. It needs no
+extra FPGA build and does not change the JA keypad / JC OLED wiring. It is
+optional if the lab has no suitable adapter. A disconnected adapter does not
+stop the FPGA transmitting, and the main display demo still works.</p>
+<h2 id="what-to-borrow">What to borrow</h2>
+<p>Ask for a <strong>3.3 V logic USB-to-TTL UART adapter</strong>, or a <strong>Digilent PmodUSBUART</strong>,
+its USB data cable, and two jumper leads. The DLC9LP in your photo is the JTAG
+programmer. The ZedBoard's onboard USB-UART is attached to the ARM/PS side;
+this design transmits from the FPGA/PL on <strong>JD pin 1 (FPGA V7)</strong>.</p>
+<p>A module named only &quot;Pmod UART&quot; is not enough to identify the wiring: check
+its model and pin labels. A PmodRS232 / DB9 RS-232 cable is a different electrical
+interface. Do not connect RS-232 levels or 5 V TX signals directly to our pins.</p>
+<h2 id="wiring-power-off-while-fitting-jumpers">Wiring — power off while fitting jumpers</h2>
+<p>For a generic USB-to-TTL adapter with confirmed 3.3 V logic:</p>
+<ul>
+<li>ZedBoard <strong>JD pin 1 → adapter RX/RXD</strong>.</li>
+<li>ZedBoard <strong>JD pin 5 or 11 → adapter GND</strong>.</li>
+<li>Leave adapter <strong>TX, VCC, 5V and 3V3 disconnected</strong> from the ZedBoard.</li>
+<li>Power the ZedBoard from its normal supply and the adapter from USB.</li>
+</ul>
+<p>For <strong>Digilent PmodUSBUART revision A</strong>, use jumper wires, not direct insertion
+of the module into JD:</p>
+<ul>
+<li>ZedBoard <strong>JD pin 1 → PmodUSBUART J2 pin 2 (RXD)</strong>.</li>
+<li>ZedBoard <strong>JD pin 5 → PmodUSBUART J2 pin 5 (GND)</strong>.</li>
+<li>Set its <strong>JP1 jumper to LCL</strong>, for an independently powered system board.</li>
+<li>Connect the module's micro-USB J1 to the PC. Leave J2 pins 1, 3, 4 and 6
+disconnected from the ZedBoard.</li>
+</ul>
+<p>Pin numbers and LCL selection come from the
+<a href="https://digilent.com/reference/_media/reference/pmod/pmodusbuart/pmodusbuart_rm.pdf">Digilent PmodUSBUART rev. A manual</a>.
+Use that module's pin-1 marking; do not infer orientation from wire colour.
+Our TX is on JD1, whereas this adapter receives on J2 pin 2, so plugging the
+whole module directly into JD will not connect the required signals.</p>
+<h2 id="open-a-serial-viewer-using-its-gui">Open a serial viewer using its GUI</h2>
+<ol>
+<li>Connect the adapter USB and open <strong>Windows Device Manager → Ports (COM &amp; LPT)</strong>.
+Note the adapter's COM number. If no port appears, ask the lab technician
+for the driver for that exact adapter; do not choose the JTAG device.</li>
+<li>Open an available serial viewer such as <strong>PuTTY</strong> or <strong>Tera Term</strong>. Choose
+<strong>Serial</strong>, select that COM port, and set <strong>115200 baud, 8 data bits,
+no parity, 1 stop bit, no flow control</strong>. No shell commands are needed.</li>
+<li>Enable session logging if available. Our firmware sends LF after each
+line; enable &quot;implicit CR in every LF&quot; / LF-to-CRLF display conversion if
+the next line appears indented. This affects the viewer only.</li>
+<li>Program the combined bitstream, with all keys released. <strong>No boot banner
+is expected.</strong> Output appears only after a complete 32-digit input block.</li>
+</ol>
+<h2 id="two-short-checks">Two short checks</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Enter <code>00112233445566778899AABBCCDDEEFF</code> on the keypad. The serial
+viewer must show one complete line:</li>
+</ul>
+<pre><code class="language-text">69C4E0D86A7B0430D8CDB78070B4C55A
+</code></pre>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Enter 32 zeros. The next line must be:</li>
+</ul>
+<pre><code class="language-text">C6A13B37878F5B826F4F8162A1C8D879
+</code></pre>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Compare each serial line with the two OLED lines joined together.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Try a partial block: no new serial line until digit 32.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> After orderly shutdown and restart, enter another block and confirm
+exactly one new line. If doing the ten-block test, capture all ten lines.</li>
+</ul>
+<p>The hardware uses 868 clocks/bit at 100 MHz: about 115207 baud. Each line is
+32 uppercase hex characters plus one LF, 33 frames total, 8N1. This is TX-only;
+typing into the serial viewer will not send input to the RISC-V program.</p>
+<h2 id="if-it-does-not-work">If it does not work</h2>
+<ul>
+<li><strong>OLED correct, serial blank:</strong> confirm COM port, JD1-to-RX mapping, shared
+ground, no flow control, and that a full block was entered after opening
+the viewer. If available, a scope/logic analyzer should see idle high and
+approximately 8.68 microseconds per bit on JD1 during output.</li>
+<li><strong>Unreadable characters:</strong> check 115200/8N1, 3.3 V logic and the ground.</li>
+<li><strong>LD7 on:</strong> save a photo and the first failing operation. This is a CPU or
+firmware fault indication, not simply a missing USB adapter. Reprogram
+only after recording the failure; use orderly OLED shutdown first when
+the running firmware can still respond.</li>
+</ul>
+<p>Save the adapter model, wiring photo, COM settings and received text. Mark
+this test <strong>not run</strong> if no suitable adapter is available; do not block the
+keypad/AES/OLED acceptance test on it.</p>
+</body></html>

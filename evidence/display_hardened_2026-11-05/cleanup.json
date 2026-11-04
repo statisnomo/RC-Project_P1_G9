@@ -1,0 +1,332 @@
+{
+  "applied": true,
+  "directories": 65,
+  "bytes": 57540356,
+  "targets": [
+    {
+      "relative": "build/release_extract_2026-11-05/.Xil",
+      "files": 0,
+      "bytes": 0
+    },
+    {
+      "relative": "build/display_internal/run_32956/internal.cache",
+      "files": 3,
+      "bytes": 842
+    },
+    {
+      "relative": "build/display_internal/run_18148/internal.cache",
+      "files": 3,
+      "bytes": 842
+    },
+    {
+      "relative": "build/display_hardened/run_39832/display_candidate.cache",
+      "files": 3,
+      "bytes": 842
+    },
+    {
+      "relative": "build/display_hardened/run_39572/display_candidate.cache",
+      "files": 6,
+      "bytes": 9423
+    },
+    {
+      "relative": "build/display_candidate/run_9376/display_candidate.cache",
+      "files": 5,
+      "bytes": 1956
+    },
+    {
+      "relative": "build/display_candidate/run_15484/display_candidate.cache",
+      "files": 6,
+      "bytes": 9423
+    },
+    {
+      "relative": "build/display_candidate/run_37616/display_candidate.cache",
+      "files": 6,
+      "bytes": 9423
+    },
+    {
+      "relative": "build/display_hardened/run_39572/display_candidate.runs/impl_1/.Xil",
+      "files": 0,
+      "bytes": 0
+    },
+    {
+      "relative": "build/display_candidate/run_15484/display_candidate.runs/impl_1/.Xil",
+      "files": 0,
+      "bytes": 0
+    },
+    {
+      "relative": "build/display_candidate/run_37616/display_candidate.runs/impl_1/.Xil",
+      "files": 0,
+      "bytes": 0
+    },
+    {
+      "relative": "build/display_hardened/run_39572/display_candidate.runs/synth_1/.Xil",
+      "files": 1,
+      "bytes": 4372
+    },
+    {
+      "relative": "build/display_candidate/run_15484/display_candidate.runs/synth_1/.Xil",
+      "files": 1,
+      "bytes": 4372
+    },
+    {
+      "relative": "build/display_candidate/run_37616/display_candidate.runs/synth_1/.Xil",
+      "files": 1,
+      "bytes": 4372
+    },
+    {
+      "relative": "build/display_internal/run_32956/internal.sim/sim_tb_oled_access/behav/xsim/xsim.dir",
+      "files": 23,
+      "bytes": 246418
+    },
+    {
+      "relative": "build/display_internal/run_18148/internal.sim/sim_tb_oled_access/behav/xsim/xsim.dir",
+      "files": 23,
+      "bytes": 242312
+    },
+    {
+      "relative": "build/display_internal/run_32956/internal.sim/sim_tb_display_system/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1864665
+    },
+    {
+      "relative": "build/release_extract_2026-11-05/build/display_hardened/run_27904/display_candidate.cache",
+      "files": 3,
+      "bytes": 842
+    },
+    {
+      "relative": "build/display_candidate/run_9376/display_candidate.sim/sim_tb_oled_access/behav/xsim/xsim.dir",
+      "files": 23,
+      "bytes": 246575
+    },
+    {
+      "relative": "build/display_hardened/run_39572/display_candidate.sim/sim_tb_display_bus/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 2236907
+    },
+    {
+      "relative": "build/display_hardened/run_39832/display_candidate.sim/sim_tb_oled_access/behav/xsim/xsim.dir",
+      "files": 23,
+      "bytes": 257233
+    },
+    {
+      "relative": "build/display_hardened/run_39832/display_candidate.sim/sim_tb_display_bus/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 2236441
+    },
+    {
+      "relative": "build/display_hardened/run_39572/display_candidate.sim/sim_tb_oled_access/behav/xsim/xsim.dir",
+      "files": 23,
+      "bytes": 257264
+    },
+    {
+      "relative": "build/display_candidate/run_37616/display_candidate.sim/sim_tb_oled_access/behav/xsim/xsim.dir",
+      "files": 23,
+      "bytes": 246508
+    },
+    {
+      "relative": "build/display_candidate/run_15484/display_candidate.sim/sim_tb_oled_access/behav/xsim/xsim.dir",
+      "files": 23,
+      "bytes": 257338
+    },
+    {
+      "relative": "build/display_candidate/run_9376/display_candidate.sim/sim_tb_display_board/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1813016
+    },
+    {
+      "relative": "build/display_hardened/run_39832/display_candidate.sim/sim_tb_display_board/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1837098
+    },
+    {
+      "relative": "build/display_hardened/run_39572/display_candidate.sim/sim_tb_display_board/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1837078
+    },
+    {
+      "relative": "build/display_hardened/run_39572/display_candidate.sim/sim_tb_display_system/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1901760
+    },
+    {
+      "relative": "build/display_candidate/run_15484/display_candidate.sim/sim_tb_display_board/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1837106
+    },
+    {
+      "relative": "build/display_hardened/run_39832/display_candidate.sim/sim_tb_display_system/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1901659
+    },
+    {
+      "relative": "build/display_hardened/run_39572/display_candidate.sim/sim_tb_display_repeat/behav/xsim/xsim.dir",
+      "files": 47,
+      "bytes": 2190923
+    },
+    {
+      "relative": "build/display_candidate/run_9376/display_candidate.sim/sim_tb_display_system/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1871750
+    },
+    {
+      "relative": "build/display_candidate/run_37616/display_candidate.sim/sim_tb_display_board/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1816479
+    },
+    {
+      "relative": "build/display_candidate/run_37616/display_candidate.sim/sim_tb_display_system/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1899349
+    },
+    {
+      "relative": "build/display_candidate/run_15484/display_candidate.sim/sim_tb_display_system/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1891204
+    },
+    {
+      "relative": "build/display_hardened/run_39572/display_candidate.sim/sim_tb_display_recovery/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1862168
+    },
+    {
+      "relative": "build/display_hardened/run_39832/display_candidate.sim/sim_tb_display_recovery/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1862261
+    },
+    {
+      "relative": "build/release_extract_2026-11-05/build/display_hardened/run_27904/display_candidate.sim/sim_tb_display_bus/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 2241254
+    },
+    {
+      "relative": "build/release_extract_2026-11-05/build/display_hardened/run_27904/display_candidate.sim/sim_tb_oled_access/behav/xsim/xsim.dir",
+      "files": 23,
+      "bytes": 257702
+    },
+    {
+      "relative": "build/release_extract_2026-11-05/build/display_hardened/run_27904/display_candidate.sim/sim_tb_display_board/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1841644
+    },
+    {
+      "relative": "build/release_extract_2026-11-05/build/display_hardened/run_27904/display_candidate.sim/sim_tb_display_system/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1906277
+    },
+    {
+      "relative": "build/release_extract_2026-11-05/build/display_hardened/run_27904/display_candidate.sim/sim_tb_display_repeat/behav/xsim/xsim.dir",
+      "files": 47,
+      "bytes": 2195624
+    },
+    {
+      "relative": "build/release_extract_2026-11-05/build/display_hardened/run_27904/display_candidate.sim/sim_tb_display_recovery/behav/xsim/xsim.dir",
+      "files": 46,
+      "bytes": 1866830
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.cache",
+      "files": 3,
+      "bytes": 842
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_1/behav/xsim/xsim.dir",
+      "files": 23,
+      "bytes": 207890
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_decode/behav/xsim/xsim.dir",
+      "files": 25,
+      "bytes": 1006967
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_soc_aes/behav/xsim/xsim.dir",
+      "files": 39,
+      "bytes": 1766203
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_regfile/behav/xsim/xsim.dir",
+      "files": 23,
+      "bytes": 194024
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_imm_gen/behav/xsim/xsim.dir",
+      "files": 23,
+      "bytes": 189664
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_uart_tx/behav/xsim/xsim.dir",
+      "files": 25,
+      "bytes": 345001
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_cpu_core/behav/xsim/xsim.dir",
+      "files": 27,
+      "bytes": 522371
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_aes_mmio/behav/xsim/xsim.dir",
+      "files": 31,
+      "bytes": 1878253
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_memories/behav/xsim/xsim.dir",
+      "files": 24,
+      "bytes": 218366
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_aes_core/behav/xsim/xsim.dir",
+      "files": 28,
+      "bytes": 835323
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_alu_board/behav/xsim/xsim.dir",
+      "files": 25,
+      "bytes": 235142
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_cpu_board/behav/xsim/xsim.dir",
+      "files": 32,
+      "bytes": 571485
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_uart_mmio/behav/xsim/xsim.dir",
+      "files": 26,
+      "bytes": 1058872
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_aes_board/behav/xsim/xsim.dir",
+      "files": 40,
+      "bytes": 1596018
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_keypad_aes/behav/xsim/xsim.dir",
+      "files": 42,
+      "bytes": 1546423
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_keypad_mmio/behav/xsim/xsim.dir",
+      "files": 27,
+      "bytes": 648915
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_soc_minimal/behav/xsim/xsim.dir",
+      "files": 30,
+      "bytes": 431098
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_oled_pattern/behav/xsim/xsim.dir",
+      "files": 23,
+      "bytes": 178770
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_keypad_scanner/behav/xsim/xsim.dir",
+      "files": 25,
+      "bytes": 420178
+    },
+    {
+      "relative": "vivado/release_regression_33240/release_regression_33240.sim/sim_aes_primitives/behav/xsim/xsim.dir",
+      "files": 27,
+      "bytes": 718999
+    }
+  ]
+}

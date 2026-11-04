@@ -1,6 +1,6 @@
 # Next lab: combined keypad → AES → OLED
 
-Download [the combined source + bitstream ZIP](https://raw.githubusercontent.com/statisnomo/RC-Project_P1_G9/main/deliverables/riscv_soc_combined_ja_jc_2026-11-05.zip). Use [the new JA/JC guide](NEXT_LAB_COMBINED.md). KYPD stays on JA; OLED moves to JC; optional UART uses JD1. Tests 1–20 and both separate physical demos have passed. The earlier lab instructions are archived below.
+Download [the hardened source + bitstream ZIP](https://raw.githubusercontent.com/statisnomo/RC-Project_P1_G9/main/deliverables/riscv_soc_hardened_ja_jc_2026-11-05.zip). Use [the JA/JC guide](NEXT_LAB_COMBINED.md) for simulations 21–26, held-key/partial-input/restart checks and ten physical reference blocks. KYPD stays on JA; OLED uses JC. The [optional UART side test](LAB_UART_OPTIONAL.md) uses JD1 and the same image. Tests 1–20 and both separate physical demos have passed. The earlier lab instructions are archived below.
 
 ---
 

@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
-// Development integration top; external keypad pad enables are active high.
-// Physical wrappers for the November lab deliberately remain independent.
+// Combined integration top; external keypad pad enables are active high.
+// Status-poll timeouts live in firmware; a nonresponding bus has no watchdog.
 module soc_display #(parameter ROM_FILE="display.hex",parameter COLUMN_CYCLES=25000,
     DEBOUNCE_FRAMES=20,WAIT_CYCLES=1,CLKS_PER_BIT=868,RESET_CYCLES=100000,
     PANEL_CYCLES=10000000,DISCHARGE_CYCLES=350000000,HALF_SPI=20)(

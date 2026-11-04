@@ -1,10 +1,26 @@
 .section .text
 .global _start
+# Poll budgets count completed status reads, not clock cycles. The shortest
+# loop has >6 clocks/read, so OLED startup gets >250ms and discharge >8s.
+# These limits handle stuck BUSY status, not a bus that never returns READY.
+.equ SHORT_POLLS, 65536
+.equ OLED_POLLS, 4194304
+.equ OFF_POLLS, 134217728
+.macro bounded_wait base, offset, mask, expected, budget, code
+    addi x22, \base, \offset
+    li x23, \mask
+    li x24, \expected
+    li x28, \budget
+    li x26, \code
+    jal x27, poll_bounded
+.endm
 _start:
     lui x1, 0x1
     lui x2, 0x40000
     addi x3, x2, 256
     addi x4, x0, 1
+    sw x0, 48(x1)             # diagnostic fault code at 0x1030
+    sw x0, 52(x1)             # overflow recovery count at 0x1034
     # Lookup table at 0x1000, byte order ROW1/COL1 through ROW4/COL4.
     li x5, 0x0a030201
     sw x5, 0(x1)
@@ -27,6 +43,8 @@ block:
     addi x6, x0, 0
 poll:
     lw x7, 0(x3)
+    andi x21, x7, 8
+    bne x21, x0, overflow_recovery
     andi x21, x7, 4
     bne x21, x0, shutdown
     andi x7, x7, 1
@@ -35,6 +53,11 @@ poll:
     add x8, x1, x8
     lbu x12, 0(x8)
     sw x4, 8(x3)
+    # Detect overflow racing the read/ACK, including on digit 32. Never
+    # encrypt a silently shortened block after dropping an input event.
+    lw x7, 0(x3)
+    andi x21, x7, 8
+    bne x21, x0, overflow_recovery
     andi x9, x6, 1
     bne x9, x0, low
     slli x10, x12, 4
@@ -58,9 +81,7 @@ next:
     sw x5, 44(x2)
     sw x4, 0(x2)
 wait_aes:
-    lw x7, 4(x2)
-    andi x7, x7, 2
-    beq x7, x0, wait_aes
+    bounded_wait x2, 4, 2, 2, SHORT_POLLS, 1
     lw x5, 48(x2)
     sw x5, 32(x1)
     lw x5, 52(x2)
@@ -81,9 +102,7 @@ wait_aes:
     lw x5, 44(x1)
     sw x5, 28(x13)
 wait_display:
-    lw x7, 0(x13)
-    andi x7, x7, 1
-    beq x7, x0, wait_display
+    bounded_wait x13, 0, 1, 1, OLED_POLLS, 2
     sw x4, 4(x13)
     # Transmit independent uppercase hex debug output then LF.
     addi x16, x0, 0
@@ -101,41 +120,56 @@ lower_digit:
     bne x19, x0, wait_tx
     addi x18, x18, 7
 wait_tx:
-    lw x7, 4(x14)
-    andi x7, x7, 1
-    bne x7, x0, wait_tx
+    bounded_wait x14, 4, 1, 0, SHORT_POLLS, 3
     sw x18, 0(x14)
     addi x16, x16, 1
     addi x19, x0, 32
     bne x16, x19, serial_char
 wait_lf:
-    lw x7, 4(x14)
-    andi x7, x7, 1
-    bne x7, x0, wait_lf
+    bounded_wait x14, 4, 1, 0, SHORT_POLLS, 3
     addi x18, x0, 10
     sw x18, 0(x14)
     addi x31, x0, 1
     beq x0, x0, block
+overflow_recovery:
+    lw x20, 52(x1)
+    addi x20, x20, 1
+    sw x20, 52(x1)
+    # Reuse the orderly shutdown/restart path. A blank screen afterward
+    # means re-enter the whole block; the old incomplete block is discarded.
 shutdown:
     # A chord stops input and requests an orderly panel shutdown.
     # Hold the chord to keep power off; release it to restart with an empty block.
     addi x13, x2, 512
 wait_idle_shutdown:
-    lw x7, 0(x13)
-    andi x7, x7, 1
-    beq x7, x0, wait_idle_shutdown
+    bounded_wait x13, 0, 1, 1, OLED_POLLS, 4
     addi x20, x0, 2
     sw x20, 4(x13)
 wait_off:
-    lw x7, 0(x13)
-    andi x7, x7, 2
-    beq x7, x0, wait_off
+    bounded_wait x13, 0, 2, 2, OFF_POLLS, 5
     addi x20, x0, 3
     sw x20, 8(x3)
 wait_release:
     lw x7, 0(x3)
     andi x7, x7, 6
     bne x7, x0, wait_release
+    # Discard any events accumulated during power-down or release. Overflow
+    # is sticky, so clear it again here, not just before waiting for release.
+    addi x20, x0, 3
+    sw x20, 8(x3)
     addi x20, x0, 4
     sw x20, 4(x13)
+    # Wait through startup before accepting the first digit of a new block.
+    bounded_wait x13, 0, 1, 1, OLED_POLLS, 6
     beq x0, x0, block
+
+poll_bounded:
+    lw x7, 0(x22)
+    and x7, x7, x23
+    beq x7, x24, poll_ok
+    addi x28, x28, -1
+    bne x28, x0, poll_bounded
+    sw x26, 48(x1)
+    ebreak                      # CPU halt => LD7; reprogram to recover
+poll_ok:
+    jalr x0, 0(x27)

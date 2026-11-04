@@ -1,0 +1,93 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>lab ten blocks</title><style>body{max-width:960px;margin:32px auto;padding:0 24px;font:17px/1.6 system-ui;color:#17202a}h1,h2{line-height:1.25}pre{background:#f1f4f7;padding:16px;overflow:auto}code{font-size:0.95em}li{margin:8px 0}a{color:#075cab}@media print{body{font-size:11pt;margin:0}h2{break-after:avoid}pre{white-space:pre-wrap}}</style><body><h1 id="ten-consecutive-physical-aes-blocks">Ten consecutive physical AES blocks</h1>
+<p>Use the fixed key <code>000102030405060708090A0B0C0D0E0F</code>. Enter each 32-digit input with separate press/release actions. Do not reset between trials. The two expected lines below match the OLED layout; UART joins them into one line. Record PASS/FAIL and the actual output on any mismatch. These references were calculated independently using .NET AES, ECB, no padding, and are also exercised by simulation test 26.</p>
+<h2 id="trial-1">Trial 1</h2>
+<p>Input: <code>00112233445566778899AABBCCDDEEFF</code></p>
+<p>Expected OLED:</p>
+<pre><code class="language-text">69C4E0D86A7B0430
+D8CDB78070B4C55A
+</code></pre>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> PASS / FAIL: __________</li>
+</ul>
+<h2 id="trial-2">Trial 2</h2>
+<p>Input: <code>00000000000000000000000000000000</code></p>
+<p>Expected OLED:</p>
+<pre><code class="language-text">C6A13B37878F5B82
+6F4F8162A1C8D879
+</code></pre>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> PASS / FAIL: __________</li>
+</ul>
+<h2 id="trial-3">Trial 3</h2>
+<p>Input: <code>FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</code></p>
+<p>Expected OLED:</p>
+<pre><code class="language-text">3C441F32CE078223
+64D7A2990E50BB13
+</code></pre>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> PASS / FAIL: __________</li>
+</ul>
+<h2 id="trial-4">Trial 4</h2>
+<p>Input: <code>0123456789ABCDEF0123456789ABCDEF</code></p>
+<p>Expected OLED:</p>
+<pre><code class="language-text">3071708FFD241222
+9B2677BA5F1C52D2
+</code></pre>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> PASS / FAIL: __________</li>
+</ul>
+<h2 id="trial-5">Trial 5</h2>
+<p>Input: <code>000102030405060708090A0B0C0D0E0F</code></p>
+<p>Expected OLED:</p>
+<pre><code class="language-text">0A940BB5416EF045
+F1C39458C653EA5A
+</code></pre>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> PASS / FAIL: __________</li>
+</ul>
+<h2 id="trial-6">Trial 6</h2>
+<p>Input: <code>FEDCBA9876543210FEDCBA9876543210</code></p>
+<p>Expected OLED:</p>
+<pre><code class="language-text">7727A9F92C7F254C
+F18E29B4572B0C83
+</code></pre>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> PASS / FAIL: __________</li>
+</ul>
+<h2 id="trial-7">Trial 7</h2>
+<p>Input: <code>11111111111111111111111111111111</code></p>
+<p>Expected OLED:</p>
+<pre><code class="language-text">35D14E6D3E3A279C
+F01E343E34E7DED3
+</code></pre>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> PASS / FAIL: __________</li>
+</ul>
+<h2 id="trial-8">Trial 8</h2>
+<p>Input: <code>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</code></p>
+<p>Expected OLED:</p>
+<pre><code class="language-text">FBD49B091A38F87A
+D5C3EE2580BA414C
+</code></pre>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> PASS / FAIL: __________</li>
+</ul>
+<h2 id="trial-9">Trial 9</h2>
+<p>Input: <code>55555555555555555555555555555555</code></p>
+<p>Expected OLED:</p>
+<pre><code class="language-text">A5548F9415018420
+2F8200AAA9D02D56
+</code></pre>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> PASS / FAIL: __________</li>
+</ul>
+<h2 id="trial-10">Trial 10</h2>
+<p>Input: <code>80000000000000000000000000000000</code></p>
+<p>Expected OLED:</p>
+<pre><code class="language-text">4399572CD6EA5341
+B8D35876A7098AF7
+</code></pre>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> PASS / FAIL: __________</li>
+</ul>
+</body></html>

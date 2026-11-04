@@ -2,8 +2,8 @@
 
 Deadline: **20 November 2026**. Full-demo target: **15 November**.
 Last reviewed: **5 November 2026**. Lab simulations 1–20 and the independent
-keypad/AES and OLED board demos passed. Combined tests 21–23 passed locally;
-the combined JA/JC image meets routed 100 MHz timing but awaits lab testing.
+keypad/AES and OLED board demos passed. The hardened combined release adds
+tests 24–26 and extends test 22; its JA/JC image awaits physical lab testing.
 
 Tick a box only after its stated result is observed. Add the task ID, date,
 and evidence location to [progress_log.md](progress_log.md). A future file
@@ -17,7 +17,7 @@ There is no need to repeat all 20 passed lab simulations during this visit.
 
 User / lab:
 
-- [ ] Run tests 21–23 in lab Vivado and save the PASS lines (P25).
+- [ ] Run tests 21–26 in lab Vivado and save the PASS lines (P25/P29).
 - [ ] Connect keypad to JA and external OLED to JC; verify both complete
   expected ciphertexts, shutdown/release/restart, then another block (P26/P27).
 - [ ] Run implementation and Generate Bitstream from the supplied source;
@@ -32,11 +32,14 @@ User / lab:
 
 Development work:
 
-- [ ] Add firmware timeout/error and keypad-overflow recovery (M4.2).
-- [ ] Finish system address/error-routing and fault/reset/stall stress tests;
-  run the final regression against one release revision (M4.1/M4.4/M4.5).
-- [ ] Record CPU-visible encryption cycles, ROM/RAM usage and final resource/
-  timing results separately from AES-only latency (M4.5/M6.1/M6.2).
+- [x] Add bounded firmware status waits and keypad-overflow recovery (M4.2).
+- [x] Test system address/error routing, status faults, overflow and recovery
+  after reset (tests 24/25). A bus that never returns READY has no watchdog;
+  this limit is explicit rather than claimed as recovered.
+- [x] Measure CPU-visible START-to-last-CT-read cycles in test 26 and record
+  ROM/RAM usage; see [release notes](release_2026-11-05.md).
+- [x] Preserve the 20-test baseline regression and six combined-test results,
+  plus routed implementation evidence, for the hardened lab release.
 - [ ] Finish diagrams, report/demo documentation and the reproducible final
   package with an extracted-copy check and backup (M6.3–M6.5).
 
@@ -144,6 +147,11 @@ November 4: P18–P21 and P23–P24 passed, reported by the user with photos. P2
 - [ ] P26: Program the combined JA/JC image; compare both full ciphertexts on the external OLED.
 - [ ] P27: Confirm chord shutdown, release/restart, and a new block afterward.
 - [ ] P28: Run implementation and generate the combined image on the lab PC from its source.
+- [ ] P29: Run tests 24–26: recovery, bus routing and repeated blocks.
+- [ ] P30: Record physical H1–H7 in the updated combined guide: holds, partial
+  input, chord release, ten blocks, three fresh starts and your own bitstream.
+- [ ] P31: If an adapter is available, run [UART side test U1](../LAB_UART_OPTIONAL.md)
+  with JD1-to-RX and shared ground. Record model, settings and received text.
 
 Next: [combined demo guide](../NEXT_LAB_COMBINED.md).
 
@@ -239,7 +247,7 @@ Routed 100 MHz setup/hold: +0.311/+0.159 ns. H2 passed from the
 
 UART engineering tests passed October 27: [guide](uart_tx.md),
 [contract](uart_interface.md), and [evidence](../evidence/uart_m3_2026-10-27/README.md).
-Tests 17–20 subsequently passed in the lab November 4. Combined tests 21–23
+Tests 17–20 subsequently passed in the lab November 4. Combined tests 21–26
 are now packaged for the next visit; they have passed locally in Vivado 2025.2.
 Adapter availability is assumed for planning;
 its actual model/logic voltage still needs checking before wiring. UART
@@ -248,19 +256,24 @@ reception (H3.1) remains open.
 
 ## M4 — whole system — due November 12
 
-- [ ] M4.1: Connect all four approved MMIO windows and check response routing,
+- [x] M4.1: Connect all four approved MMIO windows and check response routing,
   invalid addresses, byte strobes, and wait-state behavior.
-- [ ] M4.2: Finish input -> AES -> display firmware, including clear/start,
+- [x] M4.2: Finish input -> AES -> display firmware, including clear/start,
   length tracking, timeout/error handling, and the next input block.
 - [x] M4.3: Pass system simulation using modeled key presses and captured
   OLED/UART traffic; compare actual ciphertext and displayed values.
-- [ ] M4.4: Pass repeated inputs, reset/restart, incomplete input, and stalled
-  peripheral cases; no lost key events or duplicate bus side effects.
-- [ ] M4.5: Measure code, constants, buffers, and stack use within 4 KB ROM /
+- [x] M4.4: Pass repeated inputs, reset/restart, incomplete input, stuck status
+  and overflow cases. Overflow is detected and the incomplete block discarded;
+  no claim of unlimited input buffering or recovery from a bus with no READY.
+  Completion-side-effect checks remain covered by the MMIO unit benches.
+- [x] M4.5: Measure code, constants, buffers, and stack use within 4 KB ROM /
   4 KB RAM. Run all existing and new simulation sets to PASS.
+  November 5: 680 bytes code, 56 bytes RAM, no stack; all 26 tops passed locally.
 - [x] M4.6: Complete full-system implementation; review 100 MHz routed
   setup/hold, unconstrained paths, DRC, and resource use; generate bitstream.
-- [ ] G4: Complete simulated demonstration and a checked full-system image ready.
+- [x] G4: Complete simulated demonstration and a checked full-system image ready.
+  Hardened November 5 release: setup +0.146 ns, hold +0.132 ns at 100 MHz.
+  Physical combined-image acceptance is still M5, not implied by this gate.
 
 ## M5 — complete physical demo — due November 15
 
@@ -278,8 +291,10 @@ reception (H3.1) remains open.
 
 ## M6 — results and package — due November 18
 
-- [ ] M6.1: Record AES-only latency and complete CPU-visible encryption
-  cycles separately, with clock and key-reuse policy stated.
+- [x] M6.1: Record AES-only latency and CPU-visible START-to-final-CT-read
+  cycles separately, with clock, measured interval and key policy stated.
+  See release notes: 11 core clocks; 60/75 CPU-visible clocks at waits 1/5.
+  This is not a measurement of typing-to-screen latency or software speedup.
 - [ ] M6.2: Record final resources, routed timing, tests and limits; link
   every measured claim to the exact design/image and saved evidence.
 - [ ] M6.3: Finish architecture/block diagrams, register/interface notes,

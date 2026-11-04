@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_oled_pattern: 1048 SPI bytes, full clear, checkerboard, power-up and timed shutdown
+$finish called at time : 963846 ns : File "D:/RC Project/riscv_soc_project/tb/board/tb_oled_pattern.v" Line 46

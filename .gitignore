@@ -50,3 +50,4 @@ __pycache__/
 .vscode/
 .idea/
 /vivado/zedboard_*_lab*/
+/vivado/release_regression_*/

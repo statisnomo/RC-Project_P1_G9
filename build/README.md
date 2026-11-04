@@ -1,6 +1,6 @@
 # Ready-to-program ZedBoard builds
 
-**New combined image:** [keypad JA + OLED JC](zedboard_display/zedboard_display_ja_jc.bit). Use [the combined guide](../NEXT_LAB_COMBINED.md) for its LED meanings and expected ciphertext. The old standalone OLED is a JB image. The self-tests below use a different LED legend.
+**Hardened November 5 combined image:** [keypad JA + OLED JC](zedboard_display/zedboard_display_ja_jc.bit), with overflow recovery and bounded status waits. Use [the combined guide](../NEXT_LAB_COMBINED.md) for its LED meanings and expected ciphertext, and [the optional UART test](../LAB_UART_OPTIONAL.md) for JD1. Matching [implementation evidence](../evidence/display_hardened_2026-11-05/) and [bitstream hash](zedboard_display/bitstream.sha256) identify this build. The old standalone OLED is a JB image. The self-tests below use a different LED legend.
 
 ## October self-tests
 

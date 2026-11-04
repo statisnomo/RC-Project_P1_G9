@@ -1,5 +1,10 @@
 # Combined display build and lab record
 
+Historical first combined candidate: the 504-byte firmware below has been
+superseded by the [hardened 680-byte release](release_2026-11-05.md), which
+adds bounded status waits, overflow recovery and tests 24–26. Use the current
+combined lab guide and hardened ZIP for the next visit.
+
 The November 4 independent keypad/AES and external OLED board demos passed, along with the four new simulation tests. [The lab record](lab_results_2026-11-04.md) includes exact supplied messages and links to five archived photographs. Bitstream regeneration at the lab was not performed. On rechecking November 5, all four supplied waveform configuration files were found and archived with matching hashes in the lab evidence folder.
 
 The next build connects the full CPU/keypad/AES path to the external OLED and UART. The firmware uses 504 bytes of the 4096-byte ROM. Its fixed demonstration key is 00 through 0F; this is a functional AES demonstration, not a secret-key storage design. It takes 32 hex digits per block and retains the previous ciphertext while the next block is typed. A recognized chord requests orderly OLED shutdown, held until release; releasing restarts with a blank display and resets the input count. Input overflow handling and peripheral fault timeouts remain open.

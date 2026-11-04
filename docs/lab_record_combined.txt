@@ -1,0 +1,31 @@
+Combined JA/JC lab record — hardened November 5 kit
+Date / people:
+Vivado exact version:
+Board revision / Pmod models:
+Source commit or ZIP SHA-256:
+Bitstream used (supplied / lab-generated, exact filename):
+
+SIMULATION (PASS / FAIL / NOT RUN; retain full first error)
+21 OLED access:
+22 complete system and restart:
+23 board wrapper:
+24 overflow and timeout recovery:
+25 MMIO routing:
+26 repeated blocks:
+
+PHYSICAL
+First known-answer ciphertext (all 32 digits):
+Second known-answer ciphertext (all 32 digits):
+H1 held-key suppression:
+H2 31 digits vs digit 32:
+H3 partial-block discard and restart:
+H4 one key still held after a chord:
+H5 ten consecutive blocks (record trials 1–10 separately):
+H6 three fresh starts (record each startup method):
+H7 own bitstream known-answer test:
+Implementation WNS / WHS / DRC:
+U1 UART (adapter model, COM settings, captured text / reason not run):
+
+Photos/video/log filenames:
+First unexpected result, exact input and LED state:
+Next action:

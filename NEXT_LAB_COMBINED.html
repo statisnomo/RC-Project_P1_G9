@@ -1,22 +1,26 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Combined JA/JC lab</title><style>body{max-width:55rem;padding:1rem 2rem;margin:auto;font:16px/1.55 system-ui;color:#172638}h1,h2{line-height:1.2}h2{margin-top:2rem;color:#144968}li{margin:.4em 0}code,pre{background:#eff4f6;padding:.2em}a{color:#04588c}@media print{body{font-size:11pt}h2{break-after:avoid}}</style><body><h1 id="next-lab-type-a-block-and-read-its-aes-ciphertext-on-the-oled">Next lab: type a block and read its AES ciphertext on the OLED</h1>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NEXT LAB COMBINED</title><style>body{max-width:960px;margin:32px auto;padding:0 24px;font:17px/1.6 system-ui;color:#17202a}h1,h2{line-height:1.25}pre{background:#f1f4f7;padding:16px;overflow:auto}code{font-size:0.95em}li{margin:8px 0}a{color:#075cab}@media print{body{font-size:11pt;margin:0}h2{break-after:avoid}pre{white-space:pre-wrap}}</style><body><h1 id="next-lab-type-a-block-and-read-its-aes-ciphertext-on-the-oled">Next lab: type a block and read its AES ciphertext on the OLED</h1>
 <p>The November 4 lab passed simulations 17–20 and both independent hardware demos. This visit tests the combined system. Bring the ZedBoard, Pmod KYPD and external Pmod OLED; a UART adapter is optional.</p>
 <p><strong>New wiring: KYPD on JA, OLED on JC.</strong> The keypad obstructs JB. Optional UART TX moves to <strong>JD pin 1</strong>, package V7. The old standalone OLED bitstream used JB; it is not the image for this visit.</p>
 <h2 id="files-you-receive">Files you receive</h2>
-<p>The combined ZIP contains the supplied <code>prebuilt/zedboard_display_ja_jc.bit</code>, complete Verilog, the ready-to-use <code>fw/display.hex</code> ROM, the single <code>constraints/zedboard_display.xdc</code>, and three new simulation benches. Use the supplied bitstream first if time is limited. You can also run implementation and generate a bitstream yourself from the same code.</p>
+<p>Use the <strong>hardened November 5 kit</strong>, <code>riscv_soc_hardened_ja_jc_2026-11-05.zip</code>. It contains the supplied <code>prebuilt/zedboard_display_ja_jc.bit</code>, complete Verilog, the ready-to-use <code>fw/display.hex</code> ROM, the single <code>constraints/zedboard_display.xdc</code>, and six simulation benches (tests 21–26). Use the supplied bitstream first if time is limited. You can also run implementation and generate a bitstream yourself from the same code. Extract into a fresh folder rather than mixing this ROM with an older kit.</p>
+<p>The firmware now detects input overflow and has bounded peripheral status waits. An overflow discards the incomplete block through orderly shutdown/restart. A status timeout halts with LD7 on; save the observation and reprogram. These are recovery features, not new physical passes.</p>
 <h2 id="build-your-own-image-in-vivado">Build your own image in Vivado</h2>
 <ol>
 <li>Extract the complete ZIP to a writable local folder. Start <strong>Create Project → RTL Project</strong> with part <strong>xc7z020clg484-1</strong>. This creates a project native to your installed Vivado version; no setup script is required.</li>
 <li><strong>Add Sources → Add or Create Design Sources</strong>: add all <code>.v</code> files in <code>rtl/cpu</code>, <code>rtl/mem</code>, <code>rtl/crypto</code>, <code>rtl/peripherals</code>, <code>rtl/soc</code>, and <code>rtl/board</code>, plus <code>rtl/cpu/cpu_defs.vh</code>. In this kit the only board top is <code>zedboard_display</code>. Right-click it → <strong>Set as Top</strong>. Keep the copied header together with the CPU files or set <code>rtl/cpu</code> in the project's Verilog include directories.</li>
 <li>Add <code>fw/display.hex</code> as a <strong>Memory Initialization File</strong> in Design Sources. Confirm its file type in Source File Properties. Add only <code>constraints/zedboard_display.xdc</code> to Constraints. Do not add the old demo XDCs.</li>
-<li><strong>Run Implementation</strong> and allow Vivado to run synthesis first. Open the implemented design and check <strong>Report Timing Summary</strong>: WNS and WHS must both be nonnegative for the 10 ns clock. Run DRC and resolve any errors/critical warnings before use. The absence of ARM/PS7 produces the known PS7 warning in this PL-only project.</li>
+<li>In <strong>Settings → Synthesis</strong>, set <strong>flatten_hierarchy = none</strong>; in <strong>Settings → Implementation</strong>, enable <strong>phys_opt_design</strong>. These match the supplied build. <strong>Run Implementation</strong> and allow Vivado to run synthesis first. Open the implemented design and check <strong>Report Timing Summary</strong>: WNS and WHS must both be nonnegative for the 10 ns clock. Run DRC and resolve any errors/critical warnings before use. The absence of ARM/PS7 produces the known PS7 warning in this PL-only project. Vivado versions can produce different timing; your lab report must pass on its own.</li>
 <li>Click <strong>Generate Bitstream</strong>. In Design Runs, right-click <code>impl_1</code> → <strong>Open Run Directory</strong>. Program your <code>zedboard_display.bit</code>. It has the same JA/JC wiring as the supplied image. Save the filename, timestamp, timing report and a copy of your source with it.</li>
 </ol>
-<h2 id="three-new-simulations-if-time-permits">Three new simulations, if time permits</h2>
-<p>In <strong>Add Sources → Add or Create Simulation Sources</strong>, create a separate simulation set for each bench below. Add its <code>.sv</code> file, <code>tb/peripherals/keypad_matrix_model.v</code>, and <code>fw/display.hex</code> (Memory Initialization File). Make the bench the simulation top. The other RTL remains in Design Sources. Choose <strong>Run Behavioral Simulation → Run All</strong>. Close each simulation before selecting the next one. Full warnings/Fatal text is more useful than a cropped FAIL line.</p>
+<h2 id="simulations-2126-no-board-required">Simulations 21–26 — no board required</h2>
+<p>In <strong>Add Sources → Add or Create Simulation Sources</strong>, create a separate simulation set for each bench below. Add its <code>.sv</code> file, <code>tb/peripherals/keypad_matrix_model.v</code>, and <code>fw/display.hex</code> (Memory Initialization File). For test 26 also add <code>tb/internal/display_lab_vectors.mem</code> as a Memory Initialization File. Make the bench the simulation top. The other RTL remains in Design Sources. Choose <strong>Run Behavioral Simulation → Run All</strong>. Close each simulation before selecting the next one. Full warnings/Fatal text is more useful than a cropped FAIL line. You may add both memory files to every set for consistency.</p>
 <ul class="contains-task-list">
 <li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>21:</strong> <code>tb/internal/tb_oled_access.sv</code>, top <code>tb_oled_access</code>: register access, cancellation, shutdown/discharge/restart. Expect <code>PASS tb_oled_access</code>.</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>22:</strong> <code>tb/internal/tb_display_system.sv</code>, top <code>tb_display_system</code>: real CPU, matrix, AES, OLED and UART; two complete ciphertexts and pixel streams. Expect <code>PASS tb_display_system</code>.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>22:</strong> <code>tb/internal/tb_display_system.sv</code>, top <code>tb_display_system</code>: real CPU, matrix, AES, OLED and UART; three complete ciphertexts, all pixels, and a full block after restart. Expect <code>PASS tb_display_system</code>.</li>
 <li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>23:</strong> <code>tb/internal/tb_display_board.sv</code>, top <code>tb_display_board</code>: the actual board wrapper, startup, key-held-at-boot suppression, open-drain pads and LEDs. Expect <code>PASS tb_display_board</code>.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>24:</strong> <code>tb/internal/tb_display_recovery.sv</code>, top <code>tb_display_recovery</code>: a real mailbox overflow, discarded partial block, recovery ciphertext, six injected status timeouts and reset recovery. Expect <code>PASS tb_display_recovery</code>. The bench shortens timeout counters after loading the production ROM; hardware retains its full budgets.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>25:</strong> <code>tb/internal/tb_display_bus.sv</code>, top <code>tb_display_bus</code>: four MMIO windows, invalid addresses, byte strobes, response routing and reset cancellation at waits 1/5. Expect <code>PASS tb_display_bus</code>.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>26:</strong> <code>tb/internal/tb_display_repeat.sv</code>, top <code>tb_display_repeat</code>: ten varied inputs at each of two bus delays, RAM/OLED snapshots and 660 decoded UART frames. Expect <code>PASS tb_display_repeat</code>. The expected values come from an independent .NET AES implementation.</li>
 </ul>
 <p>The tests shorten device delays for simulation; hardware uses the full delays. Existing tests 1–20 are already passed and need not be repeated just for the record.</p>
 <h2 id="physical-test">Physical test</h2>
@@ -39,15 +43,52 @@ D8CDB78070B4C55A
 <ol start="5">
 <li><strong>Shutdown/restart:</strong> press and hold <strong>0 and D together</strong>. Once detected as a chord, input stops, the display goes dark and the controller discharges the panel supply. Keep holding for roughly <strong>4 seconds</strong>, until <strong>LD1 on, LD0/LD2–LD5 off</strong> (LD6 still blinking; LD7 off). You can then power off while holding the keys. Alternatively release both: it restarts with a blank display and an empty input block. Any chord seen by the scanner requests this operation; it is also how to discard a partial block. If your first finger registers before the second, that partial digit is discarded during shutdown.</li>
 </ol>
-<p>Optional UART: only with a confirmed <strong>3.3 V logic</strong> USB-to-TTL adapter, connect <strong>JD pin 1 → adapter RX</strong> and a ground pin to adapter GND. Do not connect adapter power or TX. At 115200, 8N1, expect each 32-character ciphertext followed by LF. The ZedBoard's onboard PS UART is not this PL output.</p>
+<p>Optional UART: follow <a href="LAB_UART_OPTIONAL.html">the separate UART side-test guide</a>. It covers a generic 3.3 V USB-to-TTL adapter and a Digilent PmodUSBUART, jumper wiring, GUI serial settings, expected lines and troubleshooting. Use the same combined image. Do not insert an unidentified UART module directly into JD.</p>
+<h2 id="extra-physical-tests-in-this-order">Extra physical tests — in this order</h2>
+<p>The first two known-answer blocks above are the priority. Then work through:</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>H1 — held key:</strong> after shutdown/restart, hold the first <code>0</code> of the
+FIPS input for about two seconds. LD4 must change once, and must not keep
+changing while held. Release, then enter the remaining 31 digits
+<code>0112233445566778899AABBCCDDEEFF</code>. Expect the first ciphertext above.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>H2 — partial input:</strong> enter only 31 zeros. Wait two seconds; the old
+ciphertext and LD5 must remain unchanged. The 32nd zero must produce the
+second expected ciphertext. Release between every digit.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>H3 — abandon a partial block:</strong> enter <code>12345</code>, hold <code>0+D</code> until the
+shutdown-complete LED pattern, then release. The screen must restart blank.
+Enter the FIPS input from its first digit and compare all 32 output digits.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>H4 — partial chord release:</strong> during shutdown hold both <code>0+D</code>, then
+release only one key. Keep the other held for one second: the display must
+remain off. Release the last key: it should restart blank without accepting
+that held key as the first digit of a new block.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>H5 — ten consecutive blocks:</strong> follow the <a href="docs/lab_ten_blocks.html">ten-block reference sheet</a>
+without resetting between blocks. Compare the full ciphertext each time.
+Leave a visible pause after each result, record PASS/FAIL per trial, and
+capture a short video showing both Pmods and the screen.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>H6 — three fresh starts:</strong> first do orderly shutdown and wait for LD1.
+For each trial power off, wait five seconds, power on, program the image
+with keys released and run the FIPS block. Record three results. Programming
+is volatile: power cycling alone does not guarantee that this image reloads.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>H7 — your own build:</strong> repeat the first known-answer block using your
+lab-generated bitstream, saving its timing report and exact filename.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>U1 — optional UART:</strong> capture the two reference lines and compare
+them with the OLED. Mark &quot;not run — adapter unavailable&quot; if needed.</li>
+</ul>
+<p>Do not deliberately try to overflow the keypad by extremely fast entry in the
+lab. Test 24 injects this condition reproducibly. If the screen unexpectedly
+goes through shutdown and restarts blank, re-enter the entire block slowly and
+record the observation; never assume that an incomplete block was preserved.</p>
+<p>For a short visit, do tests 22/24 and the two physical reference blocks first,
+then H1–H4. Keep H5–H7 and the optional UART check for the remaining time or
+the next slot. Before final acceptance, finish all mandatory checks.</p>
 <h2 id="what-to-record">What to record</h2>
 <ul class="contains-task-list">
 <li class="task-list-item"><input disabled="disabled" type="checkbox" /> Exact Vivado version and the bitstream actually programmed: supplied or your build.</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Tests 21/22/23: PASS, FAIL or not run.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Tests 21–26 and H1–H7/U1: PASS, FAIL or not run.</li>
 <li class="task-list-item"><input disabled="disabled" type="checkbox" /> First ciphertext exactly matches all 32 characters; photo with both Pmods visible.</li>
 <li class="task-list-item"><input disabled="disabled" type="checkbox" /> 31-digit partial input leaves the old result; digit 32 produces the second expected result.</li>
 <li class="task-list-item"><input disabled="disabled" type="checkbox" /> Holding 0+D shuts down; releasing restarts blank; another block works after restart.</li>
 <li class="task-list-item"><input disabled="disabled" type="checkbox" /> If you generated an image, save WNS/WHS and DRC along with that file.</li>
 </ul>
-<p>The internal simulations and routed build do not prove physical text orientation or readability. If characters appear mirrored or upside down, photograph them in the board's normal orientation before changing code. If a key appears wrong, record printed key → LD3…LD0. Slow deliberate entry is intended: the current single-entry keypad mailbox can overrun if input arrives too quickly while firmware is busy; firmware timeouts and overflow recovery remain future work.</p>
+<p>The internal simulations and routed build do not prove physical text orientation or readability. If characters appear mirrored or upside down, photograph them in the board's normal orientation before changing code. If a key appears wrong, record printed key → LD3…LD0. Slow deliberate entry is intended: the single-entry mailbox can still overrun, but firmware now discards that incomplete block and restarts instead of silently continuing with missing digits. Status timeouts cover completed MMIO reads reporting busy forever; there is no watchdog for a bus that never returns READY. Save the first failure before reprogramming.</p>
 </body></html>

@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+REPEAT_CASE_PASS waits=1 blocks=10 chars=330 CPU_START_TO_CT_READ_cycles=60..60
+REPEAT_CASE_PASS waits=5 blocks=10 chars=330 CPU_START_TO_CT_READ_cycles=75..75
+PASS tb_display_repeat: waits 1/5, 20 blocks from independent .NET AES vectors, 660 UART frames, RAM and OLED snapshots, CPU-visible cycle measurements
+$finish called at time : 3265315 ns : File "D:/RC Project/riscv_soc_project/tb/internal/tb_display_repeat.sv" Line 67

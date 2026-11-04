@@ -1,0 +1,56 @@
+{
+  "key": "000102030405060708090A0B0C0D0E0F",
+  "oracle": ".NET System.Security.Cryptography.Aes, ECB, no padding",
+  "vectors": [
+    {
+      "trial": 1,
+      "plaintext": "00112233445566778899AABBCCDDEEFF",
+      "ciphertext": "69C4E0D86A7B0430D8CDB78070B4C55A"
+    },
+    {
+      "trial": 2,
+      "plaintext": "00000000000000000000000000000000",
+      "ciphertext": "C6A13B37878F5B826F4F8162A1C8D879"
+    },
+    {
+      "trial": 3,
+      "plaintext": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+      "ciphertext": "3C441F32CE07822364D7A2990E50BB13"
+    },
+    {
+      "trial": 4,
+      "plaintext": "0123456789ABCDEF0123456789ABCDEF",
+      "ciphertext": "3071708FFD2412229B2677BA5F1C52D2"
+    },
+    {
+      "trial": 5,
+      "plaintext": "000102030405060708090A0B0C0D0E0F",
+      "ciphertext": "0A940BB5416EF045F1C39458C653EA5A"
+    },
+    {
+      "trial": 6,
+      "plaintext": "FEDCBA9876543210FEDCBA9876543210",
+      "ciphertext": "7727A9F92C7F254CF18E29B4572B0C83"
+    },
+    {
+      "trial": 7,
+      "plaintext": "11111111111111111111111111111111",
+      "ciphertext": "35D14E6D3E3A279CF01E343E34E7DED3"
+    },
+    {
+      "trial": 8,
+      "plaintext": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "ciphertext": "FBD49B091A38F87AD5C3EE2580BA414C"
+    },
+    {
+      "trial": 9,
+      "plaintext": "55555555555555555555555555555555",
+      "ciphertext": "A5548F94150184202F8200AAA9D02D56"
+    },
+    {
+      "trial": 10,
+      "plaintext": "80000000000000000000000000000000",
+      "ciphertext": "4399572CD6EA5341B8D35876A7098AF7"
+    }
+  ]
+}
