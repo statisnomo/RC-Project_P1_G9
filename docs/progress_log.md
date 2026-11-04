@@ -262,3 +262,8 @@ For a blocked task, retain the partial result and exact failure instead of
 marking it complete. An old pack remains a snapshot; keep this live log in
 the project and include its latest copy in the next pack.
 
+
+## November 4–5: physical peripheral passes and combined display
+
+Tests 17–20 and the independent keypad/AES and OLED board demos passed (user report and photos). No lab bitstream regeneration was performed. The next combined build moves OLED to JC to fit beside the JA keypad; optional UART moves to JD1. Internal tests cover both full displayed ciphertexts and orderly chord shutdown/restart. See [development notes](development_update_2026-11-05.md).
+

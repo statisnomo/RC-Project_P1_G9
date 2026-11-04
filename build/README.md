@@ -1,5 +1,9 @@
 # Ready-to-program ZedBoard builds
 
+**New combined image:** [keypad JA + OLED JC](zedboard_display/zedboard_display_ja_jc.bit). Use [the combined guide](../NEXT_LAB_COMBINED.md) for its LED meanings and expected ciphertext. The old standalone OLED is a JB image. The self-tests below use a different LED legend.
+
+## October self-tests
+
 These three builds are included in GitHub so the lab guides' paths work
 after downloading the repository. They match the verified October 27 lab
 ZIP. Target: **xc7z020clg484-1**, **100 MHz PL clock**, Vivado **2025.2**.
@@ -32,3 +36,4 @@ LED pattern above, including **3/3 AES trials**. See the
 
 Vivado caches, temporary runs, and unrelated generated builds remain
 ignored. These saved builds are deliberate distribution artifacts.
+

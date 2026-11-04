@@ -1,6 +1,6 @@
 # Build timeline: finish by 20 November 2026
 
-Plan created: **23 October 2026**; current lab plan **3 November**.
+Plan created: **23 October 2026**; current lab plan **5 November**.
 Simulation recovery update: **29 October**; see the lab-version note below.
 The confirmed deadline is **20 November
 2026**, replacing the original December 2 target. Dates use India time.
@@ -13,7 +13,11 @@ Use [project_checklist.md](project_checklist.md) to tick tasks and
 [progress_log.md](progress_log.md) to record dated results. The checklist
 is the maintained record; this document explains the order and deadlines.
 
-## November 3–4 lab
+## November 5 update
+
+The independent keypad and OLED board demos and simulations 17–20 passed. Next is the combined **JA keypad / JC OLED** trial, including a complete 32-digit ciphertext, repeated input and shutdown/restart. The deadline remains November 20. See [next lab](../NEXT_LAB_COMBINED.md).
+
+## November 3–4 lab (completed)
 
 November 3: tests 17–20 in Vivado, then generate the two images from editable lab projects. November 4: keypad-to-CPU/AES on JA and standalone OLED checkerboard on JB. Save results before marking the physical milestones complete. Next integration: let the CPU send its saved ciphertext to the OLED as 32 hex characters. See [the weekly lab sheet](../LAB_THIS_WEEK.md).
 
@@ -268,4 +272,5 @@ step is **M3.3, keypad scanning**. Confirm actual module revisions and key legen
 before final I/O assignments. The existing ALU, CPU, and CPU/AES demos
 have passed their reported physical checks. New peripheral tests each
 need their own simulation, implementation, and physical acceptance.
+
 

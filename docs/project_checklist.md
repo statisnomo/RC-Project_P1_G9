@@ -89,18 +89,27 @@ Waveform learning and evidence archiving are tracked separately below.
   UART's first A frame/full stop bit; UART bus completion and busy-write error.
   Also inspect ALU/register-file and board-wrapper signals and explain the
   minimal-SoC versus CPU board-wrapper tests. Save useful waveform views.
-- [ ] P18: Run keypad scanner test 17, `sim_keypad_scanner` /
+- [x] P18: Run keypad scanner test 17, `sim_keypad_scanner` /
   `tb_keypad_scanner`, to PASS in the lab; observe one pulse per press,
   stable release, and multiple-key lockout. See [the scanner guide](keypad_scanner.md).
-- [ ] P19: Run keypad MMIO test 18, `sim_keypad_mmio` / `tb_keypad_mmio`,
+- [x] P19: Run keypad MMIO test 18, `sim_keypad_mmio` / `tb_keypad_mmio`,
   to PASS in the lab. Inspect pending data surviving reads, ACK freeing
   the slot, and OVERFLOW preserving the first key. See [the MMIO guide](keypad_mmio.md).
 
-- [ ] P20: On lab Vivado run test 19: 64 keypad digits through CPU to two checked ciphertexts.
-- [ ] P21: Run test 20: capture the external OLED startup, checkerboard and shutdown.
+- [x] P20: On lab Vivado run test 19: 64 keypad digits through CPU to two checked ciphertexts.
+- [x] P21: Run test 20: capture the external OLED startup, checkerboard and shutdown.
 - [ ] P22: Generate both bitstreams in the lab GUI; save the timing reports and exact .bit names.
-- [ ] P23: On JA verify real keypad labels, one press per hold and the 32nd digit block indicator.
-- [ ] P24: On JB photograph the external OLED pattern; record automatic shutdown and LD1.
+- [x] P23: On JA verify real keypad labels, one press per hold and the 32nd digit block indicator.
+- [x] P24: On JB photograph the external OLED pattern; record automatic shutdown and LD1.
+
+November 4: P18–P21 and P23–P24 passed, reported by the user with photos. P22 was not performed. See [the lab record](lab_results_2026-11-04.md).
+
+- [ ] P25: Run combined tests 21–23 on lab Vivado; save PASS lines.
+- [ ] P26: Program the combined JA/JC image; compare both full ciphertexts on the external OLED.
+- [ ] P27: Confirm chord shutdown, release/restart, and a new block afterward.
+- [ ] P28: Run implementation and generate the combined image on the lab PC from its source.
+
+Next: [combined demo guide](../NEXT_LAB_COMBINED.md).
 
 Use the [November 3–4 lab sheet](../LAB_THIS_WEEK.md) for P18–P24.
 For older waveform and evidence follow-ups, see
@@ -202,13 +211,13 @@ CPU integration, routed board build, and H3.1 remain open.
   invalid addresses, byte strobes, and wait-state behavior.
 - [ ] M4.2: Finish input -> AES -> display firmware, including clear/start,
   length tracking, timeout/error handling, and the next input block.
-- [ ] M4.3: Pass system simulation using modeled key presses and captured
+- [x] M4.3: Pass system simulation using modeled key presses and captured
   OLED/UART traffic; compare actual ciphertext and displayed values.
 - [ ] M4.4: Pass repeated inputs, reset/restart, incomplete input, and stalled
   peripheral cases; no lost key events or duplicate bus side effects.
 - [ ] M4.5: Measure code, constants, buffers, and stack use within 4 KB ROM /
   4 KB RAM. Run all existing and new simulation sets to PASS.
-- [ ] M4.6: Complete full-system implementation; review 100 MHz routed
+- [x] M4.6: Complete full-system implementation; review 100 MHz routed
   setup/hold, unconstrained paths, DRC, and resource use; generate bitstream.
 - [ ] G4: Complete simulated demonstration and a checked full-system image ready.
 
@@ -275,4 +284,7 @@ Copy this short section into a new progress entry; do not reuse old ticks.
 - [ ] Append the visit record and choose the next test that can run without the board.
 
 Use a fresh copy of [lab_record_template.md](lab_record_template.md) for each visit.
+
+
+
 

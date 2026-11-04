@@ -1,5 +1,9 @@
 # ZedBoard I/O plan
 
+**Current combined build:** KYPD **JA**, external OLED **JC**, optional UART TX **JD pin 1 / V7**. Updated at the user's request because the keypad obstructs JB. The November 4 photos identify the lab board as Rev D. The November 3 standalone OLED image still uses JB; that is a historical test image. See [the combined lab guide](../NEXT_LAB_COMBINED.md).
+
+JC positions 1,2,4,7,8,9,10 map to OLED CS,MOSI,SCLK,D/C,RES,VBATC,VDDC and FPGA pins AB7,AB6,AA4,R6,T6,T4,U4. JC3 is unused. Pin names were cross-checked against [Digilent master constraints](https://github.com/Digilent/digilent-xdc/blob/master/Zedboard-Master.xdc) and the local board schematic/header order. The following original reservations are retained as history.
+
 Reviewed on 22 October 2026 against the four files in
 [the board reference library](references/zedboard/README.md). This plan
 records board wiring now so later peripheral work uses checked pins.
@@ -167,3 +171,5 @@ corresponding controller's real timing is defined.
 ## November 3: two separate board projects
 
 The new keypad/AES image enables JA for the KYPD. The separate checkerboard image enables JB for the external OLED. Each has its own XDC and top; the older AES-only project still uses clock and LEDs. See [the current lab sheet](../LAB_THIS_WEEK.md) for connector orientation, expected outputs and how to generate the images.
+
+

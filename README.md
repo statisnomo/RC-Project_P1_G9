@@ -1,5 +1,7 @@
 # Custom RISC-V SoC with a Cryptographic Hardware Accelerator
 
+**Next combined demo:** [JA keypad + JC OLED; source and bitstream workflow](NEXT_LAB_COMBINED.md). [November 4 lab results](docs/lab_results_2026-11-04.md).
+
 **November 3–4 lab:** [Build both .bit files in Vivado and test the keypad and OLED](LAB_THIS_WEEK.md).
 
 A custom RISC-V CPU and AES-128 accelerator in the ZedBoard programmable
@@ -184,4 +186,5 @@ the other user LEDs should be off. CPU-to-AES MMIO integration now passes.
 The next peripheral step is the keypad scanner; UART unit/MMIO tests pass.
 Confirm exact module revisions and wiring before enabling peripheral I/O.
 The existing ALU, CPU, and CPU/AES images have reported physical PASS.
+
 

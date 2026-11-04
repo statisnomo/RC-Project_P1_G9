@@ -1,5 +1,7 @@
 # What you can do while the keypad is being built
 
+**November 4 update:** lab tests 17–20 and both independent hardware demos passed. [Saved results](lab_results_2026-11-04.md). Earlier pending-status notes below describe the original increment; use [the combined guide](../NEXT_LAB_COMBINED.md) for the next lab.
+
 All original tests **1–16 have passed in the lab** across October 27 and 29.
 The user clarified that the eight tests listed below passed on October 27.
 My earlier description of them as unreported was incorrect. No repeat is
@@ -48,3 +50,4 @@ The scanner's new [test 17](keypad_scanner.md) is a separate next increment.
 The older GitHub lab snapshot has only 16 tests until the new files are
 published. Tests 17/18 are the next new lab checks after publication; the original
   tests above do not need repeating unless affected by a later change.
+

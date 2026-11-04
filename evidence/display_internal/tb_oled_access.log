@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_oled_access: 20 bus operations, cancellation, busy/invalid writes, discharge and restart
+$finish called at time : 555770 ns : File "D:/RC Project/riscv_soc_project/tb/internal/tb_oled_access.sv" Line 56

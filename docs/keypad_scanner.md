@@ -1,5 +1,7 @@
 # Keypad step 1 — scan and debounce
 
+**November 4 update:** lab tests 17–20 and both independent hardware demos passed. [Saved results](lab_results_2026-11-04.md). Earlier pending-status notes below describe the original increment; use [the combined guide](../NEXT_LAB_COMBINED.md) for the next lab.
+
 This document covers the scanner. The [event mailbox/MMIO wrapper](keypad_mmio.md)
 now also passes its independent tests. Hex-character mapping, CPU integration,
 and the board demo remain subsequent steps.
@@ -74,3 +76,4 @@ Expected final message: **`PASS tb_keypad_scanner`**.
 Scanner test 17 emits pulses; [test 18](keypad_mmio.md) now checks persistent
 CPU-visible event storage, acknowledgement and overflow. M3.3's engineering
 unit/MMIO gate is complete; lab tests 17/18 remain pending.
+

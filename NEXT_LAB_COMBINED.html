@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Combined JA/JC lab</title><style>body{max-width:55rem;padding:1rem 2rem;margin:auto;font:16px/1.55 system-ui;color:#172638}h1,h2{line-height:1.2}h2{margin-top:2rem;color:#144968}li{margin:.4em 0}code,pre{background:#eff4f6;padding:.2em}a{color:#04588c}@media print{body{font-size:11pt}h2{break-after:avoid}}</style><body><h1 id="next-lab-type-a-block-and-read-its-aes-ciphertext-on-the-oled">Next lab: type a block and read its AES ciphertext on the OLED</h1>
+<p>The November 4 lab passed simulations 17–20 and both independent hardware demos. This visit tests the combined system. Bring the ZedBoard, Pmod KYPD and external Pmod OLED; a UART adapter is optional.</p>
+<p><strong>New wiring: KYPD on JA, OLED on JC.</strong> The keypad obstructs JB. Optional UART TX moves to <strong>JD pin 1</strong>, package V7. The old standalone OLED bitstream used JB; it is not the image for this visit.</p>
+<h2 id="files-you-receive">Files you receive</h2>
+<p>The combined ZIP contains the supplied <code>prebuilt/zedboard_display_ja_jc.bit</code>, complete Verilog, the ready-to-use <code>fw/display.hex</code> ROM, the single <code>constraints/zedboard_display.xdc</code>, and three new simulation benches. Use the supplied bitstream first if time is limited. You can also run implementation and generate a bitstream yourself from the same code.</p>
+<h2 id="build-your-own-image-in-vivado">Build your own image in Vivado</h2>
+<ol>
+<li>Extract the complete ZIP to a writable local folder. Start <strong>Create Project → RTL Project</strong> with part <strong>xc7z020clg484-1</strong>. This creates a project native to your installed Vivado version; no setup script is required.</li>
+<li><strong>Add Sources → Add or Create Design Sources</strong>: add all <code>.v</code> files in <code>rtl/cpu</code>, <code>rtl/mem</code>, <code>rtl/crypto</code>, <code>rtl/peripherals</code>, <code>rtl/soc</code>, and <code>rtl/board</code>, plus <code>rtl/cpu/cpu_defs.vh</code>. In this kit the only board top is <code>zedboard_display</code>. Right-click it → <strong>Set as Top</strong>. Keep the copied header together with the CPU files or set <code>rtl/cpu</code> in the project's Verilog include directories.</li>
+<li>Add <code>fw/display.hex</code> as a <strong>Memory Initialization File</strong> in Design Sources. Confirm its file type in Source File Properties. Add only <code>constraints/zedboard_display.xdc</code> to Constraints. Do not add the old demo XDCs.</li>
+<li><strong>Run Implementation</strong> and allow Vivado to run synthesis first. Open the implemented design and check <strong>Report Timing Summary</strong>: WNS and WHS must both be nonnegative for the 10 ns clock. Run DRC and resolve any errors/critical warnings before use. The absence of ARM/PS7 produces the known PS7 warning in this PL-only project.</li>
+<li>Click <strong>Generate Bitstream</strong>. In Design Runs, right-click <code>impl_1</code> → <strong>Open Run Directory</strong>. Program your <code>zedboard_display.bit</code>. It has the same JA/JC wiring as the supplied image. Save the filename, timestamp, timing report and a copy of your source with it.</li>
+</ol>
+<h2 id="three-new-simulations-if-time-permits">Three new simulations, if time permits</h2>
+<p>In <strong>Add Sources → Add or Create Simulation Sources</strong>, create a separate simulation set for each bench below. Add its <code>.sv</code> file, <code>tb/peripherals/keypad_matrix_model.v</code>, and <code>fw/display.hex</code> (Memory Initialization File). Make the bench the simulation top. The other RTL remains in Design Sources. Choose <strong>Run Behavioral Simulation → Run All</strong>. Close each simulation before selecting the next one. Full warnings/Fatal text is more useful than a cropped FAIL line.</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>21:</strong> <code>tb/internal/tb_oled_access.sv</code>, top <code>tb_oled_access</code>: register access, cancellation, shutdown/discharge/restart. Expect <code>PASS tb_oled_access</code>.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>22:</strong> <code>tb/internal/tb_display_system.sv</code>, top <code>tb_display_system</code>: real CPU, matrix, AES, OLED and UART; two complete ciphertexts and pixel streams. Expect <code>PASS tb_display_system</code>.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <strong>23:</strong> <code>tb/internal/tb_display_board.sv</code>, top <code>tb_display_board</code>: the actual board wrapper, startup, key-held-at-boot suppression, open-drain pads and LEDs. Expect <code>PASS tb_display_board</code>.</li>
+</ul>
+<p>The tests shorten device delays for simulation; hardware uses the full delays. Existing tests 1–20 are already passed and need not be repeated just for the record.</p>
+<h2 id="physical-test">Physical test</h2>
+<ol>
+<li>With board power <strong>off</strong>, put KYPD J1 on <strong>JA</strong> and OLED J1 on <strong>JC</strong>, pin 1 to pin 1 and both rows aligned. Leave JB free. Use the programming connection that worked in the previous lab. The photographed DLC9LP is a programming cable; no UART adapter is required.</li>
+<li>Power up; in <strong>Hardware Manager → Open Target → Program Device</strong>, select <code>zedboard_display_ja_jc.bit</code> (or your locally generated image). Clear any stale probes file. Keep keys released during configuration. After startup, the OLED should be blank, LD6 blinking and LD7 off.</li>
+<li>Tap and release each digit of <strong>00112233445566778899AABBCCDDEEFF</strong>. Do not hold two keys together during input. LD3…LD0 show the latest hex digit; LD4 changes once per accepted press. After digit 32, expect these two lines, in order:</li>
+</ol>
+<pre><code class="language-text">69C4E0D86A7B0430
+D8CDB78070B4C55A
+</code></pre>
+<p>The public demonstration key is <code>000102030405060708090A0B0C0D0E0F</code>. LD5 changes after the firmware has submitted the display and sent its UART line; it is not a ciphertext-correctness flag. Compare the screen itself and photograph it.</p>
+<ol start="4">
+<li>Release between all presses and enter <strong>32 zeros</strong>. Expect:</li>
+</ol>
+<pre><code class="language-text">C6A13B37878F5B82
+6F4F8162A1C8D879
+</code></pre>
+<p>The first result stays visible while entering the second block. A partial block must not replace it. Check 31 digits first, then enter digit 32.</p>
+<ol start="5">
+<li><strong>Shutdown/restart:</strong> press and hold <strong>0 and D together</strong>. Once detected as a chord, input stops, the display goes dark and the controller discharges the panel supply. Keep holding for roughly <strong>4 seconds</strong>, until <strong>LD1 on, LD0/LD2–LD5 off</strong> (LD6 still blinking; LD7 off). You can then power off while holding the keys. Alternatively release both: it restarts with a blank display and an empty input block. Any chord seen by the scanner requests this operation; it is also how to discard a partial block. If your first finger registers before the second, that partial digit is discarded during shutdown.</li>
+</ol>
+<p>Optional UART: only with a confirmed <strong>3.3 V logic</strong> USB-to-TTL adapter, connect <strong>JD pin 1 → adapter RX</strong> and a ground pin to adapter GND. Do not connect adapter power or TX. At 115200, 8N1, expect each 32-character ciphertext followed by LF. The ZedBoard's onboard PS UART is not this PL output.</p>
+<h2 id="what-to-record">What to record</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Exact Vivado version and the bitstream actually programmed: supplied or your build.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Tests 21/22/23: PASS, FAIL or not run.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> First ciphertext exactly matches all 32 characters; photo with both Pmods visible.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> 31-digit partial input leaves the old result; digit 32 produces the second expected result.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Holding 0+D shuts down; releasing restarts blank; another block works after restart.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> If you generated an image, save WNS/WHS and DRC along with that file.</li>
+</ul>
+<p>The internal simulations and routed build do not prove physical text orientation or readability. If characters appear mirrored or upside down, photograph them in the board's normal orientation before changing code. If a key appears wrong, record printed key → LD3…LD0. Slow deliberate entry is intended: the current single-entry keypad mailbox can overrun if input arrives too quickly while firmware is busy; firmware timeouts and overflow recovery remain future work.</p>
+</body></html>

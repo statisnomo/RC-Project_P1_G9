@@ -1,3 +1,9 @@
+# Next lab: combined keypad → AES → OLED
+
+Download [the combined source + bitstream ZIP](https://raw.githubusercontent.com/statisnomo/RC-Project_P1_G9/main/deliverables/riscv_soc_combined_ja_jc_2026-11-05.zip). Use [the new JA/JC guide](NEXT_LAB_COMBINED.md). KYPD stays on JA; OLED moves to JC; optional UART uses JD1. Tests 1–20 and both separate physical demos have passed. The earlier lab instructions are archived below.
+
+---
+
 # This week's lab: November 3–4
 Download [the November lab ZIP](https://raw.githubusercontent.com/statisnomo/RC-Project_P1_G9/main/deliverables/riscv_soc_lab_2026-11-03.zip) and extract it on the lab PC. Start with [the two board projects and GUI lab tests](LAB_THIS_WEEK.md). Run tests 17–20, generate both bitstreams on the lab PC, then test the keypad and external OLED on the ZedBoard. Tests 1–16 have already passed in the lab.
 
@@ -106,4 +112,6 @@ three working `.bit` files are in [build/](build/README.md); this simulation
 recovery does not require rebuilding or reprogramming them. If the lab has
 the peripheral hardware, also record the KYPD/OLED module models and the
 3.3 V USB-to-TTL adapter model for the next wiring step.
+
+
 

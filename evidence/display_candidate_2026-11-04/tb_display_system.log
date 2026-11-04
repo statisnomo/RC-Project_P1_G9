@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_display_system: 64 digits, 2 AES ciphertexts, 1024 pixel bytes, 66 UART characters, overlap, partial input, chord shutdown and release restart
+$finish called at time : 1078060 ns : File "D:/RC Project/riscv_soc_project/tb/internal/tb_display_system.sv" Line 102

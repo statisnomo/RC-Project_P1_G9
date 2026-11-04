@@ -1,5 +1,7 @@
 # Keypad events and MMIO
 
+**November 4 update:** lab tests 17–20 and both independent hardware demos passed. [Saved results](lab_results_2026-11-04.md). Earlier pending-status notes below describe the original increment; use [the combined guide](../NEXT_LAB_COMBINED.md) for the next lab.
+
 Base **0x40000100**, using the approved completion-based valid/ready bus.
 This contract was defined before testing the implementation. The standard
 Digilent Pmod KYPD and Pmod OLED are confirmed module targets; the UART
@@ -50,3 +52,4 @@ WAIT_CYCLES must be >= 1. Reset is synchronous and active high.
 connected to `soc_aes`; CPU integration follows. Scanner test 17 remains
 separate. **Test 18: sim_keypad_mmio / tb_keypad_mmio**, then Run Behavioral
 Simulation > Run All. Expected final result: `PASS tb_keypad_mmio`.
+
