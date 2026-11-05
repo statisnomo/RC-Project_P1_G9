@@ -1,5 +1,10 @@
 # Next lab: type a block and read its AES ciphertext on the OLED
 
+**November 5 update:** tests 21–26 and the exact external-OLED ciphertexts
+have passed in the lab. This guide remains the working JA/JC reference.
+For the new built-in display option, use [the onboard OLED guide](LAB_ONBOARD_OLED.md).
+UART hardware and the explicit reliability/own-build evidence remain open.
+
 The November 4 lab passed simulations 17–20 and both independent hardware demos. This visit tests the combined system. Bring the ZedBoard, Pmod KYPD and external Pmod OLED; a UART adapter is optional.
 
 **New wiring: KYPD on JA, OLED on JC.** The keypad obstructs JB. Optional UART TX moves to **JD pin 1**, package V7. The old standalone OLED bitstream used JB; it is not the image for this visit.

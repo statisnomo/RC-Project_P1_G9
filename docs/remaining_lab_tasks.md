@@ -1,5 +1,10 @@
 # What you can do while the keypad is being built
 
+**November 5 update:** lab tests 1–26 and combined external-OLED ciphertext
+rendering passed. This page retains older learning exercises; the current
+tasks are [test 27 and the built-in OLED trial](../LAB_ONBOARD_OLED.md),
+own-build timing, explicit repeat/restart counts and optional UART reception.
+
 **November 4 update:** lab tests 17–20 and both independent hardware demos passed. [Saved results](lab_results_2026-11-04.md). Earlier pending-status notes below describe the original increment; use [the combined guide](../NEXT_LAB_COMBINED.md) for the next lab.
 
 All original tests **1–16 have passed in the lab** across October 27 and 29.

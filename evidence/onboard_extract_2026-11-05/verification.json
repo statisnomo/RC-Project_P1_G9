@@ -1,0 +1,19 @@
+{
+  "archive": "riscv_soc_onboard_oled_2026-11-05.zip",
+  "sha256": "299d80de45c5a0473ac6cb0b73fd3ddecff643feb41cb0f1dde6fd8f5201c87f",
+  "vivado": "2025.2",
+  "simulations_passed": [
+    "tb_oled_access",
+    "tb_display_system",
+    "tb_display_board",
+    "tb_display_recovery",
+    "tb_display_bus",
+    "tb_display_repeat",
+    "tb_display_onboard"
+  ],
+  "packaged_source_hashes_checked": 37,
+  "packaged_sources_match_development": true,
+  "bitstream_sha256": "d26e9d5106f6d358081be29d611c5e44e892066b408c9521cd1679b7fda753ca",
+  "physical_onboard_test": "pending",
+  "physical_uart_test": "not run"
+}

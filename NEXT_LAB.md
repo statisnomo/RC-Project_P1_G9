@@ -1,5 +1,10 @@
 # Next lab: combined keypad → AES → OLED
 
+**November 5 results:** tests 21–26 and the combined ciphertext display passed
+in the lab. Next, try [the built-in OLED variant](LAB_ONBOARD_OLED.md), which
+needs only the KYPD on JA. UART hardware is still an optional follow-up.
+The existing external-OLED kit below remains the physically verified backup.
+
 Download [the hardened source + bitstream ZIP](https://raw.githubusercontent.com/statisnomo/RC-Project_P1_G9/main/deliverables/riscv_soc_hardened_ja_jc_2026-11-05.zip). Use [the JA/JC guide](NEXT_LAB_COMBINED.md) for simulations 21–26, held-key/partial-input/restart checks and ten physical reference blocks. KYPD stays on JA; OLED uses JC. The [optional UART side test](LAB_UART_OPTIONAL.md) uses JD1 and the same image. Tests 1–20 and both separate physical demos have passed. The earlier lab instructions are archived below.
 
 ---

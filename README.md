@@ -2,6 +2,11 @@
 
 **Next lab:** [hardened JA keypad + JC OLED kit and GUI procedure](NEXT_LAB_COMBINED.md), with tests 21–26 and expanded physical checks. [Optional UART side test](LAB_UART_OPTIONAL.md). [November 4 lab results](docs/lab_results_2026-11-04.md).
 
+**November 5 lab PASS:** tests 21–26 and correctly rendered combined ciphertexts
+on the external OLED. [Results and waveform layouts](docs/lab_results_2026-11-05.md).
+The next variant uses [the ZedBoard's built-in OLED](LAB_ONBOARD_OLED.md), with
+the same CPU, AES and firmware. UART hardware testing remains pending.
+
 **November 3–4 lab:** [Build both .bit files in Vivado and test the keypad and OLED](LAB_THIS_WEEK.md).
 
 A custom RISC-V CPU and AES-128 accelerator in the ZedBoard programmable
@@ -13,9 +18,9 @@ results, and rehearsal. Use the [timeline](docs/project_timeline.md),
 [master checklist](docs/project_checklist.md), and
 [progress log](docs/progress_log.md) to track each small verified step.
 
-**Lab update:** all original tests **1–20 passed** across October 27, October 29
-and November 4, along with the independent keypad/AES and OLED board demos.
-The combined image awaits physical verification. Its firmware now has bounded
+**Lab update:** tests **1–26 passed** across October 27, October 29,
+November 4 and November 5. The combined external-OLED ciphertext display now
+also has a user-reported physical pass. Its firmware has bounded
 status waits and keypad overflow recovery. See the [release notes](docs/release_2026-11-05.md).
 
 **Historical October recovery workflow:** [GUI checklist](NEXT_LAB.md). It covers the reported

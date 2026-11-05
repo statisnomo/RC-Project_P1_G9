@@ -33,9 +33,12 @@ for path in ('NEXT_LAB_COMBINED.md','NEXT_LAB_COMBINED.html','LAB_UART_OPTIONAL.
              'tb/peripherals/keypad_matrix_model.v','scripts/build_display_candidate.tcl',
              'scripts/release_manifest.py','scripts/generate_lab_vectors.ps1'):
     add(path)
-for d in ('rtl/cpu','rtl/mem','rtl/crypto','rtl/peripherals','tb/internal'):
+for d in ('rtl/cpu','rtl/mem','rtl/crypto','rtl/peripherals'):
     for p in (root/d).iterdir():
         if p.suffix in ('.v','.vh','.sv','.mem'):add(p)
+for top in ('tb_oled_access','tb_display_system','tb_display_board','tb_display_recovery','tb_display_bus','tb_display_repeat'):
+    add('tb/internal/'+top+'.sv')
+add('tb/internal/display_lab_vectors.mem')
 for p in evidence.iterdir():
     if p.suffix in ('.txt','.rpt','.log','.md','.json'):add(p)
 add('evidence/release_regression_2026-11-05/summary.txt')

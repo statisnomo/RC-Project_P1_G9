@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LAB ONBOARD OLED</title><style>body{max-width:960px;margin:32px auto;padding:0 24px;font:17px/1.6 system-ui;color:#17202a}h1,h2{line-height:1.25}pre{background:#f1f4f7;padding:16px;overflow:auto}code{font-size:0.95em}li{margin:8px 0}a{color:#075cab}@media print{body{font-size:11pt;margin:0}h2{break-after:avoid}pre{white-space:pre-wrap}}</style><body><h1 id="next-step-use-the-zedboards-built-in-oled">Next step: use the ZedBoard's built-in OLED</h1>
+<p>The existing JA-keypad / JC-Pmod-OLED system passed the user's November 5 lab
+tests and displayed the expected ciphertexts. This new variant uses the small
+OLED already mounted on the ZedBoard, so the external Pmod OLED is unnecessary.
+The CPU, AES accelerator, firmware and keypad behaviour are the same.</p>
+<h2 id="why-this-works">Why this works</h2>
+<p>The onboard DISP1 is a 128x32 OLED connected to PL bank 13. Its signals are
+SDIN AA12, SCLK AB12, D/C U10, reset U9, VBAT control U11 and VDD control U12.
+Both supply controls are active low. The board ties OLED CS# to ground, so
+there is no FPGA CS output for this variant. The serial controller emits no
+extra clocks between bytes and test 27 checks the stream without CS framing.</p>
+<p>References: <a href="https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Zedboard-Master.xdc">Digilent master XDC</a>,
+<a href="https://files.digilent.com/resources/programmable-logic/zedboard/ZedBoard_HW_UG_v2_2.pdf">ZedBoard hardware guide</a>,
+and the archived schematic, sheet 6. The revision-D schematic also lists
+the onboard OLED circuit. No ARM software or VADJ jumper change is required.</p>
+<h2 id="files-and-wiring">Files and wiring</h2>
+<p>Download <a href="https://github.com/statisnomo/RC-Project_P1_G9/raw/refs/heads/main/deliverables/riscv_soc_onboard_oled_2026-11-05.zip">riscv_soc_onboard_oled_2026-11-05.zip</a>. The supplied image is
+<code>prebuilt/zedboard_display_onboard.bit</code>.</p>
+<ul>
+<li>Keep <strong>Pmod KYPD on JA</strong>.</li>
+<li>With power off, <strong>remove the external OLED from JC</strong>; use the display
+already mounted on the board. No display wiring or jumper leads are needed.</li>
+<li>Optional UART is still <strong>JD pin 1</strong>, with the same adapter guide.</li>
+<li>Keep the old JA/JC kit as a working backup. Its <code>.bit</code> drives the external
+display; this onboard <code>.bit</code> drives the built-in display. They are distinct.</li>
+</ul>
+<h2 id="build-it-yourself-in-vivado">Build it yourself in Vivado</h2>
+<ol>
+<li>Extract this ZIP to a short writable path and create an RTL project for
+<strong>xc7z020clg484-1</strong> in the lab's installed Vivado version.</li>
+<li>Add all <code>.v</code> files from the supplied <code>rtl</code> folders and <code>rtl/cpu/cpu_defs.vh</code>.
+Both board wrapper files are needed. Set <strong><code>zedboard_display_onboard</code> as top</strong>.</li>
+<li>Add <code>fw/display.hex</code> as a <strong>Memory Initialization File</strong>. Add only
+<strong><code>constraints/zedboard_display_onboard.xdc</code></strong>. Do not mix it with the
+external-display constraints; the two builds use different display pins.</li>
+<li>Set synthesis <code>flatten_hierarchy</code> to <strong>none</strong> and enable implementation
+<strong>phys_opt_design</strong>. Run Implementation. Check the 10 ns clock, WNS/WHS
+nonnegative and no DRC errors/critical warnings. The known PL-only ZPS7-1
+warning is recorded in the supplied reports.</li>
+<li>Generate Bitstream. Program the resulting <code>zedboard_display_onboard.bit</code>
+in Hardware Manager and save its timing report. No script is required
+for this GUI workflow. The supplied <code>.bit</code> is available if lab time is short.</li>
+</ol>
+<h2 id="new-small-simulation-test-27">New small simulation: test 27</h2>
+<p>Add <code>tb/internal/tb_display_onboard.sv</code>,
+<code>tb/peripherals/keypad_matrix_model.v</code>, and <code>fw/display.hex</code> to a simulation
+set. Set <strong><code>tb_display_onboard</code></strong> as simulation top, then
+<strong>Run Behavioral Simulation → Run All</strong>. Expected result:</p>
+<pre><code class="language-text">PASS tb_display_onboard: CS tied low, 2095 SPI bytes, two exact ciphertext frames, 66 UART frames at divider 868, power sequencing, partial chord release and restart
+</code></pre>
+<p>The test shortens display startup/discharge delays; the hardware keeps its
+normal delays. It uses the actual board wrapper and the production UART
+divider. Tests 21–26 are included for regression, but their November 5 lab
+passes are already recorded; no need to rerun them solely for the record.</p>
+<h2 id="physical-test-one-small-step-at-a-time">Physical test — one small step at a time</h2>
+<ol>
+<li>Program the onboard image with all keys released. The onboard OLED should
+become blank, LD6 should blink and LD7 should stay off.</li>
+<li>Enter <code>00112233445566778899AABBCCDDEEFF</code>. Expect:</li>
+</ol>
+<pre><code class="language-text">69C4E0D86A7B0430
+D8CDB78070B4C55A
+</code></pre>
+<ol start="3">
+<li>Enter 31 zeros and pause: the previous result should remain. Enter the
+last zero. Expect:</li>
+</ol>
+<pre><code class="language-text">C6A13B37878F5B82
+6F4F8162A1C8D879
+</code></pre>
+<ol start="4">
+<li>Hold <strong>0+D</strong> until the screen is off and LD1 indicates shutdown complete
+(roughly four seconds; LD6 still blinks). Release one key while holding
+the other: it should remain off. Release the last key: it should restart
+blank. Enter the first block again and verify the complete result.</li>
+<li>Photograph the onboard text and keypad together, noting the bitstream
+filename. If mirrored or upside down, save a photo before changing code.</li>
+<li>Once the basic test passes, use <a href="docs/lab_ten_blocks.html">the ten-block sheet</a>
+and record three fresh-start trials. Shut down the OLED before power-off;
+after power-on, reprogram this image before each trial.</li>
+</ol>
+<p>LD3–LD0 show the last digit, LD4 toggles per accepted digit, LD5 toggles after
+the firmware submits a result and sends the UART line, LD6 is heartbeat,
+LD7 is a fault. LD5 alone is not proof of a correct ciphertext: compare all
+32 displayed digits. There is no input through the PS reset button.</p>
+<p>UART remains a side test using <a href="LAB_UART_OPTIONAL.html">the adapter instructions</a>.
+Mark it not run if no suitable adapter is available.</p>
+<h2 id="record-the-result">Record the result</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Test 27: PASS / FAIL / not run; save the first error if any.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Onboard first ciphertext: exact match, photo saved.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Partial input and second ciphertext: correct.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Shutdown, partial release, restart and another block: correct.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Supplied or own-generated image identified; save own-build timing.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Ten blocks / three fresh starts: record actual counts, not just &quot;works&quot;.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Optional UART: pass / fail / not run.</li>
+</ul>
+<p>The onboard image's simulation and implementation results are local tests.
+Vivado 2025.2 passed all seven included simulations and routed the design at
+100 MHz: setup slack <strong>+0.241 ns</strong>, hold slack <strong>+0.106 ns</strong>, no DRC errors
+or critical warnings. Utilization is 3,562 LUTs, 2,509 flip-flops and two
+36 Kb BRAMs. Your Vivado version may place the design differently, so check
+its own timing report after generating a new image.
+Its physical pass remains pending until the lab confirms it. The earlier
+external-Pmod display pass does not automatically validate this wiring.</p>
+</body></html>

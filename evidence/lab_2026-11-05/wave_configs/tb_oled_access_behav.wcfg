@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_oled_access_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_oled_access" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="555770001fs"></ZoomEndTime>
+      <Cursor1Time time="555770000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="59"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="26" />
+   <wvobject fp_name="/tb_oled_access/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/v" type="logic">
+      <obj_property name="ElementShortName">v</obj_property>
+      <obj_property name="ObjectShortName">v</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/w" type="logic">
+      <obj_property name="ElementShortName">w</obj_property>
+      <obj_property name="ObjectShortName">w</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/a" type="array">
+      <obj_property name="ElementShortName">a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">a[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/d" type="array">
+      <obj_property name="ElementShortName">d[31:0]</obj_property>
+      <obj_property name="ObjectShortName">d[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/size" type="array">
+      <obj_property name="ElementShortName">size[1:0]</obj_property>
+      <obj_property name="ObjectShortName">size[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/lanes" type="array">
+      <obj_property name="ElementShortName">lanes[3:0]</obj_property>
+      <obj_property name="ObjectShortName">lanes[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/err" type="logic">
+      <obj_property name="ElementShortName">err</obj_property>
+      <obj_property name="ObjectShortName">err</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/cs" type="logic">
+      <obj_property name="ElementShortName">cs</obj_property>
+      <obj_property name="ObjectShortName">cs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/sd" type="logic">
+      <obj_property name="ElementShortName">sd</obj_property>
+      <obj_property name="ObjectShortName">sd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/dc" type="logic">
+      <obj_property name="ElementShortName">dc</obj_property>
+      <obj_property name="ObjectShortName">dc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/res" type="logic">
+      <obj_property name="ElementShortName">res</obj_property>
+      <obj_property name="ObjectShortName">res</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/vbat" type="logic">
+      <obj_property name="ElementShortName">vbat</obj_property>
+      <obj_property name="ObjectShortName">vbat</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/vdd" type="logic">
+      <obj_property name="ElementShortName">vdd</obj_property>
+      <obj_property name="ObjectShortName">vdd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/sck" type="logic">
+      <obj_property name="ElementShortName">sck</obj_property>
+      <obj_property name="ObjectShortName">sck</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/rd" type="array">
+      <obj_property name="ElementShortName">rd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/ops" type="array">
+      <obj_property name="ElementShortName">ops[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ops[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/edge_count" type="array">
+      <obj_property name="ElementShortName">edge_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">edge_count[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/panel_edge" type="array">
+      <obj_property name="ElementShortName">panel_edge[31:0]</obj_property>
+      <obj_property name="ObjectShortName">panel_edge[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/last_reset" type="array">
+      <obj_property name="ElementShortName">last_reset[31:0]</obj_property>
+      <obj_property name="ObjectShortName">last_reset[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/byte_rx" type="array">
+      <obj_property name="ElementShortName">byte_rx[7:0]</obj_property>
+      <obj_property name="ObjectShortName">byte_rx[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/last_cmd" type="array">
+      <obj_property name="ElementShortName">last_cmd[7:0]</obj_property>
+      <obj_property name="ObjectShortName">last_cmd[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/bits" type="array">
+      <obj_property name="ElementShortName">bits[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bits[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_oled_access/BASE" type="array">
+      <obj_property name="ElementShortName">BASE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BASE[31:0]</obj_property>
+   </wvobject>
+</wave_config>

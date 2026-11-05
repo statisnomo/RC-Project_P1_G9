@@ -1,0 +1,1 @@
+Vivado 2025.2, 100MHz. Setup 0.241 ns; hold 0.106 ns. Seven simulations passed. Physical test pending.

@@ -1,5 +1,12 @@
 # ZedBoard I/O plan
 
+**Onboard display option (November 5):** `zedboard_display_onboard` uses the
+built-in DISP1 OLED: SDIN AA12, SCLK AB12, DC U10, RES U9, VBAT U11, VDD U12,
+all LVCMOS33 in bank 13. CS# is tied low on the PCB and is not an FPGA port.
+Use only `zedboard_display_onboard.xdc` with this top. JA keypad and JD1 TX
+remain unchanged; remove the external Pmod OLED for this trial. See
+[the onboard guide](../LAB_ONBOARD_OLED.md). Its physical pass is pending.
+
 **Current combined build:** KYPD **JA**, external OLED **JC**, optional UART TX **JD pin 1 / V7**. Updated at the user's request because the keypad obstructs JB. The November 4 photos identify the lab board as Rev D. The November 3 standalone OLED image still uses JB; that is a historical test image. See [the combined lab guide](../NEXT_LAB_COMBINED.md).
 
 JC positions 1,2,4,7,8,9,10 map to OLED CS,MOSI,SCLK,D/C,RES,VBATC,VDDC and FPGA pins AB7,AB6,AA4,R6,T6,T4,U4. JC3 is unused. Pin names were cross-checked against [Digilent master constraints](https://github.com/Digilent/digilent-xdc/blob/master/Zedboard-Master.xdc) and the local board schematic/header order. The following original reservations are retained as history.

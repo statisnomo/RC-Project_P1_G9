@@ -1,5 +1,12 @@
 # Ready-to-program ZedBoard builds
 
+**Built-in OLED option:** [onboard display image](zedboard_display_onboard/zedboard_display_onboard.bit)
+uses the JA keypad and the ZedBoard's own display, with optional UART on JD1.
+Use [the onboard lab guide](../LAB_ONBOARD_OLED.md) to rebuild through Vivado's
+GUI and perform test 27. Seven local simulations passed; routed 100 MHz
+setup/hold slack is +0.241/+0.106 ns. Physical onboard acceptance is pending.
+The external OLED image below remains the physically demonstrated backup.
+
 **Hardened November 5 combined image:** [keypad JA + OLED JC](zedboard_display/zedboard_display_ja_jc.bit), with overflow recovery and bounded status waits. Use [the combined guide](../NEXT_LAB_COMBINED.md) for its LED meanings and expected ciphertext, and [the optional UART test](../LAB_UART_OPTIONAL.md) for JD1. Matching [implementation evidence](../evidence/display_hardened_2026-11-05/) and [bitstream hash](zedboard_display/bitstream.sha256) identify this build. The old standalone OLED is a JB image. The self-tests below use a different LED legend.
 
 ## October self-tests

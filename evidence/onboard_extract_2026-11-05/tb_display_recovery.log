@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_display_recovery: real mailbox overflow, discarded partial block, recovery ciphertext, six bounded status faults, diagnostic codes and reset recovery
+$finish called at time : 2435555 ns : File "D:/RC Project/riscv_soc_project/build/onboard_extract_1105/tb/internal/tb_display_recovery.sv" Line 79

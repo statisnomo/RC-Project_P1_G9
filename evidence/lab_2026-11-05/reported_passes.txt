@@ -1,0 +1,7 @@
+User-reported November 5 lab results; these lines were supplied in chat.
+PASS tb_oled_access: 20 bus operations, cancellation, busy/invalid writes, discharge and restart
+PASS tb_display_system: 96 digits, 3 AES ciphertexts, 1536 pixel bytes, 99 UART characters, overlap, partial input, chord shutdown and full block after restart
+PASS tb_display_board: startup reset, physical pad drive, CPU digit LEDs and hold suppression
+PASS tb_display_recovery: real mailbox overflow, discarded partial block, recovery ciphertext, six bounded status faults, diagnostic codes and reset recovery
+PASS tb_display_bus: waits 1/5, 44 routed accesses, four windows, boundaries, invalid addresses, byte strobes and reset cancellation
+PASS tb_display_repeat: waits 1/5, 20 blocks from independent .NET AES vectors, 660 UART frames, RAM and OLED snapshots, CPU-visible cycle measurements

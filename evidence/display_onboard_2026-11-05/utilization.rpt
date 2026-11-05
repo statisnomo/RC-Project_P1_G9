@@ -1,0 +1,51 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Nov  5 19:11:37 2026
+| Host         : Anand-LOQ_25 running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file {D:/RC Project/riscv_soc_project/evidence/display_onboard_2026-11-05/utilization.rpt}
+| Design       : zedboard_display_onboard
+| Device       : xc7z020clg484-1
+| Speed File   : -1
+| Design State : Routed
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++------------------------------+------------------+------------+------------+---------+------+------+--------+--------+------------+
+|           Instance           |      Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++------------------------------+------------------+------------+------------+---------+------+------+--------+--------+------------+
+| zedboard_display_onboard     |            (top) |       3562 |       3561 |       0 |    1 | 2509 |      2 |      0 |          0 |
+|   (zedboard_display_onboard) |            (top) |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   demo                       | zedboard_display |       3562 |       3561 |       0 |    1 | 2509 |      2 |      0 |          0 |
+|     soc                      |      soc_display |       3555 |       3555 |       0 |    0 | 2460 |      2 |      0 |          0 |
+|       uart                   |        uart_mmio |         52 |         52 |       0 |    0 |   37 |      0 |      0 |          0 |
+|       aes                    |         aes_mmio |       1560 |       1560 |       0 |    0 |  693 |      0 |      0 |          0 |
+|         (aes)                |         aes_mmio |        203 |        203 |       0 |    0 |  303 |      0 |      0 |          0 |
+|         core                 |      aes128_core |       1357 |       1357 |       0 |    0 |  390 |      0 |      0 |          0 |
+|           (core)             |      aes128_core |        202 |        202 |       0 |    0 |  390 |      0 |      0 |          0 |
+|           expand             |   aes_key_expand |        249 |        249 |       0 |    0 |    0 |      0 |      0 |          0 |
+|             (expand)         |   aes_key_expand |         89 |         89 |       0 |    0 |    0 |      0 |      0 |          0 |
+|           round_datapath     |        aes_round |        908 |        908 |       0 |    0 |    0 |      0 |      0 |          0 |
+|             (round_datapath) |        aes_round |        128 |        128 |       0 |    0 |    0 |      0 |      0 |          0 |
+|             mix              |  aes_mix_columns |        140 |        140 |       0 |    0 |    0 |      0 |      0 |          0 |
+|       keypad                 |      keypad_mmio |        119 |        119 |       0 |    0 |   83 |      0 |      0 |          0 |
+|         scanner              |   keypad_scanner |         82 |         82 |       0 |    0 |   70 |      0 |      0 |          0 |
+|       oled                   |    oled_hex_mmio |        296 |        296 |       0 |    0 |  359 |      0 |      0 |          0 |
+|       system                 |      soc_minimal |       1489 |       1489 |       0 |    0 | 1288 |      2 |      0 |          0 |
+|         cpu                  |         cpu_core |       1434 |       1434 |       0 |    0 | 1281 |      0 |      0 |          0 |
+|           (cpu)              |         cpu_core |        367 |        367 |       0 |    0 |  289 |      0 |      0 |          0 |
+|           decoder            |           decode |         55 |         55 |       0 |    0 |    0 |      0 |      0 |          0 |
+|           execution_alu      |              alu |        379 |        379 |       0 |    0 |    0 |      0 |      0 |          0 |
+|           registers          |          regfile |        607 |        607 |       0 |    0 |  992 |      0 |      0 |          0 |
++------------------------------+------------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

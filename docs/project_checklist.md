@@ -1,9 +1,9 @@
 # Project checklist
 
 Deadline: **20 November 2026**. Full-demo target: **15 November**.
-Last reviewed: **5 November 2026**. Lab simulations 1–20 and the independent
-keypad/AES and OLED board demos passed. The hardened combined release adds
-tests 24–26 and extends test 22; its JA/JC image awaits physical lab testing.
+Last reviewed: **5 November 2026**. Lab simulations 1–26 passed. The user
+also reports correct combined JA-keypad / JC-OLED ciphertexts. The new onboard
+OLED variant remains a separate physical test. UART hardware is not yet tested.
 
 Tick a box only after its stated result is observed. Add the task ID, date,
 and evidence location to [progress_log.md](progress_log.md). A future file
@@ -12,14 +12,17 @@ Use [the timeline](project_timeline.md) for dates and dependencies.
 
 ## Remaining work and ownership — November 5
 
-The next lab priority is P25–P28 in the [combined demo guide](../NEXT_LAB_COMBINED.md).
-There is no need to repeat all 20 passed lab simulations during this visit.
+The next lab priority is P32 in [the onboard OLED guide](../LAB_ONBOARD_OLED.md),
+plus own-build timing and explicit repeat/restart evidence (P27/P28/P30).
+There is no need to repeat all 26 passed lab simulations during this visit.
 
 User / lab:
 
-- [ ] Run tests 21–26 in lab Vivado and save the PASS lines (P25/P29).
-- [ ] Connect keypad to JA and external OLED to JC; verify both complete
-  expected ciphertexts, shutdown/release/restart, then another block (P26/P27).
+- [x] Run tests 21–26 in lab Vivado and save the PASS lines (P25/P29).
+- [x] Verify combined keypad-to-AES-to-external-OLED ciphertexts (P26).
+- [ ] Run test 27 and the built-in OLED known-answer/restart trial (P32).
+- [ ] Record explicit physical shutdown/release/restart and repeat counts
+  (P27/P30); generic ciphertext success does not establish these counts.
 - [ ] Run implementation and Generate Bitstream from the supplied source;
   program that lab-generated image and repeat the known-answer check (P28).
   Save timing reports, exact Vivado version, source revision and bitstream name.
@@ -40,6 +43,8 @@ Development work:
   ROM/RAM usage; see [release notes](release_2026-11-05.md).
 - [x] Preserve the 20-test baseline regression and six combined-test results,
   plus routed implementation evidence, for the hardened lab release.
+- [x] Build a separate onboard OLED variant; pass seven local display tests
+  and 100 MHz implementation (+0.241 ns setup, +0.106 ns hold).
 - [ ] Finish diagrams, report/demo documentation and the reproducible final
   package with an extracted-copy check and backup (M6.3–M6.5).
 
@@ -143,17 +148,23 @@ Waveform learning and evidence archiving are tracked separately below.
 
 November 4: P18–P21 and P23–P24 passed, reported by the user with photos. P22 was not performed. See [the lab record](lab_results_2026-11-04.md).
 
-- [ ] P25: Run combined tests 21–23 on lab Vivado; save PASS lines.
-- [ ] P26: Program the combined JA/JC image; compare both full ciphertexts on the external OLED.
+- [x] P25: Run combined tests 21–23 on lab Vivado; save PASS lines.
+- [x] P26: Program the combined JA/JC image; compare full ciphertexts on the external OLED.
+  November 5: user reports the exact expected sequences render correctly.
 - [ ] P27: Confirm chord shutdown, release/restart, and a new block afterward.
 - [ ] P28: Run implementation and generate the combined image on the lab PC from its source.
-- [ ] P29: Run tests 24–26: recovery, bus routing and repeated blocks.
+- [x] P29: Run tests 24–26: recovery, bus routing and repeated blocks.
 - [ ] P30: Record physical H1–H7 in the updated combined guide: holds, partial
   input, chord release, ten blocks, three fresh starts and your own bitstream.
 - [ ] P31: If an adapter is available, run [UART side test U1](../LAB_UART_OPTIONAL.md)
   with JD1-to-RX and shared ground. Record model, settings and received text.
 
-Next: [combined demo guide](../NEXT_LAB_COMBINED.md).
+- [ ] P32: Run test 27 and physically verify the built-in OLED variant using
+  [the onboard guide](../LAB_ONBOARD_OLED.md). KYPD remains on JA; no external OLED.
+
+November 5 evidence: [lab results](lab_results_2026-11-05.md), including six
+archived waveform layouts. Next: [onboard guide](../LAB_ONBOARD_OLED.md), or
+finish reliability evidence using the already-working external-display image.
 
 Use the [November 3–4 lab sheet](../LAB_THIS_WEEK.md) for P18–P24.
 For older waveform and evidence follow-ups, see
@@ -242,8 +253,9 @@ Routed 100 MHz setup/hold: +0.311/+0.159 ns. H2 passed from the
 - [ ] H3.1: On the board, receive the correct UART test string via the PL adapter.
 - [ ] H3.2: On the board, observe correct codes for all 16 keys without
   unintended duplicate events from bounce or a held key.
-- [ ] H3.3: On the board, display a fixed pattern, text, and a 32-digit
-  sample ciphertext. Target all H3 checks by November 10.
+- [x] H3.3: On the board, display a fixed pattern, text, and a 32-digit
+  sample ciphertext. External Pmod pattern passed November 4; combined
+  ciphertext text passed November 5. Onboard OLED remains separate P32.
 
 UART engineering tests passed October 27: [guide](uart_tx.md),
 [contract](uart_interface.md), and [evidence](../evidence/uart_m3_2026-10-27/README.md).
@@ -278,8 +290,9 @@ reception (H3.1) remains open.
 ## M5 — complete physical demo — due November 15
 
 - [ ] M5.1: Complete P4/P5, H2, and H3 physical checks, or resolve their failures.
-- [ ] M5.2: Enter the known-answer input on the keypad; match every displayed
+- [x] M5.2: Enter the known-answer input on the keypad; match every displayed
   ciphertext byte against the independent expected value.
+  User reports exact ciphertext sequences and correct rendering November 5.
 - [ ] M5.3: Run at least ten consecutive encryptions with varied input;
   check input clearing, start behavior, full output, and next-block entry.
 - [ ] M5.4: Pass three fresh-start trials; record whether each used

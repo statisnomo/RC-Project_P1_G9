@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+BUS_CASE_PASS waits=1 checks=22
+BUS_CASE_PASS waits=5 checks=22
+PASS tb_display_bus: waits 1/5, 44 routed accesses, four windows, boundaries, invalid addresses, byte strobes and reset cancellation
+$finish called at time : 1210 ns : File "D:/RC Project/riscv_soc_project/build/onboard_extract_1105/tb/internal/tb_display_bus.sv" Line 61

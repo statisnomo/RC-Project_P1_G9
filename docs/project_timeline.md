@@ -15,7 +15,12 @@ is the maintained record; this document explains the order and deadlines.
 
 ## November 5 update
 
-The independent keypad and OLED board demos and simulations 17–20 passed. Next is the combined **JA keypad / JC OLED** trial, including a complete 32-digit ciphertext, repeated input and shutdown/restart. The deadline remains November 20. See [next lab](../NEXT_LAB_COMBINED.md).
+All lab simulations 1–26 and the combined **JA keypad / JC OLED** ciphertext
+display passed. The next small trial uses the ZedBoard's built-in OLED, with
+test 27, own-generated bitstream timing and explicit restart/repeat counts.
+Its seven local simulations and 100 MHz implementation passed; physical
+onboard acceptance and UART reception remain pending. The deadline remains
+November 20. See [next lab](../LAB_ONBOARD_OLED.md).
 
 ## November 3–4 lab (completed)
 

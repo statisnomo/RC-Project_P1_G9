@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_display_system_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_display_system" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1447739992fs"></ZoomStartTime>
+      <ZoomEndTime time="1447740002fs"></ZoomEndTime>
+      <Cursor1Time time="1447740000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="59"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="27" />
+   <wvobject fp_name="/tb_display_system/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/rows" type="array">
+      <obj_property name="ElementShortName">rows[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rows[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/drive" type="array">
+      <obj_property name="ElementShortName">drive[3:0]</obj_property>
+      <obj_property name="ObjectShortName">drive[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/keys" type="array">
+      <obj_property name="ElementShortName">keys[15:0]</obj_property>
+      <obj_property name="ObjectShortName">keys[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/cs" type="logic">
+      <obj_property name="ElementShortName">cs</obj_property>
+      <obj_property name="ObjectShortName">cs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/sd" type="logic">
+      <obj_property name="ElementShortName">sd</obj_property>
+      <obj_property name="ObjectShortName">sd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/sck" type="logic">
+      <obj_property name="ElementShortName">sck</obj_property>
+      <obj_property name="ObjectShortName">sck</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/dc" type="logic">
+      <obj_property name="ElementShortName">dc</obj_property>
+      <obj_property name="ObjectShortName">dc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/res" type="logic">
+      <obj_property name="ElementShortName">res</obj_property>
+      <obj_property name="ObjectShortName">res</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/vbat" type="logic">
+      <obj_property name="ElementShortName">vbat</obj_property>
+      <obj_property name="ObjectShortName">vbat</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/vdd" type="logic">
+      <obj_property name="ElementShortName">vdd</obj_property>
+      <obj_property name="ObjectShortName">vdd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/tx" type="logic">
+      <obj_property name="ElementShortName">tx</obj_property>
+      <obj_property name="ObjectShortName">tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/halted" type="logic">
+      <obj_property name="ElementShortName">halted</obj_property>
+      <obj_property name="ObjectShortName">halted</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/packets" type="array">
+      <obj_property name="ElementShortName">packets[31:0]</obj_property>
+      <obj_property name="ObjectShortName">packets[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/bits" type="array">
+      <obj_property name="ElementShortName">bits[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bits[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/chars" type="array">
+      <obj_property name="ElementShortName">chars[31:0]</obj_property>
+      <obj_property name="ObjectShortName">chars[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/acks" type="array">
+      <obj_property name="ElementShortName">acks[31:0]</obj_property>
+      <obj_property name="ObjectShortName">acks[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/swaps" type="array">
+      <obj_property name="ElementShortName">swaps[31:0]</obj_property>
+      <obj_property name="ObjectShortName">swaps[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/overlap" type="array">
+      <obj_property name="ElementShortName">overlap[31:0]</obj_property>
+      <obj_property name="ObjectShortName">overlap[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/octet" type="array">
+      <obj_property name="ElementShortName">octet[7:0]</obj_property>
+      <obj_property name="ObjectShortName">octet[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/DIV" type="array">
+      <obj_property name="ElementShortName">DIV[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DIV[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/CT0" type="array">
+      <obj_property name="ElementShortName">CT0[127:0]</obj_property>
+      <obj_property name="ObjectShortName">CT0[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/CT1" type="array">
+      <obj_property name="ElementShortName">CT1[127:0]</obj_property>
+      <obj_property name="ObjectShortName">CT1[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/INIT" type="array">
+      <obj_property name="ElementShortName">INIT[175:0]</obj_property>
+      <obj_property name="ObjectShortName">INIT[175:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/POS" type="array">
+      <obj_property name="ElementShortName">POS[63:0]</obj_property>
+      <obj_property name="ObjectShortName">POS[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_system/P" type="array">
+      <obj_property name="ElementShortName">P[127:0]</obj_property>
+      <obj_property name="ObjectShortName">P[127:0]</obj_property>
+   </wvobject>
+</wave_config>

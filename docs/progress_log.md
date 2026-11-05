@@ -297,3 +297,28 @@ JC OLED, JD1 TX remain the wiring. P25–P31 and combined physical M5 acceptance
 remain pending. Cleanup removed 65 ignored caches (57,540,356 bytes) while
 preserving source, evidence and distributed artifacts.
 
+## November 5: lab acceptance recorded and onboard OLED option built
+
+The user reported PASS for tests 21–26 and exact physical ciphertexts on the
+combined JA-keypad / JC-OLED system. With the earlier reports, simulations
+1–26 are now lab-passed. Six restored waveform layouts were archived with
+XML and source/copy hash checks; they are layouts, not waveform recordings.
+UART hardware remains not run. Exact ten-block and three-fresh-start counts,
+and the user's own implementation timing, remain to be recorded.
+
+Added a separate onboard OLED wrapper and constraints, retaining existing
+CPU, firmware and peripheral implementations. Test 27 checks the built-in
+display's permanently asserted CS interface, ciphertext pixels, production
+UART divider and shutdown/restart. Seven display simulations passed locally.
+Implementation passed at 100 MHz: +0.241 ns setup, +0.106 ns hold; 3,562 LUTs,
+2,509 flip-flops, two RAMB36s; no DRC errors or critical warnings. The new lab
+guide supplies the bitstream, source and GUI implementation procedure.
+The original hardened JA/JC ZIP and its 44 source hashes remain unchanged.
+Physical onboard OLED acceptance is pending; this is the next small lab step.
+
+The new ZIP was extracted to a fresh folder and all seven simulations passed
+again there. Every packaged file hash and all 37 packaged source hashes
+were verified, including agreement with the development inputs; the public
+bitstream matches the packaged bitstream. See
+`evidence/onboard_extract_2026-11-05/verification.json` and its seven logs.
+

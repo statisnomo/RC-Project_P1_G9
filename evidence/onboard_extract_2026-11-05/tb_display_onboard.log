@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_display_onboard: CS tied low, 2095 SPI bytes, two exact ciphertext frames, 66 UART frames at divider 868, power sequencing, partial chord release and restart
+$finish called at time : 6442870 ns : File "D:/RC Project/riscv_soc_project/build/onboard_extract_1105/tb/internal/tb_display_onboard.sv" Line 112

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_display_recovery_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_display_recovery" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="2434721667fs"></ZoomStartTime>
+      <ZoomEndTime time="2435721667fs"></ZoomEndTime>
+      <Cursor1Time time="2435555000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="59"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/tb_display_recovery/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/keys" type="array">
+      <obj_property name="ElementShortName">keys[15:0]</obj_property>
+      <obj_property name="ObjectShortName">keys[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/rows" type="array">
+      <obj_property name="ElementShortName">rows[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rows[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/drive" type="array">
+      <obj_property name="ElementShortName">drive[3:0]</obj_property>
+      <obj_property name="ObjectShortName">drive[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/cs" type="logic">
+      <obj_property name="ElementShortName">cs</obj_property>
+      <obj_property name="ObjectShortName">cs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/sd" type="logic">
+      <obj_property name="ElementShortName">sd</obj_property>
+      <obj_property name="ObjectShortName">sd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/sck" type="logic">
+      <obj_property name="ElementShortName">sck</obj_property>
+      <obj_property name="ObjectShortName">sck</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/dc" type="logic">
+      <obj_property name="ElementShortName">dc</obj_property>
+      <obj_property name="ObjectShortName">dc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/res" type="logic">
+      <obj_property name="ElementShortName">res</obj_property>
+      <obj_property name="ObjectShortName">res</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/vbat" type="logic">
+      <obj_property name="ElementShortName">vbat</obj_property>
+      <obj_property name="ObjectShortName">vbat</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/vdd" type="logic">
+      <obj_property name="ElementShortName">vdd</obj_property>
+      <obj_property name="ObjectShortName">vdd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/tx" type="logic">
+      <obj_property name="ElementShortName">tx</obj_property>
+      <obj_property name="ObjectShortName">tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/halted" type="logic">
+      <obj_property name="ElementShortName">halted</obj_property>
+      <obj_property name="ObjectShortName">halted</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/key_event" type="logic">
+      <obj_property name="ElementShortName">key_event</obj_property>
+      <obj_property name="ObjectShortName">key_event</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/block_event" type="logic">
+      <obj_property name="ElementShortName">block_event</obj_property>
+      <obj_property name="ObjectShortName">block_event</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/completed" type="array">
+      <obj_property name="ElementShortName">completed[31:0]</obj_property>
+      <obj_property name="ObjectShortName">completed[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/events" type="array">
+      <obj_property name="ElementShortName">events[31:0]</obj_property>
+      <obj_property name="ObjectShortName">events[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/case_no" type="array">
+      <obj_property name="ElementShortName">case_no[31:0]</obj_property>
+      <obj_property name="ObjectShortName">case_no[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_display_recovery/POS" type="array">
+      <obj_property name="ElementShortName">POS[63:0]</obj_property>
+      <obj_property name="ObjectShortName">POS[63:0]</obj_property>
+   </wvobject>
+</wave_config>
