@@ -1,0 +1,13 @@
+{
+  "archive": "riscv_soc_benchmark_dev_2026-11-06.zip",
+  "sha256": "44ac617859e815ca2e8fb471b4a5428bbce8ab20a6c89e537aef45d0250f9777",
+  "vivado": "2025.2",
+  "passed": [
+    "tb_benchmark_timer",
+    "tb_aes_benchmark",
+    "tb_benchmark_recovery"
+  ],
+  "source_hashes_verified": 29,
+  "physical_benchmark": "not implemented",
+  "presenter_logic": "passed DOM-stub checks; visual layout not inspected"
+}

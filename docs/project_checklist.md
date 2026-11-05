@@ -1,7 +1,7 @@
 # Project checklist
 
 Deadline: **20 November 2026**. Full-demo target: **15 November**.
-Last reviewed: **5 November 2026**. Lab simulations 1–26 passed. The user
+Last reviewed: **6 November 2026**. Lab simulations 1–26 passed. The user
 also reports correct combined JA-keypad / JC-OLED ciphertexts. The new onboard
 OLED variant remains a separate physical test. UART hardware is not yet tested.
 
@@ -11,6 +11,11 @@ or test named below is planned work, not a file claimed to exist today.
 Use [the timeline](project_timeline.md) for dates and dependencies.
 
 ## Remaining work and ownership — November 5
+
+**November 6 presentation update:** the software/hardware benchmark backend
+and tests 28–30 passed locally. See [the presentation plan](presentation_plan.md)
+and [measurement definitions](benchmark.md). Existing lab passes remain valid;
+the new benchmark has not yet been shown on physical hardware.
 
 The next lab priority is P32 in [the onboard OLED guide](../LAB_ONBOARD_OLED.md),
 plus own-build timing and explicit repeat/restart evidence (P27/P28/P30).
@@ -318,8 +323,19 @@ reception (H3.1) remains open.
   simulations. Check file paths, ROM contents, and a second backup.
 - [ ] G6: Submission package and evidence are complete and reproducible.
 
-Optional only after G5: same-CPU software-AES speedup comparison; key entry;
-more elaborate UI. None may displace correctness or final verification.
+Presentation work is now explicitly requested:
+
+- [x] M6.P1: Same-CPU software AES baseline and complete-call measurements;
+  413 independent vectors per wait mode, 24,576 versus 213/234 cycles.
+- [x] M6.P2: Verify 128 one-bit input changes and generate an offline presenter
+  from the saved evidence. Browser visual review is still pending.
+- [ ] M6.P3: Integrate clear OLED labels, input progress, software/hardware
+  cycle counts and MATCH into a separately verified presentation image.
+- [ ] M6.P4: Add a live single-bit-change mode, then check it on hardware.
+- [ ] M6.P5: Manual presenter preview, physical evidence, final slides and rehearsal.
+
+Text entry/decryption and a UART laptop viewer are possible later additions;
+they must not displace the verified live comparison or final acceptance.
 
 ## M7 — rehearsal and submission — November 19-20
 

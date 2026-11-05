@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+PASS tb_benchmark_timer: snapshots, invalid accesses, held requests, cancellation, reset and 32-bit wrap
+$finish called at time : 486 ns : File "D:/RC Project/riscv_soc_project/build/benchmark_extract_1106/tb/internal/tb_benchmark_timer.sv" Line 36

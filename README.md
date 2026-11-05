@@ -1,5 +1,14 @@
 # Custom RISC-V SoC with a Cryptographic Hardware Accelerator
 
+**Presentation build — November 6:** the same custom CPU now runs software
+AES and controls the hardware AES for a measured comparison: 24,576 versus
+213 cycles at wait setting 1. Both paths matched 413 independently checked
+inputs in each of two bus configurations. This is simulation-verified; live
+OLED comparison integration is next. See [GUI tests 28–30](docs/benchmark.md),
+[the presentation plan](docs/presentation_plan.md), and download
+[the separate benchmark development ZIP](https://github.com/statisnomo/RC-Project_P1_G9/raw/refs/heads/main/deliverables/riscv_soc_benchmark_dev_2026-11-06.zip).
+Open `docs/presentation_demo.html` locally for the offline comparison/bit-change view.
+
 **Next lab:** [hardened JA keypad + JC OLED kit and GUI procedure](NEXT_LAB_COMBINED.md), with tests 21–26 and expanded physical checks. [Optional UART side test](LAB_UART_OPTIONAL.md). [November 4 lab results](docs/lab_results_2026-11-04.md).
 
 **November 5 lab PASS:** tests 21–26 and correctly rendered combined ciphertexts
@@ -186,10 +195,8 @@ Simulate the CPU board wrapper with `.\tb\run_cpu_board_tests.ps1 -Waves` and
 build it with `.\scripts\build_zedboard_cpu.ps1`. Use the CPU lab guide for
 timing results and the expected LED pattern before programming.
 
-Observe the CPU result in the lab: LD0 should blink, LD1 should stay on, and
-the other user LEDs should be off. CPU-to-AES MMIO integration now passes.
-The next peripheral step is the keypad scanner; UART unit/MMIO tests pass.
-Confirm exact module revisions and wiring before enabling peripheral I/O.
-The existing ALU, CPU, and CPU/AES images have reported physical PASS.
-
+The October ALU, CPU and CPU/AES self-test images have reported physical PASS:
+LD0 blinks, LD1 stays on, other LEDs stay off. The combined keypad/display
+image uses a different LED legend, documented in its lab guide. Current work
+is the built-in OLED trial and presentation comparison, described above.
 

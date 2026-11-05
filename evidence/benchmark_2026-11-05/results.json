@@ -1,0 +1,796 @@
+{
+  "date": "2026-11-05",
+  "source": "Vivado 2025.2 behavioral simulation",
+  "modes": [
+    {
+      "waits": 1,
+      "software": 24576,
+      "hardware": 213,
+      "speedup": 115.38028169014085
+    },
+    {
+      "waits": 5,
+      "software": 24576,
+      "hardware": 234,
+      "speedup": 105.02564102564102
+    }
+  ],
+  "key": "000102030405060708090A0B0C0D0E0F",
+  "plaintext": "00112233445566778899AABBCCDDEEFF",
+  "ciphertext": "69C4E0D86A7B0430D8CDB78070B4C55A",
+  "flips": [
+    {
+      "bit": 0,
+      "plaintext": "01112233445566778899AABBCCDDEEFF",
+      "ciphertext": "A556156C72876577F67F95A9D9E640A7",
+      "changed": 62
+    },
+    {
+      "bit": 1,
+      "plaintext": "02112233445566778899AABBCCDDEEFF",
+      "ciphertext": "A7C46BEBCE78544D528895AD4553702C",
+      "changed": 58
+    },
+    {
+      "bit": 2,
+      "plaintext": "04112233445566778899AABBCCDDEEFF",
+      "ciphertext": "4309DE7B57594044D6949BE94F16CDF4",
+      "changed": 59
+    },
+    {
+      "bit": 3,
+      "plaintext": "08112233445566778899AABBCCDDEEFF",
+      "ciphertext": "52FFD81C400C8702546A94CAA5D5E188",
+      "changed": 59
+    },
+    {
+      "bit": 4,
+      "plaintext": "10112233445566778899AABBCCDDEEFF",
+      "ciphertext": "0761ADFD2FEBD4D105B1AC2FF88171B3",
+      "changed": 64
+    },
+    {
+      "bit": 5,
+      "plaintext": "20112233445566778899AABBCCDDEEFF",
+      "ciphertext": "DBE85527B4D0B855533F6B1BA143E894",
+      "changed": 79
+    },
+    {
+      "bit": 6,
+      "plaintext": "40112233445566778899AABBCCDDEEFF",
+      "ciphertext": "A0034E574A85F21AFD378272727B6A02",
+      "changed": 70
+    },
+    {
+      "bit": 7,
+      "plaintext": "80112233445566778899AABBCCDDEEFF",
+      "ciphertext": "C4B6CC20A1961062EE8104ADB441B569",
+      "changed": 65
+    },
+    {
+      "bit": 8,
+      "plaintext": "00102233445566778899AABBCCDDEEFF",
+      "ciphertext": "22965A00B4B6D4B1FFEFB96C89A21230",
+      "changed": 65
+    },
+    {
+      "bit": 9,
+      "plaintext": "00132233445566778899AABBCCDDEEFF",
+      "ciphertext": "3AB6F6792329FBC5CB3D0A2B033D1820",
+      "changed": 71
+    },
+    {
+      "bit": 10,
+      "plaintext": "00152233445566778899AABBCCDDEEFF",
+      "ciphertext": "E87E7A2837FA5D63A9070A0C90FEC0DB",
+      "changed": 57
+    },
+    {
+      "bit": 11,
+      "plaintext": "00192233445566778899AABBCCDDEEFF",
+      "ciphertext": "41A8D1CF28A3676974BBE7CDFBE1B79B",
+      "changed": 57
+    },
+    {
+      "bit": 12,
+      "plaintext": "00012233445566778899AABBCCDDEEFF",
+      "ciphertext": "B566C08DBA7DECDE436E945C60E4F8E6",
+      "changed": 58
+    },
+    {
+      "bit": 13,
+      "plaintext": "00312233445566778899AABBCCDDEEFF",
+      "ciphertext": "3EE704BB8D8D8EEF7A8A9435CDC017AE",
+      "changed": 72
+    },
+    {
+      "bit": 14,
+      "plaintext": "00512233445566778899AABBCCDDEEFF",
+      "ciphertext": "6526B02882F46754C8515BBAEC8A6D1A",
+      "changed": 55
+    },
+    {
+      "bit": 15,
+      "plaintext": "00912233445566778899AABBCCDDEEFF",
+      "ciphertext": "B1E86AC62378045DFE6AF05D2823513C",
+      "changed": 57
+    },
+    {
+      "bit": 16,
+      "plaintext": "00112333445566778899AABBCCDDEEFF",
+      "ciphertext": "8F0A81042BAF6702A0CB2230DA5DC42A",
+      "changed": 57
+    },
+    {
+      "bit": 17,
+      "plaintext": "00112033445566778899AABBCCDDEEFF",
+      "ciphertext": "5A0E4D36E89467324EEB3B0A69A5549B",
+      "changed": 57
+    },
+    {
+      "bit": 18,
+      "plaintext": "00112633445566778899AABBCCDDEEFF",
+      "ciphertext": "A13909DC2DE0F4BB0DF4F81184D44EF5",
+      "changed": 67
+    },
+    {
+      "bit": 19,
+      "plaintext": "00112A33445566778899AABBCCDDEEFF",
+      "ciphertext": "93DF8B4F2E168D2A0D37776E6C80FA23",
+      "changed": 69
+    },
+    {
+      "bit": 20,
+      "plaintext": "00113233445566778899AABBCCDDEEFF",
+      "ciphertext": "90E6004C10980D26226F3BF2FE4727B2",
+      "changed": 63
+    },
+    {
+      "bit": 21,
+      "plaintext": "00110233445566778899AABBCCDDEEFF",
+      "ciphertext": "75D5E6BDF81F1A4261BCC80CF51DF580",
+      "changed": 58
+    },
+    {
+      "bit": 22,
+      "plaintext": "00116233445566778899AABBCCDDEEFF",
+      "ciphertext": "10A032B60EA1C7EF28C745A9F108A62F",
+      "changed": 66
+    },
+    {
+      "bit": 23,
+      "plaintext": "0011A233445566778899AABBCCDDEEFF",
+      "ciphertext": "E4909A149750456829ED36761463252E",
+      "changed": 62
+    },
+    {
+      "bit": 24,
+      "plaintext": "00112232445566778899AABBCCDDEEFF",
+      "ciphertext": "F46757CDBB9E51B385A729C7AC8D5AE2",
+      "changed": 71
+    },
+    {
+      "bit": 25,
+      "plaintext": "00112231445566778899AABBCCDDEEFF",
+      "ciphertext": "AC998A0840B566CFABC3627FE8AAD0FF",
+      "changed": 70
+    },
+    {
+      "bit": 26,
+      "plaintext": "00112237445566778899AABBCCDDEEFF",
+      "ciphertext": "5DDCE3C663FC4F0B253683E0B7283476",
+      "changed": 62
+    },
+    {
+      "bit": 27,
+      "plaintext": "0011223B445566778899AABBCCDDEEFF",
+      "ciphertext": "E92054043189FAFADD530D6F20E746C6",
+      "changed": 67
+    },
+    {
+      "bit": 28,
+      "plaintext": "00112223445566778899AABBCCDDEEFF",
+      "ciphertext": "B51F032D556A45928543B9388B7CBEE0",
+      "changed": 72
+    },
+    {
+      "bit": 29,
+      "plaintext": "00112213445566778899AABBCCDDEEFF",
+      "ciphertext": "9D7FF5F86818F745BD821B3FA7C3ACE1",
+      "changed": 73
+    },
+    {
+      "bit": 30,
+      "plaintext": "00112273445566778899AABBCCDDEEFF",
+      "ciphertext": "0056D9612E4386D919B44AF755FB2912",
+      "changed": 64
+    },
+    {
+      "bit": 31,
+      "plaintext": "001122B3445566778899AABBCCDDEEFF",
+      "ciphertext": "F86926A2B048DE75FED2E5E2988F0370",
+      "changed": 64
+    },
+    {
+      "bit": 32,
+      "plaintext": "00112233455566778899AABBCCDDEEFF",
+      "ciphertext": "6C6785C208BF568CC03A3C78040C644A",
+      "changed": 57
+    },
+    {
+      "bit": 33,
+      "plaintext": "00112233465566778899AABBCCDDEEFF",
+      "ciphertext": "4B7330AC4CA9ADD638AFF37EB8887408",
+      "changed": 60
+    },
+    {
+      "bit": 34,
+      "plaintext": "00112233405566778899AABBCCDDEEFF",
+      "ciphertext": "472480C8B44FC41B8EBDEEA5F9B22EF0",
+      "changed": 54
+    },
+    {
+      "bit": 35,
+      "plaintext": "001122334C5566778899AABBCCDDEEFF",
+      "ciphertext": "1FB715F356ACF0560A07FD652A468968",
+      "changed": 70
+    },
+    {
+      "bit": 36,
+      "plaintext": "00112233545566778899AABBCCDDEEFF",
+      "ciphertext": "B4922297197C35668023DE72B96D2125",
+      "changed": 71
+    },
+    {
+      "bit": 37,
+      "plaintext": "00112233645566778899AABBCCDDEEFF",
+      "ciphertext": "B870C9F3CB66B4F358AC852D304008CF",
+      "changed": 56
+    },
+    {
+      "bit": 38,
+      "plaintext": "00112233045566778899AABBCCDDEEFF",
+      "ciphertext": "9D4FAC01CE405910A231F2CC8E11804F",
+      "changed": 65
+    },
+    {
+      "bit": 39,
+      "plaintext": "00112233C45566778899AABBCCDDEEFF",
+      "ciphertext": "45DC4A9CA80E57C04BFAD4B5F7BC1D3C",
+      "changed": 57
+    },
+    {
+      "bit": 40,
+      "plaintext": "00112233445466778899AABBCCDDEEFF",
+      "ciphertext": "5FF6ECBB29C4DEF2DE2EEFE10873B0E5",
+      "changed": 65
+    },
+    {
+      "bit": 41,
+      "plaintext": "00112233445766778899AABBCCDDEEFF",
+      "ciphertext": "AB83BD6A733AC6DB8883E899D2EC57BD",
+      "changed": 60
+    },
+    {
+      "bit": 42,
+      "plaintext": "00112233445166778899AABBCCDDEEFF",
+      "ciphertext": "5003741ABAE53C8CD994ED3150DC4182",
+      "changed": 54
+    },
+    {
+      "bit": 43,
+      "plaintext": "00112233445D66778899AABBCCDDEEFF",
+      "ciphertext": "2351C041A2FC8FF76151CEECFD99485F",
+      "changed": 60
+    },
+    {
+      "bit": 44,
+      "plaintext": "00112233444566778899AABBCCDDEEFF",
+      "ciphertext": "8B2A365B91B26A1699369E733004688D",
+      "changed": 70
+    },
+    {
+      "bit": 45,
+      "plaintext": "00112233447566778899AABBCCDDEEFF",
+      "ciphertext": "BC4C5A21C875272A6A0E1D347964469E",
+      "changed": 57
+    },
+    {
+      "bit": 46,
+      "plaintext": "00112233441566778899AABBCCDDEEFF",
+      "ciphertext": "B9CAF86E97167A474A1D4D3B182EDE04",
+      "changed": 71
+    },
+    {
+      "bit": 47,
+      "plaintext": "0011223344D566778899AABBCCDDEEFF",
+      "ciphertext": "B047A6A8786BFD8C56D29C08EE5E86FC",
+      "changed": 60
+    },
+    {
+      "bit": 48,
+      "plaintext": "00112233445567778899AABBCCDDEEFF",
+      "ciphertext": "33999E30EC759EC0CF998C911BFC968E",
+      "changed": 62
+    },
+    {
+      "bit": 49,
+      "plaintext": "00112233445564778899AABBCCDDEEFF",
+      "ciphertext": "78A7878838D4931688D1147C576D2D43",
+      "changed": 61
+    },
+    {
+      "bit": 50,
+      "plaintext": "00112233445562778899AABBCCDDEEFF",
+      "ciphertext": "BDA2BB9CFF69740BA870D62AFA918DF5",
+      "changed": 59
+    },
+    {
+      "bit": 51,
+      "plaintext": "0011223344556E778899AABBCCDDEEFF",
+      "ciphertext": "B58624BAD4D46330B137A84944135AFB",
+      "changed": 66
+    },
+    {
+      "bit": 52,
+      "plaintext": "00112233445576778899AABBCCDDEEFF",
+      "ciphertext": "C19BCA23A81E440D3D256F77EA3FE245",
+      "changed": 69
+    },
+    {
+      "bit": 53,
+      "plaintext": "00112233445546778899AABBCCDDEEFF",
+      "ciphertext": "C7B98CFBFCD32A029A29D8E3C026FFC7",
+      "changed": 63
+    },
+    {
+      "bit": 54,
+      "plaintext": "00112233445526778899AABBCCDDEEFF",
+      "ciphertext": "5FDC669042779E189ECFD349446DCD35",
+      "changed": 47
+    },
+    {
+      "bit": 55,
+      "plaintext": "001122334455E6778899AABBCCDDEEFF",
+      "ciphertext": "6D6AAD96E9C06174304D2EF7D8011EDE",
+      "changed": 60
+    },
+    {
+      "bit": 56,
+      "plaintext": "00112233445566768899AABBCCDDEEFF",
+      "ciphertext": "1788DB141AA96296CEDE493039881BF3",
+      "changed": 66
+    },
+    {
+      "bit": 57,
+      "plaintext": "00112233445566758899AABBCCDDEEFF",
+      "ciphertext": "816247E3A11863920E354C56D2A17346",
+      "changed": 71
+    },
+    {
+      "bit": 58,
+      "plaintext": "00112233445566738899AABBCCDDEEFF",
+      "ciphertext": "9FF2C12C4F4061D16E8701543485358D",
+      "changed": 65
+    },
+    {
+      "bit": 59,
+      "plaintext": "001122334455667F8899AABBCCDDEEFF",
+      "ciphertext": "D651DBABFF47FC086B352442BF77C7ED",
+      "changed": 71
+    },
+    {
+      "bit": 60,
+      "plaintext": "00112233445566678899AABBCCDDEEFF",
+      "ciphertext": "B5E3D88ED17BA3AD6F091A8209280094",
+      "changed": 65
+    },
+    {
+      "bit": 61,
+      "plaintext": "00112233445566578899AABBCCDDEEFF",
+      "ciphertext": "A4ED316593C0FE7633C2C39B21076442",
+      "changed": 70
+    },
+    {
+      "bit": 62,
+      "plaintext": "00112233445566378899AABBCCDDEEFF",
+      "ciphertext": "B479EBC97EF742CA74C1AF3E81ED0C8E",
+      "changed": 62
+    },
+    {
+      "bit": 63,
+      "plaintext": "00112233445566F78899AABBCCDDEEFF",
+      "ciphertext": "1E50A872722863B8C11F4E49DC60EAC9",
+      "changed": 62
+    },
+    {
+      "bit": 64,
+      "plaintext": "00112233445566778999AABBCCDDEEFF",
+      "ciphertext": "926D06D09C6483198260104AF2B79C54",
+      "changed": 64
+    },
+    {
+      "bit": 65,
+      "plaintext": "00112233445566778A99AABBCCDDEEFF",
+      "ciphertext": "7AC8A99CD7C344951922F23FEF793442",
+      "changed": 63
+    },
+    {
+      "bit": 66,
+      "plaintext": "00112233445566778C99AABBCCDDEEFF",
+      "ciphertext": "AE5E0530C32BEC2AFE04E9E3053B82E0",
+      "changed": 66
+    },
+    {
+      "bit": 67,
+      "plaintext": "00112233445566778099AABBCCDDEEFF",
+      "ciphertext": "65DC38E80A8258905EC8A82FDE91D2E0",
+      "changed": 57
+    },
+    {
+      "bit": 68,
+      "plaintext": "00112233445566779899AABBCCDDEEFF",
+      "ciphertext": "D89023AE79B273E7750D0F3B47782B51",
+      "changed": 70
+    },
+    {
+      "bit": 69,
+      "plaintext": "0011223344556677A899AABBCCDDEEFF",
+      "ciphertext": "536D01EF0F73250A05FBC66BBE6AD2B2",
+      "changed": 67
+    },
+    {
+      "bit": 70,
+      "plaintext": "0011223344556677C899AABBCCDDEEFF",
+      "ciphertext": "C892983F870DCC4AE41344039325175E",
+      "changed": 68
+    },
+    {
+      "bit": 71,
+      "plaintext": "00112233445566770899AABBCCDDEEFF",
+      "ciphertext": "EADF2BCA372F94A06655787BE3134FC4",
+      "changed": 65
+    },
+    {
+      "bit": 72,
+      "plaintext": "00112233445566778898AABBCCDDEEFF",
+      "ciphertext": "9927DB3CF2BE10989B231D2F14B4671F",
+      "changed": 58
+    },
+    {
+      "bit": 73,
+      "plaintext": "0011223344556677889BAABBCCDDEEFF",
+      "ciphertext": "219F41D14DB0442822F6D9483B4C48CE",
+      "changed": 59
+    },
+    {
+      "bit": 74,
+      "plaintext": "0011223344556677889DAABBCCDDEEFF",
+      "ciphertext": "53864CC77AD4694FEB69B662C1F47230",
+      "changed": 61
+    },
+    {
+      "bit": 75,
+      "plaintext": "00112233445566778891AABBCCDDEEFF",
+      "ciphertext": "C149CCAB1147D0DAB79897FB61D28A6A",
+      "changed": 64
+    },
+    {
+      "bit": 76,
+      "plaintext": "00112233445566778889AABBCCDDEEFF",
+      "ciphertext": "61BD5448C97E671CC94274FBA973C45E",
+      "changed": 54
+    },
+    {
+      "bit": 77,
+      "plaintext": "001122334455667788B9AABBCCDDEEFF",
+      "ciphertext": "68A3C728A75EB283B07E997E974B3548",
+      "changed": 71
+    },
+    {
+      "bit": 78,
+      "plaintext": "001122334455667788D9AABBCCDDEEFF",
+      "ciphertext": "9D3232241E557D0A809B4097E8B14B4D",
+      "changed": 69
+    },
+    {
+      "bit": 79,
+      "plaintext": "00112233445566778819AABBCCDDEEFF",
+      "ciphertext": "93712665FF43F7FA5C9CF2D6A6077CD8",
+      "changed": 67
+    },
+    {
+      "bit": 80,
+      "plaintext": "00112233445566778899ABBBCCDDEEFF",
+      "ciphertext": "6CC03B7ED29D0CD33A3B7F449C470D3E",
+      "changed": 61
+    },
+    {
+      "bit": 81,
+      "plaintext": "00112233445566778899A8BBCCDDEEFF",
+      "ciphertext": "AFFF06870BC9763D1E432DE1A89164D8",
+      "changed": 61
+    },
+    {
+      "bit": 82,
+      "plaintext": "00112233445566778899AEBBCCDDEEFF",
+      "ciphertext": "84494DA02F2A323652299B9F80F9B787",
+      "changed": 64
+    },
+    {
+      "bit": 83,
+      "plaintext": "00112233445566778899A2BBCCDDEEFF",
+      "ciphertext": "F69F69410AF1ECC00E619D89483EBE8F",
+      "changed": 62
+    },
+    {
+      "bit": 84,
+      "plaintext": "00112233445566778899BABBCCDDEEFF",
+      "ciphertext": "BF8CA3ACCABDBF929C682B9790BB7821",
+      "changed": 62
+    },
+    {
+      "bit": 85,
+      "plaintext": "001122334455667788998ABBCCDDEEFF",
+      "ciphertext": "712A914F7DE646EA6FAE0891C470CBEE",
+      "changed": 66
+    },
+    {
+      "bit": 86,
+      "plaintext": "00112233445566778899EABBCCDDEEFF",
+      "ciphertext": "43BC6421907CFE4B81B5DEC7B64E96D3",
+      "changed": 69
+    },
+    {
+      "bit": 87,
+      "plaintext": "001122334455667788992ABBCCDDEEFF",
+      "ciphertext": "0AE101F7F0B64182709B3DE63D327452",
+      "changed": 58
+    },
+    {
+      "bit": 88,
+      "plaintext": "00112233445566778899AABACCDDEEFF",
+      "ciphertext": "FDB58CFC861DC684FE8B8339C016356C",
+      "changed": 57
+    },
+    {
+      "bit": 89,
+      "plaintext": "00112233445566778899AAB9CCDDEEFF",
+      "ciphertext": "40F27C77E513CF004E2662EA7E5C30A3",
+      "changed": 70
+    },
+    {
+      "bit": 90,
+      "plaintext": "00112233445566778899AABFCCDDEEFF",
+      "ciphertext": "53E515E8279C656D17A92911F750E107",
+      "changed": 64
+    },
+    {
+      "bit": 91,
+      "plaintext": "00112233445566778899AAB3CCDDEEFF",
+      "ciphertext": "F20F4021517B30244697FF24FF27F045",
+      "changed": 60
+    },
+    {
+      "bit": 92,
+      "plaintext": "00112233445566778899AAABCCDDEEFF",
+      "ciphertext": "9EDC1D3DF14B2FFCBD934BB8F66D9DCF",
+      "changed": 69
+    },
+    {
+      "bit": 93,
+      "plaintext": "00112233445566778899AA9BCCDDEEFF",
+      "ciphertext": "1398A4BCF49B74593D32C161E282C3FC",
+      "changed": 64
+    },
+    {
+      "bit": 94,
+      "plaintext": "00112233445566778899AAFBCCDDEEFF",
+      "ciphertext": "1F619DA61FFE62253C74FFD03BBADFCD",
+      "changed": 64
+    },
+    {
+      "bit": 95,
+      "plaintext": "00112233445566778899AA3BCCDDEEFF",
+      "ciphertext": "8B56FA3B144898882D9DC2A19344D21C",
+      "changed": 64
+    },
+    {
+      "bit": 96,
+      "plaintext": "00112233445566778899AABBCDDDEEFF",
+      "ciphertext": "06250D85C75610D70F222CE6F9DADEC3",
+      "changed": 76
+    },
+    {
+      "bit": 97,
+      "plaintext": "00112233445566778899AABBCEDDEEFF",
+      "ciphertext": "B8988FC19C60A000A8CE3056182A87BD",
+      "changed": 62
+    },
+    {
+      "bit": 98,
+      "plaintext": "00112233445566778899AABBC8DDEEFF",
+      "ciphertext": "1E0E58B9915D1B35D39E265DB594D32A",
+      "changed": 61
+    },
+    {
+      "bit": 99,
+      "plaintext": "00112233445566778899AABBC4DDEEFF",
+      "ciphertext": "01031ED84EEA72AD49A164EDA991697C",
+      "changed": 62
+    },
+    {
+      "bit": 100,
+      "plaintext": "00112233445566778899AABBDCDDEEFF",
+      "ciphertext": "BD40E5044A797C12D155A9935DF4B7BF",
+      "changed": 47
+    },
+    {
+      "bit": 101,
+      "plaintext": "00112233445566778899AABBECDDEEFF",
+      "ciphertext": "C98952DC520C001D24A7A037D462ECC2",
+      "changed": 59
+    },
+    {
+      "bit": 102,
+      "plaintext": "00112233445566778899AABB8CDDEEFF",
+      "ciphertext": "07721BC561E44AF116B376E111B2C8DA",
+      "changed": 63
+    },
+    {
+      "bit": 103,
+      "plaintext": "00112233445566778899AABB4CDDEEFF",
+      "ciphertext": "B55ADBBED49239F14D8BC4EE63DE0E5A",
+      "changed": 67
+    },
+    {
+      "bit": 104,
+      "plaintext": "00112233445566778899AABBCCDCEEFF",
+      "ciphertext": "4BF7F83DA892F6EE229C8B1C48BFF484",
+      "changed": 64
+    },
+    {
+      "bit": 105,
+      "plaintext": "00112233445566778899AABBCCDFEEFF",
+      "ciphertext": "3A6230AAC924217BCEA65F81434F1AE2",
+      "changed": 67
+    },
+    {
+      "bit": 106,
+      "plaintext": "00112233445566778899AABBCCD9EEFF",
+      "ciphertext": "4F9C4C74C9D8B090611F11B6EE157CD9",
+      "changed": 61
+    },
+    {
+      "bit": 107,
+      "plaintext": "00112233445566778899AABBCCD5EEFF",
+      "ciphertext": "5D8024E08E0F0EF4ADEAD2934E3A1007",
+      "changed": 59
+    },
+    {
+      "bit": 108,
+      "plaintext": "00112233445566778899AABBCCCDEEFF",
+      "ciphertext": "8626C56DDC637BBFFD4F391E5CB168B8",
+      "changed": 66
+    },
+    {
+      "bit": 109,
+      "plaintext": "00112233445566778899AABBCCFDEEFF",
+      "ciphertext": "91977DE6626C7779C9795D27060B33B6",
+      "changed": 71
+    },
+    {
+      "bit": 110,
+      "plaintext": "00112233445566778899AABBCC9DEEFF",
+      "ciphertext": "ACE44D5B71314F77560F82F71586DABC",
+      "changed": 62
+    },
+    {
+      "bit": 111,
+      "plaintext": "00112233445566778899AABBCC5DEEFF",
+      "ciphertext": "32FE831A2A00884F14E9F821D7F1EAEF",
+      "changed": 65
+    },
+    {
+      "bit": 112,
+      "plaintext": "00112233445566778899AABBCCDDEFFF",
+      "ciphertext": "336184ABA820A1CCAC169BE501D0C96E",
+      "changed": 63
+    },
+    {
+      "bit": 113,
+      "plaintext": "00112233445566778899AABBCCDDECFF",
+      "ciphertext": "0E330BBD99EB61BAAD580DC53E4215E1",
+      "changed": 73
+    },
+    {
+      "bit": 114,
+      "plaintext": "00112233445566778899AABBCCDDEAFF",
+      "ciphertext": "6F612A91E9CCB8AE49E9EB60355478F4",
+      "changed": 61
+    },
+    {
+      "bit": 115,
+      "plaintext": "00112233445566778899AABBCCDDE6FF",
+      "ciphertext": "39286F445EDE02C72E24DB22510B4F88",
+      "changed": 66
+    },
+    {
+      "bit": 116,
+      "plaintext": "00112233445566778899AABBCCDDFEFF",
+      "ciphertext": "1155609E693B8969F9D2750BD2CAE33F",
+      "changed": 52
+    },
+    {
+      "bit": 117,
+      "plaintext": "00112233445566778899AABBCCDDCEFF",
+      "ciphertext": "D10B648D12EC6928419C29BF19E28844",
+      "changed": 66
+    },
+    {
+      "bit": 118,
+      "plaintext": "00112233445566778899AABBCCDDAEFF",
+      "ciphertext": "FFB051C8C62610727B1E86965C24E959",
+      "changed": 51
+    },
+    {
+      "bit": 119,
+      "plaintext": "00112233445566778899AABBCCDD6EFF",
+      "ciphertext": "81CF905B9BC9D05D14FE5997FAD507DD",
+      "changed": 62
+    },
+    {
+      "bit": 120,
+      "plaintext": "00112233445566778899AABBCCDDEEFE",
+      "ciphertext": "C32D9C183E5B132E3E43FD740AA1290F",
+      "changed": 62
+    },
+    {
+      "bit": 121,
+      "plaintext": "00112233445566778899AABBCCDDEEFD",
+      "ciphertext": "327AF5C66E172ADB3388C61503A63922",
+      "changed": 67
+    },
+    {
+      "bit": 122,
+      "plaintext": "00112233445566778899AABBCCDDEEFB",
+      "ciphertext": "96FCB84BD96828A4472715F933FA8CD2",
+      "changed": 63
+    },
+    {
+      "bit": 123,
+      "plaintext": "00112233445566778899AABBCCDDEEF7",
+      "ciphertext": "E1652838797C199108E372E60AF74585",
+      "changed": 55
+    },
+    {
+      "bit": 124,
+      "plaintext": "00112233445566778899AABBCCDDEEEF",
+      "ciphertext": "F45504EA409A3650331D08023E758CB5",
+      "changed": 62
+    },
+    {
+      "bit": 125,
+      "plaintext": "00112233445566778899AABBCCDDEEDF",
+      "ciphertext": "4C558E610C73228F1D6AC0FAD4E0B8B7",
+      "changed": 69
+    },
+    {
+      "bit": 126,
+      "plaintext": "00112233445566778899AABBCCDDEEBF",
+      "ciphertext": "278371237DD49AB6E817B62C82EFC96F",
+      "changed": 64
+    },
+    {
+      "bit": 127,
+      "plaintext": "00112233445566778899AABBCCDDEE7F",
+      "ciphertext": "36172A62CD5A53291F4F33C27665A5D2",
+      "changed": 56
+    }
+  ],
+  "flipped_bits_min": 47,
+  "flipped_bits_max": 79,
+  "flipped_bits_mean": 63.265625,
+  "blocks_per_mode": 413,
+  "log_sha256": "b78bb880773f9d9f5ef165875294fe0c93508175e899c66686bcb821efe81c4b"
+}

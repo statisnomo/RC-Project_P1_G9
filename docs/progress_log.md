@@ -322,3 +322,31 @@ were verified, including agreement with the development inputs; the public
 bitstream matches the packaged bitstream. See
 `evidence/onboard_extract_2026-11-05/verification.json` and its seven logs.
 
+## November 5–6: presentation benchmark and avalanche evidence
+
+The user requested a more demonstrable outcome. Added a separate development
+SoC/ROM that runs software AES in compiled RV32I C and the existing hardware
+accelerator on the same custom CPU. All 413 independent inputs passed at
+each of two AES wait settings. CPU-visible complete-call times are 24,576
+cycles for software and 213/234 for hardware (waits 1/5), with timer readings
+independently checked against simulated clock edges. This compares a compact
+byte-oriented `-Os` baseline, not the best possible software implementation.
+
+Tests 28–30 also cover timer access/reset/wrap, a bounded hardware-status
+timeout and retry, and reset during software and hardware encryption. Program
+size is 2,060 bytes; maximum reported call-chain stack is 112 bytes. A 128-input
+single-bit-change sweep produced 47–79 changed ciphertext bits, mean 63.265625.
+The offline presentation view shows saved evidence and is not live telemetry.
+Its data/interaction checks passed after fixing a Windows UTF-8 decoding issue.
+Browser visual inspection was blocked by the tool's local-file URL policy.
+
+Original display RTL, firmware and published kits are unchanged. Next is
+live OLED comparison/status integration, new routed timing and physical
+acceptance. No new benchmark bitstream or physical speedup is claimed.
+
+The separate November 6 development ZIP passed all three Vivado tests again
+from a fresh extraction, plus the presenter control/data checks. All 29
+packaged source hashes matched the development inputs. The original onboard
+and hardened external-OLED ZIP hashes are unchanged. Extracted acceptance
+logs and the archive hash are in `evidence/benchmark_extract_2026-11-06/`.
+

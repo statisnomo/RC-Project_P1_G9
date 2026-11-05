@@ -15,6 +15,13 @@ is the maintained record; this document explains the order and deadlines.
 
 ## November 5 update
 
+November 6 addition: the [presentation benchmark](benchmark.md) passed local
+tests 28–30. Next development priority is OLED input/status labels and live
+software/hardware cycle counts, followed by a single-bit-change mode. Keep
+the physically passed external-OLED image as backup; each new board image
+still needs simulation, timing and physical acceptance before the November 15
+full-demo target. See [the presentation script and feature order](presentation_plan.md).
+
 All lab simulations 1–26 and the combined **JA keypad / JC OLED** ciphertext
 display passed. The next small trial uses the ZedBoard's built-in OLED, with
 test 27, own-generated bitstream timing and explicit restart/repeat counts.

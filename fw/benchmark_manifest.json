@@ -1,0 +1,48 @@
+{
+  "compiler": "riscv32-xilinx-elf-gcc.exe (GCC) 13.4.0",
+  "flags": [
+    "-march=rv32i",
+    "-mabi=ilp32",
+    "-mno-relax",
+    "-msmall-data-limit=0",
+    "-Os",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-fno-pic",
+    "-fno-stack-protector",
+    "-fno-unwind-tables",
+    "-fno-asynchronous-unwind-tables",
+    "-fstack-usage"
+  ],
+  "code_bytes": 2060,
+  "rom_bytes": 4096,
+  "rom_sha256": "15898a6f3698a56d40c7d16844345c9a02b6af1ac1a61f04bd6bc05fb78d4ec7",
+  "instruction_mnemonics": [
+    "add",
+    "addi",
+    "andi",
+    "auipc",
+    "beq",
+    "bltu",
+    "bne",
+    "jal",
+    "jalr",
+    "lbu",
+    "lui",
+    "lw",
+    "sb",
+    "slli",
+    "sltiu",
+    "srli",
+    "sub",
+    "sw",
+    "xor"
+  ],
+  "stack_usage": "aes_software.c:11:6:aes_software\t64\tstatic\nbenchmark.c:8:38:hardware\t0\tstatic\nbenchmark.c:18:5:main\t48\tstatic\n",
+  "source_hashes": {
+    "fw/src/aes_software.c": "a56887bf4bcaa24b758d516e4c4742578c20751a81e3871d5e9949280130e36a",
+    "fw/src/benchmark.c": "9e673f362ae71302e641642ba478451feb57c2d7dbb71b9fde4319662a76314a",
+    "fw/linker/benchmark.ld": "c7962849d37e78fda358442589a78f31fed63766789ed881ca4bd1d7c5399d31",
+    "fw/build_benchmark.py": "64b515f06ef7914827824cbe93e9a061a12c88625a68ee775299ebcb3da02422"
+  }
+}

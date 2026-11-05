@@ -1,5 +1,12 @@
 # Next lab: combined keypad → AES → OLED
 
+**November 6 development addition:** [tests 28–30](docs/benchmark.md) verify
+the new software-versus-hardware AES comparison in Vivado. These are optional
+additional simulations; the physical onboard OLED procedure below is unchanged.
+The benchmark is not yet included in a board bitstream. Open
+`docs/presentation_demo.html` from the downloaded repository for a presenter
+view of the verified simulation results; see [the demo plan](docs/presentation_plan.md).
+
 **November 5 results:** tests 21–26 and the combined ciphertext display passed
 in the lab. Next, try [the built-in OLED variant](LAB_ONBOARD_OLED.md), which
 needs only the KYPD on JA. UART hardware is still an optional follow-up.

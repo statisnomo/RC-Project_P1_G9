@@ -1,0 +1,8 @@
+Time resolution is 1 ps
+BENCHMARK_FIPS waits=1 sw_cycles=24576 hw_cycles=213
+BENCHMARK_FIPS waits=5 sw_cycles=24576 hw_cycles=234
+BENCHMARK_CASE_PASS waits=1 vectors=413 sw_cycles=24576..24576 hw_cycles=213..213 flips=128 changed_bits=47..79 sum=8098 reset_restart=PASS
+BENCHMARK_CASE_PASS waits=5 vectors=413 sw_cycles=24576..24576 hw_cycles=234..234 flips=128 changed_bits=47..79 sum=8098 reset_restart=PASS
+PASS tb_aes_benchmark: real RV32I software AES versus MMIO hardware, 413 independent vectors per wait mode, CPU-visible timer checked, 128 one-bit changes and reset recovery
+$finish called at time : 103342895 ns : File "D:/RC Project/riscv_soc_project/build/benchmark_extract_1106/tb/internal/tb_aes_benchmark.sv" Line 76
+INFO: xsimkernel Simulation Memory Usage: 12844 KB (Peak: 12844 KB), Simulation CPU Usage: 93999 ms
